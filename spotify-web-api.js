@@ -1,212 +1,170 @@
-var SpotifyWebApi = (function() {
+Spotify Web API JS
+==================
 
-  var _baseUri = 'https://api.spotify.com/v1';
-  var _accessToken = null;
+This is a wrapper for the Spotify Web API. It includes helper functions to make requests for getting albums, artists, tracks, playlists and users information.
 
-  var _promiseProvider = function(promiseFunction, callback) {
-    if (window.Promise) {
-      return new Promise(promiseFunction);
-    }
-    else {
-      var other = window.Q || window.when;
-      if (other) {
-        var deferred = other.defer();
-        promiseFunction(function(resolvedResult) {
-          deferred.resolve(resolvedResult);
-        }, function(rejectedResult) {
-          deferred.reject(rejectedResult);
-        });
-        return deferred.promise;
-      } else {
-        if (callback) {
-          return promiseFunction(function(resolvedResult) {
-            callback(null, resolvedResult);
-          }, function(rejectedResult) {
-            callback(rejectedResult, null);
-          });
-        }
-      }
-    }
-    return null;
-  };
+The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when) if they are available.
 
-  var _checkParamsAndPerformRequest = function(requestData, options, callback) {
-    var opt = {};
-    var cb = null;
+## Usage
 
-    if (typeof options === 'object') {
-      opt = options;
-      cb = callback;
-    } else if (typeof options === 'function') {
-      cb = options;
-    }
-    _extend(requestData.params, opt);
-    return _performRequest(requestData, cb);
-  };
+First, instantiate the wrapper.
+```javascript
+var spotifyApi = new SpotifyWebApi();
+```
 
-  var _performRequest = function(requestData, callback) {
-    var promiseFunction = function(resolve, reject) {
-      var req = new XMLHttpRequest();
-      req.open(requestData.type || 'GET',
-        _buildUrl(requestData.url, requestData.params),
-        true);
-      
-      if (_accessToken) {
-        req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
-      }
+If you have an access token, you can set it doing:
+```javascript
+spotifyApi.setAccessToken('<here_your_access_token>');
+```
 
-      req.onload = function() {
-        if (req.status == 200) {
-          var data = JSON.parse(req.responseText);
-          if (resolve) {
-            resolve(data);
-          }
-          callback(null, data);
-        } else {
-          if (reject) {
-            reject(req);
-          }
-          callback(new Error(req), null);
-        }
-      };
-      req.send(null);
-    };
+When you set an access token, it will be used for signing your requests. Note that an access token is not always necessary, unless you want to sign your requests or have access to data that a user has granted access to your app.
 
-    return _promiseProvider(promiseFunction, callback);
-  };
+Here you see how we can get basic information:
 
-  var _extend = function(params) {
-    var args = Array.prototype.slice.call(arguments);
-    var target = args[0];
-    var objects = args.slice(1);
-    target = target || {};
-    for (var i = 0; i < objects.length; i++) {
-      for (var j in objects[i]) {
-        if (!(j in target)) {
-          target[j] = objects[i][j];
-        }
-      }
-    }
-    return target;
-  };
+```javascript
+// passing a callback - get Elvis' albums
+spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
+  if (err) console.error(err);
+  else console.log('Artist albums', data);
+});
 
-  var _buildUrl = function(url, parameters){
-    var qs = '';
-    for (var key in parameters) {
-      var value = parameters[key];
-      qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
-    }
-    if (qs.length > 0){
-      qs = qs.substring(0, qs.length - 1); //chop off last '&'
-      url = url + '?' + qs;
-    }
-    return url;
-  };
+// using Promises through Promise, Q or when - get Elvis' albums
+spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
+  .then(function(data) {
+    console.log('Artist albums', data);
+  }, function(err) {
+    console.error(err);
+  });
+```
 
-  var Constr = function() {};
+The functions that fetch data from the API support also an optional JSON object with a set of options, such as the ones regarding pagination. These options will be sent as query parameters:
 
-  // public API — prototype
-  Constr.prototype = {
-    constructor: SpotifyWebApi
-  };
+```javascript
+// passing a callback - get Elvis' albums in range [20...29]
+spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', {limit: 10, offset: 20}, function(err, data) {
+  if (err) console.error(err);
+  else console.log('Artist albums', data);
+});
 
-  Constr.prototype.getGeneric = function(url, callback) {
-    var requestData = {
-      url: url
-    };
-    return _checkParamsAndPerformRequest(requestData, callback);
-  };
+// using Promises through Promise, Q or when - get Elvis' albums in range [20...29]
+spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', {limit: 10, offset: 20})
+  .then(function(data) {
+    console.log('Artist albums', data);
+  }, function(err) {
+    console.error(err);
+  });
+```
 
-  Constr.prototype.getMe = function(options, callback) {
-    var requestData = {
-      url: _baseUri + '/me'
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+### More examples
+_Note: The following examples use Promises/Q/when as the return object._
 
-  Constr.prototype.getUser = function(userId, options, callback) {
-    var requestData = {
-      url: _baseUri + '/users/' + userId
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+Here you can see more examples of the usage of this wrapper:
 
-  Constr.prototype.getUserPlaylist = function(userId, playlistId, options, callback) {
-    var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+```javascript
+spotifyApi.getAlbums(['5U4W9E5WsYb2jUQWePT8Xm', '3KyVcddATClQKIdtaap4bV'])
+  .then(function(data) {
+    console.log('Albums information', data);
+  }, function(err) {
+    console.error(err);
+  });
 
-  Constr.prototype.getUserPlaylists = function(userId, options, callback) {
-    var requestData = {
-      url: _baseUri + '/users/' + albumId + '/playlists'
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+spotifyApi.getArtist('2hazSY4Ef3aB9ATXW7F5w3')
+  .then(function(data) {
+    console.log('Artist information', data);
+  }, function(err) {
+    console.error(err);
+  });
 
-  Constr.prototype.getAlbum = function(albumId, options, callback) {
-    var requestData = {
-      url: _baseUri + '/albums/' + albumId
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+spotifyApi.getArtists(['2hazSY4Ef3aB9ATXW7F5w3', '6J6yx1t3nwIDyPXk5xa7O8'])
+  .then(function(data) {
+    console.log('Artists information', data);
+  }, function(err) {
+    console.error(err);
+  });
 
-  Constr.prototype.getAlbums = function(albumIds, options, callback) {
-    var requestData = {
-      url: _baseUri + '/albums/',
-      params: { ids: albumIds.join(',') }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
+  .then(function(data) {
+    console.log('Artist albums', data);
+  }, function(err) {
+    console.error(err);
+  });
 
-  Constr.prototype.getTrack = function(trackId, options, callback) {
-    var requestData = {};
-    requestData.url = _baseUri + '/tracks/' + trackId;
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+spotifyApi.search('Love')
+  .then(function(data) {
+    console.log('Search by "Love" (defaults to track results)', data);
+  }, function(err) {
+    console.error(err);
+  });
 
-  Constr.prototype.getTracks = function(trackIds, options, callback) {
-    var requestData = {
-      url: _baseUri + '/tracks/',
-      params: { ids: trackIds.join(',') }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+// search artists whose name contains 'Love'
+spotifyApi.search('Love', {type: 'artist'})
+  .then(function(data) {
+    console.log('Search artists by "Love"', data);
+  }, function(err) {
+    console.error(err);
+  });
 
-  Constr.prototype.getArtist = function(artistId, options, callback) {
-    var requestData = {
-      url: _baseUri + '/artists/' + artistId
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+// search tracks whose artist's name contains 'Love'
+spotifyApi.search('artist:Love', {type: 'track'})
+  .then(function(data) {
+    console.log('Search tracks by "Love" in the artist name', data);
+  }, function(err) {
+    console.error(err);
+  });
+```
 
-  Constr.prototype.getArtists = function(artistIds, options, callback) {
-    var requestData = {
-      url: _baseUri + '/artists/',
-      params: { ids: artistIds.join(',') }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+### Nesting calls
+When you need to make multiple calls to get some dataset, you can take advantage of the Promises to get a cleaner code:
 
-  Constr.prototype.getArtistAlbums = function(artistId, options, callback) {
-    var requestData = {
-      url: _baseUri + '/artists/' + artistId + '/albums'
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+```javascript
+// track detail information for album tracks
+spotifyApi.getAlbum('5U4W9E5WsYb2jUQWePT8Xm')
+  .then(function(data) {
+    return data.tracks.map(function(t) { return t.id; });
+  })
+  .then(function(trackIds) {
+    return spotifyApi.getTracks(trackIds);
+  })
+  .then(function(tracksInfo) {
+    console.log(tracksInfo);
+  })
+  .catch(function(error) {
+    console.error(error);
+  });
 
-  Constr.prototype.search = function(query, options, callback) {
-    var requestData = {
-      url: _baseUri + '/search/',
-      params: { q: query }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
-  };
+// album detail for the first 10 Elvis' albums
+spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', {limit: 10})
+  .then(function(data) {
+    return data.albums.map(function(a) { return a.id; });
+  })
+  .then(function(albums) {
+    return spotifyApi.getAlbums(albums);
+  }).then(function(data) {
+    console.log(data);
+  });
+```
 
-  Constr.prototype.setAccessToken = function(accessToken) {
-    _accessToken = accessToken;
-  };
+### Getting user's information
+In order to get user's information you will probably need to request an access token. Say for instance you want to get user's playlists. Once you get an access token, set it and fetch the data:
 
-  return Constr;
-})();
+```javascript
+// get an access token
+...
+
+// set it in the wrapper
+var spotifyApi = new SpotifyWebApi();
+spotifyApi.setAccessToken('<here_your_access_token');
+spotifyApiWithToken.getUserPlaylists('jmperezperez')
+  .then(function(data) {
+    console.log('User playlists', data);
+  }, function(err) {
+    console.error(err);
+  });
+
+spotifyApiWithToken.getUserPlaylist('jmperezperez', '4vHIKV7j4QcZwgzGQcZg1x')
+  .then(function(data) {
+    console.log('User playlist', data);
+  }, function(err) {
+    console.error(err);
+  });
+```
