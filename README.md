@@ -1,9 +1,9 @@
 Spotify Web API JS
 ==================
 
-This is a wrapper for the Spotify Web API. It includes helper functions to make requests for getting albums, artists, tracks, playlists and users information.
+This is a wrapper for the Spotify Web API. It includes helper functions to make requests for getting albums, artists, tracks, playlists and user's information.
 
-The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when) if they are available.
+The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when) if they are present.
 
 ## Usage
 
@@ -19,7 +19,7 @@ spotifyApi.setAccessToken('<here_your_access_token>');
 
 When you set an access token, it will be used for signing your requests. Note that an access token is not always necessary, unless you want to sign your requests or have access to data that a user has granted access to your app.
 
-Here you see how we can get basic information:
+Here you see how to get basic information using a function like `getArtistAlbums`:
 
 ```javascript
 // passing a callback - get Elvis' albums
@@ -61,6 +61,7 @@ _Note: The following examples use Promises/Q/when as the return object._
 Here you can see more examples of the usage of this wrapper:
 
 ```javascript
+// get multiple albums
 spotifyApi.getAlbums(['5U4W9E5WsYb2jUQWePT8Xm', '3KyVcddATClQKIdtaap4bV'])
   .then(function(data) {
     console.log('Albums information', data);
@@ -68,6 +69,7 @@ spotifyApi.getAlbums(['5U4W9E5WsYb2jUQWePT8Xm', '3KyVcddATClQKIdtaap4bV'])
     console.error(err);
   });
 
+// get an artists
 spotifyApi.getArtist('2hazSY4Ef3aB9ATXW7F5w3')
   .then(function(data) {
     console.log('Artist information', data);
@@ -75,6 +77,7 @@ spotifyApi.getArtist('2hazSY4Ef3aB9ATXW7F5w3')
     console.error(err);
   });
 
+// get multiple artists
 spotifyApi.getArtists(['2hazSY4Ef3aB9ATXW7F5w3', '6J6yx1t3nwIDyPXk5xa7O8'])
   .then(function(data) {
     console.log('Artists information', data);
@@ -82,6 +85,7 @@ spotifyApi.getArtists(['2hazSY4Ef3aB9ATXW7F5w3', '6J6yx1t3nwIDyPXk5xa7O8'])
     console.error(err);
   });
 
+// get albums by a certain artist
 spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
   .then(function(data) {
     console.log('Artist albums', data);
@@ -89,6 +93,7 @@ spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
     console.error(err);
   });
 
+// search tracks whose name, album or artist contains 'Love'
 spotifyApi.search('Love')
   .then(function(data) {
     console.log('Search by "Love" (defaults to track results)', data);
