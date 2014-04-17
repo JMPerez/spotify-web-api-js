@@ -1,5 +1,6 @@
 var SpotifyWebApi = (function() {
 
+  'use strict';
   var _baseUri = 'https://api.spotify.com/v1';
   var _accessToken = null;
 
@@ -50,13 +51,13 @@ var SpotifyWebApi = (function() {
       req.open(requestData.type || 'GET',
         _buildUrl(requestData.url, requestData.params),
         true);
-      
+
       if (_accessToken) {
         req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
       }
 
       req.onload = function() {
-        if (req.status == 200) {
+        if (req.status === 200) {
           var data = JSON.parse(req.responseText);
           if (resolve) {
             resolve(data);
@@ -75,7 +76,7 @@ var SpotifyWebApi = (function() {
     return _promiseProvider(promiseFunction, callback);
   };
 
-  var _extend = function(params) {
+  var _extend = function() {
     var args = Array.prototype.slice.call(arguments);
     var target = args[0];
     var objects = args.slice(1);
@@ -140,7 +141,7 @@ var SpotifyWebApi = (function() {
 
   Constr.prototype.getUserPlaylists = function(userId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + albumId + '/playlists'
+      url: _baseUri + '/users/' + userId + '/playlists'
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
