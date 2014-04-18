@@ -4,20 +4,19 @@ module.exports = function(grunt) {
   grunt.initConfig({
     jshint: {
       all: [
-        'spotify-web-api.js'
+        'src/*.js'
       ],
       options: {
         jshintrc: '.jshintrc'
       }
     },
     watch: {
-      // If you want to watch files and run tests automatically on change
       test: {
         files: [
           'tests/**/*.html',
           '*.js'
         ],
-        tasks: ['jshint']
+        tasks: ['default']
       }
     },
     mocha: {
@@ -28,10 +27,25 @@ module.exports = function(grunt) {
         run: true,
         reporter: 'Nyan'
       }
+    },
+    blanket_mocha: {
+      test: {
+        src: ['tests/**/*.html'],
+        options: {
+          threshold: 60,
+          globalThreshold: 65,
+          log: true,
+          logErrors: true,
+          moduleThreshold: 60,
+          modulePattern: './src/'
+        }
+      }
     }
   });
   grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['jshint', 'mocha:test']);
+  grunt.loadNpmTasks('grunt-blanket-mocha');
+  grunt.registerTask('default', ['jshint', 'mocha']);
+  grunt.registerTask('coverage', ['blanket_mocha']);
 };

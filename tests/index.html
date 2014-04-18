@@ -9,25 +9,21 @@
   <!-- Required for browser reporter -->
   <div id="mocha"></div>
 
-  <!-- run mocha after all test are loaded -->
-  <script src="../spotify-web-api.js"></script>
   <script src="js/mocha.js"></script>
-  <script type="text/javascript" charset="utf-8">
-      // This will be overridden by mocha-helper if you run with grunt
-      mocha.setup('bdd');
-  </script>
-  <!-- Include your assertion lib of choice -->
   <script src="js/chai.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="../node_modules/blanket/dist/qunit/blanket.js" data-cover-flags="branchTracking" data-cover-only="//src/"></script>
+  <script type="text/javascript" src="../node_modules/grunt-blanket-mocha/support/mocha-blanket.js"></script>
   <script type="text/javascript" charset="utf-8">
-      // Setup chai
-      var expect = chai.expect;
-  </script>
-  <script src="js/spec/test.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    // Only tests run in real browser, injected script run if options.run == true
+    var expect = chai.expect;
+    mocha.setup('bdd');
+    if (window.PHANTOMJS) {
+      blanket.options("reporter", "../node_modules/grunt-blanket-mocha/support/grunt-reporter.js");
+    }
     if (navigator.userAgent.indexOf('PhantomJS') < 0) {
       mocha.run();
     }
   </script>
+  <script src="../src/spotify-web-api.js"></script>
+  <script src="js/spec/test.js"></script>
 </body>
 </html>

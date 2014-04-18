@@ -13,6 +13,11 @@
   "devDependencies": {
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-watch": "~0.6",
-    "grunt-mocha": "~0.4.10"
+    "grunt-mocha": "~0.4.10",
+    "grunt-blanket-mocha": "~0.4.0",
+    "blanket": "~1.1.6"
+  },
+  "scripts": {
+    "test": "grunt coverage --verbose"
   }
 }
