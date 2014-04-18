@@ -1,4 +1,4 @@
-Spotify Web API JS
+Spotify Web API JS [![Build Status](https://travis-ci.org/JMPerez/spotify-web-api-js.svg?branch=master)](https://travis-ci.org/JMPerez/spotify-web-api-js)
 ==================
 
 This is a wrapper for the Spotify Web API. It includes helper functions to make requests for getting albums, artists, tracks, playlists and user's information.
