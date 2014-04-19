@@ -6,11 +6,12 @@ var SpotifyWebApi = (function() {
 
   var _promiseProvider = function(promiseFunction, callback) {
     if (window.Promise) {
-      return new Promise(promiseFunction);
+      return new window.Promise(promiseFunction);
     }
     else {
-      var other = window.Q || window.when;
-      if (other) {
+      var other = (window.Q && window.Q.defer ? window.Q : false) ||
+        (window.when && window.when.defer ? window.when : false);
+      if (other !== false) {
         var deferred = other.defer();
         promiseFunction(function(resolvedResult) {
           deferred.resolve(resolvedResult);
