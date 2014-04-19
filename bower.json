@@ -1,0 +1,12 @@
+{
+  "name": "spotify-web-api-js",
+  "version": "0.0.1",
+  "main": "src/spotify-web-api.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
