@@ -1,0 +1,122 @@
+{
+    "artists": [
+        {
+            "api_link": "https://api.spotify.com/v1/artists/0oSGxfWSnnOXhD2fKuz2Gy",
+            "genres": [
+                "Mod",
+                "Club/Dance",
+                "Alternative Pop/Rock",
+                "Alternative/Indie Rock",
+                "R&B",
+                "Contemporary Folk",
+                "Progressive Country",
+                "Singer/Songwriter",
+                "British Folk",
+                "Experimental Rock",
+                "Holidays",
+                "Psychedelic",
+                "New Wave",
+                "Folk-Rock",
+                "Film Music",
+                "Pop/Rock",
+                "Folk",
+                "Avant-Garde",
+                "Soft Rock",
+                "British Folk-Rock",
+                "Dance-Pop",
+                "British Psychedelia",
+                "Holiday",
+                "Glam Rock",
+                "Adult Alternative Pop/Rock",
+                "Adult Contemporary",
+                "Sophisti-Pop",
+                "Punk/New Wave",
+                "Soundtracks",
+                "Post-Punk",
+                "Stage & Screen",
+                "Original Score",
+                "Dance-Rock",
+                "Art Rock",
+                "Album Rock",
+                "Christmas",
+                "British Invasion",
+                "Country",
+                "Hard Rock",
+                "Soul",
+                "Experimental",
+                "Proto-Punk",
+                "Contemporary Pop/Rock",
+                "Blue-Eyed Soul"
+            ],
+            "id": "0oSGxfWSnnOXhD2fKuz2Gy",
+            "images": {
+                "MEDIUM": {
+                    "height": 141,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/3326e1f51f1eb147c3b24a4b828ed5f1191e09db",
+                    "width": 199
+                },
+                "SMALL": {
+                    "height": 45,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/5b2b602e58962bc09e38ee7aa2b74d261aa5bce0",
+                    "width": 64
+                },
+                "LARGE": {
+                    "height": 453,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/341f90bcf363b2577dacdf4c4e9b828c51c5b18a",
+                    "width": 640
+                },
+                "XLARGE": {
+                    "height": 707,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/407f471e15ac91b153b4ec81bac3973bde221bb8",
+                    "width": 1000
+                }
+            },
+            "link": "https://open.spotify.com/artist/0oSGxfWSnnOXhD2fKuz2Gy",
+            "name": "David Bowie",
+            "popularity": 78,
+            "spotify_uri": "spotify:artist:0oSGxfWSnnOXhD2fKuz2Gy",
+            "type": "artist"
+        },
+        {
+            "api_link": "https://api.spotify.com/v1/artists/3dBVyJ7JuOMt4GE9607Qin",
+            "genres": [
+                "Pop/Rock",
+                "Proto-Punk",
+                "Contemporary Pop/Rock",
+                "Rock & Roll",
+                "Glam Rock",
+                "Album Rock",
+                "Punk/New Wave",
+                "Hard Rock"
+            ],
+            "id": "3dBVyJ7JuOMt4GE9607Qin",
+            "images": {
+                "MEDIUM": {
+                    "height": 260,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/de2fa1d11c59e63143117d44ec9990b9e40451a2",
+                    "width": 200
+                },
+                "SMALL": {
+                    "height": 83,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/b39638735adb4a4a54621293b99ab65c546f605e",
+                    "width": 64
+                },
+                "LARGE": {
+                    "height": 832,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/c990e667b4ca8240c73b0db06e6d76a3b27ce929",
+                    "width": 640
+                },
+                "XLARGE": {
+                    "height": 1300,
+                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/5515a710c94ccd4edd8b9a0587778ed5e3f997da",
+                    "width": 1000
+                }
+            },
+            "link": "https://open.spotify.com/artist/3dBVyJ7JuOMt4GE9607Qin",
+            "name": "T. Rex",
+            "popularity": 55,
+            "spotify_uri": "spotify:artist:3dBVyJ7JuOMt4GE9607Qin",
+            "type": "artist"
+        }
+    ]
+}

@@ -3,7 +3,7 @@ Spotify Web API JS [![Build Status](https://travis-ci.org/JMPerez/spotify-web-ap
 
 This is a wrapper for the Spotify Web API. It includes helper functions to make requests for getting albums, artists, tracks, playlists and user's information.
 
-The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when) if they are present.
+The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), and Promises/A+ libraries such as [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when).
 
 ## Usage
 
@@ -19,16 +19,21 @@ spotifyApi.setAccessToken('<here_your_access_token>');
 
 When you set an access token, it will be used for signing your requests. Note that an access token is not always necessary, unless you want to sign your requests or have access to data that a user has granted access to your app.
 
+If you want to use a Promises/A+ library, you can set it:
+```javascript
+spotifyApi.setPromiseImplementation(Q);
+```
+
 Here you see how to get basic information using a function like `getArtistAlbums`:
 
 ```javascript
-// passing a callback - get Elvis' albums
+// get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
 spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
   if (err) console.error(err);
   else console.log('Artist albums', data);
 });
 
-// using Promises through Promise, Q or when - get Elvis' albums
+// get Elvis' albums, using Promises through Promise, Q or when
 spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
   .then(function(data) {
     console.log('Artist albums', data);

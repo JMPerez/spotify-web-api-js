@@ -10,10 +10,11 @@
   <div id="mocha"></div>
 
   <script src="js/mocha.js"></script>
-  <script src="js/chai.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript" src="../node_modules/blanket/dist/qunit/blanket.js" data-cover-flags="branchTracking" data-cover-only="//src/"></script>
+  <script src="js/chai.js"></script>
+  <script src="js/sinon.js"></script>
+  <script type="text/javascript" src="../node_modules/blanket/dist/qunit/blanket.js" data-cover-only="//src/"></script>
   <script type="text/javascript" src="../node_modules/grunt-blanket-mocha/support/mocha-blanket.js"></script>
-  <script type="text/javascript" charset="utf-8">
+  <script type="text/javascript">
     var expect = chai.expect;
     mocha.setup('bdd');
     if (window.PHANTOMJS) {
@@ -23,6 +24,7 @@
       mocha.run();
     }
   </script>
+  <script src="js/q.js"></script>
   <script src="../src/spotify-web-api.js"></script>
   <script src="js/spec/test.js"></script>
 </body>

@@ -3,30 +3,20 @@ var SpotifyWebApi = (function() {
   'use strict';
   var _baseUri = 'https://api.spotify.com/v1';
   var _accessToken = null;
+  var _promiseImplementation = null;
 
-  var _promiseProvider = function(promiseFunction, callback) {
-    if (window.Promise) {
-      return new window.Promise(promiseFunction);
-    }
-    else {
-      var other = (window.Q && window.Q.defer ? window.Q : false) ||
-        (window.when && window.when.defer ? window.when : false);
-      if (other !== false) {
-        var deferred = other.defer();
-        promiseFunction(function(resolvedResult) {
-          deferred.resolve(resolvedResult);
-        }, function(rejectedResult) {
-          deferred.reject(rejectedResult);
-        });
-        return deferred.promise;
-      } else {
-        if (callback) {
-          return promiseFunction(function(resolvedResult) {
-            callback(null, resolvedResult);
-          }, function(rejectedResult) {
-            callback(rejectedResult, null);
-          });
-        }
+  var _promiseProvider = function(promiseFunction) {
+    if (_promiseImplementation !== null) {
+      var deferred = _promiseImplementation.defer();
+      promiseFunction(function(resolvedResult) {
+        deferred.resolve(resolvedResult);
+      }, function(rejectedResult) {
+        deferred.reject(rejectedResult);
+      });
+      return deferred.promise;
+    } else {
+      if (window.Promise) {
+        return new window.Promise(promiseFunction);
       }
     }
     return null;
@@ -57,24 +47,40 @@ var SpotifyWebApi = (function() {
         req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
       }
 
-      req.onload = function() {
-        if (req.status === 200) {
-          var data = JSON.parse(req.responseText);
-          if (resolve) {
-            resolve(data);
+      req.onreadystatechange = function() {
+        if (req.readyState === 4) {
+          var data = null;
+          try {
+            data = JSON.parse(req.responseText);
+          } catch (e) {}
+
+          if (req.status === 200) {
+            if (resolve) {
+              resolve(data);
+            }
+            if (callback) {
+              callback(null, data);
+            }
+          } else {
+            if (reject) {
+              reject(req);
+            }
+            if (callback) {
+              callback(req, null);
+            }
           }
-          callback(null, data);
-        } else {
-          if (reject) {
-            reject(req);
-          }
-          callback(new Error(req), null);
         }
       };
+
       req.send(null);
     };
 
-    return _promiseProvider(promiseFunction, callback);
+    if (callback) {
+      promiseFunction();
+      return null;
+    } else {
+      return _promiseProvider(promiseFunction);
+    }
   };
 
   var _extend = function() {
@@ -95,8 +101,10 @@ var SpotifyWebApi = (function() {
   var _buildUrl = function(url, parameters){
     var qs = '';
     for (var key in parameters) {
-      var value = parameters[key];
-      qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
+      if (parameters.hasOwnProperty(key)) {
+        var value = parameters[key];
+        qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
+      }
     }
     if (qs.length > 0){
       qs = qs.substring(0, qs.length - 1); //chop off last '&'
@@ -208,6 +216,14 @@ var SpotifyWebApi = (function() {
 
   Constr.prototype.setAccessToken = function(accessToken) {
     _accessToken = accessToken;
+  };
+
+  Constr.prototype.setPromiseImplementation = function(promiseImplementation) {
+    if (!('defer' in promiseImplementation)) {
+      throw new Error('Unsupported implementation of Promises/A+');
+    } else {
+      _promiseImplementation = promiseImplementation;
+    }
   };
 
   return Constr;
