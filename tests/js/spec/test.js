@@ -253,14 +253,20 @@ describe('Basic tests', function() {
     var api = new SpotifyWebApi();
     it('should get a track and use the provided promise implementation', function(done) {
       var result = api.getTrack('3Qm86XLflmIXVm1wcwkgDK');
-      result.then(function(data) {
-        expect(data).to.deep.equal(that.fixtures.track);
+      if (window.Promise) {
+        result.then(function(data) {
+          expect(data).to.deep.equal(that.fixtures.track);
+          done();
+        });
+      } else {
         done();
-      });
-      that.requests[0].respond(200,
-        {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures.track)
-      );
+      }
+      setTimeout(function() {
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.track)
+        );
+      }, 100);
     });
 
     it('should get a track and use only the callback function if it is provided', function() {
