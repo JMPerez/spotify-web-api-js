@@ -99,7 +99,7 @@ spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
   });
 
 // search tracks whose name, album or artist contains 'Love'
-spotifyApi.search('Love')
+spotifyApi.searchTracks('Love')
   .then(function(data) {
     console.log('Search by "Love" (defaults to track results)', data);
   }, function(err) {
@@ -107,7 +107,7 @@ spotifyApi.search('Love')
   });
 
 // search artists whose name contains 'Love'
-spotifyApi.search('Love', {type: 'artist'})
+spotifyApi.searchArtists('Love')
   .then(function(data) {
     console.log('Search artists by "Love"', data);
   }, function(err) {
@@ -115,7 +115,7 @@ spotifyApi.search('Love', {type: 'artist'})
   });
 
 // search tracks whose artist's name contains 'Love'
-spotifyApi.search('artist:Love', {type: 'track'})
+spotifyApi.searchTracks('artist:Love', {type: 'track'})
   .then(function(data) {
     console.log('Search tracks by "Love" in the artist name', data);
   }, function(err) {

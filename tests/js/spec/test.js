@@ -123,40 +123,40 @@ describe('Basic tests', function() {
     it('should search for albums', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.search('The Best Of Keane', {type: 'album'}, callback);
+      api.searchAlbums('The Best Of Keane', callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
         JSON.stringify(that.fixtures['search-album'])
       );
       expect(callback.calledWith(null, that.fixtures['search-album'])).to.be.ok;
       expect(that.requests).to.have.length(1);
-      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=The%20Best%20Of%20Keane&type=album');
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/search/?q=The%20Best%20Of%20Keane');
     });
 
     it('should search for artists', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.search('David Bowie', {type: 'artist'}, callback);
+      api.searchArtists('David Bowie', callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
         JSON.stringify(that.fixtures['search-artist'])
       );
       expect(callback.calledWith(null, that.fixtures['search-artist'])).to.be.ok;
       expect(that.requests).to.have.length(1);
-      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=David%20Bowie&type=artist');
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/search/?q=David%20Bowie');
     });
 
     it('should search for tracks', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.search('Mr. Brightside', callback);
+      api.searchTracks('Mr. Brightside', callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
         JSON.stringify(that.fixtures['search-track-page1'])
       );
       expect(callback.calledWith(null, that.fixtures['search-track-page1'])).to.be.ok;
       expect(that.requests).to.have.length(1);
-      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=Mr.%20Brightside');
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/tracks/search/?q=Mr.%20Brightside');
     });
 
     it('should get a track using a token', function() {
