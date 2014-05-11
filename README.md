@@ -101,7 +101,7 @@ spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
 // search tracks whose name, album or artist contains 'Love'
 spotifyApi.searchTracks('Love')
   .then(function(data) {
-    console.log('Search by "Love" (defaults to track results)', data);
+    console.log('Search by "Love"', data);
   }, function(err) {
     console.error(err);
   });
