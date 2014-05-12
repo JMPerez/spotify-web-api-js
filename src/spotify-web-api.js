@@ -206,9 +206,25 @@ var SpotifyWebApi = (function() {
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
-  Constr.prototype.search = function(query, options, callback) {
+  Constr.prototype.searchAlbums = function(query, options, callback) {
     var requestData = {
-      url: _baseUri + '/search/',
+      url: _baseUri + '/albums/search/',
+      params: { q: query }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  Constr.prototype.searchArtists = function(query, options, callback) {
+    var requestData = {
+      url: _baseUri + '/artists/search/',
+      params: { q: query }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  Constr.prototype.searchTracks = function(query, options, callback) {
+    var requestData = {
+      url: _baseUri + '/tracks/search/',
       params: { q: query }
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);

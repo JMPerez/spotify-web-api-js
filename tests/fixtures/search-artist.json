@@ -1,36 +1,39 @@
 {
-    "artists": [
+  "href": "https://api.spotify.com/v1/artists/search?query=gatan&offset=0&limit=20",
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2Bw6FyyzgCc8OD7MX59TEQ"
+      },
+      "genres": [],
+      "href": "https://api.spotify.com/v1/artists/2Bw6FyyzgCc8OD7MX59TEQ",
+      "id": "2Bw6FyyzgCc8OD7MX59TEQ",
+      "images": [
         {
-            "api_link": "https://api.spotify.com/v1/artists/2Bw6FyyzgCc8OD7MX59TEQ",
-            "genres": [],
-            "id": "2Bw6FyyzgCc8OD7MX59TEQ",
-            "images": {
-                "MEDIUM": {
-                    "height": 300,
-                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/7fc613b33c2c2cdb8b30ebb4cb989917096bff0f",
-                    "width": 300
-                },
-                "SMALL": {
-                    "height": 64,
-                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/4b88a1eb9e5c9d3f72d4902d43ea342e51ace932",
-                    "width": 64
-                },
-                "LARGE": {
-                    "height": 640,
-                    "image_url": "https://d3rt1990lpmkn.cloudfront.net/original/26ca12528f16760d71c6e304a747c827b6baea50",
-                    "width": 640
-                }
-            },
-            "link": "https://open.spotify.com/artist/2Bw6FyyzgCc8OD7MX59TEQ",
-            "name": "Satan I Gatan",
-            "popularity": 0,
-            "spotify_uri": "spotify:artist:2Bw6FyyzgCc8OD7MX59TEQ",
-            "type": "artist"
+          "height": 640,
+          "url": "https://d3rt1990lpmkn.cloudfront.net/original/26ca12528f16760d71c6e304a747c827b6baea50",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://d3rt1990lpmkn.cloudfront.net/original/7fc613b33c2c2cdb8b30ebb4cb989917096bff0f",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://d3rt1990lpmkn.cloudfront.net/original/4b88a1eb9e5c9d3f72d4902d43ea342e51ace932",
+          "width": 64
         }
-    ],
-    "paging": {
-        "next": null,
-        "previous": null,
-        "total_result_count": 1
+      ],
+      "name": "Satan I Gatan",
+      "popularity": 0,
+      "type": "artist",
+      "uri": "spotify:artist:2Bw6FyyzgCc8OD7MX59TEQ"
     }
+  ],
+  "limit": 20,
+  "next": null,
+  "offset": 0,
+  "previous": null,
+  "total": 1
 }
