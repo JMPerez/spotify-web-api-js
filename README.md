@@ -115,7 +115,7 @@ spotifyApi.searchArtists('Love')
   });
 
 // search tracks whose artist's name contains 'Love'
-spotifyApi.searchTracks('artist:Love', {type: 'track'})
+spotifyApi.searchTracks('artist:Love')
   .then(function(data) {
     console.log('Search tracks by "Love" in the artist name', data);
   }, function(err) {
