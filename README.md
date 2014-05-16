@@ -163,7 +163,7 @@ In order to get user's information you will probably need to request an access t
 
 // set it in the wrapper
 var spotifyApi = new SpotifyWebApi();
-spotifyApi.setAccessToken('<here_your_access_token');
+spotifyApi.setAccessToken('<here_your_access_token>');
 spotifyApiWithToken.getUserPlaylists('jmperezperez')
   .then(function(data) {
     console.log('User playlists', data);
