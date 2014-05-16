@@ -19,12 +19,17 @@ describe('Basic tests', function() {
     track: loadFixture('track'),
     tracks: loadFixture('tracks'),
     album: loadFixture('album'),
+    album_tracks: loadFixture('album_tracks'),
     albums: loadFixture('albums'),
     artist: loadFixture('artist'),
     artists: loadFixture('artists'),
-    'search-album': loadFixture('search-album'),
-    'search-artist': loadFixture('search-artist'),
-    'search-track-page1': loadFixture('search-track-page1')
+    artist_albums: loadFixture('artist_albums'),
+    artist_top_tracks: loadFixture('artist_top_tracks'),
+    search_album: loadFixture('search_album'),
+    search_artist: loadFixture('search_artist'),
+    search_track_page1: loadFixture('search_track_page1'),
+    me: loadFixture('me'),
+    user_playlists: loadFixture('user_playlists')
   };
 
   var that = this;
@@ -81,6 +86,19 @@ describe('Basic tests', function() {
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Baj');
     });
 
+    it('should get an albums\'s tracks', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getAlbumTracks('0sNOF9WDwhWunNAHPD3Baj', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.album_tracks)
+      );
+      expect(callback.calledWith(null, that.fixtures.album_tracks)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Baj/tracks');
+    });
+
     it('should get multiple albums', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
@@ -107,6 +125,32 @@ describe('Basic tests', function() {
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/0LcJLqbBmaGUft1e9Mm8HV');
     });
 
+    it('should get an artist\'s albums', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getArtistAlbums('5YyScSZOuBHpoFhGvHFedc', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.artist_albums)
+      );
+      expect(callback.calledWith(null, that.fixtures.artist_albums)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/albums');
+    });
+
+    it('should get an artist\'s top tracks', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getArtistTopTracks('5YyScSZOuBHpoFhGvHFedc', 'ES', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.artist_top_tracks)
+      );
+      expect(callback.calledWith(null, that.fixtures.artist_top_tracks)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/top-tracks?country=ES');
+    });
+
     it('should get multiple artists', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
@@ -126,11 +170,11 @@ describe('Basic tests', function() {
       api.searchAlbums('The Best Of Keane', callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures['search-album'])
+        JSON.stringify(that.fixtures.search_album)
       );
-      expect(callback.calledWith(null, that.fixtures['search-album'])).to.be.ok;
+      expect(callback.calledWith(null, that.fixtures.search_album)).to.be.ok;
       expect(that.requests).to.have.length(1);
-      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/search/?q=The%20Best%20Of%20Keane');
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=The%20Best%20Of%20Keane&type=album');
     });
 
     it('should search for artists', function() {
@@ -139,11 +183,11 @@ describe('Basic tests', function() {
       api.searchArtists('David Bowie', callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures['search-artist'])
+        JSON.stringify(that.fixtures.search_artist)
       );
-      expect(callback.calledWith(null, that.fixtures['search-artist'])).to.be.ok;
+      expect(callback.calledWith(null, that.fixtures.search_artist)).to.be.ok;
       expect(that.requests).to.have.length(1);
-      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/search/?q=David%20Bowie');
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=David%20Bowie&type=artist');
     });
 
     it('should search for tracks', function() {
@@ -152,11 +196,11 @@ describe('Basic tests', function() {
       api.searchTracks('Mr. Brightside', callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures['search-track-page1'])
+        JSON.stringify(that.fixtures.search_track_page1)
       );
-      expect(callback.calledWith(null, that.fixtures['search-track-page1'])).to.be.ok;
+      expect(callback.calledWith(null, that.fixtures.search_track_page1)).to.be.ok;
       expect(that.requests).to.have.length(1);
-      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/tracks/search/?q=Mr.%20Brightside');
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=Mr.%20Brightside&type=track');
     });
 
     it('should get a track using a token', function() {
@@ -193,16 +237,29 @@ describe('Basic tests', function() {
       api.getAlbum('asdyi1uy', callback);
       that.requests[0].respond(404,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures['error_id-not-found'])
+        JSON.stringify(that.fixtureserror_id_not_found)
       );
       expect(callback.calledWith(sinon.match(Error), null)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/asdyi1uy');
     });
+
+    it('should get information about the current logged in user', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.getMe(callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.me)
+      );
+      expect(callback.calledWith(null, that.fixtures.me)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me');
+    });
   });
 
   describe('Using Promises/A+ through Q.js', function() {
-
 
     it('should get a track and use the provided promise implementation', function(done) {
       var api = new SpotifyWebApi();
@@ -237,7 +294,7 @@ describe('Basic tests', function() {
       var result = api.getAlbum('asdyi1uy');
       that.requests[0].respond(404,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures['error_id-not-found'])
+        JSON.stringify(that.fixtureserror_id_not_found)
       );
       result.fail(function(error) {
         expect(error.status).to.equal(404);
@@ -286,7 +343,7 @@ describe('Basic tests', function() {
       var result = api.getAlbum('asdyi1uy');
       that.requests[0].respond(404,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures['error_id-not-found'])
+        JSON.stringify(that.fixtures.error_id_not_found)
       );
       result.fail(function(error) {
         expect(error.status).to.equal(404);

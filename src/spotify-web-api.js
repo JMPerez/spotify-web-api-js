@@ -162,6 +162,13 @@ var SpotifyWebApi = (function() {
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
+  Constr.prototype.getAlbumTracks = function(albumId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/albums/' + albumId + '/tracks'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
   Constr.prototype.getAlbums = function(albumIds, options, callback) {
     var requestData = {
       url: _baseUri + '/albums/',
@@ -206,26 +213,43 @@ var SpotifyWebApi = (function() {
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
+  Constr.prototype.getArtistTopTracks = function(artistId, countryId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/artists/' + artistId + '/top-tracks',
+      params: { country: countryId }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
   Constr.prototype.searchAlbums = function(query, options, callback) {
     var requestData = {
-      url: _baseUri + '/albums/search/',
-      params: { q: query }
+      url: _baseUri + '/search/',
+      params: {
+        q: query,
+        type: 'album'
+      }
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
   Constr.prototype.searchArtists = function(query, options, callback) {
     var requestData = {
-      url: _baseUri + '/artists/search/',
-      params: { q: query }
+      url: _baseUri + '/search/',
+      params: {
+        q: query,
+        type: 'artist'
+      }
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
   Constr.prototype.searchTracks = function(query, options, callback) {
     var requestData = {
-      url: _baseUri + '/tracks/search/',
-      params: { q: query }
+      url: _baseUri + '/search/',
+      params: {
+        q: query,
+        type: 'track'
+      }
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
