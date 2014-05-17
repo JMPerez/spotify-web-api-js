@@ -1,12 +1,23 @@
 {
   "name": "spotify-web-api-js",
+  "description": "A client-side JS wrapper for the Spotify Web API",
   "version": "0.0.1",
-  "main": "src/spotify-web-api.js",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "homepage": "https://github.com/jmperez/spotify-web-api",
+  "author": {
+    "name": "José M. Pérez"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jmperez/spotify-web-api"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-watch": "~0.6",
+    "grunt-mocha": "~0.4.10",
+    "grunt-blanket-mocha": "~0.4.0",
+    "blanket": "~1.1.6"
+  },
+  "scripts": {
+    "test": "grunt mocha"
+  }
 }

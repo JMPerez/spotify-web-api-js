@@ -3,9 +3,16 @@ Spotify Web API JS [![Build Status](https://travis-ci.org/JMPerez/spotify-web-ap
 
 This is a wrapper for the Spotify Web API. It includes helper functions to make requests for getting albums, artists, tracks, playlists and user's information.
 
-The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), and Promises/A+ libraries such as [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when).
+## Installation
+Install via bower (browser):
+
+    $ bower install spotify-web-api-js
+
+or by making a copy of the `src/spotify-web-api.js` file
 
 ## Usage
+
+The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), and Promises/A+ libraries such as [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when).
 
 First, instantiate the wrapper.
 ```javascript
