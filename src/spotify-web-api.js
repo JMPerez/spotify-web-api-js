@@ -39,10 +39,14 @@ var SpotifyWebApi = (function() {
   var _performRequest = function(requestData, callback) {
     var promiseFunction = function(resolve, reject) {
       var req = new XMLHttpRequest();
-      req.open(requestData.type || 'GET',
-        _buildUrl(requestData.url, requestData.params),
-        true);
-
+      var type = requestData.type || 'GET';
+      if (type === 'GET') {
+        req.open(type,
+          _buildUrl(requestData.url, requestData.params),
+          true);
+      } else {
+        req.open(type, _buildUrl(requestData.url));
+      }
       if (_accessToken) {
         req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
       }
@@ -51,10 +55,10 @@ var SpotifyWebApi = (function() {
         if (req.readyState === 4) {
           var data = null;
           try {
-            data = JSON.parse(req.responseText);
+            data = req.responseText ? JSON.parse(req.responseText) : '';
           } catch (e) {}
 
-          if (req.status === 200) {
+          if (req.status === 200 || req.status === 201) {
             if (resolve) {
               resolve(data);
             }
@@ -72,7 +76,11 @@ var SpotifyWebApi = (function() {
         }
       };
 
-      req.send(null);
+      if (type === 'GET') {
+        req.send(null);
+      } else {
+        req.send(JSON.stringify(requestData.postData));
+      }
     };
 
     if (callback) {
@@ -141,16 +149,34 @@ var SpotifyWebApi = (function() {
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
-  Constr.prototype.getUserPlaylist = function(userId, playlistId, options, callback) {
+  Constr.prototype.getUserPlaylists = function(userId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  Constr.prototype.getPlaylist = function(userId, playlistId, options, callback) {
     var requestData = {
       url: _baseUri + '/users/' + userId + '/playlists/' + playlistId
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
-  Constr.prototype.getUserPlaylists = function(userId, options, callback) {
+  Constr.prototype.createPlaylist = function(userId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists'
+      url: _baseUri + '/users/' + userId + '/playlists',
+      type: 'POST',
+      postData: options
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  Constr.prototype.addTracksToPlaylist = function(userId, playlistId, uris, options, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      type: 'POST',
+      postData: uris
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };

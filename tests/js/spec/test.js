@@ -27,9 +27,12 @@ describe('Basic tests', function() {
     artist_top_tracks: loadFixture('artist_top_tracks'),
     search_album: loadFixture('search_album'),
     search_artist: loadFixture('search_artist'),
-    search_track_page1: loadFixture('search_track_page1'),
+    search_track: loadFixture('search_track'),
+    user: loadFixture('user'),
     me: loadFixture('me'),
-    user_playlists: loadFixture('user_playlists')
+    user_playlists: loadFixture('user_playlists'),
+    user_new_playlist: loadFixture('user_new_playlist'),
+    playlist: loadFixture('playlist')
   };
 
   var that = this;
@@ -196,9 +199,9 @@ describe('Basic tests', function() {
       api.searchTracks('Mr. Brightside', callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures.search_track_page1)
+        JSON.stringify(that.fixtures.search_track)
       );
-      expect(callback.calledWith(null, that.fixtures.search_track_page1)).to.be.ok;
+      expect(callback.calledWith(null, that.fixtures.search_track)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=Mr.%20Brightside&type=track');
     });
@@ -244,6 +247,19 @@ describe('Basic tests', function() {
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/asdyi1uy');
     });
 
+    it('should get information about a user', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getUser('jmperezperez', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.user)
+      );
+      expect(callback.calledWith(null, that.fixtures.user)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez');
+    });
+
     it('should get information about the current logged in user', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
@@ -256,6 +272,62 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, that.fixtures.me)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me');
+    });
+
+    it('should get user\'s playlists', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.getUserPlaylists('a_user', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.user_playlists)
+      );
+      expect(callback.calledWith(null, that.fixtures.user_playlists)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/a_user/playlists');
+    });
+
+    it('should get a playlist', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.getPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.playlist)
+      );
+      expect(callback.calledWith(null, that.fixtures.playlist)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di');
+    });
+
+    it('should create a playlist', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.createPlaylist('jmperezperez', {name: 'A name for the playlist'}, callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.user_new_playlist)
+      );
+      expect(callback.calledWith(null, that.fixtures.user_new_playlist)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists');
+    });
+
+    it('should add tracks to a playlist', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.addTracksToPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e'], callback);
+      that.requests[0].respond(201,
+        {'Content-Type':'application/json'},
+        ''
+      );
+      expect(callback.calledWith(null, '')).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks');
     });
   });
 

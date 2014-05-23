@@ -1,0 +1,25 @@
+{
+  "collaborative" : false,
+  "description" : null,
+  "external_urls" : {
+    "spotify" : "http://open.spotify.com/user/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di"
+  },
+  "followers" : null,
+  "href" : "https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di",
+  "id" : "7Kud0O2IdWLbEGgvBkW9di",
+  "images" : [ null ],
+  "name" : "Test from API 3.0",
+  "owner" : {
+    "external_urls" : {
+      "spotify" : "http://open.spotify.com/user/jmperezperez"
+    },
+    "href" : "https://api.spotify.com/v1/users/jmperezperez",
+    "id" : "jmperezperez",
+    "type" : "user",
+    "uri" : "spotify:user:jmperezperez"
+  },
+  "public" : true,
+  "tracks" : null,
+  "type" : "playlist",
+  "uri" : "spotify:user:jmperezperez:playlist:7Kud0O2IdWLbEGgvBkW9di"
+}
