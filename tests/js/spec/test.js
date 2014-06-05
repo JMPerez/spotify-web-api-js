@@ -32,7 +32,8 @@ describe('Basic tests', function() {
     me: loadFixture('me'),
     user_playlists: loadFixture('user_playlists'),
     user_new_playlist: loadFixture('user_new_playlist'),
-    playlist: loadFixture('playlist')
+    playlist: loadFixture('playlist'),
+    playlist_tracks: loadFixture('playlist_tracks')
   };
 
   var that = this;
@@ -300,6 +301,20 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, that.fixtures.playlist)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di');
+    });
+
+    it('should get the tracks of a playlist', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.getPlaylistTracks('wizzler', '0EIVqzEcrY2a8vO0AUJar2', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.playlist_tracks)
+      );
+      expect(callback.calledWith(null, that.fixtures.playlist)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/wizzler/playlists/0EIVqzEcrY2a8vO0AUJar2/tracks');
     });
 
     it('should create a playlist', function() {

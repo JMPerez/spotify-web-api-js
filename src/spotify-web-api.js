@@ -163,6 +163,13 @@ var SpotifyWebApi = (function() {
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
+  Constr.prototype.getPlaylistTracks = function(userId, playlistId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
   Constr.prototype.createPlaylist = function(userId, options, callback) {
     var requestData = {
       url: _baseUri + '/users/' + userId + '/playlists',

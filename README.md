@@ -185,3 +185,13 @@ spotifyApiWithToken.getUserPlaylist('jmperezperez', '4vHIKV7j4QcZwgzGQcZg1x')
     console.error(err);
   });
 ```
+
+## Running tests
+
+In order to run the tests, run:
+
+    npm test
+
+If you want to check out the coverage, run:
+
+    grunt coverage
