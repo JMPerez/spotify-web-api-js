@@ -1,14 +1,14 @@
 {
   "name": "spotify-web-api-js",
   "description": "A client-side JS wrapper for the Spotify Web API",
-  "version": "0.0.1",
-  "homepage": "https://github.com/jmperez/spotify-web-api",
+  "version": "0.0.2",
+  "homepage": "https://github.com/JMPerez/spotify-web-api-js",
   "author": {
     "name": "José M. Pérez"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jmperez/spotify-web-api"
+    "url": "git://github.com/JMPerez/spotify-web-api-js"
   },
   "devDependencies": {
     "grunt-contrib-jshint": "~0.10.0",
