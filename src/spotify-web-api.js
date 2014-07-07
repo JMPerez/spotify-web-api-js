@@ -254,6 +254,13 @@ var SpotifyWebApi = (function() {
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
+  Constr.prototype.getArtistRelatedArtists = function(artistId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/artists/' + artistId + '/related-artists'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
   Constr.prototype.searchAlbums = function(query, options, callback) {
     var requestData = {
       url: _baseUri + '/search/',

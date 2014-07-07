@@ -24,6 +24,7 @@ describe('Basic tests', function() {
     artist: loadFixture('artist'),
     artists: loadFixture('artists'),
     artist_albums: loadFixture('artist_albums'),
+    artist_related_artists: loadFixture('artist_related_artists'),
     artist_top_tracks: loadFixture('artist_top_tracks'),
     search_album: loadFixture('search_album'),
     search_artist: loadFixture('search_artist'),
@@ -153,6 +154,19 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, that.fixtures.artist_top_tracks)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/top-tracks?country=ES');
+    });
+
+    it('should get an artist\'s related artists', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getArtistRelatedArtists('6J6yx1t3nwIDyPXk5xa7O8', callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.artist_related_artists)
+      );
+      expect(callback.calledWith(null, that.fixtures.artist_top_tracks)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/6J6yx1t3nwIDyPXk5xa7O8/related-artists');
     });
 
     it('should get multiple artists', function() {
