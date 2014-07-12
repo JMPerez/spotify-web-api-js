@@ -25,6 +25,7 @@ var SpotifyWebApi = (function() {
   var _checkParamsAndPerformRequest = function(requestData, options, callback) {
     var opt = {};
     var cb = null;
+    requestData.params = requestData.params || {};
 
     if (typeof options === 'object') {
       opt = options;
