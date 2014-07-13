@@ -98,9 +98,7 @@ var SpotifyWebApi = (function() {
     target = target || {};
     for (var i = 0; i < objects.length; i++) {
       for (var j in objects[i]) {
-        if (!(j in target)) {
-          target[j] = objects[i][j];
-        }
+        target[j] = objects[i][j];
       }
     }
     return target;
