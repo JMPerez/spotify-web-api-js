@@ -25,7 +25,6 @@ var SpotifyWebApi = (function() {
   var _checkParamsAndPerformRequest = function(requestData, options, callback) {
     var opt = {};
     var cb = null;
-    requestData.params = requestData.params || {};
 
     if (typeof options === 'object') {
       opt = options;
@@ -33,7 +32,7 @@ var SpotifyWebApi = (function() {
     } else if (typeof options === 'function') {
       cb = options;
     }
-    _extend(requestData.params, opt);
+    _extend(requestData, { params: opt });
     return _performRequest(requestData, cb);
   };
 
