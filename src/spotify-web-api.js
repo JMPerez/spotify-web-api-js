@@ -32,7 +32,7 @@ var SpotifyWebApi = (function() {
     } else if (typeof options === 'function') {
       cb = options;
     }
-    _extend(requestData.params, opt);
+    _extend(requestData, { params: opt });
     return _performRequest(requestData, cb);
   };
 
