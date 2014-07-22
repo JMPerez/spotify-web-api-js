@@ -164,7 +164,7 @@ describe('Basic tests', function() {
         {'Content-Type':'application/json'},
         JSON.stringify(that.fixtures.artist_related_artists)
       );
-      expect(callback.calledWith(null, that.fixtures.artist_top_tracks)).to.be.ok;
+      expect(callback.calledWith(null, that.fixtures.artist_related_artists)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/6J6yx1t3nwIDyPXk5xa7O8/related-artists');
     });
@@ -326,7 +326,7 @@ describe('Basic tests', function() {
         {'Content-Type':'application/json'},
         JSON.stringify(that.fixtures.playlist_tracks)
       );
-      expect(callback.calledWith(null, that.fixtures.playlist)).to.be.ok;
+      expect(callback.calledWith(null, that.fixtures.playlist_tracks)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/wizzler/playlists/0EIVqzEcrY2a8vO0AUJar2/tracks');
     });
