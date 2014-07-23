@@ -155,10 +155,85 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Fetches current user's saved tracks.
+   * See [Get Current User's Saved Tracks](https://developer.spotify.com/web-api/get-users-saved-tracks/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getMySavedTracks = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/tracks'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Adds a list of tracks to the current user's saved tracks.
+   * See [Save Tracks for Current User](https://developer.spotify.com/web-api/save-tracks-user/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
+   * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.addToMySavedTracks = function(trackIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/tracks',
+      type: 'PUT',
+      postData: trackIds
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Remove a list of tracks from the current user's saved tracks.
+   * See [Remove Tracks for Current User](https://developer.spotify.com/web-api/remove-tracks-user/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
+   * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.removeFromMySavedTracks = function(trackIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/tracks',
+      type: 'DELETE',
+      postData: trackIds
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Checks if the current user's saved tracks contains a certain list of tracks.
+   * See [Check Current User's Saved Tracks](https://developer.spotify.com/web-api/check-users-saved-tracks/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
+   * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.containsMySavedTracks = function(trackIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/tracks/contains',
+      params: { ids: trackIds.join(',') }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Fetches information about a specific user.
    * See [Get a User's Profile](https://developer.spotify.com/web-api/get-users-profile/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} userId The id of the user. If you know the Spotify URI it is easy 
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
    * to find the id (e.g. spotify:user:<here_is_the_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -176,7 +251,7 @@ var SpotifyWebApi = (function() {
    * Fetches a list of the current user's playlists.
    * See [Get a List of a User's Playlists](https://developer.spotify.com/web-api/get-list-users-playlists/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} userId The id of the user. If you know the Spotify URI it is easy 
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
    * to find the id (e.g. spotify:user:<here_is_the_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -194,9 +269,9 @@ var SpotifyWebApi = (function() {
    * Fetches a specific playlist.
    * See [Get a Playlist](https://developer.spotify.com/web-api/get-playlist/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} userId The id of the user. If you know the Spotify URI it is easy 
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
    * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
-   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy 
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -214,9 +289,9 @@ var SpotifyWebApi = (function() {
    * Fetches the tracks from a specific playlist.
    * See [Get a Playlist's Tracks](https://developer.spotify.com/web-api/get-playlists-tracks/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} userId The id of the user. If you know the Spotify URI it is easy 
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
    * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
-   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy 
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -234,7 +309,7 @@ var SpotifyWebApi = (function() {
    * Creates a playlist and stores it in the current user's library.
    * See [Create a Playlist](https://developer.spotify.com/web-api/create-playlist/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} userId The id of the user. You may want to user the "getMe" function to 
+   * @param {string} userId The id of the user. You may want to user the "getMe" function to
    * find out the id of the current logged in user
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -254,9 +329,9 @@ var SpotifyWebApi = (function() {
    * Add tracks to a playlist.
    * See [Add Tracks to a Playlist](https://developer.spotify.com/web-api/add-tracks-to-playlist/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} userId The id of the user. If you know the Spotify URI it is easy 
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
    * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
-   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy 
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -276,7 +351,7 @@ var SpotifyWebApi = (function() {
    * Fetches an album from the Spotify catalog.
    * See [Get an Album](https://developer.spotify.com/web-api/get-album/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} albumId The id of the album. If you know the Spotify URI it is easy 
+   * @param {string} albumId The id of the album. If you know the Spotify URI it is easy
    * to find the album id (e.g. spotify:album:<here_is_the_album_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -294,7 +369,7 @@ var SpotifyWebApi = (function() {
    * Fetches the tracks of an album from the Spotify catalog.
    * See [Get an Album's Tracks](https://developer.spotify.com/web-api/get-albums-tracks/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} albumId The id of the album. If you know the Spotify URI it is easy 
+   * @param {string} albumId The id of the album. If you know the Spotify URI it is easy
    * to find the album id (e.g. spotify:album:<here_is_the_album_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -312,7 +387,7 @@ var SpotifyWebApi = (function() {
    * Fetches multiple albums from the Spotify catalog.
    * See [Get Several Albums](https://developer.spotify.com/web-api/get-several-albums/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI it is easy 
+   * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI it is easy
    * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -331,7 +406,7 @@ var SpotifyWebApi = (function() {
    * Fetches a track from the Spotify catalog.
    * See [Get a Track](https://developer.spotify.com/web-api/get-track/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} trackId The id of the track. If you know the Spotify URI it is easy 
+   * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
    * to find the track id (e.g. spotify:track:<here_is_the_track_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -348,7 +423,7 @@ var SpotifyWebApi = (function() {
    * Fetches multiple tracks from the Spotify catalog.
    * See [Get Several Tracks](https://developer.spotify.com/web-api/get-several-tracks/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy 
+   * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
    * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -367,7 +442,7 @@ var SpotifyWebApi = (function() {
    * Fetches an artist from the Spotify catalog.
    * See [Get an Artist](https://developer.spotify.com/web-api/get-artist/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy 
+   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -385,7 +460,7 @@ var SpotifyWebApi = (function() {
    * Fetches multiple artists from the Spotify catalog.
    * See [Get Several Artists](https://developer.spotify.com/web-api/get-several-artists/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy 
+   * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
    * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -404,7 +479,7 @@ var SpotifyWebApi = (function() {
    * Fetches the albums of an artist from the Spotify catalog.
    * See [Get an Artist's Albums](https://developer.spotify.com/web-api/get-artists-albums/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy 
+   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
@@ -422,7 +497,7 @@ var SpotifyWebApi = (function() {
    * Fetches a list of top tracks of an artist from the Spotify catalog, for a specific country.
    * See [Get an Artist's Top Tracks](https://developer.spotify.com/web-api/get-artists-top-tracks/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy 
+   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {string} countryId The id of the country (e.g. ES for Spain or US for United States)
    * @param {Object} options A JSON object with options that can be passed
@@ -442,7 +517,7 @@ var SpotifyWebApi = (function() {
    * Fetches a list of artists related with a given one from the Spotify catalog.
    * See [Get an Artist's Related Artists](https://developer.spotify.com/web-api/get-related-artists/) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy 
+   * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
