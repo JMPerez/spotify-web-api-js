@@ -33,6 +33,7 @@ describe('Basic tests', function() {
     me: loadFixture('me'),
     user_playlists: loadFixture('user_playlists'),
     user_new_playlist: loadFixture('user_new_playlist'),
+    user_saved_tracks: loadFixture('user_saved_tracks'),
     playlist: loadFixture('playlist'),
     playlist_tracks: loadFixture('playlist_tracks')
   };
@@ -287,6 +288,53 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, that.fixtures.me)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me');
+    });
+
+    it('should get user\'s saved tracks', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.getMySavedTracks(callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.user_saved_tracks)
+      );
+      expect(callback.calledWith(null, that.fixtures.user_saved_tracks)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/tracks');
+    });
+
+    it('should add tracks to user\'s saved tracks', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.addToMySavedTracks(['1ryJP6qCpF1mBv0vXS8fyq', '5pRgDDjJcxaYwpsRJBoVXr'], callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        ''
+      );
+      expect(callback.calledWith(null, '')).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/tracks');
+      expect(that.requests[0].method).to.equal('PUT');
+      expect(that.requests[0].status).to.equal(200);
+
+    });
+
+    it('should remove tracks from user\'s saved tracks', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.removeFromMySavedTracks(['1ryJP6qCpF1mBv0vXS8fyq', '5pRgDDjJcxaYwpsRJBoVXr'], callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        ''
+      );
+      expect(callback.calledWith(null, '')).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/tracks');
+      expect(that.requests[0].method).to.equal('DELETE');
+      expect(that.requests[0].status).to.equal(200);
     });
 
     it('should get user\'s playlists', function() {
