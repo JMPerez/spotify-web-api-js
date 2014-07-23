@@ -318,7 +318,6 @@ describe('Basic tests', function() {
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/tracks');
       expect(that.requests[0].method).to.equal('PUT');
       expect(that.requests[0].status).to.equal(200);
-
     });
 
     it('should remove tracks from user\'s saved tracks', function() {
@@ -335,6 +334,20 @@ describe('Basic tests', function() {
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/tracks');
       expect(that.requests[0].method).to.equal('DELETE');
       expect(that.requests[0].status).to.equal(200);
+    });
+
+    it('should check if a track is in the user\'s saved tracks', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.containsMySavedTracks(['1ryJP6qCpF1mBv0vXS8fyq', '5pRgDDjJcxaYwpsRJBoVXr'], callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify([true, true])
+      );
+      expect(callback.calledWith(null, [true, true])).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/tracks/contains?ids=1ryJP6qCpF1mBv0vXS8fyq%2C5pRgDDjJcxaYwpsRJBoVXr');
     });
 
     it('should get user\'s playlists', function() {

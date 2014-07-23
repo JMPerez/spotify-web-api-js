@@ -211,6 +211,25 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Checks if the current user's saved tracks contains a certain list of tracks.
+   * See [Check Current User's Saved Tracks](https://developer.spotify.com/web-api/check-users-saved-tracks/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
+   * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.containsMySavedTracks = function(trackIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/tracks/contains',
+      params: { ids: trackIds.join(',') }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Fetches information about a specific user.
    * See [Get a User's Profile](https://developer.spotify.com/web-api/get-users-profile/) on
    * the Spotify Developer site for more information about the endpoint.
