@@ -345,6 +345,23 @@ describe('Basic tests', function() {
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists');
     });
 
+    it('should update a playlist\'s details', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.changePlaylistDetails('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', {
+        name: 'A NEW name for the playlist',
+        'public': false
+      }, callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        ''
+      );
+      expect(callback.calledWith(null, '')).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di');
+    });
+
     it('should add tracks to a playlist', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
