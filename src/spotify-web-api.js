@@ -326,6 +326,28 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Change a playlist's name and public/private state
+   * See [Change a Playlist's Details](https://developer.spotify.com/web-api/change-playlist-details/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} userId The id of the user. You may want to user the "getMe" function to
+   * find out the id of the current logged in user
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Object} data A JSON object with the data to update. E.g. {name: 'A new name', public: true}
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.changePlaylistDetails = function(userId, playlistId, data, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId,
+      type: 'PUT',
+      postData: data
+    };
+    return _checkParamsAndPerformRequest(requestData, data, callback);
+  };
+
+  /**
    * Add tracks to a playlist.
    * See [Add Tracks to a Playlist](https://developer.spotify.com/web-api/add-tracks-to-playlist/) on
    * the Spotify Developer site for more information about the endpoint.
