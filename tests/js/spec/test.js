@@ -460,7 +460,7 @@ describe('Basic tests', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
-      api.removeTracksFromPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', [{uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e', position: 6}], callback);
+      api.removeTracksFromPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', [{uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e', positions: [6]}], callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
         ''
@@ -473,7 +473,7 @@ describe('Basic tests', function() {
       expect(that.requests[0].requestBody).to.equal(JSON.stringify({
         tracks: [{
           uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e',
-          position: 6
+          positions: [6]
         }]
       }));
     });

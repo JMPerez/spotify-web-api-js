@@ -401,7 +401,8 @@ var SpotifyWebApi = (function() {
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Array<Object>} uris An array of tracks to be removed. Each element of the array can be either a
-   * string, in which case it is treated as a URI, or an object containing the properties `uri` and `position`.
+   * string, in which case it is treated as a URI, or an object containing the properties `uri` (which is a
+   * string) and `positions` (which is an array of integers).
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
@@ -432,7 +433,8 @@ var SpotifyWebApi = (function() {
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Array<Object>} uris An array of tracks to be removed. Each element of the array can be either a
-   * string, in which case it is treated as a URI, or an object containing the properties `uri` and `position`.
+   * string, in which case it is treated as a URI, or an object containing the properties `uri` (which is a
+   * string) and `positions` (which is an array of integers).
    * @param {string} snapshotId The playlist's snapshot ID against which you want to make the changes
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
