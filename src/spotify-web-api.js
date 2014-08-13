@@ -355,6 +355,7 @@ var SpotifyWebApi = (function() {
    * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Array<string>} uris An array of Spotify URIs for the tracks
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -369,6 +370,93 @@ var SpotifyWebApi = (function() {
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
+  /**
+   * Replace the tracks of a plsylist
+   * See [Replace a Playlist's Tracks](https://developer.spotify.com/web-api/replace-playlists-tracks/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+   * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Array<string>} uris An array of Spotify URIs for the tracks
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.replaceTracksInPlaylist = function(userId, playlistId, uris, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      type: 'PUT',
+      postData: {uris: uris}
+    };
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
+  /**
+   * Remove tracks from a playlist
+   * See [Remove Tracks from a Playlist](https://developer.spotify.com/web-api/remove-tracks-playlist/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+   * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Array<Object>} uris An array of tracks to be removed. Each element of the array can be either a
+   * string, in which case it is treated as a URI, or an object containing the properties `uri` and `position`.
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.removeTracksFromPlaylist = function(userId, playlistId, uris, callback) {
+    var dataToBeSent = uris.map(function(uri) {
+      if (typeof uri === 'string') {
+        return { uri: uri };
+      } else {
+        return uri;
+      }
+    });
+
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      type: 'DELETE',
+      postData: {tracks: dataToBeSent}
+    };
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
+  /**
+   * Remove tracks from a playlist, specifying a snapshot id.
+   * See [Remove Tracks from a Playlist](https://developer.spotify.com/web-api/remove-tracks-playlist/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+   * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Array<Object>} uris An array of tracks to be removed. Each element of the array can be either a
+   * string, in which case it is treated as a URI, or an object containing the properties `uri` and `position`.
+   * @param {string} snapshotId The playlist's snapshot ID against which you want to make the changes
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.removeTracksFromPlaylistWithSnapshotId = function(userId, playlistId, uris, snapshotId, callback) {
+    var dataToBeSent = uris.map(function(uri) {
+      if (typeof uri === 'string') {
+        return { uri: uri };
+      } else {
+        return uri;
+      }
+    });
+
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      type: 'DELETE',
+      postData: {
+        tracks: dataToBeSent,
+        snapshot_id: snapshotId
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
   /**
    * Fetches an album from the Spotify catalog.
    * See [Get an Album](https://developer.spotify.com/web-api/get-album/) on
