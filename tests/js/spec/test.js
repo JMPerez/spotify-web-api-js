@@ -24,6 +24,7 @@ describe('Basic tests', function() {
     artist: loadFixture('artist'),
     artists: loadFixture('artists'),
     artist_albums: loadFixture('artist_albums'),
+    artist_albums_limit_2: loadFixture('artist_albums_limit_2'),
     artist_related_artists: loadFixture('artist_related_artists'),
     artist_top_tracks: loadFixture('artist_top_tracks'),
     search_album: loadFixture('search_album'),
@@ -142,6 +143,19 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, that.fixtures.artist_albums)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/albums');
+    });
+
+    it('should get 2 artist\'s albums', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getArtistAlbums('5YyScSZOuBHpoFhGvHFedc', {limit: 2}, callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.artist_albums)
+      );
+      expect(callback.calledWith(null, that.fixtures.artist_albums_limit_2)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/albums?limit=2');
     });
 
     it('should get an artist\'s top tracks', function() {
