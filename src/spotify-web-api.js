@@ -441,6 +441,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.removeTracksFromPlaylistWithSnapshotId = function(userId, playlistId, uris, snapshotId, callback) {
+    /*jshint camelcase: false */
     var dataToBeSent = uris.map(function(uri) {
       if (typeof uri === 'string') {
         return { uri: uri };
@@ -639,6 +640,38 @@ var SpotifyWebApi = (function() {
   Constr.prototype.getArtistRelatedArtists = function(artistId, options, callback) {
     var requestData = {
       url: _baseUri + '/artists/' + artistId + '/related-artists'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches a list of Spotify featured playlists (shown, for example, on a Spotify player's "Browse" tab).
+   * See [Get a List of Featured Playlists](https://developer.spotify.com/web-api/get-list-featured-playlists/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getFeaturedPlaylists = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/browse/featured-playlists'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches a list of new album releases featured in Spotify (shown, for example, on a Spotify player's "Browse" tab).
+   * See [Get a List of New Releases](https://developer.spotify.com/web-api/get-list-new-releases/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getNewReleases = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/browse/new-releases'
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
