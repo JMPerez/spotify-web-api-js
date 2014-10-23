@@ -36,7 +36,9 @@ describe('Basic tests', function() {
     user_new_playlist: loadFixture('user_new_playlist'),
     user_saved_tracks: loadFixture('user_saved_tracks'),
     playlist: loadFixture('playlist'),
-    playlist_tracks: loadFixture('playlist_tracks')
+    playlist_tracks: loadFixture('playlist_tracks'),
+    featured_playlists: loadFixture('featured_playlists'),
+    new_releases: loadFixture('new_releases'),
   };
 
   var that = this;
@@ -552,6 +554,36 @@ describe('Basic tests', function() {
       expect(that.requests[0].requestBody).to.equal(JSON.stringify({
         uris: ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e']
       }));
+    });
+
+    it('should get featured playlists', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getFeaturedPlaylists({
+        locale: 'sv_SE',
+        country: 'SE',
+        timestamp: '2014-10-23T09:00:00'
+      }, callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.featured_playlists)
+      );
+      expect(callback.calledWith(null, that.fixtures.featured_playlists)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/browse/featured-playlists?locale=sv_SE&country=SE&timestamp=2014-10-23T09%3A00%3A00');
+    });
+
+    it('should get new releases', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getNewReleases({country: 'SE'}, callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.new_releases)
+      );
+      expect(callback.calledWith(null, that.fixtures.new_releases)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/browse/new-releases?country=SE');
     });
   });
 
