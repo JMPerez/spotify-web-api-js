@@ -32,7 +32,14 @@ var SpotifyWebApi = (function() {
     } else if (typeof options === 'function') {
       cb = options;
     }
-    requestData.params = _extend(requestData.params, opt);
+
+    // options extend postData, if any. Otherwise they extend parameters sent in the url
+    var type = requestData.type || 'GET';
+    if (type !== 'GET' && requestData.postData) {
+      requestData.postData = _extend(requestData.postData, opt);
+    } else {
+      requestData.params = _extend(requestData.params, opt);
+    }
     return _performRequest(requestData, cb);
   };
 
@@ -40,13 +47,7 @@ var SpotifyWebApi = (function() {
     var promiseFunction = function(resolve, reject) {
       var req = new XMLHttpRequest();
       var type = requestData.type || 'GET';
-      if (type === 'GET') {
-        req.open(type,
-          _buildUrl(requestData.url, requestData.params),
-          true);
-      } else {
-        req.open(type, _buildUrl(requestData.url));
-      }
+      req.open(type, _buildUrl(requestData.url, requestData.params));
       if (_accessToken) {
         req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
       }
@@ -365,7 +366,9 @@ var SpotifyWebApi = (function() {
     var requestData = {
       url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
       type: 'POST',
-      postData: uris
+      params: {
+        uris: uris
+      }
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };

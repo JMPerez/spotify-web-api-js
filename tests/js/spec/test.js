@@ -153,7 +153,7 @@ describe('Basic tests', function() {
       api.getArtistAlbums('5YyScSZOuBHpoFhGvHFedc', {limit: 2}, callback);
       that.requests[0].respond(200,
         {'Content-Type':'application/json'},
-        JSON.stringify(that.fixtures.artist_albums)
+        JSON.stringify(that.fixtures.artist_albums_limit_2)
       );
       expect(callback.calledWith(null, that.fixtures.artist_albums_limit_2)).to.be.ok;
       expect(that.requests).to.have.length(1);
@@ -450,7 +450,21 @@ describe('Basic tests', function() {
       );
       expect(callback.calledWith(null, '')).to.be.ok;
       expect(that.requests).to.have.length(1);
-      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks');
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks?uris=spotify%3Atrack%3A2Oehrcv4Kov0SuIgWyQY9e');
+    });
+
+    it('should add tracks to a playlist, specifying position', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.addTracksToPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e'], {position: 0}, callback);
+      that.requests[0].respond(201,
+        {'Content-Type':'application/json'},
+        ''
+      );
+      expect(callback.calledWith(null, '')).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks?uris=spotify%3Atrack%3A2Oehrcv4Kov0SuIgWyQY9e&position=0');
     });
 
     it('should remove tracks from a playlist', function() {
