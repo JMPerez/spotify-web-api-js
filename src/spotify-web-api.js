@@ -740,6 +740,26 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Fetches tracks from the Spotify catalog according to a query.
+   * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.searchPlaylists = function(query, options, callback) {
+    var requestData = {
+      url: _baseUri + '/search/',
+      params: {
+        q: query,
+        type: 'playlist'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Sets the access token to be used.
    * See [the Authorization Guide](https://developer.spotify.com/web-api/authorization-guide/) on
    * the Spotify Developer site for more information about obtaining an access token.

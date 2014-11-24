@@ -1,0 +1,143 @@
+
+{
+  "playlists" : {
+    "href" : "https://api.spotify.com/v1/search?query=music&offset=0&limit=5&type=playlist",
+    "items" : [ {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/chillls/playlist/6OUo9M97qj4lmSTbnkNm35"
+      },
+      "href" : "https://api.spotify.com/v1/users/chillls/playlists/6OUo9M97qj4lmSTbnkNm35",
+      "id" : "6OUo9M97qj4lmSTbnkNm35",
+      "images" : [ ],
+      "name" : "Christmas Music",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/chillls"
+        },
+        "href" : "https://api.spotify.com/v1/users/chillls",
+        "id" : "chillls",
+        "type" : "user",
+        "uri" : "spotify:user:chillls"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/chillls/playlists/6OUo9M97qj4lmSTbnkNm35/tracks",
+        "total" : 102
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:chillls:playlist:6OUo9M97qj4lmSTbnkNm35"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/igreene21/playlist/5iQ0qBTxtuSZYsVDsBYxHQ"
+      },
+      "href" : "https://api.spotify.com/v1/users/igreene21/playlists/5iQ0qBTxtuSZYsVDsBYxHQ",
+      "id" : "5iQ0qBTxtuSZYsVDsBYxHQ",
+      "images" : [ ],
+      "name" : "Pre-Game Music",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/igreene21"
+        },
+        "href" : "https://api.spotify.com/v1/users/igreene21",
+        "id" : "igreene21",
+        "type" : "user",
+        "uri" : "spotify:user:igreene21"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/igreene21/playlists/5iQ0qBTxtuSZYsVDsBYxHQ/tracks",
+        "total" : 270
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:igreene21:playlist:5iQ0qBTxtuSZYsVDsBYxHQ"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/5FJXhjdILmRA2z5bvz4nzf"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/5FJXhjdILmRA2z5bvz4nzf",
+      "id" : "5FJXhjdILmRA2z5bvz4nzf",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/4669088eb741254479f9eb340bf1f93165b93288"
+      } ],
+      "name" : "Today's Top Hits",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/5FJXhjdILmRA2z5bvz4nzf/tracks",
+        "total" : 51
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:5FJXhjdILmRA2z5bvz4nzf"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/mcs1992/playlist/4HiLVQvLMFLOZBiDGThuOX"
+      },
+      "href" : "https://api.spotify.com/v1/users/mcs1992/playlists/4HiLVQvLMFLOZBiDGThuOX",
+      "id" : "4HiLVQvLMFLOZBiDGThuOX",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/d7c96c229c76af84b031cd1ed6ef41dd8c5bf3ff"
+      } ],
+      "name" : "Relaxed Driving Music - last update: 17-11-'14 (acoustic, vocalist, laid back, chilled out, road trip, unplugged, easy listening, cover, singer-songwriter)",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/mcs1992"
+        },
+        "href" : "https://api.spotify.com/v1/users/mcs1992",
+        "id" : "mcs1992",
+        "type" : "user",
+        "uri" : "spotify:user:mcs1992"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/mcs1992/playlists/4HiLVQvLMFLOZBiDGThuOX/tracks",
+        "total" : 219
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:mcs1992:playlist:4HiLVQvLMFLOZBiDGThuOX"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/65y98W0UItf73DJKVgylTP"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/65y98W0UItf73DJKVgylTP",
+      "id" : "65y98W0UItf73DJKVgylTP",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/223eaea3d44938b833a86651267db608bea1c5a3"
+      } ],
+      "name" : "ESM | Electronic Study Music",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/65y98W0UItf73DJKVgylTP/tracks",
+        "total" : 53
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:65y98W0UItf73DJKVgylTP"
+    } ],
+    "limit" : 5,
+    "next" : "https://api.spotify.com/v1/search?query=music&offset=5&limit=5&type=playlist",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 106349
+  }
+}

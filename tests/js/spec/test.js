@@ -30,6 +30,7 @@ describe('Basic tests', function() {
     search_album: loadFixture('search_album'),
     search_artist: loadFixture('search_artist'),
     search_track: loadFixture('search_track'),
+    search_playlist: loadFixture('search_playlist'),
     user: loadFixture('user'),
     me: loadFixture('me'),
     user_playlists: loadFixture('user_playlists'),
@@ -236,6 +237,19 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, that.fixtures.search_track)).to.be.ok;
       expect(that.requests).to.have.length(1);
       expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=Mr.%20Brightside&type=track');
+    });
+
+    it('should search for playlists', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.searchPlaylists('music', {offset: 0, limit: 5}, callback);
+      that.requests[0].respond(200,
+        {'Content-Type':'application/json'},
+        JSON.stringify(that.fixtures.search_playlist)
+      );
+      expect(callback.calledWith(null, that.fixtures.search_playlist)).to.be.ok;
+      expect(that.requests).to.have.length(1);
+      expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=music&type=playlist&offset=0&limit=5');
     });
 
     it('should get a track using a token', function() {
