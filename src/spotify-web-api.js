@@ -740,7 +740,7 @@ var SpotifyWebApi = (function() {
   };
 
   /**
-   * Fetches tracks from the Spotify catalog according to a query.
+   * Fetches playlists from the Spotify catalog according to a query.
    * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {Object} options A JSON object with options that can be passed
