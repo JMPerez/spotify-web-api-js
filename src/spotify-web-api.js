@@ -59,7 +59,7 @@ var SpotifyWebApi = (function() {
             data = req.responseText ? JSON.parse(req.responseText) : '';
           } catch (e) {}
 
-          if (req.status === 200 || req.status === 201) {
+          if (req.status >= 200 && req.status < 300) {
             if (resolve) {
               resolve(data);
             }
@@ -228,6 +228,126 @@ var SpotifyWebApi = (function() {
       params: { ids: trackIds.join(',') }
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Adds the current user as a follower of one or more other Spotify users.
+   * See [Follow Artists or Users](https://developer.spotify.com/web-api/follow-artists-users/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.followUsers = function(userIds, callback) {
+    var requestData = {
+      url: _baseUri + '/me/following/',
+      type: 'PUT',
+      params: {
+        ids: userIds.join(','),
+        type: 'user'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
+   * Adds the current user as a follower of one or more artists.
+   * See [Follow Artists or Users](https://developer.spotify.com/web-api/follow-artists-users/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.followArtists = function(artistIds, callback) {
+    var requestData = {
+      url: _baseUri + '/me/following/',
+      type: 'PUT',
+      params: {
+        ids: artistIds.join(','),
+        type: 'artist'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
+   * Removes the current user as a follower of one or more other Spotify users.
+   * See [Unfollow Artists or Users](https://developer.spotify.com/web-api/unfollow-artists-users/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.unfollowUsers = function(userIds, callback) {
+    var requestData = {
+      url: _baseUri + '/me/following/',
+      type: 'DELETE',
+      params: {
+        ids: userIds.join(','),
+        type: 'user'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
+   * Removes the current user as a follower of one or more artists.
+   * See [Unfollow Artists or Users](https://developer.spotify.com/web-api/unfollow-artists-users/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.unfollowArtists = function(artistIds, callback) {
+    var requestData = {
+      url: _baseUri + '/me/following/',
+      type: 'DELETE',
+      params: {
+        ids: artistIds.join(','),
+        type: 'artist'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
+   * Checks to see if the current user is following one or more other Spotify users.
+   * See [Check if Current User Follows](https://developer.spotify.com/web-api/check-current-user-follows/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.isFollowingUsers = function(userIds, callback) {
+    var requestData = {
+      url: _baseUri + '/me/following/contains',
+      type: 'GET',
+      params: {
+        ids: userIds.join(','),
+        type: 'user'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
+   * Checks to see if the current user is following one or more artists.
+   * See [Check if Current User Follows](https://developer.spotify.com/web-api/check-current-user-follows/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.isFollowingArtists = function(artistIds, callback) {
+    var requestData = {
+      url: _baseUri + '/me/following/contains',
+      type: 'GET',
+      params: {
+        ids: artistIds.join(','),
+        type: 'artist'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
   };
 
   /**
