@@ -234,8 +234,10 @@ var SpotifyWebApi = (function() {
    * Adds the current user as a follower of one or more other Spotify users.
    * See [Follow Artists or Users](https://developer.spotify.com/web-api/follow-artists-users/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
+   * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.followUsers = function(userIds, callback) {
@@ -254,8 +256,10 @@ var SpotifyWebApi = (function() {
    * Adds the current user as a follower of one or more artists.
    * See [Follow Artists or Users](https://developer.spotify.com/web-api/follow-artists-users/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
+   * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.followArtists = function(artistIds, callback) {
@@ -274,8 +278,10 @@ var SpotifyWebApi = (function() {
    * Removes the current user as a follower of one or more other Spotify users.
    * See [Unfollow Artists or Users](https://developer.spotify.com/web-api/unfollow-artists-users/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
+   * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.unfollowUsers = function(userIds, callback) {
@@ -294,8 +300,10 @@ var SpotifyWebApi = (function() {
    * Removes the current user as a follower of one or more artists.
    * See [Unfollow Artists or Users](https://developer.spotify.com/web-api/unfollow-artists-users/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
+   * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.unfollowArtists = function(artistIds, callback) {
@@ -314,8 +322,11 @@ var SpotifyWebApi = (function() {
    * Checks to see if the current user is following one or more other Spotify users.
    * See [Check if Current User Follows](https://developer.spotify.com/web-api/check-current-user-follows/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
+   * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * one is the error object (null if no error), and the second is an array of boolean values that indicate
+   * whether the user is following the users sent in the request.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.isFollowingUsers = function(userIds, callback) {
@@ -334,8 +345,11 @@ var SpotifyWebApi = (function() {
    * Checks to see if the current user is following one or more artists.
    * See [Check if Current User Follows](https://developer.spotify.com/web-api/check-current-user-follows/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
+   * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * one is the error object (null if no error), and the second is an array of boolean values that indicate
+   * whether the user is following the artists sent in the request.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.isFollowingArtists = function(artistIds, callback) {
