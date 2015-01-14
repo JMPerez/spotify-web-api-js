@@ -275,6 +275,31 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Add the current user as a follower of one playlist.
+   * See [Follow a Playlist](https://developer.spotify.com/web-api/follow-playlist/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} ownerId The id of the playlist owner. If you know the Spotify URI of
+   * the playlist, it is easy to find the owner's user id
+   * (e.g. spotify:user:<here_is_the_owner_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Object} options A JSON object with options that can be passed. For instance,
+   * whether you want the playlist to be followed privately ({public: false})
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is an empty value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.followPlaylist = function(ownerId, playlistId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers',
+      type: 'PUT',
+      postData: {}
+    };
+
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Removes the current user as a follower of one or more other Spotify users.
    * See [Unfollow Artists or Users](https://developer.spotify.com/web-api/unfollow-artists-users/) on
    * the Spotify Developer site for more information about the endpoint.
@@ -314,6 +339,27 @@ var SpotifyWebApi = (function() {
         ids: artistIds.join(','),
         type: 'artist'
       }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
+   * Remove the current user as a follower of one playlist.
+   * See [Unfollow a Playlist](https://developer.spotify.com/web-api/unfollow-playlist/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} ownerId The id of the playlist owner. If you know the Spotify URI of
+   * the playlist, it is easy to find the owner's user id
+   * (e.g. spotify:user:<here_is_the_owner_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is an empty value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.unfollowPlaylist = function(ownerId, playlistId, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers',
+      type: 'DELETE'
     };
     return _checkParamsAndPerformRequest(requestData, callback);
   };
