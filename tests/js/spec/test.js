@@ -685,6 +685,39 @@
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/following/?ids=artistid01%2Cartistid02&type=artist');
       });
+
+      it('should follow a playlist publicly', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.followPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', callback);
+        that.requests[0].respond(200);
+        expect(that.requests[0].method).to.equal('PUT');
+        expect(callback.calledWith(null, '')).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers');
+      });
+
+      it('should follow a playlist privately', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.followPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', {"public": false}, callback);
+        that.requests[0].respond(200);
+        expect(that.requests[0].method).to.equal('PUT');
+        expect(callback.calledWith(null, '')).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers');
+      });
+
+      it('should unfollow a playlist', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.unfollowPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', callback);
+        that.requests[0].respond(200);
+        expect(that.requests[0].method).to.equal('DELETE');
+        expect(callback.calledWith(null, '')).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers');
+      });
     });
 
     describe('Using Promises/A+ through Q.js', function() {
