@@ -366,7 +366,7 @@ var SpotifyWebApi = (function() {
 
   /**
    * Checks to see if the current user is following one or more other Spotify users.
-   * See [Check if Current User Follows](https://developer.spotify.com/web-api/check-current-user-follows/) on
+   * See [Check if Current User Follows Users or Artists](https://developer.spotify.com/web-api/check-current-user-follows/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
    * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
