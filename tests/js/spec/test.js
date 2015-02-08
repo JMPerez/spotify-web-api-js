@@ -41,7 +41,8 @@
       featured_playlists: loadFixture('featured_playlists'),
       new_releases: loadFixture('new_releases'),
       follow_is_following_users: loadFixture('follow_is_following_users'),
-      follow_is_following_artists: loadFixture('follow_is_following_artists')
+      follow_is_following_artists: loadFixture('follow_is_following_artists'),
+      follow_are_following_playlist: loadFixture('follow_are_following_playlist')
     };
 
     var that = this;
@@ -706,6 +707,20 @@
         expect(callback.calledWith(null, '')).to.be.ok;
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers');
+      });
+
+      it('should check whether users are following a playlist', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.areFollowingPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', ['userid01', 'userid02'], callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.follow_are_following_playlist)
+        );
+        expect(that.requests[0].method).to.equal('GET');
+        expect(callback.calledWith(null, that.fixtures.follow_are_following_playlist)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers/contains?ids=userid01%2Cuserid02');
       });
 
       it('should unfollow a playlist', function() {
