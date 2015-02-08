@@ -411,6 +411,33 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Check to see if one or more Spotify users are following a specified playlist.
+   * See [Check if Users Follow a Playlist](https://developer.spotify.com/web-api/check-user-following-playlist/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} ownerId The id of the playlist owner. If you know the Spotify URI of
+   * the playlist, it is easy to find the owner's user id
+   * (e.g. spotify:user:<here_is_the_owner_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
+   * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is an array of boolean values that indicate
+   * whether the users are following the playlist sent in the request.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.areFollowingPlaylist = function(ownerId, playlistId, userIds, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers/contains',
+      type: 'GET',
+      params: {
+        ids: userIds.join(',')
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
    * Fetches information about a specific user.
    * See [Get a User's Profile](https://developer.spotify.com/web-api/get-users-profile/) on
    * the Spotify Developer site for more information about the endpoint.
