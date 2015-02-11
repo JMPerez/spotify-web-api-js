@@ -39,6 +39,9 @@
       playlist: loadFixture('playlist'),
       playlist_tracks: loadFixture('playlist_tracks'),
       featured_playlists: loadFixture('featured_playlists'),
+      browse_categories: loadFixture('browse_categories'),
+      category: loadFixture('category'),
+      category_playlists: loadFixture('category_playlists'),
       new_releases: loadFixture('new_releases'),
       follow_is_following_users: loadFixture('follow_is_following_users'),
       follow_is_following_artists: loadFixture('follow_is_following_artists'),
@@ -615,6 +618,53 @@
         expect(callback.calledWith(null, that.fixtures.new_releases)).to.be.ok;
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/browse/new-releases?country=SE');
+      });
+
+      it('should get list of categories', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.getCategories({
+          locale: 'sv_SE',
+          country: 'SE'
+        }, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.browse_categories)
+        );
+        expect(callback.calledWith(null, that.fixtures.browse_categories)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/browse/categories?locale=sv_SE&country=SE');
+      });
+
+      it('should get the dinner category', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.getCategory('dinner', {
+          locale: 'sv_SE',
+          country: 'SE'
+        }, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.category)
+        );
+        expect(callback.calledWith(null, that.fixtures.category)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/browse/categories/dinner?locale=sv_SE&country=SE');
+      });
+
+      it('should get the dinner category playlists', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.getCategoryPlaylists('dinner', {
+          country: 'SE'
+        }, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.category_playlists)
+        );
+        expect(callback.calledWith(null, that.fixtures.category_playlists)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/browse/categories/dinner/playlists?country=SE');
       });
 
       it('should follow several other users', function() {
