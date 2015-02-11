@@ -887,6 +887,56 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Get a list of categories used to tag items in Spotify (on, for example, the Spotify player's "Browse" tab).
+   * See [Get a List of Categories](https://developer.spotify.com/web-api/get-list-categories/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getCategories = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/browse/categories'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Get a single category used to tag items in Spotify (on, for example, the Spotify player's "Browse" tab).
+   * See [Get a Category](https://developer.spotify.com/web-api/get-category/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} categoryId The id of the category. These can be found with the getCategories function
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getCategory = function(categoryId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/browse/categories/' + categoryId
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Get a list of Spotify playlists tagged with a particular category.
+   * See [Get a Category's Playlists](https://developer.spotify.com/web-api/get-categorys-playlists/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} categoryId The id of the category. These can be found with the getCategories function
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getCategoryPlaylists = function(categoryId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/browse/categories/' + categoryId + '/playlists'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Fetches albums from the Spotify catalog according to a query.
    * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
    * the Spotify Developer site for more information about the endpoint.
