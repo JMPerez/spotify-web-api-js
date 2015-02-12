@@ -19,5 +19,8 @@
   },
   "scripts": {
     "test": "grunt mocha"
-  }
+  },
+  "keywords": [
+    "spotify"
+  ]
 }
