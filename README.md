@@ -5,6 +5,8 @@ This is a wrapper for the [Spotify Web API](https://developer.spotify.com/web-ap
 
 This wrapper is intended to be run on a browser. If you want to use Node.JS to make the requests, please check [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node).
 
+A list of selected wrappers for different languages and environments are available on the Developer site's [Libraries page](https://developer.spotify.com/web-api/code-examples/).
+
 ## Installation
 Install via bower (browser):
 
