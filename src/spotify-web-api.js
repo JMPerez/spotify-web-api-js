@@ -670,6 +670,35 @@ var SpotifyWebApi = (function() {
     };
     return _checkParamsAndPerformRequest(requestData, {}, callback);
   };
+
+  /**
+   * Remove tracks from a playlist, specifying the positions of the tracks to be removed.
+   * See [Remove Tracks from a Playlist](https://developer.spotify.com/web-api/remove-tracks-playlist/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+   * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Array<number>} positions array of integers containing the positions of the tracks to remove
+   * from the playlist.
+   * @param {string} snapshotId The playlist's snapshot ID against which you want to make the changes
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.removeTracksFromPlaylistInPositions = function(userId, playlistId, positions, snapshotId, callback) {
+    /*jshint camelcase: false */
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      type: 'DELETE',
+      postData: {
+        positions: positions,
+        snapshot_id: snapshotId
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
   /**
    * Fetches an album from the Spotify catalog.
    * See [Get an Album](https://developer.spotify.com/web-api/get-album/) on

@@ -552,7 +552,7 @@
         var callback = sinon.spy();
         var api = new SpotifyWebApi();
         api.setAccessToken('<example_access_token>');
-        api.removeTracksFromPlaylistWithSnapshotId('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', [{uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e', position: 6}], 'AsNaPsHoTiD', callback);
+        api.removeTracksFromPlaylistWithSnapshotId('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', [{uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e', positions: [6]}], 'AsNaPsHoTiD', callback);
         that.requests[0].respond(200,
           {'Content-Type':'application/json'},
           ''
@@ -565,8 +565,28 @@
         expect(that.requests[0].requestBody).to.equal(JSON.stringify({
           tracks: [{
             uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e',
-            position: 6
+            positions: [6]
           }],
+          snapshot_id: 'AsNaPsHoTiD'
+        }));
+      });
+
+      it('should remove tracks from a playlist specifying just their positions and snapshot id', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.removeTracksFromPlaylistInPositions('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', [0,1,3,9], 'AsNaPsHoTiD', callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          ''
+        );
+        expect(callback.calledWith(null, '')).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks');
+        expect(that.requests[0].method).to.equal('DELETE');
+        expect(that.requests[0].status).to.equal(200);
+        expect(that.requests[0].requestBody).to.equal(JSON.stringify({
+          positions: [0,1,3,9],
           snapshot_id: 'AsNaPsHoTiD'
         }));
       });
