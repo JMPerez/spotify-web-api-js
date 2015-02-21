@@ -5,7 +5,13 @@ var SpotifyWebApi = (function() {
   var _accessToken = null;
   var _promiseImplementation = null;
 
-  var _promiseProvider = function(promiseFunction) {
+  var wrapPromiseWithAbort = function(promise, onAbort) {
+    promise.abort = onAbort;
+    return promise;
+  };
+
+  var _promiseProvider = function(promiseFunction, onAbort) {
+    var returnedPromise;
     if (_promiseImplementation !== null) {
       var deferred = _promiseImplementation.defer();
       promiseFunction(function(resolvedResult) {
@@ -13,13 +19,18 @@ var SpotifyWebApi = (function() {
       }, function(rejectedResult) {
         deferred.reject(rejectedResult);
       });
-      return deferred.promise;
+      returnedPromise = deferred.promise;
     } else {
       if (window.Promise) {
-        return new window.Promise(promiseFunction);
+        returnedPromise = new window.Promise(promiseFunction);
       }
     }
-    return null;
+
+    if (returnedPromise) {
+      return new wrapPromiseWithAbort(returnedPromise, onAbort);
+    } else {
+      return null;
+    }
   };
 
   var _checkParamsAndPerformRequest = function(requestData, options, callback) {
@@ -44,8 +55,10 @@ var SpotifyWebApi = (function() {
   };
 
   var _performRequest = function(requestData, callback) {
+
+    var req = new XMLHttpRequest();
+
     var promiseFunction = function(resolve, reject) {
-      var req = new XMLHttpRequest();
       var type = requestData.type || 'GET';
       req.open(type, _buildUrl(requestData.url, requestData.params));
       if (_accessToken) {
@@ -88,7 +101,9 @@ var SpotifyWebApi = (function() {
       promiseFunction();
       return null;
     } else {
-      return _promiseProvider(promiseFunction);
+      return _promiseProvider(promiseFunction, function() {
+        req.abort();
+      });
     }
   };
 

@@ -55,6 +55,34 @@ spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE')
   });
 ```
 
+The promises also expose an `abort` method that aborts the XMLHttpRequest. This is useful to cancel
+requests that were made earlier and could be resolved out-of-sync:
+
+```javascript
+var prev = null;
+
+function onUserInput(queryTerm) {
+
+  // abort previous request, if any
+  if (prev !== null) {
+    prev.abort();
+  }
+
+  // store the current promise in case we need to abort it
+  prev = spotifyApi.searchTracks(queryTerm, {limit: 5})
+    .then(function(data) {
+
+      // clean the promise so it doesn't call abort
+      prev = null;
+
+      // ...render list of search results...
+
+    }, function(err) {
+      console.error(err);
+    });
+}
+```
+
 The functions that fetch data from the API support also an optional JSON object with a set of options, such as the ones regarding pagination. These options will be sent as query parameters:
 
 ```javascript

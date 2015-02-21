@@ -850,53 +850,88 @@
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/asdyi1uy');
       });
+
+      it('should be able to abort a request', function(done) {
+        var api = new SpotifyWebApi();
+        api.setPromiseImplementation(window.Q);
+        var result = api.getAlbum('asdyi1uy');
+
+        setTimeout(function() {
+          expect(that.requests[0].aborted).to.be.true;
+          done();
+        }, 20);
+
+        result.abort();
+      });
     });
 
-    describe('Using Promises/A+ through Promise', function() {
+    describe('Using Promises/A+ through Promise', function(done) {
       var api = new SpotifyWebApi();
       it('should get a track and use the provided promise implementation', function(done) {
-        var result = api.getTrack('3Qm86XLflmIXVm1wcwkgDK');
         if (window.Promise) {
+          var result = api.getTrack('3Qm86XLflmIXVm1wcwkgDK');
           result.then(function(data) {
             expect(data).to.deep.equal(that.fixtures.track);
             done();
           });
+          setTimeout(function() {
+            that.requests[0].respond(200,
+              {'Content-Type':'application/json'},
+              JSON.stringify(that.fixtures.track)
+            );
+          }, 100);
         } else {
           done();
         }
-        setTimeout(function() {
+      });
+
+      it('should get a track and use only the callback function if it is provided', function() {
+        if (window.Promise) {
+          var api = new SpotifyWebApi();
+          var callback = sinon.spy();
+          var result = api.getTrack('3Qm86XLflmIXVm1wcwkgDK', callback);
           that.requests[0].respond(200,
             {'Content-Type':'application/json'},
             JSON.stringify(that.fixtures.track)
           );
-        }, 100);
-      });
-
-      it('should get a track and use only the callback function if it is provided', function() {
-        var api = new SpotifyWebApi();
-        var callback = sinon.spy();
-        var result = api.getTrack('3Qm86XLflmIXVm1wcwkgDK', callback);
-        that.requests[0].respond(200,
-          {'Content-Type':'application/json'},
-          JSON.stringify(that.fixtures.track)
-        );
-        expect(callback.calledWith(null, that.fixtures.track)).to.be.ok;
-        expect(result).to.be.null;
+          expect(callback.calledWith(null, that.fixtures.track)).to.be.ok;
+          expect(result).to.be.null;
+        }
       });
 
       it('should return an error when looking up a wrong id and use the provided promise implementation', function(done) {
-        var api = new SpotifyWebApi();
-        var result = api.getAlbum('asdyi1uy');
-        that.requests[0].respond(404,
-          {'Content-Type':'application/json'},
-          JSON.stringify(that.fixtures.error_id_not_found)
-        );
-        result.fail(function(error) {
-          expect(error.status).to.equal(404);
+        if (window.Promise) {
+          var api = new SpotifyWebApi();
+          var result = api.getAlbum('asdyi1uy');
+          that.requests[0].respond(404,
+            {'Content-Type':'application/json'},
+            JSON.stringify(that.fixtures.error_id_not_found)
+          );
+          result.fail(function(error) {
+            expect(error.status).to.equal(404);
+            done();
+          });
+          expect(that.requests).to.have.length(1);
+          expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/asdyi1uy');
+        } else {
           done();
-        });
-        expect(that.requests).to.have.length(1);
-        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/albums/asdyi1uy');
+        }
+      });
+
+      it('should be able to abort a request', function(done) {
+        if (window.Promise) {
+          var api = new SpotifyWebApi();
+          var result = api.getAlbum('asdyi1uy');
+
+          setTimeout(function() {
+            expect(that.requests[0].aborted).to.be.true;
+            done();
+          }, 20);
+
+          result.abort();
+        } else {
+          done();
+        }
       });
     });
 
