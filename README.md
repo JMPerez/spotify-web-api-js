@@ -7,6 +7,48 @@ This wrapper is intended to be run on a browser. If you want to use Node.JS to m
 
 A list of selected wrappers for different languages and environments is available on the Developer site's [Libraries page](https://developer.spotify.com/web-api/code-examples/).
 
+It includes helper functions to do the following:
+
+#### Music metadata
+- Albums, artists, and tracks
+- Albums for a specific artist
+- Top tracks for a specific artist
+- Artists similar to a specific artist
+
+#### Profiles
+- User's emails, product type, display name, birthdate, image
+
+#### Search
+- Albums, artists, tracks, and playlists
+
+#### Playlist manipulation
+- Get a user's playlists
+- Create playlists
+- Change playlist details
+- Add tracks to a playlist
+- Remove tracks from a playlist
+- Replace tracks in a playlist
+- Reorder tracks in a playlist
+
+#### Your Music library
+- Add, remove, and get tracks that are in the signed in user's Your Music library
+- Check if a track is in the signed in user's Your Music library
+
+#### Browse
+- Get New Releases
+- Get Featured Playlists
+- Get a List of Categories
+- Get a Category
+- Get a Category's Playlists
+
+#### Follow
+- Follow and unfollow users
+- Follow and unfollow artists
+- Check if the logged in user follows a user or artist
+- Follow a playlist
+- Unfollow a playlist
+- Check if users are following a Playlist
+
 ## Installation
 Install via bower (browser):
 
