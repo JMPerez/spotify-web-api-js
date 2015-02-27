@@ -610,6 +610,47 @@
         }));
       });
 
+      it('should reorder tracks in a playlist', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.reorderTracksInPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', 1, 3, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify({snapshot_id: 'AsNaPsHoTiD'})
+        );
+        expect(callback.calledWith(null, {snapshot_id: 'AsNaPsHoTiD'})).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks');
+        expect(that.requests[0].method).to.equal('PUT');
+        expect(that.requests[0].status).to.equal(200);
+        expect(that.requests[0].requestBody).to.equal(JSON.stringify({
+          range_start: 1,
+          insert_before: 3
+        }));
+      });
+
+      it('should reorder tracks in a playlist with optional parameters', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.reorderTracksInPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', 1, 3, {range_length: 2}, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify({snapshot_id: 'AsNaPsHoTiD'})
+        );
+        expect(callback.calledWith(null, {snapshot_id: 'AsNaPsHoTiD'})).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks');
+        expect(that.requests[0].method).to.equal('PUT');
+        expect(that.requests[0].status).to.equal(200);
+        expect(that.requests[0].requestBody).to.equal(JSON.stringify({
+          range_start: 1,
+          insert_before: 3,
+          range_length: 2
+        }));
+      });
+
       it('should get featured playlists', function() {
         var callback = sinon.spy();
         var api = new SpotifyWebApi();

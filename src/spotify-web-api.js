@@ -596,7 +596,7 @@ var SpotifyWebApi = (function() {
   };
 
   /**
-   * Replace the tracks of a plsylist
+   * Replace the tracks of a playlist
    * See [Replace a Playlist's Tracks](https://developer.spotify.com/web-api/replace-playlists-tracks/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {string} userId The id of the user. If you know the Spotify URI it is easy
@@ -615,6 +615,35 @@ var SpotifyWebApi = (function() {
       postData: {uris: uris}
     };
     return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
+  /**
+   * Reorder tracks in a playlist
+   * See [Reorder a Playlist’s Tracks](https://developer.spotify.com/web-api/reorder-playlists-tracks/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+   * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {number} rangeStart The position of the first track to be reordered.
+   * @param {number} insertBefore The position where the tracks should be inserted. To reorder the tracks to
+   * the end of the playlist, simply set insert_before to the position after the last track.
+   * @param {Object} options An object with optional parameters (range_length, snapshot_id)
+   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.reorderTracksInPlaylist = function(userId, playlistId, rangeStart, insertBefore, options, callback) {
+    /*jshint camelcase: false */
+    var requestData = {
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      type: 'PUT',
+      postData: {
+        range_start: rangeStart,
+        insert_before: insertBefore
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
   /**
