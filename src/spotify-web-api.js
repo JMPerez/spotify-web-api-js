@@ -1,6 +1,6 @@
+'use strict';
 var SpotifyWebApi = (function() {
 
-  'use strict';
   var _baseUri = 'https://api.spotify.com/v1';
   var _accessToken = null;
   var _promiseImplementation = null;
@@ -33,25 +33,35 @@ var SpotifyWebApi = (function() {
     }
   };
 
-  var _checkParamsAndPerformRequest = function(requestData, options, callback) {
-    var opt = {};
-    var cb = null;
-
-    if (typeof options === 'object') {
-      opt = options;
-      cb = callback;
-    } else if (typeof options === 'function') {
-      cb = options;
+  var _extend = function() {
+    var args = Array.prototype.slice.call(arguments);
+    var target = args[0];
+    var objects = args.slice(1);
+    target = target || {};
+    for (var i = 0; i < objects.length; i++) {
+      for (var j in objects[i]) {
+        if (objects[i].hasOwnProperty(j)) {
+          target[j] = objects[i][j];
+        }
+      }
     }
+    return target;
+  };
 
-    // options extend postData, if any. Otherwise they extend parameters sent in the url
-    var type = requestData.type || 'GET';
-    if (type !== 'GET' && requestData.postData) {
-      requestData.postData = _extend(requestData.postData, opt);
-    } else {
-      requestData.params = _extend(requestData.params, opt);
+  var _buildUrl = function(url, parameters) {
+    var qs = '';
+    for (var key in parameters) {
+      if (parameters.hasOwnProperty(key)) {
+        var value = parameters[key];
+        qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
+      }
     }
-    return _performRequest(requestData, cb);
+    if (qs.length > 0) {
+      // chop off last '&'
+      qs = qs.substring(0, qs.length - 1);
+      url = url + '?' + qs;
+    }
+    return url;
   };
 
   var _performRequest = function(requestData, callback) {
@@ -70,7 +80,9 @@ var SpotifyWebApi = (function() {
           var data = null;
           try {
             data = req.responseText ? JSON.parse(req.responseText) : '';
-          } catch (e) {}
+          } catch (e) {
+            console.error(e);
+          }
 
           if (req.status >= 200 && req.status < 300) {
             if (resolve) {
@@ -107,32 +119,25 @@ var SpotifyWebApi = (function() {
     }
   };
 
-  var _extend = function() {
-    var args = Array.prototype.slice.call(arguments);
-    var target = args[0];
-    var objects = args.slice(1);
-    target = target || {};
-    for (var i = 0; i < objects.length; i++) {
-      for (var j in objects[i]) {
-        target[j] = objects[i][j];
-      }
-    }
-    return target;
-  };
+  var _checkParamsAndPerformRequest = function(requestData, options, callback) {
+    var opt = {};
+    var cb = null;
 
-  var _buildUrl = function(url, parameters){
-    var qs = '';
-    for (var key in parameters) {
-      if (parameters.hasOwnProperty(key)) {
-        var value = parameters[key];
-        qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
-      }
+    if (typeof options === 'object') {
+      opt = options;
+      cb = callback;
+    } else if (typeof options === 'function') {
+      cb = options;
     }
-    if (qs.length > 0){
-      qs = qs.substring(0, qs.length - 1); //chop off last '&'
-      url = url + '?' + qs;
+
+    // options extend postData, if any. Otherwise they extend parameters sent in the url
+    var type = requestData.type || 'GET';
+    if (type !== 'GET' && requestData.postData) {
+      requestData.postData = _extend(requestData.postData, opt);
+    } else {
+      requestData.params = _extend(requestData.params, opt);
     }
-    return url;
+    return _performRequest(requestData, cb);
   };
 
   var Constr = function() {};
@@ -1013,6 +1018,7 @@ var SpotifyWebApi = (function() {
    * Fetches albums from the Spotify catalog according to a query.
    * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -1033,6 +1039,7 @@ var SpotifyWebApi = (function() {
    * Fetches artists from the Spotify catalog according to a query.
    * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -1053,6 +1060,7 @@ var SpotifyWebApi = (function() {
    * Fetches tracks from the Spotify catalog according to a query.
    * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -1073,6 +1081,7 @@ var SpotifyWebApi = (function() {
    * Fetches playlists from the Spotify catalog according to a query.
    * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
    * the Spotify Developer site for more information about the endpoint.
+   * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -1094,6 +1103,7 @@ var SpotifyWebApi = (function() {
    * See [the Authorization Guide](https://developer.spotify.com/web-api/authorization-guide/) on
    * the Spotify Developer site for more information about obtaining an access token.
    * @param {string} accessToken The access token
+   * @return {void}
    */
   Constr.prototype.setAccessToken = function(accessToken) {
     _accessToken = accessToken;
@@ -1104,6 +1114,8 @@ var SpotifyWebApi = (function() {
    * See [Conformant Implementations](https://github.com/promises-aplus/promises-spec/blob/master/implementations.md)
    * for a list of some available options
    * @param {Object} promiseImplementation A Promises/A+ valid implementation
+   * @throws {Error} If the implementation being set doesn't conform with Promises/A+
+   * @return {void}
    */
   Constr.prototype.setPromiseImplementation = function(promiseImplementation) {
     if (!('defer' in promiseImplementation)) {
