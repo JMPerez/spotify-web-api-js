@@ -6,3 +6,12 @@ footer {
 	padding: 2em;
 	text-align: center;
 }
+
+ul.side-nav li a{ 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ul.side-nav li a:hover{ 
+  overflow: visible;
+}
