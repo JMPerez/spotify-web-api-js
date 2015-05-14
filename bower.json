@@ -1,0 +1,9 @@
+{
+  "name": "spotify-web-api-js",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "spotify-web-api-js": "0.13.1"
+  }
+}

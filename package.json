@@ -1,0 +1,22 @@
+{
+  "name": "spotify-web-api-js",
+  "version": "1.0.0",
+  "description": "Documentation for spotify-web-api-js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JMPerez/spotify-web-api-js.git"
+  },
+  "author": "jmperez1985@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JMPerez/spotify-web-api-js/issues"
+  },
+  "homepage": "http://jmperezperez.com/spotify-web-api-js/",
+  "devDependencies": {
+    "dox-foundation": "^0.5.6"
+  }
+}
