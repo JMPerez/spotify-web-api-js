@@ -149,7 +149,7 @@ var SpotifyWebApi = (function() {
   /**
    * Fetches a resource through a generic GET request.
    * @param {string} url The URL to be fetched
-   * @param {function(Object, Object)} callback An optional callback
+   * @param {function(Object,Object)} callback An optional callback
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.getGeneric = function(url, callback) {
@@ -164,7 +164,7 @@ var SpotifyWebApi = (function() {
    * See [Get Current User's Profile](https://developer.spotify.com/web-api/get-current-users-profile/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -180,7 +180,7 @@ var SpotifyWebApi = (function() {
    * See [Get Current User's Saved Tracks](https://developer.spotify.com/web-api/get-users-saved-tracks/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -198,7 +198,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
    * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -218,7 +218,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
    * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -238,7 +238,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
    * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -256,7 +256,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
    * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -278,7 +278,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
    * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -305,7 +305,7 @@ var SpotifyWebApi = (function() {
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Object} options A JSON object with options that can be passed. For instance,
    * whether you want the playlist to be followed privately ({public: false})
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -325,7 +325,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
    * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -347,7 +347,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
    * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -372,7 +372,7 @@ var SpotifyWebApi = (function() {
    * (e.g. spotify:user:<here_is_the_owner_id>:playlist:xxxx)
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an empty value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -390,7 +390,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
    * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an array of boolean values that indicate
    * whether the user is following the users sent in the request.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
@@ -413,7 +413,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
    * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an array of boolean values that indicate
    * whether the user is following the artists sent in the request.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
@@ -441,7 +441,7 @@ var SpotifyWebApi = (function() {
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
    * to find their user id (e.g. spotify:user:<here_is_the_user_id>)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is an array of boolean values that indicate
    * whether the users are following the playlist sent in the request.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
@@ -464,7 +464,7 @@ var SpotifyWebApi = (function() {
    * @param {string} userId The id of the user. If you know the Spotify URI it is easy
    * to find the id (e.g. spotify:user:<here_is_the_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -482,7 +482,7 @@ var SpotifyWebApi = (function() {
    * @param {string} userId The id of the user. If you know the Spotify URI it is easy
    * to find the id (e.g. spotify:user:<here_is_the_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -502,7 +502,7 @@ var SpotifyWebApi = (function() {
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -522,7 +522,7 @@ var SpotifyWebApi = (function() {
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -540,7 +540,7 @@ var SpotifyWebApi = (function() {
    * @param {string} userId The id of the user. You may want to user the "getMe" function to
    * find out the id of the current logged in user
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -562,7 +562,7 @@ var SpotifyWebApi = (function() {
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Object} data A JSON object with the data to update. E.g. {name: 'A new name', public: true}
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -585,7 +585,7 @@ var SpotifyWebApi = (function() {
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Array<string>} uris An array of Spotify URIs for the tracks
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -609,7 +609,7 @@ var SpotifyWebApi = (function() {
    * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
    * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
    * @param {Array<string>} uris An array of Spotify URIs for the tracks
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -634,7 +634,7 @@ var SpotifyWebApi = (function() {
    * @param {number} insertBefore The position where the tracks should be inserted. To reorder the tracks to
    * the end of the playlist, simply set insert_before to the position after the last track.
    * @param {Object} options An object with optional parameters (range_length, snapshot_id)
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -662,7 +662,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<Object>} uris An array of tracks to be removed. Each element of the array can be either a
    * string, in which case it is treated as a URI, or an object containing the properties `uri` (which is a
    * string) and `positions` (which is an array of integers).
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -695,7 +695,7 @@ var SpotifyWebApi = (function() {
    * string, in which case it is treated as a URI, or an object containing the properties `uri` (which is a
    * string) and `positions` (which is an array of integers).
    * @param {string} snapshotId The playlist's snapshot ID against which you want to make the changes
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -731,7 +731,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<number>} positions array of integers containing the positions of the tracks to remove
    * from the playlist.
    * @param {string} snapshotId The playlist's snapshot ID against which you want to make the changes
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -755,7 +755,7 @@ var SpotifyWebApi = (function() {
    * @param {string} albumId The id of the album. If you know the Spotify URI it is easy
    * to find the album id (e.g. spotify:album:<here_is_the_album_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -773,7 +773,7 @@ var SpotifyWebApi = (function() {
    * @param {string} albumId The id of the album. If you know the Spotify URI it is easy
    * to find the album id (e.g. spotify:album:<here_is_the_album_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -791,7 +791,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI it is easy
    * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -810,7 +810,7 @@ var SpotifyWebApi = (function() {
    * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
    * to find the track id (e.g. spotify:track:<here_is_the_track_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -827,7 +827,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
    * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -846,7 +846,7 @@ var SpotifyWebApi = (function() {
    * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -864,7 +864,7 @@ var SpotifyWebApi = (function() {
    * @param {Array<string>} artistIds The ids of the artists. If you know their Spotify URI it is easy
    * to find their artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -883,7 +883,7 @@ var SpotifyWebApi = (function() {
    * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -902,7 +902,7 @@ var SpotifyWebApi = (function() {
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {string} countryId The id of the country (e.g. ES for Spain or US for United States)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -921,7 +921,7 @@ var SpotifyWebApi = (function() {
    * @param {string} artistId The id of the artist. If you know the Spotify URI it is easy
    * to find the artist id (e.g. spotify:artist:<here_is_the_artist_id>)
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -937,7 +937,7 @@ var SpotifyWebApi = (function() {
    * See [Get a List of Featured Playlists](https://developer.spotify.com/web-api/get-list-featured-playlists/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -953,7 +953,7 @@ var SpotifyWebApi = (function() {
    * See [Get a List of New Releases](https://developer.spotify.com/web-api/get-list-new-releases/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -969,7 +969,7 @@ var SpotifyWebApi = (function() {
    * See [Get a List of Categories](https://developer.spotify.com/web-api/get-list-categories/) on
    * the Spotify Developer site for more information about the endpoint.
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -986,7 +986,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {string} categoryId The id of the category. These can be found with the getCategories function
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -1003,7 +1003,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {string} categoryId The id of the category. These can be found with the getCategories function
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -1020,7 +1020,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -1041,7 +1041,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -1062,7 +1062,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
@@ -1083,7 +1083,7 @@ var SpotifyWebApi = (function() {
    * the Spotify Developer site for more information about the endpoint.
    * @param {string} query The search query
    * @param {Object} options A JSON object with options that can be passed
-   * @param {function(Object, Object)} callback An optional callback that receives 2 parameters. The first
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
