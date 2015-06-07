@@ -5,7 +5,7 @@ var SpotifyWebApi = (function() {
   var _accessToken = null;
   var _promiseImplementation = null;
 
-  var wrapPromiseWithAbort = function(promise, onAbort) {
+  var WrapPromiseWithAbort = function(promise, onAbort) {
     promise.abort = onAbort;
     return promise;
   };
@@ -27,7 +27,7 @@ var SpotifyWebApi = (function() {
     }
 
     if (returnedPromise) {
-      return new wrapPromiseWithAbort(returnedPromise, onAbort);
+      return new WrapPromiseWithAbort(returnedPromise, onAbort);
     } else {
       return null;
     }
@@ -38,13 +38,13 @@ var SpotifyWebApi = (function() {
     var target = args[0];
     var objects = args.slice(1);
     target = target || {};
-    for (var i = 0; i < objects.length; i++) {
-      for (var j in objects[i]) {
-        if (objects[i].hasOwnProperty(j)) {
-          target[j] = objects[i][j];
+    objects.forEach(function(object) {
+      for (var j in object) {
+        if (object.hasOwnProperty(j)) {
+          target[j] = object[j];
         }
       }
-    }
+    });
     return target;
   };
 
@@ -69,6 +69,25 @@ var SpotifyWebApi = (function() {
     var req = new XMLHttpRequest();
 
     var promiseFunction = function(resolve, reject) {
+
+      function success(data) {
+        if (resolve) {
+          resolve(data);
+        }
+        if (callback) {
+          callback(null, data);
+        }
+      }
+
+      function failure() {
+        if (reject) {
+          reject(req);
+        }
+        if (callback) {
+          callback(req, null);
+        }
+      }
+
       var type = requestData.type || 'GET';
       req.open(type, _buildUrl(requestData.url, requestData.params));
       if (_accessToken) {
@@ -85,19 +104,9 @@ var SpotifyWebApi = (function() {
           }
 
           if (req.status >= 200 && req.status < 300) {
-            if (resolve) {
-              resolve(data);
-            }
-            if (callback) {
-              callback(null, data);
-            }
+            success(data);
           } else {
-            if (reject) {
-              reject(req);
-            }
-            if (callback) {
-              callback(req, null);
-            }
+            failure();
           }
         }
       };
