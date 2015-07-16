@@ -45,7 +45,8 @@
       new_releases: loadFixture('new_releases'),
       follow_is_following_users: loadFixture('follow_is_following_users'),
       follow_is_following_artists: loadFixture('follow_is_following_artists'),
-      follow_are_following_playlist: loadFixture('follow_are_following_playlist')
+      follow_are_following_playlist: loadFixture('follow_are_following_playlist'),
+      followed_artists: loadFixture('followed_artists')
     };
 
     var that = this;
@@ -843,6 +844,20 @@
         expect(callback.calledWith(null, '')).to.be.ok;
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers');
+      });
+
+      it('should get followed artists', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.getFollowedArtists(callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.followed_artists)
+        );
+        expect(that.requests[0].method).to.equal('GET');
+        expect(callback.calledWith(null, that.fixtures.followed_artists)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/following?type=artist');
       });
     });
 

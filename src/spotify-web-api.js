@@ -467,6 +467,28 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Get the current user's followed artists.
+   * See [Get User's Followed Artists](https://developer.spotify.com/web-api/get-followed-artists/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} [options] Options, being after and limit.
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is an object with a paged object containing
+   * artists.
+   * @returns {Promise|undefined} A promise that if successful, resolves to an object containing a paging object which contains
+   * artists objects. Not returned if a callback is given.
+   */
+  Constr.prototype.getFollowedArtists = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/following',
+      type: 'GET',
+      params: {
+        type: 'artist'
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Fetches information about a specific user.
    * See [Get a User's Profile](https://developer.spotify.com/web-api/get-users-profile/) on
    * the Spotify Developer site for more information about the endpoint.

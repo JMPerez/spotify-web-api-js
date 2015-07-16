@@ -47,13 +47,14 @@ The wrapper includes helper functions to do the following:
 - Check if the logged in user follows a user or artist
 - Follow a playlist
 - Unfollow a playlist
+- Get followed artists
 - Check if users are following a Playlist
 
 ## Installation
 Install via bower (browser):
 
     $ bower install spotify-web-api-js
-    
+
 Install via node (since the requests are made using XMLHttpRequest, you will need a tool like Browserify to run this on a browser):
 
     $ npm install spotify-web-api-js
