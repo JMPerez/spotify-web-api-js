@@ -71,7 +71,7 @@ or by making a copy of the `src/spotify-web-api.js` file
 
 ## Usage
 
-We recommend you have a look at the [documentation](http://jmperezperez.com/spotify-web-api-js/) to get an overview of the supported features.
+We recommend you have a look at the [documentation](https://jmperezperez.com/spotify-web-api-js/) to get an overview of the supported features.
 
 The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), and Promises/A+ libraries such as [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when).
 
