@@ -21,6 +21,11 @@
   "scripts": {
     "test": "grunt mocha"
   },
+  "files": [
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
   "keywords": [
     "spotify"
   ]
