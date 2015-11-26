@@ -36,6 +36,7 @@
       user_playlists: loadFixture('user_playlists'),
       user_new_playlist: loadFixture('user_new_playlist'),
       user_saved_tracks: loadFixture('user_saved_tracks'),
+      user_saved_albums: loadFixture('user_saved_albums'),
       playlist: loadFixture('playlist'),
       playlist_tracks: loadFixture('playlist_tracks'),
       featured_playlists: loadFixture('featured_playlists'),
@@ -385,6 +386,66 @@
         expect(callback.calledWith(null, [true, true])).to.be.ok;
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/tracks/contains?ids=1ryJP6qCpF1mBv0vXS8fyq%2C5pRgDDjJcxaYwpsRJBoVXr');
+      });
+
+      it('should get user\'s saved albums', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.getMySavedAlbums(callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.user_saved_albums)
+        );
+        expect(callback.calledWith(null, that.fixtures.user_saved_albums)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/albums');
+      });
+
+      it('should add albums to user\'s saved albums', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.addToMySavedAlbums(['1WDA6r4advRJalp0gJCoXv', '088HGHE7BhAMAy9fAApAGP'], callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          ''
+        );
+        expect(callback.calledWith(null, '')).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/albums');
+        expect(that.requests[0].method).to.equal('PUT');
+        expect(that.requests[0].status).to.equal(200);
+      });
+
+      it('should remove albums from user\'s saved albums', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.removeFromMySavedAlbums(['1WDA6r4advRJalp0gJCoXv', '088HGHE7BhAMAy9fAApAGP'], callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          ''
+        );
+        expect(callback.calledWith(null, '')).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/albums');
+        expect(that.requests[0].method).to.equal('DELETE');
+        expect(that.requests[0].status).to.equal(200);
+      });
+
+      it('should check if a album is in the user\'s saved albums', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.containsMySavedAlbums(['1WDA6r4advRJalp0gJCoXv', '088HGHE7BhAMAy9fAApAGP'], callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify([true, true])
+        );
+        expect(callback.calledWith(null, [true, true])).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/albums/contains?ids=1WDA6r4advRJalp0gJCoXv%2C088HGHE7BhAMAy9fAApAGP');
       });
 
       it('should get user\'s playlists', function() {

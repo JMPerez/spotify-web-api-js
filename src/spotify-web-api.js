@@ -260,6 +260,81 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Get a list of the albums saved in the current Spotify user's "Your Music" library.
+   * See [Get Current User's Saved Albums](https://developer.spotify.com/web-api/get-users-saved-albums/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+   Constr.prototype.getMySavedAlbums = function(options, callback) {
+     var requestData = {
+       url: _baseUri + '/me/albums'
+     };
+     return _checkParamsAndPerformRequest(requestData, options, callback);
+   };
+
+   /**
+    * Save one or more albums to the current user's "Your Music" library.
+    * See [Save Albums for Current User](https://developer.spotify.com/web-api/save-albums-user/) on
+    * the Spotify Developer site for more information about the endpoint.
+    * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI, it is easy
+    * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
+    * @param {Object} options A JSON object with options that can be passed
+    * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+    * one is the error object (null if no error), and the second is the value if the request succeeded.
+    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+    */
+   Constr.prototype.addToMySavedAlbums = function(albumIds, options, callback) {
+     var requestData = {
+       url: _baseUri + '/me/albums',
+       type: 'PUT',
+       postData: albumIds
+     };
+     return _checkParamsAndPerformRequest(requestData, options, callback);
+   };
+
+   /**
+    * Remove one or more albums from the current user's "Your Music" library.
+    * See [Remove Albums for Current User](https://developer.spotify.com/web-api/remove-albums-user/) on
+    * the Spotify Developer site for more information about the endpoint.
+    * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI, it is easy
+    * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
+    * @param {Object} options A JSON object with options that can be passed
+    * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+    * one is the error object (null if no error), and the second is the value if the request succeeded.
+    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+    */
+   Constr.prototype.removeFromMySavedAlbums = function(albumIds, options, callback) {
+     var requestData = {
+       url: _baseUri + '/me/albums',
+       type: 'DELETE',
+       postData: albumIds
+     };
+     return _checkParamsAndPerformRequest(requestData, options, callback);
+   };
+
+   /**
+    * Check if one or more albums is already saved in the current Spotify user's "Your Music" library.
+    * See [Check User's Saved Albums](https://developer.spotify.com/web-api/check-users-saved-albums/) on
+    * the Spotify Developer site for more information about the endpoint.
+    * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI, it is easy
+    * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
+    * @param {Object} options A JSON object with options that can be passed
+    * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+    * one is the error object (null if no error), and the second is the value if the request succeeded.
+    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+    */
+   Constr.prototype.containsMySavedAlbums = function(albumIds, options, callback) {
+     var requestData = {
+       url: _baseUri + '/me/albums/contains',
+       params: { ids: albumIds.join(',') }
+     };
+     return _checkParamsAndPerformRequest(requestData, options, callback);
+   };
+
+  /**
    * Adds the current user as a follower of one or more other Spotify users.
    * See [Follow Artists or Users](https://developer.spotify.com/web-api/follow-artists-users/) on
    * the Spotify Developer site for more information about the endpoint.
