@@ -11,4 +11,13 @@ Follow these steps:
   suite covering the code. Want to run the tests? Run `npm test`. What about code coverage? Run `grunt coverage`.
 4. Send a Pull Request.
 
+Releasing a new version
+=======================
+
+1. Update bower version in the `bower.json` file
+2. Update npm module version in the `package.json` file, using `npm version`
+3. Draft a new release
+4. Generate the docs
+5. Profit
+
 Thanks for collaborating!
