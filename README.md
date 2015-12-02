@@ -260,16 +260,30 @@ In order to get user's information you will probably need to request an access t
 // set it in the wrapper
 var spotifyApi = new SpotifyWebApi();
 spotifyApi.setAccessToken('<here_your_access_token>');
-spotifyApiWithToken.getUserPlaylists('jmperezperez')
+spotifyApi.getUserPlaylists('jmperezperez')
   .then(function(data) {
     console.log('User playlists', data);
   }, function(err) {
     console.error(err);
   });
 
-spotifyApiWithToken.getUserPlaylist('jmperezperez', '4vHIKV7j4QcZwgzGQcZg1x')
+spotifyApi.getUserPlaylist('jmperezperez', '4vHIKV7j4QcZwgzGQcZg1x')
   .then(function(data) {
     console.log('User playlist', data);
+  }, function(err) {
+    console.error(err);
+  });
+```
+
+Some functions don't need to receive the user's id as a parameter, and will use the
+user's information from the access token:
+
+```javascript
+var spotifyApi = new SpotifyWebApi();
+spotifyApi.setAccessToken('<here_your_access_token>');
+spotifyApi.getUserPlaylists()  // note that we don't pass a user id
+  .then(function(data) {
+    console.log('User playlists', data);
   }, function(err) {
     console.error(err);
   });
