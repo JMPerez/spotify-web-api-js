@@ -14,8 +14,9 @@ Follow these steps:
 Releasing a new version
 =======================
 
-1. Update bower version in the `bower.json` file
-2. Update npm module version in the `package.json` file, using `npm version`
+1. Update npm module version in the `package.json` file, using `npm version`
+2. Update bower version in the `bower.json` file to match the version from the npm package. Amend the commit generated in step 1.
+3. Push with tags: `git push --follow-tags`
 3. Draft a new release
 4. Generate the docs
 5. Profit
