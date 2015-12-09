@@ -1215,6 +1215,14 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Gets the access token in use.
+   * @return {string} accessToken The access token
+   */
+  Constr.prototype.getAccessToken = function() {
+    return _accessToken;
+  };
+
+  /**
    * Sets the access token to be used.
    * See [the Authorization Guide](https://developer.spotify.com/web-api/authorization-guide/) on
    * the Spotify Developer site for more information about obtaining an access token.
