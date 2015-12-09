@@ -63,6 +63,13 @@
       that.xhr.restore();
     });
 
+    it('should return the access token', function() {
+      var api = new SpotifyWebApi();
+      expect(api.getAccessToken()).to.equal(null);
+      api.setAccessToken('Some access token');
+      expect(api.getAccessToken()).to.equal('Some access token');
+    });
+
     describe('Using callbacks', function() {
 
       it('should get a track', function() {
