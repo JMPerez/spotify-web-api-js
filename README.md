@@ -57,7 +57,7 @@ Install via bower (browser):
 
 Install via node (since the requests are made using XMLHttpRequest, you will need a tool like Browserify to run this on a browser):
 
-    $ npm install spotify-web-api-js
+    $ npm install -S spotify-web-api-js
 
 Then, in your javascript file
 
