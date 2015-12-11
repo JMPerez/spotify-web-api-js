@@ -115,7 +115,7 @@ var SpotifyWebApi = (function() {
       if (type === 'GET') {
         req.send(null);
       } else {
-        req.send(JSON.stringify(requestData.postData));
+        req.send(requestData.postData ? JSON.stringify(requestData.postData) : null);
       }
     };
 
