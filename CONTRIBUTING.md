@@ -19,6 +19,7 @@ Releasing a new version
 3. Push with tags: `git push --follow-tags`
 3. Draft a new release
 4. Generate the docs
-5. Profit
+5. Publish a new npm package: `npm publish`
+6. Profit
 
 Thanks for collaborating!
