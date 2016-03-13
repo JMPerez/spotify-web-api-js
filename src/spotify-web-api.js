@@ -1216,6 +1216,40 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Get audio features for a single track identified by its unique Spotify ID.
+   * See [Get Audio Features for a Track](https://developer.spotify.com/web-api/get-audio-features/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
+   * to find the track id (e.g. spotify:track:<here_is_the_track_id>)
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getAudioFeaturesForTrack = function(trackId, callback) {
+    var requestData = {};
+    requestData.url = _baseUri + '/audio-features/' + trackId;
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
+  /**
+   * Get audio features for multiple tracks based on their Spotify IDs.
+   * See [Get Audio Features for Several Tracks](https://developer.spotify.com/web-api/get-several-audio-features/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
+   * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getAudioFeaturesForTracks = function(trackIds, callback) {
+    var requestData = {
+      url: _baseUri + '/audio-features',
+      params: { ids: trackIds }
+    };
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
+  /**
    * Gets the access token in use.
    * @return {string} accessToken The access token
    */

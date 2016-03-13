@@ -1,0 +1,24 @@
+{
+  "audio_features": [
+    {
+      "danceability": 0.735,
+      "energy": 0.578,
+      "key": 5,
+      "loudness": -11.84,
+      "mode": 0,
+      "speechiness": 0.0461,
+      "acousticness": 0.514,
+      "instrumentalness": 0.0902,
+      "liveness": 0.159,
+      "valence": 0.624,
+      "tempo": 98.002,
+      "type": "audio_features",
+      "id": "06AKEBrKUckW0KREUWRnvT",
+      "uri": "spotify:track:06AKEBrKUckW0KREUWRnvT",
+      "track_href": "https://api.spotify.com/v1/tracks/06AKEBrKUckW0KREUWRnvT",
+      "analysis_url": "http://echonest-analysis.s3.amazonaws.com/TR/xZIVRgimIx9_iJFqTriVhCm_4unjh7tZAglpO5D-xS4xNkvxq70uCFAtuoVYTaIeHbWoLKvCB6W-kvd9E=/3/full.json?AWSAccessKeyId=AKIAJRDFEY23UEVW42BQ&Expires=1455893394&Signature=rmceqCXLMbPrXt9RTIJwk%2BQzxoY%3D",
+      "duration_ms": 255349,
+      "time_signature": 4
+    }
+  ]
+}

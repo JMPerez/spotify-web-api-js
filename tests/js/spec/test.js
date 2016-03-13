@@ -18,6 +18,8 @@
     this.fixtures = {
       track: loadFixture('track'),
       tracks: loadFixture('tracks'),
+      track_audio_features: loadFixture('track_audio_features'),
+      tracks_audio_features: loadFixture('tracks_audio_features'),
       album: loadFixture('album'),
       album_tracks: loadFixture('album_tracks'),
       albums: loadFixture('albums'),
@@ -941,6 +943,35 @@
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/following?type=artist');
       });
+
+      it('should get the audio features for a track', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        var result = api.getAudioFeaturesForTrack('3Qm86XLflmIXVm1wcwkgDK', callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.track_audio_features)
+        );
+        expect(that.requests[0].method).to.equal('GET');
+        expect(callback.calledWith(null, that.fixtures.track_audio_features)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/audio-features/3Qm86XLflmIXVm1wcwkgDK');
+      });
+
+      it('should get the audio features for several tracks', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        var result = api.getAudioFeaturesForTracks(['3Qm86XLflmIXVm1wcwkgDK'], callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.tracks_audio_features)
+        );
+        expect(that.requests[0].method).to.equal('GET');
+        expect(callback.calledWith(null, that.fixtures.tracks_audio_features)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/audio-features?ids=3Qm86XLflmIXVm1wcwkgDK');
+      });
+
     });
 
     describe('Using Promises/A+ through Q.js', function() {
