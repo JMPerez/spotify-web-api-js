@@ -10,7 +10,8 @@ A list of selected wrappers for different languages and environments is availabl
 The wrapper includes helper functions to do the following:
 
 #### Music metadata
-- Albums, artists, and tracks
+- Albums, artists, tracks and playlists
+- Audio features for tracks
 - Albums for a specific artist
 - Top tracks for a specific artist
 - Artists similar to a specific artist
