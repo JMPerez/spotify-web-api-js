@@ -1132,6 +1132,29 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Get Spotify catalog information about artists, albums, tracks or playlists that match a keyword string.
+   * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} query The search query
+   * @param {Array<string>} types An array of item types to search across.
+   * Valid types are: 'album', 'artist', 'playlist', and 'track'.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.search = function(query, types, options, callback) {
+    var requestData = {
+      url: _baseUri + '/search/',
+      params: {
+        q: query,
+        type: types.join(',')
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Fetches albums from the Spotify catalog according to a query.
    * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
    * the Spotify Developer site for more information about the endpoint.
@@ -1142,14 +1165,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.searchAlbums = function(query, options, callback) {
-    var requestData = {
-      url: _baseUri + '/search/',
-      params: {
-        q: query,
-        type: 'album'
-      }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
+    return this.search(query, ['album'], options, callback);
   };
 
   /**
@@ -1163,14 +1179,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.searchArtists = function(query, options, callback) {
-    var requestData = {
-      url: _baseUri + '/search/',
-      params: {
-        q: query,
-        type: 'artist'
-      }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
+    return this.search(query, ['artist'], options, callback);
   };
 
   /**
@@ -1184,14 +1193,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.searchTracks = function(query, options, callback) {
-    var requestData = {
-      url: _baseUri + '/search/',
-      params: {
-        q: query,
-        type: 'track'
-      }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
+    return this.search(query, ['track'], options, callback);
   };
 
   /**
@@ -1205,14 +1207,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.searchPlaylists = function(query, options, callback) {
-    var requestData = {
-      url: _baseUri + '/search/',
-      params: {
-        q: query,
-        type: 'playlist'
-      }
-    };
-    return _checkParamsAndPerformRequest(requestData, options, callback);
+    return this.search(query, ['playlist'], options, callback);
   };
 
   /**

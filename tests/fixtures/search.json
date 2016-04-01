@@ -1,0 +1,106 @@
+{
+  "artists" : {
+    "href" : "https://api.spotify.com/v1/search?query=muse&offset=0&limit=1&type=artist",
+    "items" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
+      },
+      "followers" : {
+        "href" : null,
+        "total" : 2052604
+      },
+      "genres" : [ ],
+      "href" : "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
+      "id" : "12Chz98pHFMPJEknJQMWvI",
+      "images" : [ {
+        "height" : 667,
+        "url" : "https://i.scdn.co/image/0b3c04473aa6a2db8235e5092ec3413f35752b8d",
+        "width" : 1000
+      }, {
+        "height" : 427,
+        "url" : "https://i.scdn.co/image/cf54c2d4a4549fb484862a9c475fc897bb5ce707",
+        "width" : 640
+      }, {
+        "height" : 133,
+        "url" : "https://i.scdn.co/image/837c977024362a7f6d1873027e2a8664e21f911a",
+        "width" : 200
+      }, {
+        "height" : 43,
+        "url" : "https://i.scdn.co/image/0b14ff7b9c9fcfaf6b662fe439576c531b0aa8d8",
+        "width" : 64
+      } ],
+      "name" : "Muse",
+      "popularity" : 81,
+      "type" : "artist",
+      "uri" : "spotify:artist:12Chz98pHFMPJEknJQMWvI"
+    } ],
+    "limit" : 1,
+    "next" : "https://api.spotify.com/v1/search?query=muse&offset=1&limit=1&type=artist",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 405
+  },
+  "tracks" : {
+    "href" : "https://api.spotify.com/v1/search?query=muse&offset=0&limit=1&type=track",
+    "items" : [ {
+      "album" : {
+        "album_type" : "album",
+        "available_markets" : [ "AR", "AU", "AT", "BE", "BO", "BR", "BG", "CA", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "DE", "EC", "EE", "SV", "FI", "FR", "GR", "GT", "HN", "HK", "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MY", "MT", "MX", "NL", "NZ", "NI", "NO", "PA", "PY", "PE", "PH", "PL", "PT", "SG", "SK", "ES", "SE", "CH", "TW", "TR", "UY", "US", "GB", "AD", "MC", "ID" ],
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/album/6s2isojT7rGZUgJyymjjKU"
+        },
+        "href" : "https://api.spotify.com/v1/albums/6s2isojT7rGZUgJyymjjKU",
+        "id" : "6s2isojT7rGZUgJyymjjKU",
+        "images" : [ {
+          "height" : 640,
+          "url" : "https://i.scdn.co/image/dee2b853269efd27747d8ac68020cc620248dc4e",
+          "width" : 640
+        }, {
+          "height" : 300,
+          "url" : "https://i.scdn.co/image/a31a9eb4ea2850f01136d61f7b837ddd81e4292d",
+          "width" : 300
+        }, {
+          "height" : 64,
+          "url" : "https://i.scdn.co/image/dd4022f7be53c35543209258b74f09b4581d7361",
+          "width" : 64
+        } ],
+        "name" : "PARTYNEXTDOOR TWO",
+        "type" : "album",
+        "uri" : "spotify:album:6s2isojT7rGZUgJyymjjKU"
+      },
+      "artists" : [ {
+        "external_urls" : {
+          "spotify" : "https://open.spotify.com/artist/2HPaUgqeutzr3jx5a9WyDV"
+        },
+        "href" : "https://api.spotify.com/v1/artists/2HPaUgqeutzr3jx5a9WyDV",
+        "id" : "2HPaUgqeutzr3jx5a9WyDV",
+        "name" : "PARTYNEXTDOOR",
+        "type" : "artist",
+        "uri" : "spotify:artist:2HPaUgqeutzr3jx5a9WyDV"
+      } ],
+      "available_markets" : [ "AR", "AU", "AT", "BE", "BO", "BR", "BG", "CA", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "DE", "EC", "EE", "SV", "FI", "FR", "GR", "GT", "HN", "HK", "HU", "IS", "IE", "IT", "LV", "LT", "LU", "MY", "MT", "MX", "NL", "NZ", "NI", "NO", "PA", "PY", "PE", "PH", "PL", "PT", "SG", "SK", "ES", "SE", "CH", "TW", "TR", "UY", "US", "GB", "AD", "MC", "ID" ],
+      "disc_number" : 1,
+      "duration_ms" : 203324,
+      "explicit" : true,
+      "external_ids" : {
+        "isrc" : "USWB11401870"
+      },
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/track/41ipOYFGT2MW4dvOPkoK1f"
+      },
+      "href" : "https://api.spotify.com/v1/tracks/41ipOYFGT2MW4dvOPkoK1f",
+      "id" : "41ipOYFGT2MW4dvOPkoK1f",
+      "name" : "Muse",
+      "popularity" : 58,
+      "preview_url" : "https://p.scdn.co/mp3-preview/d03f4da489977e44fe92e95f771b2ace9607fbcc",
+      "track_number" : 12,
+      "type" : "track",
+      "uri" : "spotify:track:41ipOYFGT2MW4dvOPkoK1f"
+    } ],
+    "limit" : 1,
+    "next" : "https://api.spotify.com/v1/search?query=muse&offset=1&limit=1&type=track",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 32436
+  }
+}
