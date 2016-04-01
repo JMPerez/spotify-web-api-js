@@ -40,6 +40,8 @@
       user_new_playlist: loadFixture('user_new_playlist'),
       user_saved_tracks: loadFixture('user_saved_tracks'),
       user_saved_albums: loadFixture('user_saved_albums'),
+      user_top_artists: loadFixture('user_top_artists'),
+      user_top_tracks: loadFixture('user_top_tracks'),
       playlist: loadFixture('playlist'),
       playlist_tracks: loadFixture('playlist_tracks'),
       featured_playlists: loadFixture('featured_playlists'),
@@ -471,6 +473,34 @@
         expect(callback.calledWith(null, [true, true])).to.be.ok;
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/albums/contains?ids=1WDA6r4advRJalp0gJCoXv%2C088HGHE7BhAMAy9fAApAGP');
+      });
+
+      it('should get user\'s top artists', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.getMyTopArtists({limit: 5}, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.user_top_artists)
+        );
+        expect(callback.calledWith(null, that.fixtures.user_top_artists)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/top/artists?limit=5');
+      });
+
+      it('should get user\'s top tracks', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.getMyTopTracks({limit: 5}, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.user_top_tracks)
+        );
+        expect(callback.calledWith(null, that.fixtures.user_top_tracks)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/top/tracks?limit=5');
       });
 
       it('should get user\'s playlists', function() {

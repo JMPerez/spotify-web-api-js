@@ -35,6 +35,9 @@ The wrapper includes helper functions to do the following:
 - Add, remove, and get tracks that are in the signed in user's Your Music library
 - Check if a track is in the signed in user's Your Music library
 
+#### Personalization
+- Get a user’s top artists and tracks based on calculated affinity
+
 #### Browse
 - Get new releases
 - Get featured playlists
