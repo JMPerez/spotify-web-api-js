@@ -50,7 +50,9 @@
       follow_is_following_users: loadFixture('follow_is_following_users'),
       follow_is_following_artists: loadFixture('follow_is_following_artists'),
       follow_are_following_playlist: loadFixture('follow_are_following_playlist'),
-      followed_artists: loadFixture('followed_artists')
+      followed_artists: loadFixture('followed_artists'),
+      recommendations: loadFixture('recommendations'),
+      genre_seeds: loadFixture('genre_seeds')
     };
 
     var that = this;
@@ -986,6 +988,39 @@
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/audio-features?ids=3Qm86XLflmIXVm1wcwkgDK');
       });
 
+      it('should get recommendations', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.getRecommendations({
+          min_energy: 0.4,
+          market: 'ES',
+          seed_artists: ['6mfK6Q2tzLMEchAr0e9Uzu', '4DYFVNKZ1uixa6SQTvzQwJ'],
+          limit: 5,
+          min_popularity: 50
+        }, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.recommendations)
+        );
+        expect(that.requests[0].method).to.equal('GET');
+        expect(callback.calledWith(null, that.fixtures.recommendations)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/recommendations?min_energy=0.4&market=ES&seed_artists=6mfK6Q2tzLMEchAr0e9Uzu%2C4DYFVNKZ1uixa6SQTvzQwJ&limit=5&min_popularity=50');
+      });
+
+      it('should get available genre seeds', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.getAvailableGenreSeeds(callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.genre_seeds)
+        );
+        expect(that.requests[0].method).to.equal('GET');
+        expect(callback.calledWith(null, that.fixtures.genre_seeds)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/recommendations/available-genre-seeds');
+      });
     });
 
     describe('Using Promises/A+ through Q.js', function() {

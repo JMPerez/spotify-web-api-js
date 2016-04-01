@@ -1245,6 +1245,38 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Create a playlist-style listening experience based on seed artists, tracks and genres.
+   * See [Get Recommendations Based on Seeds](https://developer.spotify.com/web-api/get-recommendations/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getRecommendations = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/recommendations'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Retrieve a list of available genres seed parameter values for recommendations.
+   * See [Available Genre Seeds](https://developer.spotify.com/web-api/get-recommendations/#available-genre-seeds) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getAvailableGenreSeeds = function(callback) {
+    var requestData = {
+      url: _baseUri + '/recommendations/available-genre-seeds'
+    };
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
+  /**
    * Gets the access token in use.
    * @return {string} accessToken The access token
    */
