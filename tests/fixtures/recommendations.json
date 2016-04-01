@@ -1,0 +1,310 @@
+{
+  "tracks" : [ {
+    "album" : {
+      "album_type" : "ALBUM",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/3Oc7TFerme2LybRGVAcESO"
+      },
+      "href" : "https://api.spotify.com/v1/albums/3Oc7TFerme2LybRGVAcESO",
+      "id" : "3Oc7TFerme2LybRGVAcESO",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/793cdbdaeb491081d0848183e09b4ffc24df8359",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/f71aff71567661308a557d6e0fcc572fdc0d4ca7",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/d218669d0590afa5d7ad4ce5c16b40d22ce5ae1f",
+        "width" : 64
+      } ],
+      "name" : "El Regreso del Sobreviviente (Deluxe Edition)",
+      "type" : "album",
+      "uri" : "spotify:album:3Oc7TFerme2LybRGVAcESO"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/3E6xrwgnVfYCrCs0ePERDz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/3E6xrwgnVfYCrCs0ePERDz",
+      "id" : "3E6xrwgnVfYCrCs0ePERDz",
+      "name" : "Wisin",
+      "type" : "artist",
+      "uri" : "spotify:artist:3E6xrwgnVfYCrCs0ePERDz"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/2DlGxzQSjYe5N6G9nkYghR"
+      },
+      "href" : "https://api.spotify.com/v1/artists/2DlGxzQSjYe5N6G9nkYghR",
+      "id" : "2DlGxzQSjYe5N6G9nkYghR",
+      "name" : "Jennifer Lopez",
+      "type" : "artist",
+      "uri" : "spotify:artist:2DlGxzQSjYe5N6G9nkYghR"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7slfeZO9LsJbWgpkIoXBUJ"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7slfeZO9LsJbWgpkIoXBUJ",
+      "id" : "7slfeZO9LsJbWgpkIoXBUJ",
+      "name" : "Ricky Martin",
+      "type" : "artist",
+      "uri" : "spotify:artist:7slfeZO9LsJbWgpkIoXBUJ"
+    } ],
+    "disc_number" : 1,
+    "duration_ms" : 235546,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "USSD11300395"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/2eqDUxbd0JPEhNrJdPlHLs"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/2eqDUxbd0JPEhNrJdPlHLs",
+    "id" : "2eqDUxbd0JPEhNrJdPlHLs",
+    "is_playable" : true,
+    "name" : "Adrenalina",
+    "popularity" : 71,
+    "preview_url" : "https://p.scdn.co/mp3-preview/887e90341f351d2fc5e204e39729141780251ae0",
+    "track_number" : 3,
+    "type" : "track",
+    "uri" : "spotify:track:2eqDUxbd0JPEhNrJdPlHLs"
+  }, {
+    "album" : {
+      "album_type" : "ALBUM",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/5YByMSqR8kLoigJ3h8xgGD"
+      },
+      "href" : "https://api.spotify.com/v1/albums/5YByMSqR8kLoigJ3h8xgGD",
+      "id" : "5YByMSqR8kLoigJ3h8xgGD",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/e7a0990a0ff0c32acf9fe6653efefdbf7caf2357",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/6a27c9e27c2f84678cb487917edc4a16b82c8c30",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/21b38b6ffc5b76b1203df47a96f37e5df14fbcf6",
+        "width" : 64
+      } ],
+      "name" : "Antes de que cuente diez",
+      "type" : "album",
+      "uri" : "spotify:album:5YByMSqR8kLoigJ3h8xgGD"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/1tZ99AnqyjgrmPwLfGU5eo"
+      },
+      "href" : "https://api.spotify.com/v1/artists/1tZ99AnqyjgrmPwLfGU5eo",
+      "id" : "1tZ99AnqyjgrmPwLfGU5eo",
+      "name" : "Fito y Fitipaldis",
+      "type" : "artist",
+      "uri" : "spotify:artist:1tZ99AnqyjgrmPwLfGU5eo"
+    } ],
+    "disc_number" : 1,
+    "duration_ms" : 245213,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "ES5150901070"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/0HYj1k4x1awDQLNZW96MYA"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/0HYj1k4x1awDQLNZW96MYA",
+    "id" : "0HYj1k4x1awDQLNZW96MYA",
+    "is_playable" : true,
+    "name" : "Me acorde de ti",
+    "popularity" : 53,
+    "preview_url" : "https://p.scdn.co/mp3-preview/a171cb88e05ec69932f534ac6cf0b56c098f1a4f",
+    "track_number" : 2,
+    "type" : "track",
+    "uri" : "spotify:track:0HYj1k4x1awDQLNZW96MYA"
+  }, {
+    "album" : {
+      "album_type" : "ALBUM",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/3jdYDg5KQ9d8uBGleBlGYY"
+      },
+      "href" : "https://api.spotify.com/v1/albums/3jdYDg5KQ9d8uBGleBlGYY",
+      "id" : "3jdYDg5KQ9d8uBGleBlGYY",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/fe9c4f17a657f3490ccdf0779e319b3684294bdc",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/da75790f86aba84e15b592746de35bcc30579af4",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/c745b92cc19f25b17a63fb44a1091e405038225c",
+        "width" : 64
+      } ],
+      "name" : "Sentimiento, Elegancia Y Maldad",
+      "type" : "album",
+      "uri" : "spotify:album:3jdYDg5KQ9d8uBGleBlGYY"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/4SsVbpTthjScTS7U2hmr1X"
+      },
+      "href" : "https://api.spotify.com/v1/artists/4SsVbpTthjScTS7U2hmr1X",
+      "id" : "4SsVbpTthjScTS7U2hmr1X",
+      "name" : "Arcangel",
+      "type" : "artist",
+      "uri" : "spotify:artist:4SsVbpTthjScTS7U2hmr1X"
+    } ],
+    "disc_number" : 1,
+    "duration_ms" : 244120,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "USB271311017"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/3D1WVvSo2Mjc4Nf9rF4XqW"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/3D1WVvSo2Mjc4Nf9rF4XqW",
+    "id" : "3D1WVvSo2Mjc4Nf9rF4XqW",
+    "is_playable" : true,
+    "name" : "Como Tiene Que Ser",
+    "popularity" : 51,
+    "preview_url" : "https://p.scdn.co/mp3-preview/28b8f76703da1687ae0abb8e0eecfb99fc5214a1",
+    "track_number" : 8,
+    "type" : "track",
+    "uri" : "spotify:track:3D1WVvSo2Mjc4Nf9rF4XqW"
+  }, {
+    "album" : {
+      "album_type" : "ALBUM",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/6WnU9fIvoqP5R2O2KFiif7"
+      },
+      "href" : "https://api.spotify.com/v1/albums/6WnU9fIvoqP5R2O2KFiif7",
+      "id" : "6WnU9fIvoqP5R2O2KFiif7",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ef5d857a209472cbb297b6517ccfe6ef46a75a64",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/498b179fe6da039430ff26534ac14d39648a3af7",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/5e9123608882a7dac5bc3ed596719da28204984d",
+        "width" : 64
+      } ],
+      "name" : "Señal de Vida",
+      "type" : "album",
+      "uri" : "spotify:album:6WnU9fIvoqP5R2O2KFiif7"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/2OHKEe204spO7G7NcbeO2o"
+      },
+      "href" : "https://api.spotify.com/v1/artists/2OHKEe204spO7G7NcbeO2o",
+      "id" : "2OHKEe204spO7G7NcbeO2o",
+      "name" : "Ñejo",
+      "type" : "artist",
+      "uri" : "spotify:artist:2OHKEe204spO7G7NcbeO2o"
+    }, {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/3jGlU8UMMo44I2xeLQ6FD3"
+      },
+      "href" : "https://api.spotify.com/v1/artists/3jGlU8UMMo44I2xeLQ6FD3",
+      "id" : "3jGlU8UMMo44I2xeLQ6FD3",
+      "name" : "Dalmata",
+      "type" : "artist",
+      "uri" : "spotify:artist:3jGlU8UMMo44I2xeLQ6FD3"
+    } ],
+    "disc_number" : 1,
+    "duration_ms" : 240240,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "QMFME1393106"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/4KAk2OscoVby5SKtNxEeI3"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/4KAk2OscoVby5SKtNxEeI3",
+    "id" : "4KAk2OscoVby5SKtNxEeI3",
+    "is_playable" : true,
+    "name" : "Señal de Vida - Radio Edit",
+    "popularity" : 57,
+    "preview_url" : "https://p.scdn.co/mp3-preview/5ae502392e37e87e94ed7a8072e8cfbf0bd1a24a",
+    "track_number" : 1,
+    "type" : "track",
+    "uri" : "spotify:track:4KAk2OscoVby5SKtNxEeI3"
+  }, {
+    "album" : {
+      "album_type" : "ALBUM",
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/2hdR2Eahz36zXqC62LhmGo"
+      },
+      "href" : "https://api.spotify.com/v1/albums/2hdR2Eahz36zXqC62LhmGo",
+      "id" : "2hdR2Eahz36zXqC62LhmGo",
+      "images" : [ {
+        "height" : 556,
+        "url" : "https://i.scdn.co/image/957ddf7862ce8fde240664bf16a1996be12fa8be",
+        "width" : 640
+      }, {
+        "height" : 261,
+        "url" : "https://i.scdn.co/image/0d91da3a0c308a98be67123cccc420aafe24d150",
+        "width" : 300
+      }, {
+        "height" : 56,
+        "url" : "https://i.scdn.co/image/d45c7dd098447a9fcbc1b911ac20256484c3ee3a",
+        "width" : 64
+      } ],
+      "name" : "Algo para Cantar",
+      "type" : "album",
+      "uri" : "spotify:album:2hdR2Eahz36zXqC62LhmGo"
+    },
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/6mfK6Q2tzLMEchAr0e9Uzu"
+      },
+      "href" : "https://api.spotify.com/v1/artists/6mfK6Q2tzLMEchAr0e9Uzu",
+      "id" : "6mfK6Q2tzLMEchAr0e9Uzu",
+      "name" : "Pereza",
+      "type" : "artist",
+      "uri" : "spotify:artist:6mfK6Q2tzLMEchAr0e9Uzu"
+    } ],
+    "disc_number" : 1,
+    "duration_ms" : 172600,
+    "explicit" : false,
+    "external_ids" : {
+      "isrc" : "ES5020200442"
+    },
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/track/5dncXckT4fSDlyEL9QgzuY"
+    },
+    "href" : "https://api.spotify.com/v1/tracks/5dncXckT4fSDlyEL9QgzuY",
+    "id" : "5dncXckT4fSDlyEL9QgzuY",
+    "is_playable" : true,
+    "name" : "Pienso en Aquella Tarde",
+    "popularity" : 51,
+    "preview_url" : "https://p.scdn.co/mp3-preview/9428bf8f4b9b615d100aae1d61dd39d9a18703ad",
+    "track_number" : 1,
+    "type" : "track",
+    "uri" : "spotify:track:5dncXckT4fSDlyEL9QgzuY"
+  } ],
+  "seeds" : [ {
+    "initialPoolSize" : 250,
+    "afterFilteringSize" : 129,
+    "afterRelinkingSize" : 129,
+    "id" : "6mfK6Q2tzLMEchAr0e9Uzu",
+    "type" : "ARTIST",
+    "href" : "https://api.spotify.com/v1/artists/6mfK6Q2tzLMEchAr0e9Uzu"
+  }, {
+    "initialPoolSize" : 250,
+    "afterFilteringSize" : 225,
+    "afterRelinkingSize" : 222,
+    "id" : "4DYFVNKZ1uixa6SQTvzQwJ",
+    "type" : "ARTIST",
+    "href" : "https://api.spotify.com/v1/artists/4DYFVNKZ1uixa6SQTvzQwJ"
+  } ]
+}
