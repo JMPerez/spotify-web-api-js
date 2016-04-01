@@ -336,6 +336,38 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Get the current user’s top artists based on calculated affinity.
+   * See [Get a User’s Top Artists](https://developer.spotify.com/web-api/get-users-top-artists-and-tracks/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getMyTopArtists = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/top/artists'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Get the current user’s top tracks based on calculated affinity.
+   * See [Get a User’s Top Tracks](https://developer.spotify.com/web-api/get-users-top-artists-and-tracks/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getMyTopTracks = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/top/tracks'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Adds the current user as a follower of one or more other Spotify users.
    * See [Follow Artists or Users](https://developer.spotify.com/web-api/follow-artists-users/) on
    * the Spotify Developer site for more information about the endpoint.
