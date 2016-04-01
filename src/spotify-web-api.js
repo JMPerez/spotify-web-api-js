@@ -1296,7 +1296,6 @@ var SpotifyWebApi = (function() {
    * Retrieve a list of available genres seed parameter values for recommendations.
    * See [Available Genre Seeds](https://developer.spotify.com/web-api/get-recommendations/#available-genre-seeds) on
    * the Spotify Developer site for more information about the endpoint.
-   * @param {Object} options A JSON object with options that can be passed
    * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
