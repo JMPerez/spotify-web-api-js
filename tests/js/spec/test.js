@@ -27,6 +27,7 @@
       artist_albums_limit_2: loadFixture('artist_albums_limit_2'),
       artist_related_artists: loadFixture('artist_related_artists'),
       artist_top_tracks: loadFixture('artist_top_tracks'),
+      search: loadFixture('search'),
       search_album: loadFixture('search_album'),
       search_artist: loadFixture('search_artist'),
       search_track: loadFixture('search_track'),
@@ -213,6 +214,19 @@
         expect(callback.calledWith(null, that.fixtures.artists)).to.be.ok;
         expect(that.requests).to.have.length(1);
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/artists/?ids=0oSGxfWSnnOXhD2fKuz2Gy%2C3dBVyJ7JuOMt4GE9607Qin');
+      });
+
+      it('should search for several types', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.search('muse', ['track', 'artist'], {limit: 1}, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.search)
+        );
+        expect(callback.calledWith(null, that.fixtures.search)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/search/?q=muse&type=track%2Cartist&limit=1');
       });
 
       it('should search for albums', function() {
