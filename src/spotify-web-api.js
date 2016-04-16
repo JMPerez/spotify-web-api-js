@@ -1335,10 +1335,19 @@ var SpotifyWebApi = (function() {
    * @return {void}
    */
   Constr.prototype.setPromiseImplementation = function(promiseImplementation) {
-    if (!('defer' in promiseImplementation)) {
-      throw new Error('Unsupported implementation of Promises/A+');
-    } else {
+    var valid = false;
+    try {
+      var p = new promiseImplementation(function(resolve, reject) { resolve(); });
+      if (typeof p.then === 'function' && typeof p.catch === 'function') {
+        valid = true;
+      }
+    } catch(e) {
+
+    }
+    if (valid) {
       _promiseImplementation = promiseImplementation;
+    } else {
+      throw new Error('Unsupported implementation of Promises/A+');
     }
   };
 
