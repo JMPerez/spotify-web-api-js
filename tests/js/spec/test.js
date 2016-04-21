@@ -531,6 +531,20 @@
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/playlists');
       });
 
+      it('should get current user\'s playlists with options', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.setAccessToken('<example_access_token>');
+        api.getUserPlaylists({limit: 10, offset: 50}, callback);
+        that.requests[0].respond(200,
+          {'Content-Type':'application/json'},
+          JSON.stringify(that.fixtures.user_playlists)
+        );
+        expect(callback.calledWith(null, that.fixtures.user_playlists)).to.be.ok;
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/me/playlists?limit=10&offset=50');
+      });
+
       it('should get a playlist', function() {
         var callback = sinon.spy();
         var api = new SpotifyWebApi();
