@@ -273,7 +273,7 @@ spotifyApi.getUserPlaylists('jmperezperez')
     console.error(err);
   });
 
-spotifyApi.getUserPlaylist('jmperezperez', '4vHIKV7j4QcZwgzGQcZg1x')
+spotifyApi.getPlaylist('jmperezperez', '4vHIKV7j4QcZwgzGQcZg1x')
   .then(function(data) {
     console.log('User playlist', data);
   }, function(err) {
