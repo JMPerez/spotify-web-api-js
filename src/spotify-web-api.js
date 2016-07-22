@@ -428,7 +428,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.followPlaylist = function(ownerId, playlistId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers',
+      url: _baseUri + '/users/' + encodeURIComponent(ownerId) + '/playlists/' + playlistId + '/followers',
       type: 'PUT',
       postData: {}
     };
@@ -495,7 +495,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.unfollowPlaylist = function(ownerId, playlistId, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers',
+      url: _baseUri + '/users/' + encodeURIComponent(ownerId) + '/playlists/' + playlistId + '/followers',
       type: 'DELETE'
     };
     return _checkParamsAndPerformRequest(requestData, callback);
@@ -565,7 +565,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.areFollowingPlaylist = function(ownerId, playlistId, userIds, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers/contains',
+      url: _baseUri + '/users/' + encodeURIComponent(ownerId) + '/playlists/' + playlistId + '/followers/contains',
       type: 'GET',
       params: {
         ids: userIds.join(',')
@@ -609,7 +609,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.getUser = function(userId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId
+      url: _baseUri + '/users/' + encodeURIComponent(userId)
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
@@ -630,7 +630,7 @@ var SpotifyWebApi = (function() {
     var requestData;
     if (typeof userId === 'string') {
       requestData = {
-        url: _baseUri + '/users/' + userId + '/playlists'
+        url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists'
       };
     } else {
       requestData = {
@@ -657,7 +657,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.getPlaylist = function(userId, playlistId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
@@ -677,7 +677,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.getPlaylistTracks = function(userId, playlistId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks'
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks'
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
@@ -695,7 +695,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.createPlaylist = function(userId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists',
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists',
       type: 'POST',
       postData: options
     };
@@ -717,7 +717,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.changePlaylistDetails = function(userId, playlistId, data, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId,
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId,
       type: 'PUT',
       postData: data
     };
@@ -740,7 +740,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.addTracksToPlaylist = function(userId, playlistId, uris, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
       type: 'POST',
       params: {
         uris: uris
@@ -764,7 +764,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.replaceTracksInPlaylist = function(userId, playlistId, uris, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
       type: 'PUT',
       postData: {uris: uris}
     };
@@ -790,7 +790,7 @@ var SpotifyWebApi = (function() {
   Constr.prototype.reorderTracksInPlaylist = function(userId, playlistId, rangeStart, insertBefore, options, callback) {
     /*jshint camelcase: false */
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
       type: 'PUT',
       postData: {
         range_start: rangeStart,
@@ -825,7 +825,7 @@ var SpotifyWebApi = (function() {
     });
 
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
       type: 'DELETE',
       postData: {tracks: dataToBeSent}
     };
@@ -859,7 +859,7 @@ var SpotifyWebApi = (function() {
     });
 
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
       type: 'DELETE',
       postData: {
         tracks: dataToBeSent,
@@ -887,7 +887,7 @@ var SpotifyWebApi = (function() {
   Constr.prototype.removeTracksFromPlaylistInPositions = function(userId, playlistId, positions, snapshotId, callback) {
     /*jshint camelcase: false */
     var requestData = {
-      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
       type: 'DELETE',
       postData: {
         positions: positions,

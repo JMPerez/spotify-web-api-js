@@ -341,6 +341,14 @@
         expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/jmperezperez');
       });
 
+      it('should get information about a user with a "#" character and encode it properly', function() {
+        var callback = sinon.spy();
+        var api = new SpotifyWebApi();
+        api.getUser('#matze23', callback);
+        expect(that.requests).to.have.length(1);
+        expect(that.requests[0].url).to.equal('https://api.spotify.com/v1/users/%23matze23');
+      });
+
       it('should get information about the current logged in user', function() {
         var callback = sinon.spy();
         var api = new SpotifyWebApi();
