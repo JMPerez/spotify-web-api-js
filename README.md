@@ -11,7 +11,7 @@ The wrapper includes helper functions to do the following:
 
 #### Music metadata
 - Albums, artists, tracks and playlists
-- Audio features for tracks
+- Audio features and audio analysis for tracks
 - Albums for a specific artist
 - Top tracks for a specific artist
 - Artists similar to a specific artist
@@ -77,7 +77,8 @@ or by making a copy of the `src/spotify-web-api.js` file
 
 ## Usage
 
-We recommend you have a look at the [documentation](https://jmperezperez.com/spotify-web-api-js/) to get an overview of the supported features.
+We recommend you have a look at the [documentation](https://jmperezperez.com/spotify-web-api-js/) to get an overview of the supported 
+.
 
 The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), and Promises/A+ libraries such as [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when).
 
