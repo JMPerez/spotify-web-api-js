@@ -1286,9 +1286,9 @@ var SpotifyWebApi = (function() {
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
-  Constr.prototype.getAudioFeaturesForTrack = function(trackId, callback) {
+  Constr.prototype.getAudioAnalysisForTrack = function(trackId, callback) {
     var requestData = {};
-    requestData.url = _baseUri + '/audio-features/' + trackId;
+    requestData.url = _baseUri + '/audio-analysis/' + trackId;
     return _checkParamsAndPerformRequest(requestData, {}, callback);
   };
 
