@@ -1,4 +1,4 @@
-Spotify Web API JS [![Build Status](https://travis-ci.org/JMPerez/spotify-web-api-js.svg?branch=master)](https://travis-ci.org/JMPerez/spotify-web-api-js)
+Spotify Web API JS [![Build Status](https://travis-ci.org/JMPerez/spotify-web-api-js.svg?branch=master)](https://travis-ci.org/JMPerez/spotify-web-api-js) [![Coverage Status](https://coveralls.io/repos/JMPerez/spotify-web-api-js/badge.svg)](https://coveralls.io/r/JMPerez/spotify-web-api-js)
 ==================
 
 This is a lightweight wrapper for the [Spotify Web API](https://developer.spotify.com/web-api/) (2kB gzipped + compressed). It includes helper functions for **all Spotify's endpoints**, such as fetching metadata (search and look-up of albums, artists, tracks, playlists, new releases) and user's information (follow users, artists and playlists, and saved tracks management).
