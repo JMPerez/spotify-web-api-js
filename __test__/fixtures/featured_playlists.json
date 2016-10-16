@@ -1,0 +1,336 @@
+module.exports = {
+  "message" : "Feeling nostalgic this afternoon?",
+  "playlists" : {
+    "href" : "https://api.spotify.com/v1/browse/featured-playlists?timestamp=2014-10-23T15:37:39&offset=0&limit=20",
+    "items" : [ {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/4ORiMCgOe6UxBDqW8SF1Lm"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/4ORiMCgOe6UxBDqW8SF1Lm",
+      "id" : "4ORiMCgOe6UxBDqW8SF1Lm",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/de9f55660bc0abbbd36ac43acb80ced3c03da768"
+      } ],
+      "name" : "#ThrowbackThursday",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/4ORiMCgOe6UxBDqW8SF1Lm/tracks",
+        "total" : 24
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:4ORiMCgOe6UxBDqW8SF1Lm"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/51HFHO33vXhvUElwtD9eBD"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/51HFHO33vXhvUElwtD9eBD",
+      "id" : "51HFHO33vXhvUElwtD9eBD",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/d64625b16b7ca5077e84af83a4700cdf1761ee6d"
+      } ],
+      "name" : "Neo Soul",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/51HFHO33vXhvUElwtD9eBD/tracks",
+        "total" : 66
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:51HFHO33vXhvUElwtD9eBD"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/16BpjqQV1Ey0HeDueNDSYz"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/16BpjqQV1Ey0HeDueNDSYz",
+      "id" : "16BpjqQV1Ey0HeDueNDSYz",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/a7814e486f761990c9c73672aaa0cbdbaa5983e7"
+      } ],
+      "name" : "Afternoon Acoustic",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/16BpjqQV1Ey0HeDueNDSYz/tracks",
+        "total" : 116
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:16BpjqQV1Ey0HeDueNDSYz"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/4PVvyd4T99XWeIZOFMbT7k"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/4PVvyd4T99XWeIZOFMbT7k",
+      "id" : "4PVvyd4T99XWeIZOFMbT7k",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/9c3aaec17296bd06a93cf3b8af2c1ea31a099293"
+      } ],
+      "name" : "Retro Pop",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/4PVvyd4T99XWeIZOFMbT7k/tracks",
+        "total" : 135
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:4PVvyd4T99XWeIZOFMbT7k"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/7iiRP3LZPuuoE4dBWWufkw"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/7iiRP3LZPuuoE4dBWWufkw",
+      "id" : "7iiRP3LZPuuoE4dBWWufkw",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/ab4f838da13bb0b2929accdaa9a0f11cefb0e7a1"
+      } ],
+      "name" : "Bring Back the 90s",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/7iiRP3LZPuuoE4dBWWufkw/tracks",
+        "total" : 61
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:7iiRP3LZPuuoE4dBWWufkw"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/2Qi8yAzfj1KavAhWz1gaem"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/2Qi8yAzfj1KavAhWz1gaem",
+      "id" : "2Qi8yAzfj1KavAhWz1gaem",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/9d820048e10707dc0ac7ddae33a34bb2b0d10a2a"
+      } ],
+      "name" : "Rock Classics",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/2Qi8yAzfj1KavAhWz1gaem/tracks",
+        "total" : 92
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:2Qi8yAzfj1KavAhWz1gaem"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/44XJR1i3Vl2B3acOEYwinE"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/44XJR1i3Vl2B3acOEYwinE",
+      "id" : "44XJR1i3Vl2B3acOEYwinE",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/78280176866b4438f27acc7950555d3155876ecd"
+      } ],
+      "name" : "Power Ballads",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/44XJR1i3Vl2B3acOEYwinE/tracks",
+        "total" : 79
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:44XJR1i3Vl2B3acOEYwinE"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/2NFOUmp2wyR5CrXtKDkUkB"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/2NFOUmp2wyR5CrXtKDkUkB",
+      "id" : "2NFOUmp2wyR5CrXtKDkUkB",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/9ae8f6bf396c435adc6a3288f22beea89f96c099"
+      } ],
+      "name" : "Bring Back the 60's",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/2NFOUmp2wyR5CrXtKDkUkB/tracks",
+        "total" : 67
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:2NFOUmp2wyR5CrXtKDkUkB"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/4jONxQje1Fmw9AFHT7bCp8"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/4jONxQje1Fmw9AFHT7bCp8",
+      "id" : "4jONxQje1Fmw9AFHT7bCp8",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/1fb8c82d01eef0dd860c7a74e604e0d332bd50dc"
+      } ],
+      "name" : "Old School Hip Hop",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/4jONxQje1Fmw9AFHT7bCp8/tracks",
+        "total" : 84
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:4jONxQje1Fmw9AFHT7bCp8"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/0c8Y6trDz57umvTPFlo1zF"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/0c8Y6trDz57umvTPFlo1zF",
+      "id" : "0c8Y6trDz57umvTPFlo1zF",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/a4ac931e334d14c24579dbda0c1716b31d2e0f91"
+      } ],
+      "name" : "Femme Fatale",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/0c8Y6trDz57umvTPFlo1zF/tracks",
+        "total" : 79
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:0c8Y6trDz57umvTPFlo1zF"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/42zGB0WsGn8nb1SCS3xtQr"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/42zGB0WsGn8nb1SCS3xtQr",
+      "id" : "42zGB0WsGn8nb1SCS3xtQr",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/96454a691a1170f21d77f9802521ddfcf9d085f1"
+      } ],
+      "name" : "California Sun",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/42zGB0WsGn8nb1SCS3xtQr/tracks",
+        "total" : 26
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:42zGB0WsGn8nb1SCS3xtQr"
+    }, {
+      "collaborative" : false,
+      "external_urls" : {
+        "spotify" : "http://open.spotify.com/user/spotify/playlist/4bWgWsz9p9eZVtpIvBgbsj"
+      },
+      "href" : "https://api.spotify.com/v1/users/spotify/playlists/4bWgWsz9p9eZVtpIvBgbsj",
+      "id" : "4bWgWsz9p9eZVtpIvBgbsj",
+      "images" : [ {
+        "url" : "https://i.scdn.co/image/abb30d1f84ff24ab8c7cb2887814e53ff164a3e9"
+      } ],
+      "name" : "From a Smokey Bar ",
+      "owner" : {
+        "external_urls" : {
+          "spotify" : "http://open.spotify.com/user/spotify"
+        },
+        "href" : "https://api.spotify.com/v1/users/spotify",
+        "id" : "spotify",
+        "type" : "user",
+        "uri" : "spotify:user:spotify"
+      },
+      "public" : null,
+      "tracks" : {
+        "href" : "https://api.spotify.com/v1/users/spotify/playlists/4bWgWsz9p9eZVtpIvBgbsj/tracks",
+        "total" : 47
+      },
+      "type" : "playlist",
+      "uri" : "spotify:user:spotify:playlist:4bWgWsz9p9eZVtpIvBgbsj"
+    } ],
+    "limit" : 20,
+    "next" : null,
+    "offset" : 0,
+    "previous" : null,
+    "total" : 12
+  }
+};

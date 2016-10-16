@@ -1,0 +1,57 @@
+module.exports = {
+  "href" : "https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/albums?offset=0&limit=2&album_type=single,album,compilation,appears_on",
+  "items" : [ {
+    "album_type" : "album",
+    "available_markets" : [ ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/45P1TztZZFbxpmMNuQdR21"
+    },
+    "href" : "https://api.spotify.com/v1/albums/45P1TztZZFbxpmMNuQdR21",
+    "id" : "45P1TztZZFbxpmMNuQdR21",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/54533347f41c7d0afaa3e51f127ec93ea5e70311",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/23e03d404f2b2e203022240d0b555b0ef953c757",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/92cc17359e1c3f4a2faf42ff8dfc98390c9550b4",
+      "width" : 64
+    } ],
+    "name" : "Mas de Cien Amaneceres",
+    "type" : "album",
+    "uri" : "spotify:album:45P1TztZZFbxpmMNuQdR21"
+  }, {
+    "album_type" : "album",
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6M9uDidhgXknM1AIO5Pkb4"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6M9uDidhgXknM1AIO5Pkb4",
+    "id" : "6M9uDidhgXknM1AIO5Pkb4",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/abe64732d0d16bef25dd27e35870dae76fb9eafb",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/9e47cff4b5dc38ab6fb836ea3109e8046cad4d2b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/c8cd3b5e20281000e28682f2fc5313cf21b594f6",
+      "width" : 64
+    } ],
+    "name" : "Mas de Cien Amaneceres",
+    "type" : "album",
+    "uri" : "spotify:album:6M9uDidhgXknM1AIO5Pkb4"
+  } ],
+  "limit" : 2,
+  "next" : "https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/albums?offset=2&limit=2&album_type=single,album,compilation,appears_on",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 33
+};
