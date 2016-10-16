@@ -1,13 +1,13 @@
 {
   "name": "spotify-web-api-js",
   "description": "A client-side JS wrapper for the Spotify Web API",
-  "version": "0.19.3",
+  "version": "0.20.0",
   "homepage": "https://github.com/JMPerez/spotify-web-api-js",
   "author": {
     "name": "José M. Pérez"
   },
   "ignore": [
-    "tests",
+    "__tests__",
     "README.md",
     ".travis.yml",
     ".gitignore",
@@ -18,8 +18,7 @@
     "README.md",
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test"
+    "bower_components"
   ],
   "authors": [
     "jmperez1985@gmail.com"
