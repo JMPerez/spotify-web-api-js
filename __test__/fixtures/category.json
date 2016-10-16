@@ -1,0 +1,10 @@
+module.exports = {
+  "href" : "https://api.spotify.com/v1/browse/categories/dinner",
+  "icons" : [ {
+    "height" : 274,
+    "url" : "https://datsnxq1rwndn.cloudfront.net/media/original/dinner_1b6506abba0ba52c54e6d695c8571078_274x274.jpg",
+    "width" : 274
+  } ],
+  "id" : "dinner",
+  "name" : "Middag"
+};

@@ -1,0 +1,18 @@
+module.exports = {
+  "display_name": "Some Random User",
+  "external_urls": {
+    "spotify": "https://open.spotify.com/user/some_random_user"
+  },
+  "href": "https://api.spotify.com/v1/users/some_random_user",
+  "id": "some_random_user",
+  "images": [
+    {
+      "height": null,
+      "url": "http://profile-images.scdn.co/images/userprofile/default/xx",
+      "width": null
+    }
+  ],
+  "product": "premium",
+  "type": "user",
+  "uri": "spotify:user:some_random_user"
+};

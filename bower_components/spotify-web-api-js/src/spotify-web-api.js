@@ -428,7 +428,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.followPlaylist = function(ownerId, playlistId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(ownerId) + '/playlists/' + playlistId + '/followers',
+      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers',
       type: 'PUT',
       postData: {}
     };
@@ -495,7 +495,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.unfollowPlaylist = function(ownerId, playlistId, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(ownerId) + '/playlists/' + playlistId + '/followers',
+      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers',
       type: 'DELETE'
     };
     return _checkParamsAndPerformRequest(requestData, callback);
@@ -565,7 +565,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.areFollowingPlaylist = function(ownerId, playlistId, userIds, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(ownerId) + '/playlists/' + playlistId + '/followers/contains',
+      url: _baseUri + '/users/' + ownerId + '/playlists/' + playlistId + '/followers/contains',
       type: 'GET',
       params: {
         ids: userIds.join(',')
@@ -609,7 +609,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.getUser = function(userId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId)
+      url: _baseUri + '/users/' + userId
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
@@ -630,14 +630,14 @@ var SpotifyWebApi = (function() {
     var requestData;
     if (typeof userId === 'string') {
       requestData = {
-        url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists'
+        url: _baseUri + '/users/' + userId + '/playlists'
       };
     } else {
       requestData = {
         url: _baseUri + '/me/playlists'
       };
-      callback = options;
       options = userId;
+      callback = options;
     }
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
@@ -657,7 +657,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.getPlaylist = function(userId, playlistId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
@@ -677,7 +677,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.getPlaylistTracks = function(userId, playlistId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks'
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks'
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
@@ -695,7 +695,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.createPlaylist = function(userId, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists',
+      url: _baseUri + '/users/' + userId + '/playlists',
       type: 'POST',
       postData: options
     };
@@ -717,7 +717,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.changePlaylistDetails = function(userId, playlistId, data, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId,
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId,
       type: 'PUT',
       postData: data
     };
@@ -740,7 +740,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.addTracksToPlaylist = function(userId, playlistId, uris, options, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
       type: 'POST',
       params: {
         uris: uris
@@ -764,7 +764,7 @@ var SpotifyWebApi = (function() {
    */
   Constr.prototype.replaceTracksInPlaylist = function(userId, playlistId, uris, callback) {
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
       type: 'PUT',
       postData: {uris: uris}
     };
@@ -788,16 +788,15 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.reorderTracksInPlaylist = function(userId, playlistId, rangeStart, insertBefore, options, callback) {
-    /* eslint-disable camelcase */
+    /*jshint camelcase: false */
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
       type: 'PUT',
       postData: {
         range_start: rangeStart,
         insert_before: insertBefore
       }
     };
-    /* eslint-enable camelcase */
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
 
@@ -826,7 +825,7 @@ var SpotifyWebApi = (function() {
     });
 
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
       type: 'DELETE',
       postData: {tracks: dataToBeSent}
     };
@@ -850,6 +849,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.removeTracksFromPlaylistWithSnapshotId = function(userId, playlistId, uris, snapshotId, callback) {
+    /*jshint camelcase: false */
     var dataToBeSent = uris.map(function(uri) {
       if (typeof uri === 'string') {
         return { uri: uri };
@@ -857,16 +857,15 @@ var SpotifyWebApi = (function() {
         return uri;
       }
     });
-    /* eslint-disable camelcase */
+
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
       type: 'DELETE',
       postData: {
         tracks: dataToBeSent,
         snapshot_id: snapshotId
       }
     };
-    /* eslint-enable camelcase */
     return _checkParamsAndPerformRequest(requestData, {}, callback);
   };
 
@@ -886,16 +885,15 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.removeTracksFromPlaylistInPositions = function(userId, playlistId, positions, snapshotId, callback) {
-    /* eslint-disable camelcase */
+    /*jshint camelcase: false */
     var requestData = {
-      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks',
+      url: _baseUri + '/users/' + userId + '/playlists/' + playlistId + '/tracks',
       type: 'DELETE',
       postData: {
         positions: positions,
         snapshot_id: snapshotId
       }
     };
-    /* eslint-enable camelcase */
     return _checkParamsAndPerformRequest(requestData, {}, callback);
   };
 
@@ -1279,22 +1277,6 @@ var SpotifyWebApi = (function() {
   };
 
   /**
-   * Get audio analysis for a single track identified by its unique Spotify ID.
-   * See [Get Audio Analysis for a Track](https://developer.spotify.com/web-api/get-audio-analysis/) on
-   * the Spotify Developer site for more information about the endpoint.
-   * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
-   * to find the track id (e.g. spotify:track:<here_is_the_track_id>)
-   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
-   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
-   */
-  Constr.prototype.getAudioAnalysisForTrack = function(trackId, callback) {
-    var requestData = {};
-    requestData.url = _baseUri + '/audio-analysis/' + trackId;
-    return _checkParamsAndPerformRequest(requestData, {}, callback);
-  };
-
-  /**
    * Create a playlist-style listening experience based on seed artists, tracks and genres.
    * See [Get Recommendations Based on Seeds](https://developer.spotify.com/web-api/get-recommendations/) on
    * the Spotify Developer site for more information about the endpoint.
@@ -1348,26 +1330,15 @@ var SpotifyWebApi = (function() {
    * Sets an implementation of Promises/A+ to be used. E.g. Q, when.
    * See [Conformant Implementations](https://github.com/promises-aplus/promises-spec/blob/master/implementations.md)
    * for a list of some available options
-   * @param {Object} PromiseImplementation A Promises/A+ valid implementation
+   * @param {Object} promiseImplementation A Promises/A+ valid implementation
    * @throws {Error} If the implementation being set doesn't conform with Promises/A+
    * @return {void}
    */
-  Constr.prototype.setPromiseImplementation = function(PromiseImplementation) {
-    var valid = false;
-    try {
-      var p = new PromiseImplementation(function(resolve) {
-        resolve();
-      });
-      if (typeof p.then === 'function' && typeof p.catch === 'function') {
-        valid = true;
-      }
-    } catch (e) {
-      console.error(e);
-    }
-    if (valid) {
-      _promiseImplementation = PromiseImplementation;
-    } else {
+  Constr.prototype.setPromiseImplementation = function(promiseImplementation) {
+    if (!('defer' in promiseImplementation)) {
       throw new Error('Unsupported implementation of Promises/A+');
+    } else {
+      _promiseImplementation = promiseImplementation;
     }
   };
 

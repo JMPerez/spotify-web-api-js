@@ -1,7 +1,7 @@
 Spotify Web API JS [![Build Status](https://travis-ci.org/JMPerez/spotify-web-api-js.svg?branch=master)](https://travis-ci.org/JMPerez/spotify-web-api-js)
 ==================
 
-This is a lightweight wrapper for the [Spotify Web API](https://developer.spotify.com/web-api/) (1.7kB gzipped + compressed). It includes helper functions for **all Spotify's endpoints**, such as fetching metadata (search and look-up of albums, artists, tracks, playlists, new releases) and user's information (follow users, artists and playlists, and saved tracks management).
+This is a lightweight wrapper for the [Spotify Web API](https://developer.spotify.com/web-api/) (2kB gzipped + compressed). It includes helper functions for **all Spotify's endpoints**, such as fetching metadata (search and look-up of albums, artists, tracks, playlists, new releases) and user's information (follow users, artists and playlists, and saved tracks management).
 
 It doesn't have any dependencies and supports callbacks and promises. It is intended to be run on a browser, but if you want to use Node.JS to make the requests, please check [spotify-web-api-node](https://github.com/thelinmichael/spotify-web-api-node).
 
@@ -77,7 +77,7 @@ or by making a copy of the `src/spotify-web-api.js` file
 
 ## Usage
 
-We recommend you have a look at the [documentation](https://jmperezperez.com/spotify-web-api-js/) to get an overview of the supported 
+We recommend you have a look at the [documentation](https://jmperezperez.com/spotify-web-api-js/) to get an overview of the supported
 .
 
 The wrapper supports callback functions, as well as [Promises](http://www.html5rocks.com/en/tutorials/es6/promises/) (you can also use [a polyfill](https://github.com/jakearchibald/es6-promise)), and Promises/A+ libraries such as [Q](https://github.com/kriskowal/q) and [when](https://github.com/cujojs/when).
@@ -300,15 +300,11 @@ spotifyApi.getUserPlaylists()  // note that we don't pass a user id
 
 Get typings for this package and all responses from Spotify API endpoints from the DefinitelyTyped repository by installing the typescript definition manager ```tsd``` from npm like so:
 
-```
-npm install -g tsd
-```
+  $ npm install -g tsd
 
 Then in the directory in which you want the typings directory, run this command to install both the definitions for this library and the definitions for The Spotify Web API.
 
-```
-tsd install spotify-web-api-js
-```
+  $ tsd install spotify-web-api-js
 
 Then reference the typings from the top of your main .ts file with
 
@@ -316,13 +312,12 @@ Then reference the typings from the top of your main .ts file with
 /// <reference path="../typings/spotify-web-api-js/spotify-web-api-js.d.ts"/>
 ```
 
-
 ## Running tests
 
 In order to run the tests, run:
 
-    npm test
+    $ npm test
 
 If you want to check out the coverage, run:
 
-    grunt coverage
+    $ npm run test:coverage

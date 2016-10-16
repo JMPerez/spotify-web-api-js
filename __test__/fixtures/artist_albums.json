@@ -1,0 +1,469 @@
+module.exports = {
+  "href" : "https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/albums?offset=0&limit=20&album_type=single,album,compilation,appears_on",
+  "items" : [ {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/45P1TztZZFbxpmMNuQdR21"
+    },
+    "href" : "https://api.spotify.com/v1/albums/45P1TztZZFbxpmMNuQdR21",
+    "id" : "45P1TztZZFbxpmMNuQdR21",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/54533347f41c7d0afaa3e51f127ec93ea5e70311",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/23e03d404f2b2e203022240d0b555b0ef953c757",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/92cc17359e1c3f4a2faf42ff8dfc98390c9550b4",
+      "width" : 64
+    } ],
+    "name" : "Mas de Cien Amaneceres",
+    "type" : "album",
+    "uri" : "spotify:album:45P1TztZZFbxpmMNuQdR21"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6M9uDidhgXknM1AIO5Pkb4"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6M9uDidhgXknM1AIO5Pkb4",
+    "id" : "6M9uDidhgXknM1AIO5Pkb4",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/abe64732d0d16bef25dd27e35870dae76fb9eafb",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/9e47cff4b5dc38ab6fb836ea3109e8046cad4d2b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/c8cd3b5e20281000e28682f2fc5313cf21b594f6",
+      "width" : 64
+    } ],
+    "name" : "Mas de Cien Amaneceres",
+    "type" : "album",
+    "uri" : "spotify:album:6M9uDidhgXknM1AIO5Pkb4"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1TYQD5E50a3Csg7So0qKiO"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1TYQD5E50a3Csg7So0qKiO",
+    "id" : "1TYQD5E50a3Csg7So0qKiO",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/edbdaea5d63d272b5d824e1e6006c286b2cb1331",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/1bef3119361825ad1956379fc022c394cbca24f8",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/dbdfe988b037f5f9ca3d5f5f660f9b48f5ba268f",
+      "width" : 64
+    } ],
+    "name" : "Raices",
+    "type" : "album",
+    "uri" : "spotify:album:1TYQD5E50a3Csg7So0qKiO"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2kpb7D2hUNrzJF7DPaxFyZ"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2kpb7D2hUNrzJF7DPaxFyZ",
+    "id" : "2kpb7D2hUNrzJF7DPaxFyZ",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/edbdaea5d63d272b5d824e1e6006c286b2cb1331",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/1bef3119361825ad1956379fc022c394cbca24f8",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/dbdfe988b037f5f9ca3d5f5f660f9b48f5ba268f",
+      "width" : 64
+    } ],
+    "name" : "Raices",
+    "type" : "album",
+    "uri" : "spotify:album:2kpb7D2hUNrzJF7DPaxFyZ"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/2qZt4hXKcszH8qS3pesaI7"
+    },
+    "href" : "https://api.spotify.com/v1/albums/2qZt4hXKcszH8qS3pesaI7",
+    "id" : "2qZt4hXKcszH8qS3pesaI7",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/b42728aa1cf2bc1211b8b6b13f7ce26a7e243020",
+      "width" : 621
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/2d2aa4ee7a42598797376e044122243c8ed9e1aa",
+      "width" : 291
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/4a1494cbeffd96eba7c06f1eee18881141c81ca2",
+      "width" : 62
+    } ],
+    "name" : "Asuntos pendientes",
+    "type" : "album",
+    "uri" : "spotify:album:2qZt4hXKcszH8qS3pesaI7"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5TS9CJQ4nbmzenjv1WOG9J"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5TS9CJQ4nbmzenjv1WOG9J",
+    "id" : "5TS9CJQ4nbmzenjv1WOG9J",
+    "images" : [ {
+      "height" : 634,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/83acce73648c5019ce961ed9512da08d0f0dd08d",
+      "width" : 640
+    }, {
+      "height" : 297,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/c4913259971d1b75d65b590e9a0b2c01acc2a17f",
+      "width" : 300
+    }, {
+      "height" : 63,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/fef203f2e674a804992c28a6a15c1b0e0a3d4ea4",
+      "width" : 64
+    } ],
+    "name" : "Nubes y claros- Acustico 2006-",
+    "type" : "album",
+    "uri" : "spotify:album:5TS9CJQ4nbmzenjv1WOG9J"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6Y1HdCcAfs6Oawt73kuKpx"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6Y1HdCcAfs6Oawt73kuKpx",
+    "id" : "6Y1HdCcAfs6Oawt73kuKpx",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/53bc47ee843490570199789915ae233be71c3d08",
+      "width" : 630
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/94a8324bff9a8695ffac957f03b916144c3ebd42",
+      "width" : 295
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/d076ab98e29615e0d0c8fab4d49a9d95bea79afa",
+      "width" : 63
+    } ],
+    "name" : "En directo",
+    "type" : "album",
+    "uri" : "spotify:album:6Y1HdCcAfs6Oawt73kuKpx"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1hCwejZJomHEdOP7sZmGUR"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1hCwejZJomHEdOP7sZmGUR",
+    "id" : "1hCwejZJomHEdOP7sZmGUR",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/74dfaa37903f73ad94088c9daac6fd8d556d99fd",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/88fb3247c3e4e5db094e01375e76929fe1cbde51",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/7e04567fd71483b35ed7c3a7cc3f2f20d7daff16",
+      "width" : 64
+    } ],
+    "name" : "Negociando gasolina",
+    "type" : "album",
+    "uri" : "spotify:album:1hCwejZJomHEdOP7sZmGUR"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4HNiEBlDqik3hvD1D5Gptx"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4HNiEBlDqik3hvD1D5Gptx",
+    "id" : "4HNiEBlDqik3hvD1D5Gptx",
+    "images" : [ {
+      "height" : 632,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/c2d0a176e80f01ed6a9295b3818567d164033652",
+      "width" : 640
+    }, {
+      "height" : 296,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/9dee070734448f1fd589dc9eb54d4f96862763a0",
+      "width" : 300
+    }, {
+      "height" : 63,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/ee6f7437a97ff155284c2996be1a8daf2714e068",
+      "width" : 64
+    } ],
+    "name" : "Calles de Papel",
+    "type" : "album",
+    "uri" : "spotify:album:4HNiEBlDqik3hvD1D5Gptx"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3dg7xWe5EU25bFZQMW0hFP"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3dg7xWe5EU25bFZQMW0hFP",
+    "id" : "3dg7xWe5EU25bFZQMW0hFP",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/91be30e13aa15bf20172d496eb992006b350a442",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/8f536eb3839b6b34c90d6cee419f70d75148e982",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/3db81afbb5ce855ea42684d53a9c666d381533ec",
+      "width" : 64
+    } ],
+    "name" : "A las 12",
+    "type" : "album",
+    "uri" : "spotify:album:3dg7xWe5EU25bFZQMW0hFP"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7hwGksKIvfyqDj6iAAm1LV"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7hwGksKIvfyqDj6iAAm1LV",
+    "id" : "7hwGksKIvfyqDj6iAAm1LV",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/cd0edbe758a4f4329e005be8379171eb04e65111",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/2ba17331b432cd01d4b157d9071ae81719447cd9",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/79e009a2067a17a4905009e05977534ec57db371",
+      "width" : 64
+    } ],
+    "name" : "A golpes de Rock'n'Roll",
+    "type" : "album",
+    "uri" : "spotify:album:7hwGksKIvfyqDj6iAAm1LV"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7EpE7UsapcAWKmuzWVNa18"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7EpE7UsapcAWKmuzWVNa18",
+    "id" : "7EpE7UsapcAWKmuzWVNa18",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/dff7abe81ba3faca88fa74c31798b25935eca72e",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/e0b960e265c9b46331848493686e8f8e3a2e8a5f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/b1ebbd7556100693e0c916245e0a147ac7f42350",
+      "width" : 64
+    } ],
+    "name" : "Mira",
+    "type" : "album",
+    "uri" : "spotify:album:7EpE7UsapcAWKmuzWVNa18"
+  }, {
+    "album_type" : "single",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6yA6LLpparGE1OYSUHbsya"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6yA6LLpparGE1OYSUHbsya",
+    "id" : "6yA6LLpparGE1OYSUHbsya",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/8e7e0365aacd414fd012ddb6833c4943f0f5c96f",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/10ce04e98bf2915b2488a517a3f4b383e94f9a1b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/79174847b703dfede79ea388a053adc7f4bf8f17",
+      "width" : 64
+    } ],
+    "name" : "Camarote",
+    "type" : "album",
+    "uri" : "spotify:album:6yA6LLpparGE1OYSUHbsya"
+  }, {
+    "album_type" : "single",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4uLSj4AhMO86FUiWSmQY85"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4uLSj4AhMO86FUiWSmQY85",
+    "id" : "4uLSj4AhMO86FUiWSmQY85",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/a236fc9e36f403b4386a6757e8c81dc140c4fd0d",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/2f426b7d56223b2987cf54dbdf4fddea1ec0d972",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/4662fda2a8a31fee83769409b2d973c18d6a6135",
+      "width" : 64
+    } ],
+    "name" : "Lunes de Olvido",
+    "type" : "album",
+    "uri" : "spotify:album:4uLSj4AhMO86FUiWSmQY85"
+  }, {
+    "album_type" : "single",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/19cvmOoDSrQSeWrewHpItq"
+    },
+    "href" : "https://api.spotify.com/v1/albums/19cvmOoDSrQSeWrewHpItq",
+    "id" : "19cvmOoDSrQSeWrewHpItq",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/fa964187fc31c8b9d147ac87f6dc25d227462499",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/5192f08e7f6f377fb589ebca652c1f6f1dae3f06",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/156eae72c3c9e6a32fd578d53b8ee0ff612b792f",
+      "width" : 64
+    } ],
+    "name" : "Lunes de Olvido",
+    "type" : "album",
+    "uri" : "spotify:album:19cvmOoDSrQSeWrewHpItq"
+  }, {
+    "album_type" : "single",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4Jkf8mvWG3Ck3fR6ITtbia"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4Jkf8mvWG3Ck3fR6ITtbia",
+    "id" : "4Jkf8mvWG3Ck3fR6ITtbia",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/549f41a6f955cdb6137e7356da71a2c8f1b7f931",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/fd4b1d6835e9ec2d7975c77c7b919472eec67b0e",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/303d39684a21ba61a43b04e534d8af9ef3aa7883",
+      "width" : 64
+    } ],
+    "name" : "Ganas",
+    "type" : "album",
+    "uri" : "spotify:album:4Jkf8mvWG3Ck3fR6ITtbia"
+  }, {
+    "album_type" : "single",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/010mTPPbvCLqTkMrcPXmh2"
+    },
+    "href" : "https://api.spotify.com/v1/albums/010mTPPbvCLqTkMrcPXmh2",
+    "id" : "010mTPPbvCLqTkMrcPXmh2",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/00159cdb83398ea261f317087d77d304c8485e33",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/bd1d588ee377ee99e831d09025b3f3f695a8c35b",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/6f32ab09762c127980c50ad067fcd1af6796ce95",
+      "width" : 64
+    } ],
+    "name" : "Opciones",
+    "type" : "album",
+    "uri" : "spotify:album:010mTPPbvCLqTkMrcPXmh2"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4yemN6Hd7jibsKraFT6Jbz"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4yemN6Hd7jibsKraFT6Jbz",
+    "id" : "4yemN6Hd7jibsKraFT6Jbz",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/cd0c2f91a04bb131c9928606787019b18c02cb51",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/0c8090ef628b0a3624af861513425e737e081764",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/ecbdfdf8ffd98d334b59b41e4d2c406dbd5e296c",
+      "width" : 64
+    } ],
+    "name" : "Que siga la función",
+    "type" : "album",
+    "uri" : "spotify:album:4yemN6Hd7jibsKraFT6Jbz"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/4UWMB8sGHR1HzwwgX3knpZ"
+    },
+    "href" : "https://api.spotify.com/v1/albums/4UWMB8sGHR1HzwwgX3knpZ",
+    "id" : "4UWMB8sGHR1HzwwgX3knpZ",
+    "images" : [ {
+      "height" : 582,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/18c48170fe71d7f7264f5e16de6da6be182d4951",
+      "width" : 640
+    }, {
+      "height" : 273,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/23de2ac5ec3f1dfd6435b102bbf5fa9b245bd920",
+      "width" : 300
+    }, {
+      "height" : 58,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/3c2f1d5f793058e6a7e41556bf260656c006acef",
+      "width" : 64
+    } ],
+    "name" : "Aquí huele a romero",
+    "type" : "album",
+    "uri" : "spotify:album:4UWMB8sGHR1HzwwgX3knpZ"
+  }, {
+    "album_type" : "album",
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6ERD7RXP7URF4LadMa17M1"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6ERD7RXP7URF4LadMa17M1",
+    "id" : "6ERD7RXP7URF4LadMa17M1",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/5658820aaee39be3a4e9dd755dda38b20c778b07",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/a76a637cc0526182b13fc783a288c2bce1fbc6af",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://d3rt1990lpmkn.cloudfront.net/original/b3ced46c79ca52a6087165a645fdebfc5e24f73c",
+      "width" : 64
+    } ],
+    "name" : "Todos Fuimos Heroes",
+    "type" : "album",
+    "uri" : "spotify:album:6ERD7RXP7URF4LadMa17M1"
+  } ],
+  "limit" : 20,
+  "next" : "https://api.spotify.com/v1/artists/5YyScSZOuBHpoFhGvHFedc/albums?offset=20&limit=11&album_type=single,album,compilation,appears_on",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 31
+};

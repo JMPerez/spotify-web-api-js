@@ -1,0 +1,29 @@
+module.exports = {
+  "external_urls" : {
+    "spotify" : "https://open.spotify.com/artist/0oSGxfWSnnOXhD2fKuz2Gy"
+  },
+  "genres" : [ "Adult Alternative Pop/Rock", "Album Rock", "Alternative Pop/Rock", "Alternative/Indie Rock", "Art Rock", "Avant-Garde", "Blue-Eyed Soul", "British Folk", "British Folk-Rock", "British Invasion", "British Psychedelia", "Christmas", "Club/Dance", "Contemporary Folk", "Contemporary Pop/Rock", "Dance-Pop", "Dance-Rock", "Experimental", "Experimental Rock", "Film Music", "Folk-Rock", "Glam Rock", "Hard Rock", "Holiday", "Holidays", "Mod", "Original Score", "Pop/Rock", "Post-Punk", "Progressive Country", "Proto-Punk", "Psychedelic", "Punk/New Wave", "Singer/Songwriter", "Sophisti-Pop", "Soundtracks", "Stage & Screen" ],
+  "href" : "https://api.spotify.com/v1/artists/0oSGxfWSnnOXhD2fKuz2Gy",
+  "id" : "0oSGxfWSnnOXhD2fKuz2Gy",
+  "images" : [ {
+    "height" : 1000,
+    "url" : "https://d3rt1990lpmkn.cloudfront.net/original/32bd9707b42a2c081482ec9cd3ffa8879f659f95",
+    "width" : 1000
+  }, {
+    "height" : 640,
+    "url" : "https://d3rt1990lpmkn.cloudfront.net/original/865f24753e5e4f40a383bf24a9cdda598a4559a8",
+    "width" : 640
+  }, {
+    "height" : 200,
+    "url" : "https://d3rt1990lpmkn.cloudfront.net/original/7ddd6fa5cf78aee2f2e8b347616151393022b7d9",
+    "width" : 200
+  }, {
+    "height" : 64,
+    "url" : "https://d3rt1990lpmkn.cloudfront.net/original/c8dc28c191432862afce298216458a6f00bbfbd8",
+    "width" : 64
+  } ],
+  "name" : "David Bowie",
+  "popularity" : 77,
+  "type" : "artist",
+  "uri" : "spotify:artist:0oSGxfWSnnOXhD2fKuz2Gy"
+};

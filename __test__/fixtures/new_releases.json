@@ -1,0 +1,491 @@
+module.exports = {
+  "albums" : {
+    "href" : "https://api.spotify.com/v1/browse/new-releases?offset=0&limit=20",
+    "items" : [ {
+      "album_type" : "single",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LV", "MC", "MT", "MX", "MY", "NI", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/60mvULtYiNSRmpVvoa3RE4"
+      },
+      "href" : "https://api.spotify.com/v1/albums/60mvULtYiNSRmpVvoa3RE4",
+      "id" : "60mvULtYiNSRmpVvoa3RE4",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/8642802d13a53541e313781c34521a0d33099aac",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/631ee4d5160303af86751587457b1b00957e0519",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/d7b7140400d985d1294d7b044da1b5b4bfc0ae69",
+        "width" : 64
+      } ],
+      "name" : "We Are One (Ole Ola) [The Official 2014 FIFA World Cup Song]",
+      "type" : "album",
+      "uri" : "spotify:album:60mvULtYiNSRmpVvoa3RE4"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4JXziyWNlxM4oPw34PMjVj"
+      },
+      "href" : "https://api.spotify.com/v1/albums/4JXziyWNlxM4oPw34PMjVj",
+      "id" : "4JXziyWNlxM4oPw34PMjVj",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/47c6249a3d514752fc783e64a2f47611bce66a4b",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/a22dbdd2595f1144890eb269bb93cc79142f2767",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/c1bd45015d6a1245603a88e03d336992f5d653a2",
+        "width" : 64
+      } ],
+      "name" : "A13",
+      "type" : "album",
+      "uri" : "spotify:album:4JXziyWNlxM4oPw34PMjVj"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AU", "BE", "BG", "BO", "BR", "CA", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1SIpLwZu1R69coxKMH06kw"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1SIpLwZu1R69coxKMH06kw",
+      "id" : "1SIpLwZu1R69coxKMH06kw",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/c65ef9bb11bcd9d06aa710866fb3440291c5f9ea",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/8db5eeba539b7eabe7599e13e7bd83b8ec9f98bb",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/abfb50b9844def2e40afac4059da71d658845ab2",
+        "width" : 64
+      } ],
+      "name" : "May Death Never Stop You",
+      "type" : "album",
+      "uri" : "spotify:album:1SIpLwZu1R69coxKMH06kw"
+    }, {
+      "album_type" : "single",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/5qZNAZ5xJCUAiyYoETU0aj"
+      },
+      "href" : "https://api.spotify.com/v1/albums/5qZNAZ5xJCUAiyYoETU0aj",
+      "id" : "5qZNAZ5xJCUAiyYoETU0aj",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/86c15f11c44726c52df044882e39e6c4d168f8a8",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/f7e52154d6ea994ea9e78dd8b1ab0d37417934ef",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/2a5c218cb7e524c5bd95b938b3553905311705da",
+        "width" : 64
+      } ],
+      "name" : "Keep Watch",
+      "type" : "album",
+      "uri" : "spotify:album:5qZNAZ5xJCUAiyYoETU0aj"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/5ZzFFF7wSMmGaIWjAHElnW"
+      },
+      "href" : "https://api.spotify.com/v1/albums/5ZzFFF7wSMmGaIWjAHElnW",
+      "id" : "5ZzFFF7wSMmGaIWjAHElnW",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/aa1d1cf0d70fb29b4ae575f10d2ac8acc88413f5",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/aed60ab4e13c6cd781df8dcd2375c2b186ae1991",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/058e4170c906814ee70fb51ae1d84d09d5244979",
+        "width" : 64
+      } ],
+      "name" : "By Any Means",
+      "type" : "album",
+      "uri" : "spotify:album:5ZzFFF7wSMmGaIWjAHElnW"
+    }, {
+      "album_type" : "single",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/0LKHTm8YOJH9ygGm8DWv40"
+      },
+      "href" : "https://api.spotify.com/v1/albums/0LKHTm8YOJH9ygGm8DWv40",
+      "id" : "0LKHTm8YOJH9ygGm8DWv40",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/6b2eea62c1a6f986824e25ff4e0f072c515a9988",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/f9a46fb4f6f4ca0117c2d1ab530a36958921720b",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/06e3464983b24b9957828d10b6c2a34c6dddae9c",
+        "width" : 64
+      } ],
+      "name" : "Depth of My Soul (feat. Shana Halligan)",
+      "type" : "album",
+      "uri" : "spotify:album:0LKHTm8YOJH9ygGm8DWv40"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1dKh4z5Aayt8FFDWjO5FDh"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1dKh4z5Aayt8FFDWjO5FDh",
+      "id" : "1dKh4z5Aayt8FFDWjO5FDh",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/b2602ba2bd35dca1cc2903d58429a9379b342bf3",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/8b86d8c65c01dacc92305003559db960e36a9614",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/3eb58e564cc6ede9ac234c293e905e166cefa1b2",
+        "width" : 64
+      } ],
+      "name" : "Singles",
+      "type" : "album",
+      "uri" : "spotify:album:1dKh4z5Aayt8FFDWjO5FDh"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/33jUyJOx4j6BWJ7VkzWoth"
+      },
+      "href" : "https://api.spotify.com/v1/albums/33jUyJOx4j6BWJ7VkzWoth",
+      "id" : "33jUyJOx4j6BWJ7VkzWoth",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/e35451b38b162c4a8665b77e729c53a2437d6f74",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/f5baa64ff1928f27163516658b8301b92e54c80a",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/41f4c456d66bc81d4e10d502d707fb778c431798",
+        "width" : 64
+      } ],
+      "name" : "Out Among The Stars",
+      "type" : "album",
+      "uri" : "spotify:album:33jUyJOx4j6BWJ7VkzWoth"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4kE1w1zgP6Ag6Ojbuxzk7l"
+      },
+      "href" : "https://api.spotify.com/v1/albums/4kE1w1zgP6Ag6Ojbuxzk7l",
+      "id" : "4kE1w1zgP6Ag6Ojbuxzk7l",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/c9eca97fd2817f349737dfe2aa672929759a556b",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/b131664fc60fc781b5bfe41a41763d4176abfdcb",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/5d2a8eeb9732f68c09c8c582ee5d028091fe1abf",
+        "width" : 64
+      } ],
+      "name" : "Underneath the Rainbow (Bonus Track Version)",
+      "type" : "album",
+      "uri" : "spotify:album:4kE1w1zgP6Ag6Ojbuxzk7l"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "BE", "BG", "BO", "BR", "CA", "CL", "CO", "CR", "CY", "CZ", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/6RCOAR93Gi157qwW771xFG"
+      },
+      "href" : "https://api.spotify.com/v1/albums/6RCOAR93Gi157qwW771xFG",
+      "id" : "6RCOAR93Gi157qwW771xFG",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/590d34233a0ef309d2c83213fb20cdef7e7804c6",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/5bceabff51f4e0366fa7e05bfc92e3f8a73e157f",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/32d480d47b3f0d0687c7d6cb362f7246b35fb62e",
+        "width" : 64
+      } ],
+      "name" : "Kiss Me Once (Special Edition)",
+      "type" : "album",
+      "uri" : "spotify:album:6RCOAR93Gi157qwW771xFG"
+    }, {
+      "album_type" : "single",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/14GhiNSb8mH3sOnersqp28"
+      },
+      "href" : "https://api.spotify.com/v1/albums/14GhiNSb8mH3sOnersqp28",
+      "id" : "14GhiNSb8mH3sOnersqp28",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/ceabefd7b5c7c1a4a4a550de823289810b14b7dd",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/398e5dda368c86337c8240dd2e6fa015ae576ce2",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/e73d5b0fb22ae7e0ceb66155a7dc82f5512f9005",
+        "width" : 64
+      } ],
+      "name" : "FALLINLOVE2NITE",
+      "type" : "album",
+      "uri" : "spotify:album:14GhiNSb8mH3sOnersqp28"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/7rf1qZJ6hGSlPN7K9ShsVV"
+      },
+      "href" : "https://api.spotify.com/v1/albums/7rf1qZJ6hGSlPN7K9ShsVV",
+      "id" : "7rf1qZJ6hGSlPN7K9ShsVV",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/9ab61dfa896d1431af5cddcb2bb9dba471103bb0",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/fd6fe6aa26f835e85fc8b555f2ed86a36d62ca33",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/c00728e445db587f47d8f4161319d83e5b2fe33c",
+        "width" : 64
+      } ],
+      "name" : "Recess",
+      "type" : "album",
+      "uri" : "spotify:album:7rf1qZJ6hGSlPN7K9ShsVV"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1YPlEB0kZ4SOyT2kBLgINR"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1YPlEB0kZ4SOyT2kBLgINR",
+      "id" : "1YPlEB0kZ4SOyT2kBLgINR",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/baca3f284d82c0b10286dfdd0727b96b7744caf5",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/f0cea1f04f0a442049aad5047d06a4948752d94e",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/233aafd9f55291c1103ed69b821af3521d4f97ce",
+        "width" : 64
+      } ],
+      "name" : "Love Letters",
+      "type" : "album",
+      "uri" : "spotify:album:1YPlEB0kZ4SOyT2kBLgINR"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/2BQejnIGjuFugsT71hhOG3"
+      },
+      "href" : "https://api.spotify.com/v1/albums/2BQejnIGjuFugsT71hhOG3",
+      "id" : "2BQejnIGjuFugsT71hhOG3",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/b02ee9ec0e8eade076bc2358cba1e22921de956d",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/1e92081774a2150269dc23ee02bd643c8e5c1bb5",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/113ff50a0e7d0a52de712314e1bf4e66e1460598",
+        "width" : 64
+      } ],
+      "name" : "The Take Off And Landing Of Everything",
+      "type" : "album",
+      "uri" : "spotify:album:2BQejnIGjuFugsT71hhOG3"
+    }, {
+      "album_type" : "single",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/1RUwY4InqOgnkrH1zcl9AI"
+      },
+      "href" : "https://api.spotify.com/v1/albums/1RUwY4InqOgnkrH1zcl9AI",
+      "id" : "1RUwY4InqOgnkrH1zcl9AI",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/36946cbaa32098e4a3716a18a3b2eb2b4c2d07b0",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/264664cfb24f659e478a768722668dd5658e8ca5",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/b34d0694f1c24489ba862ebb1a32006015e7e1b0",
+        "width" : 64
+      } ],
+      "name" : "Guilty All The Same (feat. Rakim)",
+      "type" : "album",
+      "uri" : "spotify:album:1RUwY4InqOgnkrH1zcl9AI"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "CA", "US" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/13xRSfodlL3UtG3xSyL8u2"
+      },
+      "href" : "https://api.spotify.com/v1/albums/13xRSfodlL3UtG3xSyL8u2",
+      "id" : "13xRSfodlL3UtG3xSyL8u2",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/2ab5e967f8979027fbe7ae7508aaa216f98ebbd9",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/0b87d1fbca3b4bf8a1df3bff69c49083bc0363ba",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/221626b9dc42c9a8e75d53a277c601824f173c49",
+        "width" : 64
+      } ],
+      "name" : "No Mythologies to Follow (Deluxe)",
+      "type" : "album",
+      "uri" : "spotify:album:13xRSfodlL3UtG3xSyL8u2"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/7lAYJiypiPbCDvjKOBX1TV"
+      },
+      "href" : "https://api.spotify.com/v1/albums/7lAYJiypiPbCDvjKOBX1TV",
+      "id" : "7lAYJiypiPbCDvjKOBX1TV",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/915c9f12ef6479d885ae3f6de2dedafb70494d20",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/aba9cf39c84a1444420b230f0e6b851ec4db8f08",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/107b06d55ea161a15a21dec478d5aa1d0befaa40",
+        "width" : 64
+      } ],
+      "name" : "Atlas",
+      "type" : "album",
+      "uri" : "spotify:album:7lAYJiypiPbCDvjKOBX1TV"
+    }, {
+      "album_type" : "single",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4cCfFozyo6JC8acN8uIP7u"
+      },
+      "href" : "https://api.spotify.com/v1/albums/4cCfFozyo6JC8acN8uIP7u",
+      "id" : "4cCfFozyo6JC8acN8uIP7u",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/95f5cbdb03db43c16046562c5f85cc2e3f77b596",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/c950057b00130fb061e801b45aea6cc45dba1bc3",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/53c5c7fbda7527abb8635e7af36af4e333f01e22",
+        "width" : 64
+      } ],
+      "name" : "Magic",
+      "type" : "album",
+      "uri" : "spotify:album:4cCfFozyo6JC8acN8uIP7u"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "IE", "IS", "IT", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SI", "SK", "SV", "TR", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/4JHtCtKG5CXJAXYLJtKUEE"
+      },
+      "href" : "https://api.spotify.com/v1/albums/4JHtCtKG5CXJAXYLJtKUEE",
+      "id" : "4JHtCtKG5CXJAXYLJtKUEE",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/c61a960d6110e259eb26a8a48d39b5b43b61bcdf",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/e504411141d5dd4742d41245e9821d6da9079bc5",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/b4af49db137f7862cef31d64b4ab9c7f14475467",
+        "width" : 64
+      } ],
+      "name" : "Somebody's Party - EP",
+      "type" : "album",
+      "uri" : "spotify:album:4JHtCtKG5CXJAXYLJtKUEE"
+    }, {
+      "album_type" : "album",
+      "available_markets" : [ "AR", "AU", "BO", "BR", "CA", "CL", "CO", "CR", "DO", "EC", "GT", "HK", "HN", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TW", "US", "UY" ],
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/album/0Cvy3SH2exFvz8WIX68HSZ"
+      },
+      "href" : "https://api.spotify.com/v1/albums/0Cvy3SH2exFvz8WIX68HSZ",
+      "id" : "0Cvy3SH2exFvz8WIX68HSZ",
+      "images" : [ {
+        "height" : 640,
+        "url" : "https://i.scdn.co/image/3d0b40dbf4ed6318b2bbe87d83a9bcbf39fcc45d",
+        "width" : 640
+      }, {
+        "height" : 300,
+        "url" : "https://i.scdn.co/image/bc2bd24632e69303590c47a60c0d3b7e73ad641a",
+        "width" : 300
+      }, {
+        "height" : 64,
+        "url" : "https://i.scdn.co/image/79b3b1df664940f0352a7214e1260603124cc590",
+        "width" : 64
+      } ],
+      "name" : "Spotify Sessions - Live at Warped Tour 2013",
+      "type" : "album",
+      "uri" : "spotify:album:0Cvy3SH2exFvz8WIX68HSZ"
+    } ],
+    "limit" : 20,
+    "next" : "https://api.spotify.com/v1/browse/new-releases?offset=20&limit=20",
+    "offset" : 0,
+    "previous" : null,
+    "total" : 123
+  }
+};
