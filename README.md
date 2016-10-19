@@ -296,21 +296,32 @@ spotifyApi.getUserPlaylists()  // note that we don't pass a user id
   });
 ```
 
-## Typings for Typescript
+## Integrated Typescript Typings
 
-Get typings for this package and all responses from Spotify API endpoints from the DefinitelyTyped repository by installing the typescript definition manager ```tsd``` from npm like so:
+Get great code completion for this package using the integrated typescript typings. It includes the complete typings of the Spotify Web Api too, so you'll know both how to the navigate the API as well as the response you are getting. 
 
-  $ npm install -g tsd
+![Typings Example](https://raw.githubusercontent.com/skovmand/spotify-web-api-js/integrated-typescript-typings/typings-example.gif)
 
-Then in the directory in which you want the typings directory, run this command to install both the definitions for this library and the definitions for The Spotify Web API.
+### When bundling the library
 
-  $ tsd install spotify-web-api-js
+If you are bundling spotify-web-api-js using e.g. webpack you can include the library and the typings into a typescript file like this:
 
-Then reference the typings from the top of your main .ts file with
+```typescript
+import * as SpotifyWebApi from 'spotify-web-api-js';
 
+let spotify = new SpotifyWebApi();
 ```
-/// <reference path="../typings/spotify-web-api-js/spotify-web-api-js.d.ts"/>
+
+### When using the library globally
+
+If you are using the library globally, for example including directly from index.html, include the typings in the top of your typescript file. Typescript will then assume the library is already present globally. Adjust the path to ```node_modules```.
+
+```typescript
+/// <reference path="../node_modules/spotify-web-api-js/src/typings/spotify-web-api.d.ts" />
+
+let spotify = new SpotifyWebApi();
 ```
+
 
 ## Running tests
 
