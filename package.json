@@ -7,6 +7,7 @@
     "name": "José M. Pérez"
   },
   "main": "src/spotify-web-api.js",
+  "typings": "src/typings/spotify-web-api.d.ts",
   "repository": {
     "type": "git",
     "url": "git://github.com/JMPerez/spotify-web-api-js"
