@@ -300,7 +300,7 @@ spotifyApi.getUserPlaylists()  // note that we don't pass a user id
 
 Get great code completion for this package using the integrated typescript typings. It includes the complete typings of the Spotify Web Api too, so you'll know both how to the navigate the API as well as the response you are getting. 
 
-![Typings Example](https://raw.githubusercontent.com/skovmand/spotify-web-api-js/integrated-typescript-typings/typings-example.gif)
+![Typings Example](https://raw.githubusercontent.com/JMPerez/spotify-web-api-js/master/typings-example.gif)
 
 ### When bundling the library
 
