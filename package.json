@@ -15,6 +15,7 @@
   "devDependencies": {
     "coveralls": "^2.11.14",
     "eslint": "^3.8.0",
+    "jest-cli": "^16.0.1",
     "q": "^1.4.1",
     "sinon": "^1.17.6"
   },
@@ -30,8 +31,5 @@
   ],
   "keywords": [
     "spotify"
-  ],
-  "dependencies": {
-    "jest-cli": "^16.0.1"
-  }
+  ]
 }
