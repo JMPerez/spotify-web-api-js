@@ -628,7 +628,7 @@ declare namespace SpotifyWebApiJs {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getAudioFeaturesForTrack(trackId: string, callback: ResultsCallback<SpotifyApi.AudioFeaturesResponse>) : Promise<SpotifyApi.AudioFeaturesResponse>
+        getAudioFeaturesForTrack(trackId: string, callback?: ResultsCallback<SpotifyApi.AudioFeaturesResponse>) : Promise<SpotifyApi.AudioFeaturesResponse>
 
         /**
          * Get audio features for multiple tracks based on their Spotify IDs.
