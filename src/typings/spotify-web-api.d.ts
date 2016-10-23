@@ -10,7 +10,7 @@ export as namespace SpotifyWebApi;
 export = SpotifyWebApi;
 
 /**
- * Declare SpotifyWebApi variable, sincle that is the name of the function in spotify-web-api-js.
+ * Declare SpotifyWebApi variable, since that is the name of the function in spotify-web-api-js.
  */
 declare var SpotifyWebApi: SpotifyWebApiJs.SpotifyWebApiJsStatic;
 
@@ -33,7 +33,7 @@ declare namespace SpotifyWebApiJs {
     }
 
     /**
-     * Describes the static side of SpotifyApi. 
+     * Describes the static side of SpotifyApi.
      * Only possibility is to get a new instance of the SpotifyApi.
      */
     interface SpotifyWebApiJsStatic {
@@ -46,7 +46,7 @@ declare namespace SpotifyWebApiJs {
     interface SpotifyWebApiJs {
         /**
          * Fetches a resource through a generic GET request.
-         * 
+         *
          * @param {string} url The URL to be fetched
          * @param {function(Object,Object)} callback An optional callback
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
@@ -57,7 +57,7 @@ declare namespace SpotifyWebApiJs {
          * Fetches information about the current user.
          * See [Get Current User's Profile](https://developer.spotify.com/web-api/get-current-users-profile/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -69,7 +69,7 @@ declare namespace SpotifyWebApiJs {
          * Fetches current user's saved tracks.
          * See [Get Current User's Saved Tracks](https://developer.spotify.com/web-api/get-users-saved-tracks/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -81,7 +81,7 @@ declare namespace SpotifyWebApiJs {
          * Adds a list of tracks to the current user's saved tracks.
          * See [Save Tracks for Current User](https://developer.spotify.com/web-api/save-tracks-user/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
          * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -95,7 +95,7 @@ declare namespace SpotifyWebApiJs {
          * Remove a list of tracks from the current user's saved tracks.
          * See [Remove Tracks for Current User](https://developer.spotify.com/web-api/remove-tracks-user/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
          * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -109,7 +109,7 @@ declare namespace SpotifyWebApiJs {
          * Checks if the current user's saved tracks contains a certain list of tracks.
          * See [Check Current User's Saved Tracks](https://developer.spotify.com/web-api/check-users-saved-tracks/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
          * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -123,7 +123,7 @@ declare namespace SpotifyWebApiJs {
          * Get a list of the albums saved in the current Spotify user's "Your Music" library.
          * See [Get Current User's Saved Albums](https://developer.spotify.com/web-api/get-users-saved-albums/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -135,7 +135,7 @@ declare namespace SpotifyWebApiJs {
          * Save one or more albums to the current user's "Your Music" library.
          * See [Save Albums for Current User](https://developer.spotify.com/web-api/save-albums-user/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI, it is easy
          * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -149,7 +149,7 @@ declare namespace SpotifyWebApiJs {
          * Remove one or more albums from the current user's "Your Music" library.
          * See [Remove Albums for Current User](https://developer.spotify.com/web-api/remove-albums-user/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI, it is easy
          * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -163,7 +163,7 @@ declare namespace SpotifyWebApiJs {
          * Check if one or more albums is already saved in the current Spotify user's "Your Music" library.
          * See [Check User's Saved Albums](https://developer.spotify.com/web-api/check-users-saved-albums/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Array<string>} albumIds The ids of the albums. If you know their Spotify URI, it is easy
          * to find their album id (e.g. spotify:album:<here_is_the_album_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -177,7 +177,7 @@ declare namespace SpotifyWebApiJs {
          * Get the current user’s top artists based on calculated affinity.
          * See [Get a User’s Top Artists](https://developer.spotify.com/web-api/get-users-top-artists-and-tracks/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -189,7 +189,7 @@ declare namespace SpotifyWebApiJs {
          * Get the current user’s top tracks based on calculated affinity.
          * See [Get a User’s Top Tracks](https://developer.spotify.com/web-api/get-users-top-artists-and-tracks/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -621,7 +621,7 @@ declare namespace SpotifyWebApiJs {
          * Get audio features for a single track identified by its unique Spotify ID.
          * See [Get Audio Features for a Track](https://developer.spotify.com/web-api/get-audio-features/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
          * to find the track id (e.g. spotify:track:<here_is_the_track_id>)
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
@@ -634,7 +634,7 @@ declare namespace SpotifyWebApiJs {
          * Get audio features for multiple tracks based on their Spotify IDs.
          * See [Get Audio Features for Several Tracks](https://developer.spotify.com/web-api/get-several-audio-features/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Array<string>} trackIds The ids of the tracks. If you know their Spotify URI it is easy
          * to find their track id (e.g. spotify:track:<here_is_the_track_id>)
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
@@ -647,7 +647,7 @@ declare namespace SpotifyWebApiJs {
          * Create a playlist-style listening experience based on seed artists, tracks and genres.
          * See [Get Recommendations Based on Seeds](https://developer.spotify.com/web-api/get-recommendations/) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
@@ -659,7 +659,7 @@ declare namespace SpotifyWebApiJs {
          * Retrieve a list of available genres seed parameter values for recommendations.
          * See [Available Genre Seeds](https://developer.spotify.com/web-api/get-recommendations/#available-genre-seeds) on
          * the Spotify Developer site for more information about the endpoint.
-         * 
+         *
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
@@ -668,7 +668,7 @@ declare namespace SpotifyWebApiJs {
 
         /**
          * Gets the access token in use.
-         * 
+         *
          * @return {string} accessToken The access token
          */
         getAccessToken() : string;

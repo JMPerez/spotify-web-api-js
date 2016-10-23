@@ -25,9 +25,8 @@
     "travis": "npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "files": [
-    "src/",
-    "LICENSE",
-    "README.md"
+    "src/*.js",
+    "src/typings/*.d.ts"
   ],
   "keywords": [
     "spotify"
