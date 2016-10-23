@@ -1,7 +1,6 @@
-// Type definitions for spotify-web-api-js v0.20.0
+// Type definitions for spotify-web-api-js v0.21.0
 // Project: https://github.com/JMPerez/spotify-web-api-js
 // Definitions by: Niels Kristian Hansen Skovmand <https://github.com/skovmand>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 /// <reference path="./spotify-api.d.ts" />
 
@@ -310,7 +309,7 @@ declare namespace SpotifyWebApiJs {
          * @param options A JSON object with options that can be passed
          * @param callback An optional callback that receives 2 parameters. The first one is the error object (null if no error), and the second is the value if the request succeeded.
          */
-        getUserPlaylists(userId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>) : Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
+        getUserPlaylists(userId?: string, options?: Object, callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>) : Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
 
         /**
          * Fetches a specific playlist.
@@ -628,7 +627,7 @@ declare namespace SpotifyWebApiJs {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getAudioFeaturesForTrack(trackId: string, callback: ResultsCallback<SpotifyApi.AudioFeaturesResponse>) : Promise<SpotifyApi.AudioFeaturesResponse>
+        getAudioFeaturesForTrack(trackId: string, callback?: ResultsCallback<SpotifyApi.AudioFeaturesResponse>) : Promise<SpotifyApi.AudioFeaturesResponse>
 
         /**
          * Get audio features for multiple tracks based on their Spotify IDs.
