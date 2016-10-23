@@ -310,7 +310,7 @@ declare namespace SpotifyWebApiJs {
          * @param options A JSON object with options that can be passed
          * @param callback An optional callback that receives 2 parameters. The first one is the error object (null if no error), and the second is the value if the request succeeded.
          */
-        getUserPlaylists(userId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>) : Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
+        getUserPlaylists(userId?: string, options?: Object, callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>) : Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
 
         /**
          * Fetches a specific playlist.
