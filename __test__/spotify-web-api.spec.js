@@ -575,7 +575,10 @@ var Q = require('q');
         );
         expect(callback.calledWith(null, '')).toBeTruthy();
         expect(that.requests.length).toBe(1);
-        expect(that.requests[0].url).toBe('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks?uris=spotify%3Atrack%3A2Oehrcv4Kov0SuIgWyQY9e');
+        expect(that.requests[0].url).toBe('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks');
+        expect(that.requests[0].requestBody).toBe(JSON.stringify({
+          uris: ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e']
+        }));
       });
 
       it('should add tracks to a playlist, specifying position', function() {
@@ -589,7 +592,10 @@ var Q = require('q');
         );
         expect(callback.calledWith(null, '')).toBeTruthy();
         expect(that.requests.length).toBe(1);
-        expect(that.requests[0].url).toBe('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks?uris=spotify%3Atrack%3A2Oehrcv4Kov0SuIgWyQY9e&position=0');
+        expect(that.requests[0].url).toBe('https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks?position=0');
+        expect(that.requests[0].requestBody).toBe(JSON.stringify({
+          uris: ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e']
+        }));
       });
 
       it('should remove tracks from a playlist', function() {
