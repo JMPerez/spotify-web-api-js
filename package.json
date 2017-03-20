@@ -15,9 +15,9 @@
   "devDependencies": {
     "coveralls": "^2.11.14",
     "eslint": "^3.8.0",
-    "jest-cli": "^16.0.1",
+    "jest-cli": "^19.0.2",
     "q": "^1.4.1",
-    "sinon": "^1.17.6"
+    "sinon": "^2.1.0"
   },
   "scripts": {
     "lint": "eslint src/*.js",
