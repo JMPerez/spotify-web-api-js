@@ -45,5 +45,6 @@ module.exports = {
   follow_are_following_playlist: loadFixture('follow_are_following_playlist'),
   followed_artists: loadFixture('followed_artists'),
   recommendations: loadFixture('recommendations'),
-  genre_seeds: loadFixture('genre_seeds')
+  genre_seeds: loadFixture('genre_seeds'),
+  recently_played_tracks: loadFixture('recently_played_tracks')
 };

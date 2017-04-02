@@ -39,6 +39,7 @@ The wrapper includes helper functions to do the following:
 
 #### Personalization
 - Get a user’s top artists and tracks based on calculated affinity
+- Get current user’s recently played tracks
 
 #### Browse
 - Get new releases
