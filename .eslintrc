@@ -4,7 +4,7 @@ env:
 rules:
     brace-style: [2, "1tbs"]
     comma-style: [2, "last"]
-    camelcase: 2
+    camelcase: 0
     curly: 2
     default-case: 2
     eqeqeq: 2

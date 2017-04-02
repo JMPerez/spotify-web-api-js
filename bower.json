@@ -1,7 +1,7 @@
 {
   "name": "spotify-web-api-js",
   "description": "A client-side JS wrapper for the Spotify Web API",
-  "version": "0.21.0",
+  "version": "0.21.2",
   "homepage": "https://github.com/JMPerez/spotify-web-api-js",
   "author": {
     "name": "José M. Pérez"

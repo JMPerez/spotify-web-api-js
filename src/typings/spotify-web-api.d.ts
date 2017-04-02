@@ -198,6 +198,18 @@ declare namespace SpotifyWebApiJs {
         getMyTopTracks(options?: Object, callback?: ResultsCallback<SpotifyApi.UsersTopTracksResponse>) : Promise<SpotifyApi.UsersTopTracksResponse>;
 
         /**
+         * Get tracks from the current user’s recently played tracks.
+         * See [Get Current User’s Recently Played Tracks](https://developer.spotify.com/web-api/web-api-personalization-endpoints/get-recently-played/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getMyRecentlyPlayedTracks(options?: Object, callback?: ResultsCallback<SpotifyApi.UsersRecentlyPlayedTracksResponse>) : Promise<SpotifyApi.UsersTopTracksResponse>;
+
+        /**
          * Adds the current user as a follower of one or more other Spotify users.
          * See [Follow Artists or Users](https://developer.spotify.com/web-api/follow-artists-users/) on
          * the Spotify Developer site for more information about the endpoint.
