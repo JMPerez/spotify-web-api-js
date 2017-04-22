@@ -59,6 +59,20 @@ The wrapper includes helper functions to do the following:
 - Get followed artists
 - Check if users are following a Playlist
 
+#### Player
+- Get a user's available devices
+- Get information about the user's current playback
+- Get the user's currently playing track
+- Transfer a user's playback
+- Start/Resume a user's playback
+- Pause a user's playback
+- Skip user's playback to next track
+- Skip user's playback to previous track
+- Seek to position in currently playing track
+- Set repeat mode on user's playback
+- Set volume for user's playback
+- Toggle shuffle for user's playback
+
 ## Installation
 Install via bower (browser):
 
