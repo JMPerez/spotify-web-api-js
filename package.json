@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
-    "eslint": "^3.8.0",
+    "eslint": "^4.1.0",
     "jest-cli": "^20.0.0",
     "q": "^1.4.1",
     "sinon": "^2.1.0"
