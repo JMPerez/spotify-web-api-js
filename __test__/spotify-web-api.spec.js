@@ -1123,7 +1123,6 @@ describe('Basic tests', function() {
       api.play(callback);
       that.requests[0].respond(204);
       expect(that.requests[0].method).toBe('PUT');
-      console.log(callback);
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/player/play');
