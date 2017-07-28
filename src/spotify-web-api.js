@@ -1544,7 +1544,7 @@ var SpotifyWebApi = (function() {
   Constr.prototype.skipToNext = function(options, callback) {
     var params = 'device_id' in options ? {device_id: options.device_id} : null;
     var requestData = {
-      type: 'PUT',
+      type: 'POST',
       url: _baseUri + '/me/player/next',
       params: params
     };
@@ -1566,7 +1566,7 @@ var SpotifyWebApi = (function() {
   Constr.prototype.skipToPrevious = function(options, callback) {
     var params = 'device_id' in options ? {device_id: options.device_id} : null;
     var requestData = {
-      type: 'PUT',
+      type: 'POST',
       url: _baseUri + '/me/player/previous',
       params: params
     };
