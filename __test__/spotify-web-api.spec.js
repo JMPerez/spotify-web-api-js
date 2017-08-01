@@ -1160,7 +1160,7 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.skipToNext({ device_id: 'my_device_id' }, callback);
       that.requests[0].respond(204);
-      expect(that.requests[0].method).toBe('PUT');
+      expect(that.requests[0].method).toBe('POST');
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/player/next?device_id=my_device_id');
@@ -1171,7 +1171,7 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.skipToPrevious({ device_id: 'my_device_id' }, callback);
       that.requests[0].respond(204);
-      expect(that.requests[0].method).toBe('PUT');
+      expect(that.requests[0].method).toBe('POST');
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/player/previous?device_id=my_device_id');
