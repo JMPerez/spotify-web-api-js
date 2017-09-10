@@ -948,6 +948,10 @@ declare namespace SpotifyApi {
         uri: string
     }
 
+    /**
+     * Context Object
+     * [](https://developer.spotify.com/web-api/object-model/#context-object)
+     */
     interface ContextObject {
         type: string,
         href: string,
@@ -955,6 +959,10 @@ declare namespace SpotifyApi {
         uri: string
     }
 
+    /**
+     * Play History Object
+     * [](https://developer.spotify.com/web-api/web-api-personalization-endpoints/get-recently-played/#play-history-object)
+     */
     interface PlayHistoryObject {
         track: TrackObjectSimplified,
         played_at: string,
