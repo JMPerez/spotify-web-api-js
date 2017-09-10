@@ -1,4 +1,4 @@
-// Type definitions for spotify-web-api-js v0.21.0
+// Type definitions for spotify-web-api-js v0.21.2
 // Project: https://github.com/JMPerez/spotify-web-api-js
 // Definitions by: Niels Kristian Hansen Skovmand <https://github.com/skovmand>
 
