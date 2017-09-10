@@ -207,7 +207,7 @@ declare namespace SpotifyWebApiJs {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getMyRecentlyPlayedTracks(options?: Object, callback?: ResultsCallback<SpotifyApi.UsersRecentlyPlayedTracksResponse>) : Promise<SpotifyApi.UsersTopTracksResponse>;
+        getMyRecentlyPlayedTracks(options?: Object, callback?: ResultsCallback<SpotifyApi.UsersRecentlyPlayedTracksResponse>) : Promise<SpotifyApi.UsersRecentlyPlayedTracksResponse>;
 
         /**
          * Adds the current user as a follower of one or more other Spotify users.
