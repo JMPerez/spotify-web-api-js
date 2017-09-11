@@ -1,7 +1,6 @@
 // Tests for the type definitions for The Spotify Web API (including changes March 29th 2016)
 // Project: https://developer.spotify.com/web-api/
 // Definitions by: Niels Kristian Hansen Skovmand <https://github.com/skovmand>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 /*
  * This test file contains the sample output from The Spotify Web Api obtained from [The Web API Console](https://developer.spotify.com/web-api/console/)
@@ -7065,11 +7064,13 @@ const replacePlaylistTracks : SpotifyApi.ReplacePlaylistTracksResponse = {};
  */
 const checkUserFollowsPlaylist : SpotifyApi.UsersFollowPlaylistReponse = [true, false, true];
 
-import * as album from '__test__/fixtures.js';
-console.log('he!');
+
+
+
 
 /**
  * Get current user's recently played tracks
+ * 
  * GET /v1/me/player/recently-played
  * https://developer.spotify.com/web-api/web-api-personalization-endpoints/get-recently-played/
  */
