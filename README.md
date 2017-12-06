@@ -107,7 +107,7 @@ If you have an access token, you can set it doing:
 spotifyApi.setAccessToken('<here_your_access_token>');
 ```
 
-When you set an access token, it will be used for signing your requests. Note that an access token is not always necessary, unless you want to sign your requests or have access to data that a user has granted access to your app.
+When you set an access token, it will be used for signing your requests. An access token is required for all endpoints.
 
 If you want to use a Promises/A+ library, you can set it:
 ```javascript
@@ -273,7 +273,7 @@ spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', {limit: 10})
 ```
 
 ### Getting user's information
-In order to get user's information you will probably need to request an access token. Say for instance you want to get user's playlists. Once you get an access token, set it and fetch the data:
+In order to get user's information you need to request a user-signed access token, from either the Implicit Grant or Authorization Code flow. Say for instance you want to get user's playlists. Once you get an access token, set it and fetch the data:
 
 ```javascript
 // get an access token
