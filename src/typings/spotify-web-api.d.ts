@@ -558,6 +558,22 @@ declare namespace SpotifyWebApiJs {
         removeTracksFromPlaylistInPositions(userId: string, playlistId: string, positions: number[], snapshotId: string, callback?: ResultsCallback<SpotifyApi.PlaylistSnapshotResponse>) : Promise<SpotifyApi.PlaylistSnapshotResponse>;
 
         /**
+         * Upload a custom playlist cover image.
+         * See [Upload A Custom Playlist Cover Image](https://developer.spotify.com/web-api/upload-a-custom-playlist-cover-image/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
+         * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+         * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+         * @param {string} imageData Base64 encoded JPEG image data, maximum payload size is 256 KB.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        uploadCustomPlaylistCoverImage(userId: string, playlistId: string, imageData: string, callback?: ResultsCallback<SpotifyApi.UploadCustomPlaylistCoverImageReponse>) : Promise<SpotifyApi.UploadCustomPlaylistCoverImageReponse>;
+
+        /**
          * Fetches an album from the Spotify catalog.
          * See [Get an Album](https://developer.spotify.com/web-api/get-album/) on
          * the Spotify Developer site for more information about the endpoint.

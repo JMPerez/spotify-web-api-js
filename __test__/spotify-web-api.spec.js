@@ -760,6 +760,24 @@ describe('Basic tests', function() {
       );
     });
 
+    it('should upload a custom playlist cover image', function() {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      var imageDataWithEncoding = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2';
+      var imageDataWithoutEncoding = '/9j/4AAQSkZJRgABAQAAAQABAAD/2';
+      api.setAccessToken('<example_access_token>');
+      api.uploadCustomPlaylistCoverImage('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', imageDataWithEncoding, callback);
+      that.requests[0].respond(202);
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/images'
+      );
+      expect(that.requests[0].method).toBe('PUT');
+      expect(that.requests[0].status).toBe(202);
+      expect(that.requests[0].requestHeaders['Content-Type'].includes('image/jpeg')).toBe(true);
+      expect(that.requests[0].requestBody).toBe(imageDataWithoutEncoding);
+    });
+
     it('should get featured playlists', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
