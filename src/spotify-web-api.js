@@ -98,6 +98,9 @@ var SpotifyWebApi = (function() {
       if (_accessToken) {
         req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
       }
+      if (requestData.contentType) {
+        req.setRequestHeader('Content-Type', requestData.contentType)
+      }
 
       req.onreadystatechange = function() {
         if (req.readyState === 4) {
@@ -119,7 +122,11 @@ var SpotifyWebApi = (function() {
       if (type === 'GET') {
         req.send(null);
       } else {
-        req.send(requestData.postData ? JSON.stringify(requestData.postData) : null);
+        var postData = null
+        if (requestData.postData) {
+          postData = requestData.contentType === 'image/jpeg' ? requestData.postData : JSON.stringify(requestData.postData)
+        }
+        req.send(postData);
       }
     };
 
@@ -955,6 +962,30 @@ var SpotifyWebApi = (function() {
       }
     };
     /* eslint-enable camelcase */
+    return _checkParamsAndPerformRequest(requestData, {}, callback);
+  };
+
+  /**
+   * Upload a custom playlist cover image.
+   * See [Upload A Custom Playlist Cover Image](https://developer.spotify.com/web-api/upload-a-custom-playlist-cover-image/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+   * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {string} imageData Base64 encoded JPEG image data, maximum payload size is 256 KB.
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.uploadCustomPlaylistCoverImage = function(userId, playlistId, imageData, callback) {
+    var requestData = {
+      url: _baseUri + '/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/images',
+      type: 'PUT',
+      postData: imageData.replace(/^data:image\/jpeg;base64,/, ''),
+      contentType: 'image/jpeg'
+    };
     return _checkParamsAndPerformRequest(requestData, {}, callback);
   };
 

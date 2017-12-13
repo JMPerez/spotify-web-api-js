@@ -30,6 +30,7 @@ The wrapper includes helper functions to do the following:
 - Remove tracks from a playlist
 - Replace tracks in a playlist
 - Reorder tracks in a playlist
+- Upload custom playlist cover image
 
 #### Your Music library
 - Add, remove, and get tracks that are in the signed in user's Your Music library
