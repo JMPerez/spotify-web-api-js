@@ -147,17 +147,17 @@ function onUserInput(queryTerm) {
   }
 
   // store the current promise in case we need to abort it
-  prev = spotifyApi.searchTracks(queryTerm, {limit: 5})
-    .then(function(data) {
+  prev = spotifyApi.searchTracks(queryTerm, {limit: 5});
+  prev.then(function(data) {
 
-      // clean the promise so it doesn't call abort
-      prev = null;
+    // clean the promise so it doesn't call abort
+    prev = null;
 
-      // ...render list of search results...
+    // ...render list of search results...
 
-    }, function(err) {
-      console.error(err);
-    });
+  }, function(err) {
+    console.error(err);
+  });
 }
 ```
 
