@@ -17,7 +17,7 @@
     "eslint": "^4.1.0",
     "jest-cli": "^22.3.0",
     "q": "^1.4.1",
-    "sinon": "^4.0.0"
+    "sinon": "^5.0.0"
   },
   "scripts": {
     "lint": "eslint src/*.js",
