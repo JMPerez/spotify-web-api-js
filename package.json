@@ -6,6 +6,7 @@
   "author": {
     "name": "José M. Pérez"
   },
+  "license": "MIT",
   "main": "src/spotify-web-api.js",
   "typings": "src/typings/spotify-web-api.d.ts",
   "repository": {
