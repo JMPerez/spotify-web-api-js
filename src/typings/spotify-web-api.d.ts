@@ -14,12 +14,16 @@ export = SpotifyWebApi;
 declare var SpotifyWebApi: SpotifyWebApiJs.SpotifyWebApiJsStatic;
 
 declare namespace SpotifyWebApiJs {
+    interface VoidResultsCallback {
+        (error: ErrorObject): any;
+    }
+
     /**
      * An optional callback that receives 2 parameters. The first
      * one is the error object (null if no error), and the second is the value if the request succeeded.
      */
     interface ResultsCallback<T> {
-        (error: ErrorObject, value: T) : any
+        (error: ErrorObject, value: T): any;
     }
 
     /**
@@ -207,7 +211,9 @@ declare namespace SpotifyWebApiJs {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getMyRecentlyPlayedTracks(options?: Object, callback?: ResultsCallback<SpotifyApi.UsersRecentlyPlayedTracksResponse>) : Promise<SpotifyApi.UsersRecentlyPlayedTracksResponse>;
+        getMyRecentlyPlayedTracks(options?: SpotifyApi.RecentlyPlayedParameterObject) : Promise<SpotifyApi.UsersRecentlyPlayedTracksResponse>;
+        getMyRecentlyPlayedTracks(options: SpotifyApi.RecentlyPlayedParameterObject, callback: ResultsCallback<SpotifyApi.UsersRecentlyPlayedTracksResponse>): void;
+        getMyRecentlyPlayedTracks(callback: ResultsCallback<SpotifyApi.UsersRecentlyPlayedTracksResponse>): void;
 
         /**
          * Adds the current user as a follower of one or more other Spotify users.
@@ -877,7 +883,180 @@ declare namespace SpotifyWebApiJs {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getAvailableGenreSeeds(callback?: ResultsCallback<SpotifyApi.AvailableGenreSeedsResponse>) : Promise<SpotifyApi.AvailableGenreSeedsResponse>
+        getAvailableGenreSeeds(callback?: ResultsCallback<SpotifyApi.AvailableGenreSeedsResponse>) : Promise<SpotifyApi.AvailableGenreSeedsResponse>;
+        
+        /**
+        * Get information about a user’s available devices.
+        * See [Get a User’s Available Devices](https://developer.spotify.com/web-api/get-a-users-available-devices/) on
+        * the Spotify Developer site for more information about the endpoint.
+        *
+        * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+        * one is the error object (null if no error), and the second is the value if the request succeeded.
+        * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+        */
+        getMyDevices(): Promise<SpotifyApi.UserDevicesResponse>;
+        getMyDevices(callback: ResultsCallback<SpotifyApi.UserDevicesResponse>): void;
+
+        /**
+         * Get information about the user’s current playback state, including track, track progress, and active device.
+         * See [Get Information About The User’s Current Playback](https://developer.spotify.com/web-api/get-information-about-the-users-current-playback/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getMyCurrentPlaybackState(options?: SpotifyApi.TrackRelinkingParameterObject): Promise<SpotifyApi.CurrentPlaybackResponse>;
+        getMyCurrentPlaybackState(options: SpotifyApi.TrackRelinkingParameterObject, callback: ResultsCallback<SpotifyApi.CurrentPlaybackResponse>): void;
+        getMyCurrentPlaybackState(callback: ResultsCallback<SpotifyApi.CurrentPlaybackResponse>): void;
+
+        /**
+         * Get the object currently being played on the user’s Spotify account.
+         * See [Get the User’s Currently Playing Track](https://developer.spotify.com/web-api/get-the-users-currently-playing-track/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getMyCurrentPlayingTrack(options?: SpotifyApi.TrackRelinkingParameterObject): Promise<SpotifyApi.CurrentlyPlayingResponse>;
+        getMyCurrentPlayingTrack(options: SpotifyApi.TrackRelinkingParameterObject, callback: ResultsCallback<SpotifyApi.CurrentlyPlayingResponse>): void;
+        getMyCurrentPlayingTrack(callback: ResultsCallback<SpotifyApi.CurrentlyPlayingResponse>): void;
+
+        /**
+         * Transfer playback to a new device and determine if it should start playing.
+         * See [Transfer a User’s Playback](https://developer.spotify.com/web-api/transfer-a-users-playback/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Array<string>} deviceIds A JSON array containing the ID of the device on which playback should be started/transferred.
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        transferMyPlayback(deviceIds: string[], options?: SpotifyApi.TransferPlaybackParameterObject): Promise<void>;
+        transferMyPlayback(deviceIds: string[], options: SpotifyApi.TransferPlaybackParameterObject, callback: VoidResultsCallback): void;
+        transferMyPlayback(deviceIds: string[], callback: VoidResultsCallback): void;
+
+        /**
+         * Start a new context or resume current playback on the user’s active device.
+         * See [Start/Resume a User’s Playback](https://developer.spotify.com/web-api/start-a-users-playback/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        play(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        play(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        play(callback: VoidResultsCallback): void;
+
+        /**
+         * Pause playback on the user’s account.
+         * See [Pause a User’s Playback](https://developer.spotify.com/web-api/pause-a-users-playback/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        pause(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        pause(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        pause(callback: VoidResultsCallback): void;
+
+        /**
+         * Skips to next track in the user’s queue.
+         * See [Skip User’s Playback To Next Track](https://developer.spotify.com/web-api/skip-users-playback-to-next-track/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        skipToNext(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        skipToNext(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        skipToNext(callback: VoidResultsCallback): void;
+
+        /**
+         * Skips to previous track in the user’s queue.
+         * Note that this will ALWAYS skip to the previous track, regardless of the current track’s progress.
+         * Returning to the start of the current track should be performed using `.seek()`
+         * See [Skip User’s Playback To Previous Track](https://developer.spotify.com/web-api/skip-users-playback-to-next-track/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        skipToPrevious(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        skipToPrevious(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        skipToPrevious(callback: VoidResultsCallback): void;
+
+        /**
+         * Seeks to the given position in the user’s currently playing track.
+         * See [Seek To Position In Currently Playing Track](https://developer.spotify.com/web-api/seek-to-position-in-currently-playing-track/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {number} position_ms The position in milliseconds to seek to. Must be a positive number.
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        seek(position: number, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        seek(position: number, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        seek(position: number, callback: VoidResultsCallback): void;
+
+        /**
+         * Set the repeat mode for the user’s playback. Options are repeat-track, repeat-context, and off.
+         * See [Set Repeat Mode On User’s Playback](https://developer.spotify.com/web-api/set-repeat-mode-on-users-playback/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {String} state A string set to 'track', 'context' or 'off'.
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        setRepeat(state: SpotifyApi.PlaybackRepeatState, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        setRepeat(state: SpotifyApi.PlaybackRepeatState, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        setRepeat(state: SpotifyApi.PlaybackRepeatState, callback: VoidResultsCallback): void;
+
+        /**
+         * Set the volume for the user’s current playback device.
+         * See [Set Volume For User’s Playback](https://developer.spotify.com/web-api/set-volume-for-users-playback/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {number} volume_percent The volume to set. Must be a value from 0 to 100 inclusive.
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        setVolume(volumePercent: number, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        setVolume(volumePercent: number, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        setVolume(volumePercent: number, callback: VoidResultsCallback): void;
+
+        /**
+         * Toggle shuffle on or off for user’s playback.
+         * See [Toggle Shuffle For User’s Playback](https://developer.spotify.com/web-api/toggle-shuffle-for-users-playback/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {bool} state Whether or not to shuffle user's playback.
+         * @param {Object} options A JSON object with options that can be passed.
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        setShuffle(state: boolean, options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
+        setShuffle(state: boolean, options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        setShuffle(state: boolean, callback: VoidResultsCallback): void;
 
         /**
          * Gets the access token in use.
