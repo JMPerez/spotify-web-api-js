@@ -103,6 +103,23 @@ declare namespace SpotifyApi {
         target_valence?: number
     }
 
+    interface RecentlyPlayedParameterObject {
+        limit?: number;
+        after?: number;
+        before?: number;
+    }
+
+    interface TransferPlaybackParameterObject {
+        play?: boolean;
+    }
+
+    interface TrackRelinkingParameterObject {
+        market?: string;
+    }
+
+    interface DeviceSpecificParameterObject {
+        device_id?: string;
+    }
 
     //
     // Responses from the Spotify Web API in the same order as in the API endpoint docs seen here:
@@ -122,7 +139,6 @@ declare namespace SpotifyApi {
     interface PlaylistSnapshotResponse {
         snapshot_id: string
     }
-
 
     // Spotify API Endpoints:
 
@@ -603,7 +619,13 @@ declare namespace SpotifyApi {
      */
     interface UsersFollowPlaylistReponse extends Array<boolean> {}
 
+    interface UserDevicesResponse {
+        devices: UserDevice[];
+    }
 
+    interface CurrentPlaybackResponse extends CurrentlyPlayingObject, PlaybackObject {}
+
+    interface CurrentlyPlayingResponse extends CurrentlyPlayingObject {}
 
     //
     // Objects from the Object Models of the Spotify Web Api, ordered alphabetically.
@@ -961,10 +983,10 @@ declare namespace SpotifyApi {
      * [](https://developer.spotify.com/web-api/object-model/#context-object)
      */
     interface ContextObject {
-        type: string,
-        href: string,
-        external_urls: ExternalUrlObject,
-        uri: string
+        type: ContextObjectType;
+        href: string | null;
+        external_urls: ExternalUrlObject | null;
+        uri: string;
     }
 
     /**
@@ -972,8 +994,34 @@ declare namespace SpotifyApi {
      * [](https://developer.spotify.com/web-api/web-api-personalization-endpoints/get-recently-played/#play-history-object)
      */
     interface PlayHistoryObject {
-        track: TrackObjectSimplified,
-        played_at: string,
-        context: ContextObject
+        track: TrackObjectSimplified;
+        played_at: string;
+        context: ContextObject;
     }
+
+    interface PlaybackObject {
+        shuffle_state: boolean;
+        repeat_state: PlaybackRepeatState;
+    }
+
+    interface CurrentlyPlayingObject {
+        timestamp: number;
+        device: UserDevice;
+        progress_ms: number | null;
+        is_playing: boolean;
+        item: TrackObjectFull | null;
+        context: ContextObject | null;
+    }
+
+    interface UserDevice {
+        id: string | null;
+        is_active: boolean;
+        is_restricted: boolean;
+        name: string;
+        type: string;
+        volume_percent: number | null;
+    }
+
+    type ContextObjectType = 'artist' | 'playlist' | 'album';
+    type PlaybackRepeatState = 'off' | 'track' | 'context';
 }
