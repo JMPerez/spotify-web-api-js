@@ -1523,6 +1523,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.play = function(options, callback) {
+    options = options || {};
     var params = 'device_id' in options ? {device_id: options.device_id} : null;
     var postData = {};
     ['context_uri', 'uris', 'offset'].forEach(function(field) {
@@ -1553,6 +1554,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.pause = function(options, callback) {
+    options = options || {};
     var params = 'device_id' in options ? {device_id: options.device_id} : null;
     var requestData = {
       type: 'PUT',
@@ -1573,6 +1575,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.skipToNext = function(options, callback) {
+    options = options || {};
     var params = 'device_id' in options ? {device_id: options.device_id} : null;
     var requestData = {
       type: 'POST',
@@ -1595,6 +1598,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.skipToPrevious = function(options, callback) {
+    options = options || {};
     var params = 'device_id' in options ? {device_id: options.device_id} : null;
     var requestData = {
       type: 'POST',
