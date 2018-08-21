@@ -442,12 +442,12 @@ describe('Basic tests', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
-      api.getPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', callback);
+      api.getPlaylist('7Kud0O2IdWLbEGgvBkW9di', callback);
       that.requests[0].respond(200, { 'Content-Type': 'application/json' }, JSON.stringify(fixtures.playlist));
       expect(callback.calledWith(null, fixtures.playlist)).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di'
       );
     });
 
@@ -455,12 +455,12 @@ describe('Basic tests', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
-      api.getPlaylistTracks('wizzler', '0EIVqzEcrY2a8vO0AUJar2', callback);
+      api.getPlaylistTracks('0EIVqzEcrY2a8vO0AUJar2', callback);
       that.requests[0].respond(200, { 'Content-Type': 'application/json' }, JSON.stringify(fixtures.playlist_tracks));
       expect(callback.calledWith(null, fixtures.playlist_tracks)).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/wizzler/playlists/0EIVqzEcrY2a8vO0AUJar2/tracks'
+        'https://api.spotify.com/v1/playlists/0EIVqzEcrY2a8vO0AUJar2/tracks'
       );
     });
 
@@ -480,7 +480,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.changePlaylistDetails(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         {
           name: 'A NEW name for the playlist',
@@ -492,7 +491,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di'
       );
     });
 
@@ -501,7 +500,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.addTracksToPlaylist(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e'],
         callback
@@ -510,7 +508,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].requestBody).toBe(
         JSON.stringify({
@@ -524,7 +522,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.addTracksToPlaylist(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e'],
         { position: 0 },
@@ -534,7 +531,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks?position=0'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks?position=0'
       );
       expect(that.requests[0].requestBody).toBe(
         JSON.stringify({
@@ -548,7 +545,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.removeTracksFromPlaylist(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e'],
         callback
@@ -557,7 +553,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('DELETE');
       expect(that.requests[0].status).toBe(200);
@@ -573,7 +569,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.removeTracksFromPlaylist(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         [{ uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e', positions: [6] }],
         callback
@@ -582,7 +577,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('DELETE');
       expect(that.requests[0].status).toBe(200);
@@ -603,7 +598,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.removeTracksFromPlaylistWithSnapshotId(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e'],
         'AsNaPsHoTiD',
@@ -613,7 +607,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('DELETE');
       expect(that.requests[0].status).toBe(200);
@@ -630,7 +624,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.removeTracksFromPlaylistWithSnapshotId(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         [{ uri: 'spotify:track:2Oehrcv4Kov0SuIgWyQY9e', positions: [6] }],
         'AsNaPsHoTiD',
@@ -640,7 +633,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('DELETE');
       expect(that.requests[0].status).toBe(200);
@@ -662,7 +655,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.removeTracksFromPlaylistInPositions(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         [0, 1, 3, 9],
         'AsNaPsHoTiD',
@@ -672,7 +664,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('DELETE');
       expect(that.requests[0].status).toBe(200);
@@ -689,7 +681,6 @@ describe('Basic tests', function() {
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
       api.replaceTracksInPlaylist(
-        'jmperezperez',
         '7Kud0O2IdWLbEGgvBkW9di',
         ['spotify:track:2Oehrcv4Kov0SuIgWyQY9e'],
         callback
@@ -698,7 +689,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('PUT');
       expect(that.requests[0].status).toBe(200);
@@ -713,7 +704,7 @@ describe('Basic tests', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
-      api.reorderTracksInPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', 1, 3, callback);
+      api.reorderTracksInPlaylist('7Kud0O2IdWLbEGgvBkW9di', 1, 3, callback);
       that.requests[0].respond(
         200,
         { 'Content-Type': 'application/json' },
@@ -722,7 +713,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, { snapshot_id: 'AsNaPsHoTiD' })).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('PUT');
       expect(that.requests[0].status).toBe(200);
@@ -738,7 +729,7 @@ describe('Basic tests', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
-      api.reorderTracksInPlaylist('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', 1, 3, { range_length: 2 }, callback);
+      api.reorderTracksInPlaylist('7Kud0O2IdWLbEGgvBkW9di', 1, 3, { range_length: 2 }, callback);
       that.requests[0].respond(
         200,
         { 'Content-Type': 'application/json' },
@@ -747,7 +738,7 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, { snapshot_id: 'AsNaPsHoTiD' })).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/tracks'
       );
       expect(that.requests[0].method).toBe('PUT');
       expect(that.requests[0].status).toBe(200);
@@ -766,11 +757,11 @@ describe('Basic tests', function() {
       var imageDataWithEncoding = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2';
       var imageDataWithoutEncoding = '/9j/4AAQSkZJRgABAQAAAQABAAD/2';
       api.setAccessToken('<example_access_token>');
-      api.uploadCustomPlaylistCoverImage('jmperezperez', '7Kud0O2IdWLbEGgvBkW9di', imageDataWithEncoding, callback);
+      api.uploadCustomPlaylistCoverImage('7Kud0O2IdWLbEGgvBkW9di', imageDataWithEncoding, callback);
       that.requests[0].respond(202);
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/jmperezperez/playlists/7Kud0O2IdWLbEGgvBkW9di/images'
+        'https://api.spotify.com/v1/playlists/7Kud0O2IdWLbEGgvBkW9di/images'
       );
       expect(that.requests[0].method).toBe('PUT');
       expect(that.requests[0].status).toBe(202);
@@ -945,33 +936,33 @@ describe('Basic tests', function() {
     it('should follow a playlist publicly', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.followPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', callback);
+      api.followPlaylist('2ujjMpFriZ2nayLmrD1Jgl', callback);
       that.requests[0].respond(200);
       expect(that.requests[0].method).toBe('PUT');
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers'
+        'https://api.spotify.com/v1/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers'
       );
     });
 
     it('should follow a playlist privately', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.followPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', { public: false }, callback);
+      api.followPlaylist('2ujjMpFriZ2nayLmrD1Jgl', { public: false }, callback);
       that.requests[0].respond(200);
       expect(that.requests[0].method).toBe('PUT');
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers'
+        'https://api.spotify.com/v1/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers'
       );
     });
 
     it('should check whether users are following a playlist', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.areFollowingPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', ['userid01', 'userid02'], callback);
+      api.areFollowingPlaylist('2ujjMpFriZ2nayLmrD1Jgl', ['userid01', 'userid02'], callback);
       that.requests[0].respond(
         200,
         { 'Content-Type': 'application/json' },
@@ -981,20 +972,20 @@ describe('Basic tests', function() {
       expect(callback.calledWith(null, fixtures.follow_are_following_playlist)).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers/contains?ids=userid01%2Cuserid02'
+        'https://api.spotify.com/v1/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers/contains?ids=userid01%2Cuserid02'
       );
     });
 
     it('should unfollow a playlist', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.unfollowPlaylist('spotify', '2ujjMpFriZ2nayLmrD1Jgl', callback);
+      api.unfollowPlaylist('2ujjMpFriZ2nayLmrD1Jgl', callback);
       that.requests[0].respond(200);
       expect(that.requests[0].method).toBe('DELETE');
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/users/spotify/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers'
+        'https://api.spotify.com/v1/playlists/2ujjMpFriZ2nayLmrD1Jgl/followers'
       );
     });
 
