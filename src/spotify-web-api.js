@@ -1526,7 +1526,7 @@ var SpotifyWebApi = (function() {
     options = options || {};
     var params = 'device_id' in options ? {device_id: options.device_id} : null;
     var postData = {};
-    ['context_uri', 'uris', 'offset'].forEach(function(field) {
+    ['context_uri', 'uris', 'offset', 'position_ms'].forEach(function(field) {
       if (field in options) {
         postData[field] = options[field];
       }

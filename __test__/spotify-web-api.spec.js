@@ -1149,7 +1149,7 @@ describe('Basic tests', function() {
     it('should play on a certain device', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.play({ device_id: 'my_device_id', context_uri: 'spotify:album:xxx' }, callback);
+      api.play({ device_id: 'my_device_id', context_uri: 'spotify:album:xxx', position_ms: 2000 }, callback);
       that.requests[0].respond(204);
       expect(that.requests[0].method).toBe('PUT');
       expect(callback.calledWith(null, '')).toBeTruthy();
@@ -1157,7 +1157,8 @@ describe('Basic tests', function() {
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/player/play?device_id=my_device_id');
       expect(that.requests[0].requestBody).toBe(
         JSON.stringify({
-          context_uri: 'spotify:album:xxx'
+          context_uri: 'spotify:album:xxx',
+          position_ms: 2000
         })
       );
     });
