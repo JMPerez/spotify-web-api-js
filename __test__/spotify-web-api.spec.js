@@ -468,11 +468,11 @@ describe('Basic tests', function() {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
-      api.createPlaylist('jmperezperez', { name: 'A name for the playlist' }, callback);
+      api.createPlaylist({ name: 'A name for the playlist' }, callback);
       that.requests[0].respond(200, { 'Content-Type': 'application/json' }, JSON.stringify(fixtures.user_new_playlist));
       expect(callback.calledWith(null, fixtures.user_new_playlist)).toBeTruthy();
       expect(that.requests.length).toBe(1);
-      expect(that.requests[0].url).toBe('https://api.spotify.com/v1/users/jmperezperez/playlists');
+      expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/playlists');
     });
 
     it("should update a playlist's details", function() {
