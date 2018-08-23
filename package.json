@@ -1,7 +1,7 @@
 {
   "name": "spotify-web-api-js",
   "description": "A client-side JS wrapper for the Spotify Web API",
-  "version": "0.24.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/JMPerez/spotify-web-api-js",
   "author": {
     "name": "José M. Pérez"
@@ -14,11 +14,15 @@
     "url": "git://github.com/JMPerez/spotify-web-api-js"
   },
   "devDependencies": {
-    "coveralls": "^3.0.0",
-    "eslint": "^5.0.1",
-    "jest": "^22.4.3",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.4.0",
+    "jest": "^22.4.4",
     "q": "^1.4.1",
-    "sinon": "^5.0.0"
+    "sinon": "^5.1.1"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
   },
   "scripts": {
     "lint": "eslint src/*.js",
