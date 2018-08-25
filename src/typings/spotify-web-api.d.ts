@@ -4,14 +4,11 @@
 
 /// <reference path="./spotify-api.d.ts" />
 
-export as namespace SpotifyWebApiJs;
+// export as namespace SpotifyWebApiJs;
 
-export = SpotifyWebApi;
+export default SpotifyWebApi;
 
-/**
- * Declare SpotifyWebApi variable, since that is the name of the function in spotify-web-api-js.
- */
-declare var SpotifyWebApi: SpotifyWebApiJs.SpotifyWebApiJsStatic;
+
 
 declare namespace SpotifyWebApi {
     interface VoidResultsCallback {
@@ -751,8 +748,23 @@ declare namespace SpotifyWebApi {
          */
         getCategoryPlaylists(categoryId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.CategoryPlaylistsReponse>) : Promise<SpotifyApi.CategoryPlaylistsReponse>;
 
-        // the search method has been omitted, since its functionality is covered below.
+        // the search method added to allow access to it in typescript
+        
+        /**
+         * Get Spotify catalog information about artists, albums, tracks or playlists that match a keyword string.
+         * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} query The search query
+         * @param {Array<>} types An array of item types to search across.
+         * Valid types are: 'album', 'artist', 'playlist', and 'track'.
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
 
+        search(query: string, types: ('album'| 'artist'| 'playlist'| 'track')[], options?: SpotifyApi.SearchForItemParameterObject, callback?: ResultsCallback<SpotifyApi.AlbumSearchResponse>) : Promise<SpotifyApi.SearchResponse>;
         /**
          * Fetches albums from the Spotify catalog according to a query.
          * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
@@ -805,6 +817,15 @@ declare namespace SpotifyWebApi {
          */
         searchPlaylists(query: string, options?: SpotifyApi.SearchForItemParameterObject, callback?: ResultsCallback<SpotifyApi.PlaylistSearchResponse>) : Promise<SpotifyApi.PlaylistSearchResponse>;
 
+        /**
+         * Get audio feature information for a single track identified by its unique Spotify ID. 
+         * See [Get Audio Analysis for a Track](https://developer.spotify.com/documentation/web-api/https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/) on
+         * the Spotify Developer site for more information about the endpoint.
+         * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         */
+        getAudioAnalysisForTrack(trackId: string, callback?: ResultsCallback<any>): Promise<any>;
         /**
          * Get audio features for a single track identified by its unique Spotify ID.
          * See [Get Audio Features for a Track](https://developer.spotify.com/web-api/get-audio-features/) on
@@ -1056,3 +1077,8 @@ declare namespace SpotifyWebApi {
         setPromiseImplementation(promiseImplementation: Object) : void;
     }
 }
+
+/**
+ * Declare SpotifyWebApi variable, since that is the name of the function in spotify-web-api-js.
+ */
+declare var SpotifyWebApi: SpotifyWebApi.SpotifyWebApiJsStatic;
