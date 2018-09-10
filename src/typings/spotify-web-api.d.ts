@@ -4,14 +4,11 @@
 
 /// <reference path="./spotify-api.d.ts" />
 
-export as namespace SpotifyWebApiJs;
+// export as namespace SpotifyWebApiJs;
 
-export = SpotifyWebApi;
+export default SpotifyWebApi;
 
-/**
- * Declare SpotifyWebApi variable, since that is the name of the function in spotify-web-api-js.
- */
-declare var SpotifyWebApi: SpotifyWebApiJs.SpotifyWebApiJsStatic;
+
 
 declare namespace SpotifyWebApi {
     interface VoidResultsCallback {
@@ -247,9 +244,6 @@ declare namespace SpotifyWebApi {
          * See [Follow a Playlist](https://developer.spotify.com/web-api/follow-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} ownerId The id of the playlist owner. If you know the Spotify URI of
-         * the playlist, it is easy to find the owner's user id
-         * (e.g. spotify:user:<here_is_the_owner_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Object} options A JSON object with options that can be passed. For instance,
@@ -258,7 +252,7 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is an empty value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        followPlaylist(ownerId: string, playlistId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.FollowPlaylistReponse>) : Promise<SpotifyApi.FollowPlaylistReponse>;
+        followPlaylist(playlistId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.FollowPlaylistReponse>) : Promise<SpotifyApi.FollowPlaylistReponse>;
 
         /**
          * Removes the current user as a follower of one or more other Spotify users.
@@ -292,16 +286,13 @@ declare namespace SpotifyWebApi {
          * See [Unfollow a Playlist](https://developer.spotify.com/web-api/unfollow-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} ownerId The id of the playlist owner. If you know the Spotify URI of
-         * the playlist, it is easy to find the owner's user id
-         * (e.g. spotify:user:<here_is_the_owner_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is an empty value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        unfollowPlaylist(ownerId: string, playlistId: string, callback?: ResultsCallback<SpotifyApi.UnfollowPlaylistReponse>) : Promise<SpotifyApi.UnfollowPlaylistReponse>;
+        unfollowPlaylist(playlistId: string, callback?: ResultsCallback<SpotifyApi.UnfollowPlaylistReponse>) : Promise<SpotifyApi.UnfollowPlaylistReponse>;
 
 
         /**
@@ -337,9 +328,6 @@ declare namespace SpotifyWebApi {
          * See [Check if Users Follow a Playlist](https://developer.spotify.com/web-api/check-user-following-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} ownerId The id of the playlist owner. If you know the Spotify URI of
-         * the playlist, it is easy to find the owner's user id
-         * (e.g. spotify:user:<here_is_the_owner_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Array<string>} userIds The ids of the users. If you know their Spotify URI it is easy
@@ -349,7 +337,7 @@ declare namespace SpotifyWebApi {
          * whether the users are following the playlist sent in the request.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        areFollowingPlaylist(ownerId: string, playlistId: string, userIds: string[], callback?: ResultsCallback<SpotifyApi.UsersFollowPlaylistReponse>) : Promise<SpotifyApi.UsersFollowPlaylistReponse>;
+        areFollowingPlaylist(playlistId: string, userIds: string[], callback?: ResultsCallback<SpotifyApi.UsersFollowPlaylistReponse>) : Promise<SpotifyApi.UsersFollowPlaylistReponse>;
 
         /**
          * Get the current user's followed artists.
@@ -399,8 +387,6 @@ declare namespace SpotifyWebApi {
          * See [Get a Playlist](https://developer.spotify.com/web-api/get-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -408,15 +394,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getPlaylist(userId: string, playlistId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.SinglePlaylistResponse>) : Promise<SpotifyApi.SinglePlaylistResponse>;
+        getPlaylist(playlistId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.SinglePlaylistResponse>) : Promise<SpotifyApi.SinglePlaylistResponse>;
 
         /**
          * Fetches the tracks from a specific playlist.
          * See [Get a Playlist's Tracks](https://developer.spotify.com/web-api/get-playlists-tracks/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Object} options A JSON object with options that can be passed
@@ -424,29 +408,25 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getPlaylistTracks(userId: string, playlistId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.PlaylistTrackResponse>) : Promise<SpotifyApi.PlaylistTrackResponse>;
+        getPlaylistTracks(playlistId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.PlaylistTrackResponse>) : Promise<SpotifyApi.PlaylistTrackResponse>;
 
         /**
          * Creates a playlist and stores it in the current user's library.
          * See [Create a Playlist](https://developer.spotify.com/web-api/create-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. You may want to user the "getMe" function to
-         * find out the id of the current logged in user
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        createPlaylist(userId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.CreatePlaylistResponse>) : Promise<SpotifyApi.CreatePlaylistResponse>;
+        createPlaylist(options?: Object, callback?: ResultsCallback<SpotifyApi.CreatePlaylistResponse>) : Promise<SpotifyApi.CreatePlaylistResponse>;
 
         /**
          * Change a playlist's name and public/private state
          * See [Change a Playlist's Details](https://developer.spotify.com/web-api/change-playlist-details/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. You may want to user the "getMe" function to
-         * find out the id of the current logged in user
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Object} data A JSON object with the data to update. E.g. {name: 'A new name', public: true}
@@ -454,15 +434,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        changePlaylistDetails(userId: string, playlistId: string, data: Object, callback?: ResultsCallback<SpotifyApi.ChangePlaylistDetailsReponse>) : Promise<SpotifyApi.ChangePlaylistDetailsReponse>;
+        changePlaylistDetails(playlistId: string, data: Object, callback?: ResultsCallback<SpotifyApi.ChangePlaylistDetailsReponse>) : Promise<SpotifyApi.ChangePlaylistDetailsReponse>;
 
         /**
          * Add tracks to a playlist.
          * See [Add Tracks to a Playlist](https://developer.spotify.com/web-api/add-tracks-to-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Array<string>} uris An array of Spotify URIs for the tracks
@@ -471,15 +449,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        addTracksToPlaylist(userId: string, playlistId: string, uris: string[], options?: Object, callback?: ResultsCallback<SpotifyApi.AddTracksToPlaylistResponse>) : Promise<SpotifyApi.AddTracksToPlaylistResponse>;
+        addTracksToPlaylist(playlistId: string, uris: string[], options?: Object, callback?: ResultsCallback<SpotifyApi.AddTracksToPlaylistResponse>) : Promise<SpotifyApi.AddTracksToPlaylistResponse>;
 
         /**
          * Replace the tracks of a playlist
          * See [Replace a Playlist's Tracks](https://developer.spotify.com/web-api/replace-playlists-tracks/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Array<string>} uris An array of Spotify URIs for the tracks
@@ -487,15 +463,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        replaceTracksInPlaylist(userId: string, playlistId: string, uris: string[], callback?: ResultsCallback<SpotifyApi.ReplacePlaylistTracksResponse>) : Promise<SpotifyApi.ReplacePlaylistTracksResponse>;
+        replaceTracksInPlaylist(playlistId: string, uris: string[], callback?: ResultsCallback<SpotifyApi.ReplacePlaylistTracksResponse>) : Promise<SpotifyApi.ReplacePlaylistTracksResponse>;
 
         /**
          * Reorder tracks in a playlist
          * See [Reorder a Playlist’s Tracks](https://developer.spotify.com/web-api/reorder-playlists-tracks/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {number} rangeStart The position of the first track to be reordered.
@@ -506,15 +480,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        reorderTracksInPlaylist(userId: string, playlistId: string, rangeStart: number, insertBefore: number, options?: Object, callback?: ResultsCallback<SpotifyApi.ReorderPlaylistTracksResponse>) : Promise<SpotifyApi.ReorderPlaylistTracksResponse>;
+        reorderTracksInPlaylist(playlistId: string, rangeStart: number, insertBefore: number, options?: Object, callback?: ResultsCallback<SpotifyApi.ReorderPlaylistTracksResponse>) : Promise<SpotifyApi.ReorderPlaylistTracksResponse>;
 
         /**
          * Remove tracks from a playlist
          * See [Remove Tracks from a Playlist](https://developer.spotify.com/web-api/remove-tracks-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Array<Object>} uris An array of tracks to be removed. Each element of the array can be either a
@@ -524,15 +496,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        removeTracksFromPlaylist(userId: string, playlistId: string, uris: Object[], callback?: ResultsCallback<SpotifyApi.RemoveTracksFromPlaylistResponse>) : Promise<SpotifyApi.RemoveTracksFromPlaylistResponse>;
+        removeTracksFromPlaylist(playlistId: string, uris: Object[], callback?: ResultsCallback<SpotifyApi.RemoveTracksFromPlaylistResponse>) : Promise<SpotifyApi.RemoveTracksFromPlaylistResponse>;
 
         /**
          * Remove tracks from a playlist, specifying a snapshot id.
          * See [Remove Tracks from a Playlist](https://developer.spotify.com/web-api/remove-tracks-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Array<Object>} uris An array of tracks to be removed. Each element of the array can be either a
@@ -543,15 +513,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        removeTracksFromPlaylistWithSnapshotId(userId: string, playlistId: string, uris: Object[], snapshotId: string, callback?: ResultsCallback<SpotifyApi.PlaylistSnapshotResponse>) : Promise<SpotifyApi.PlaylistSnapshotResponse>;
+        removeTracksFromPlaylistWithSnapshotId(playlistId: string, uris: Object[], snapshotId: string, callback?: ResultsCallback<SpotifyApi.PlaylistSnapshotResponse>) : Promise<SpotifyApi.PlaylistSnapshotResponse>;
 
         /**
          * Remove tracks from a playlist, specifying the positions of the tracks to be removed.
          * See [Remove Tracks from a Playlist](https://developer.spotify.com/web-api/remove-tracks-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {Array<number>} positions array of integers containing the positions of the tracks to remove
@@ -561,15 +529,13 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        removeTracksFromPlaylistInPositions(userId: string, playlistId: string, positions: number[], snapshotId: string, callback?: ResultsCallback<SpotifyApi.PlaylistSnapshotResponse>) : Promise<SpotifyApi.PlaylistSnapshotResponse>;
+        removeTracksFromPlaylistInPositions(playlistId: string, positions: number[], snapshotId: string, callback?: ResultsCallback<SpotifyApi.PlaylistSnapshotResponse>) : Promise<SpotifyApi.PlaylistSnapshotResponse>;
 
         /**
          * Upload a custom playlist cover image.
          * See [Upload A Custom Playlist Cover Image](https://developer.spotify.com/web-api/upload-a-custom-playlist-cover-image/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
-         * to find the user id (e.g. spotify:user:<here_is_the_user_id>:playlist:xxxx)
          * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
          * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
          * @param {string} imageData Base64 encoded JPEG image data, maximum payload size is 256 KB.
@@ -577,7 +543,7 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        uploadCustomPlaylistCoverImage(userId: string, playlistId: string, imageData: string, callback?: ResultsCallback<SpotifyApi.UploadCustomPlaylistCoverImageReponse>) : Promise<SpotifyApi.UploadCustomPlaylistCoverImageReponse>;
+        uploadCustomPlaylistCoverImage(playlistId: string, imageData: string, callback?: ResultsCallback<SpotifyApi.UploadCustomPlaylistCoverImageReponse>) : Promise<SpotifyApi.UploadCustomPlaylistCoverImageReponse>;
 
         /**
          * Fetches an album from the Spotify catalog.
@@ -782,8 +748,23 @@ declare namespace SpotifyWebApi {
          */
         getCategoryPlaylists(categoryId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.CategoryPlaylistsReponse>) : Promise<SpotifyApi.CategoryPlaylistsReponse>;
 
-        // the search method has been omitted, since its functionality is covered below.
+        // the search method added to allow access to it in typescript
+        
+        /**
+         * Get Spotify catalog information about artists, albums, tracks or playlists that match a keyword string.
+         * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {string} query The search query
+         * @param {Array<>} types An array of item types to search across.
+         * Valid types are: 'album', 'artist', 'playlist', and 'track'.
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
 
+        search(query: string, types: ('album'| 'artist'| 'playlist'| 'track')[], options?: SpotifyApi.SearchForItemParameterObject, callback?: ResultsCallback<SpotifyApi.AlbumSearchResponse>) : Promise<SpotifyApi.SearchResponse>;
         /**
          * Fetches albums from the Spotify catalog according to a query.
          * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
@@ -836,6 +817,15 @@ declare namespace SpotifyWebApi {
          */
         searchPlaylists(query: string, options?: SpotifyApi.SearchForItemParameterObject, callback?: ResultsCallback<SpotifyApi.PlaylistSearchResponse>) : Promise<SpotifyApi.PlaylistSearchResponse>;
 
+        /**
+         * Get audio feature information for a single track identified by its unique Spotify ID. 
+         * See [Get Audio Analysis for a Track](https://developer.spotify.com/documentation/web-api/https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/) on
+         * the Spotify Developer site for more information about the endpoint.
+         * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         */
+        getAudioAnalysisForTrack(trackId: string, callback?: ResultsCallback<any>): Promise<any>;
         /**
          * Get audio features for a single track identified by its unique Spotify ID.
          * See [Get Audio Features for a Track](https://developer.spotify.com/web-api/get-audio-features/) on
@@ -1087,3 +1077,8 @@ declare namespace SpotifyWebApi {
         setPromiseImplementation(promiseImplementation: Object) : void;
     }
 }
+
+/**
+ * Declare SpotifyWebApi variable, since that is the name of the function in spotify-web-api-js.
+ */
+declare var SpotifyWebApi: SpotifyWebApi.SpotifyWebApiJsStatic;
