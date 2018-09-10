@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
-    "eslint": "^5.4.0",
+    "eslint": "^5.5.0",
     "jest": "^22.4.4",
     "q": "^1.4.1",
     "sinon": "^5.1.1"
