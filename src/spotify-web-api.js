@@ -1589,6 +1589,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.seek = function(position_ms, options, callback) {
+    options = options || {};
     var params = {
       position_ms: position_ms
     };
@@ -1615,6 +1616,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.setRepeat = function(state, options, callback) {
+    options = options || {};
     var params = {
       state: state
     };
@@ -1641,6 +1643,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.setVolume = function(volume_percent, options, callback) {
+    options = options || {};
     var params = {
       volume_percent: volume_percent
     };
@@ -1667,6 +1670,7 @@ var SpotifyWebApi = (function() {
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
   Constr.prototype.setShuffle = function(state, options, callback) {
+    options = options || {};
     var params = {
       state: state
     };
