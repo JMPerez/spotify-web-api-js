@@ -940,8 +940,8 @@ declare namespace SpotifyWebApi {
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        play(options?: SpotifyApi.DeviceSpecificParameterObject): Promise<void>;
-        play(options: SpotifyApi.DeviceSpecificParameterObject, callback: VoidResultsCallback): void;
+        play(options?: SpotifyApi.PlayParameterObject): Promise<void>;
+        play(options: SpotifyApi.PlayParameterObject, callback: VoidResultsCallback): void;
         play(callback: VoidResultsCallback): void;
 
         /**
