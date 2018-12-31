@@ -1593,7 +1593,7 @@ var SpotifyWebApi = (function() {
     var params = {
       position_ms: position_ms
     };
-    if ('device_id' in options) {
+    if (options && 'device_id' in options) {
       params.device_id = options.device_id;
     }
     var requestData = {
