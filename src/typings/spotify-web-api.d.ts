@@ -415,12 +415,14 @@ declare namespace SpotifyWebApi {
          * See [Create a Playlist](https://developer.spotify.com/web-api/create-playlist/) on
          * the Spotify Developer site for more information about the endpoint.
          *
+         * @param {string} userId The id of the user. If you know the Spotify URI it is easy
+         * to find the id (e.g. spotify:user:<here_is_the_id>)
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        createPlaylist(options?: Object, callback?: ResultsCallback<SpotifyApi.CreatePlaylistResponse>) : Promise<SpotifyApi.CreatePlaylistResponse>;
+        createPlaylist(userId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.CreatePlaylistResponse>) : Promise<SpotifyApi.CreatePlaylistResponse>;
 
         /**
          * Change a playlist's name and public/private state
