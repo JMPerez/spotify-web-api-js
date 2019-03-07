@@ -1506,7 +1506,8 @@ var SpotifyWebApi = (function() {
       type: 'PUT',
       url: _baseUri + '/me/player/play',
       params: params,
-      postData: postData
+      postData: postData,
+      contentType: 'application/json'
     };
 
     // need to clear options so it doesn't add all of them to the query params
