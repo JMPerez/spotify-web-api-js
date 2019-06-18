@@ -794,6 +794,32 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Add tracks to a playlist at specific position.
+   * See [Add Tracks to a Playlist](https://developer.spotify.com/web-api/add-tracks-to-playlist/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:user:xxxx:playlist:<here_is_the_playlist_id>)
+   * @param {Array<string>} uris An array of Spotify URIs for the tracks
+   * @param {number} pos Position at which the previously specified list of uris should be inserted.
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.addTracksToPlaylistAtPosition = function(playlistId, uris, pos, options, callback) {
+    var requestData = {
+      url: _baseUri + '/playlists/' + playlistId + '/tracks',
+      type: 'POST',
+      postData: {
+        uris: uris,
+        position: pos
+      }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback, true);
+  };
+
+  /**
    * Replace the tracks of a playlist
    * See [Replace a Playlist's Tracks](https://developer.spotify.com/web-api/replace-playlists-tracks/) on
    * the Spotify Developer site for more information about the endpoint.
