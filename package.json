@@ -14,7 +14,7 @@
     "url": "git://github.com/JMPerez/spotify-web-api-js"
   },
   "devDependencies": {
-    "coveralls": "^3.0.2",
+    "coveralls": "^3.0.9",
     "eslint": "^6.2.2",
     "jest": "^22.4.4",
     "q": "^1.4.1",
