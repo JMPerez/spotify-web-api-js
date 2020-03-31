@@ -1688,6 +1688,210 @@ var SpotifyWebApi = (function() {
   };
 
   /**
+   * Fetches a show from the Spotify catalog.
+   * See [Get a Show](https://developer.spotify.com/documentation/web-api/reference/shows/get-a-show/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} showId The id of the show. If you know the Spotify URI it is easy
+   * to find the show id (e.g. spotify:show:<here_is_the_show_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getShow = function(showId, options, callback) {
+    var requestData = {};
+    requestData.url = _baseUri + '/shows/' + showId;
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches multiple shows from the Spotify catalog.
+   * See [Get Several Shows](https://developer.spotify.com/documentation/web-api/reference/shows/get-several-shows/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+   * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getShows = function(showIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/shows/',
+      params: { ids: showIds.join(',') }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches current user's saved shows.
+   * See [Get Current User's Saved Shows](https://developer.spotify.com/documentation/web-api/reference/library/get-users-saved-shows/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getMySavedShows = function(options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/shows'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Adds a list of shows to the current user's saved shows.
+   * See [Save Shows for Current User](https://developer.spotify.com/documentation/web-api/reference/library/save-shows-user/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+   * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.addToMySavedShows = function(showIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/shows',
+      type: 'PUT',
+      postData: showIds
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Remove a list of shows from the current user's saved shows.
+   * See [Remove Shows for Current User](https://developer.spotify.com/documentation/web-api/reference/library/remove-shows-user/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+   * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.removeFromMySavedShows = function(showIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/shows',
+      type: 'DELETE',
+      postData: showIds
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Checks if the current user's saved shows contains a certain list of shows.
+   * See [Check Current User's Saved Shows](https://developer.spotify.com/documentation/web-api/reference/library/check-users-saved-shows/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Array<string>} showIds The ids of the shows. If you know their Spotify URI it is easy
+   * to find their show id (e.g. spotify:show:<here_is_the_show_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.containsMySavedShows = function(showIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/me/shows/contains',
+      params: { ids: showIds.join(',') }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches the episodes of an show from the Spotify catalog.
+   * See [Get an Show's Episodes](https://developer.spotify.com/documentation/web-api/reference/shows/get-shows-episodes/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} showId The id of the show. If you know the Spotify URI it is easy
+   * to find the show id (e.g. spotify:show:<here_is_the_show_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getShowEpisodes = function(showId, options, callback) {
+    var requestData = {
+      url: _baseUri + '/shows/' + showId + '/episodes'
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches shows from the Spotify catalog according to a query.
+   * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} query The search query
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.searchShows = function(query, options, callback) {
+    return this.search(query, ['show'], options, callback);
+  };
+
+  /**
+   * Fetches an episode from the Spotify catalog.
+   * See [Get an Episode](https://developer.spotify.com/documentation/web-api/reference/episodes/get-an-episode/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} episodeId The id of the episode. If you know the Spotify URI it is easy
+   * to find the episode id (e.g. spotify:episode:<here_is_the_episode_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getEpisode = function(episodeId, options, callback) {
+    var requestData = {};
+    requestData.url = _baseUri + '/episodes/' + episodeId;
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches multiple episodes from the Spotify catalog.
+   * See [Get Several Episodes](https://developer.spotify.com/documentation/web-api/reference/episodes/get-several-episodes/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Array<string>} episodeIds The ids of the episodes. If you know their Spotify URI it is easy
+   * to find their episode id (e.g. spotify:episode:<here_is_the_episode_id>)
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getEpisodes = function(episodeIds, options, callback) {
+    var requestData = {
+      url: _baseUri + '/episodes/',
+      params: { ids: episodeIds.join(',') }
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
+   * Fetches episodes from the Spotify catalog according to a query.
+   * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} query The search query
+   * @param {Object} options A JSON object with options that can be passed
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.searchEpisodes = function(query, options, callback) {
+    return this.search(query, ['episode'], options, callback);
+  };
+
+  /**
    * Gets the access token in use.
    *
    * @return {string} accessToken The access token
