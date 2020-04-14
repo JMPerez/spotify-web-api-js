@@ -1055,7 +1055,7 @@ declare namespace SpotifyWebApi {
          *
          * @return {string} accessToken The access token
          */
-        getAccessToken() : string;
+        getAccessToken() : string | null;
 
         /**
          * Sets the access token to be used.
@@ -1065,7 +1065,7 @@ declare namespace SpotifyWebApi {
          * @param {string} accessToken The access token
          * @return {void}
          */
-        setAccessToken(accessToken: string) : void;
+        setAccessToken(accessToken: string | null) : void;
 
         /**
          * Sets an implementation of Promises/A+ to be used. E.g. Q, when.
