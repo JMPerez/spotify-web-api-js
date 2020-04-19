@@ -16,7 +16,11 @@
   "devDependencies": {
     "coveralls": "^3.0.2",
     "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.10.1",
+    "husky": "^4.2.5",
     "jest": "^25.3.0",
+    "lint-staged": "^10.1.5",
+    "prettier": "2.0.4",
     "q": "^1.4.1",
     "sinon": "^9.0.0"
   },
@@ -35,5 +39,14 @@
   ],
   "keywords": [
     "spotify"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --single-quote --trailing-comma none --write '{**/*.ts,**/*.js,*.md}'"
+  }
 }

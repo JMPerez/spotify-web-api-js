@@ -1,9 +1,15 @@
+/* global module */
+'use strict';
+
 var fs = require('fs');
 var path = require('path');
 
 function loadFixture(fixtureName) {
-  return fs.readFileSync(path.join(__dirname, 'fixtures/' + fixtureName + '.json'), 'UTF8');
-};
+  return fs.readFileSync(
+    path.join(__dirname, 'fixtures/' + fixtureName + '.json'),
+    'UTF8'
+  );
+}
 
 module.exports = {
   track: loadFixture('track'),
