@@ -368,19 +368,37 @@ declare namespace SpotifyWebApi {
         getUser(userId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.UserProfileResponse>) : Promise<SpotifyApi.UserProfileResponse>;
 
         /**
-         * Fetches a list of the current user's playlists.
+         * Fetches a list of a user's playlists.
          * See [Get a List of a User's Playlists](https://developer.spotify.com/web-api/get-list-users-playlists/) on
          * the Spotify Developer site for more information about the endpoint.
          *
-         * @param {string} userId An optional id of the user. If you know the Spotify URI it is easy
-         * to find the id (e.g. spotify:user:<here_is_the_id>). If not provided, the id of the user that granted
-         * the permissions will be used.
+         * @param {string} userId The id for the owner of the playlists. If you know the Spotify URI it is easy
+         * to find the id (e.g. spotify:user:<here_is_the_id>).
          * @param {Object} options A JSON object with options that can be passed
          * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
          * one is the error object (null if no error), and the second is the value if the request succeeded.
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
-        getUserPlaylists(userId?: string, options?: Object, callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>) : Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
+        getUserPlaylists(
+          userId: string,
+          options?: Object,
+          callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>
+        ): Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
+
+        /**
+         * Fetches a list of the playlists owned by the  user who granted the access token's playlists
+         * See [Get a List of a User's Playlists](https://developer.spotify.com/web-api/get-list-users-playlists/) on
+         * the Spotify Developer site for more information about the endpoint.
+         *
+         * @param {Object} options A JSON object with options that can be passed
+         * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+         * one is the error object (null if no error), and the second is the value if the request succeeded.
+         * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+         */
+        getUserPlaylists(
+          options?: Object,
+          callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>
+        ): Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
 
         /**
          * Fetches a specific playlist.
@@ -751,7 +769,7 @@ declare namespace SpotifyWebApi {
         getCategoryPlaylists(categoryId: string, options?: Object, callback?: ResultsCallback<SpotifyApi.CategoryPlaylistsReponse>) : Promise<SpotifyApi.CategoryPlaylistsReponse>;
 
         // the search method added to allow access to it in typescript
-        
+
         /**
          * Get Spotify catalog information about artists, albums, tracks or playlists that match a keyword string.
          * See [Search for an Item](https://developer.spotify.com/web-api/search-item/) on
@@ -820,7 +838,7 @@ declare namespace SpotifyWebApi {
         searchPlaylists(query: string, options?: SpotifyApi.SearchForItemParameterObject, callback?: ResultsCallback<SpotifyApi.PlaylistSearchResponse>) : Promise<SpotifyApi.PlaylistSearchResponse>;
 
         /**
-         * Get audio feature information for a single track identified by its unique Spotify ID. 
+         * Get audio feature information for a single track identified by its unique Spotify ID.
          * See [Get Audio Analysis for a Track](https://developer.spotify.com/documentation/web-api/https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/) on
          * the Spotify Developer site for more information about the endpoint.
          * @param {string} trackId The id of the track. If you know the Spotify URI it is easy
@@ -876,7 +894,7 @@ declare namespace SpotifyWebApi {
          * @return {Object} Null if a callback is provided, a `Promise` object otherwise
          */
         getAvailableGenreSeeds(callback?: ResultsCallback<SpotifyApi.AvailableGenreSeedsResponse>) : Promise<SpotifyApi.AvailableGenreSeedsResponse>;
-        
+
         /**
         * Get information about a user’s available devices.
         * See [Get a User’s Available Devices](https://developer.spotify.com/web-api/get-a-users-available-devices/) on
