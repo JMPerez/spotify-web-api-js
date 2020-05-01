@@ -14,11 +14,7 @@
             "uri": "spotify:artist:5INjqkS1o8h1imAzPqGZBb"
           }
         ],
-        "available_markets": [
-          "CA",
-          "MX",
-          "US"
-        ],
+        "available_markets": ["CA", "MX", "US"],
         "disc_number": 1,
         "duration_ms": 108546,
         "explicit": false,
@@ -57,11 +53,7 @@
             "uri": "spotify:artist:5INjqkS1o8h1imAzPqGZBb"
           }
         ],
-        "available_markets": [
-          "CA",
-          "MX",
-          "US"
-        ],
+        "available_markets": ["CA", "MX", "US"],
         "disc_number": 1,
         "duration_ms": 467586,
         "explicit": false,

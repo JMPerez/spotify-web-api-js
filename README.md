@@ -8,13 +8,14 @@ A list of selected wrappers for different languages and environments is availabl
 
 The wrapper includes helper functions to do the following:
 
-#### Music metadata
+#### Music and Podcast metadata
 
 - Albums, artists, tracks and playlists
 - Audio features and audio analysis for tracks
 - Albums for a specific artist
 - Top tracks for a specific artist
 - Artists similar to a specific artist
+- Shows and episodes (podcasts)
 
 #### Profiles
 
@@ -22,9 +23,9 @@ The wrapper includes helper functions to do the following:
 
 #### Search
 
-- Albums, artists, tracks, and playlists
+- Albums, artists, tracks, playlists, shows, and episodes
 
-#### Playlist manipulation
+#### Playlist Management
 
 - Get a user's playlists
 - Create playlists
@@ -35,10 +36,11 @@ The wrapper includes helper functions to do the following:
 - Reorder tracks in a playlist
 - Upload custom playlist cover image
 
-#### Your Music library
+#### User's Library
 
-- Add, remove, and get tracks that are in the signed in user's Your Music library
-- Check if a track is in the signed in user's Your Music library
+- Add, remove, and get tracks on a user's library
+- Check if a track is in the signed in user's library
+- Add, remove, and get shows (podcasts) on a user's library
 
 #### Personalization
 
@@ -92,7 +94,7 @@ Install via node (since the requests are made using XMLHttpRequest, you will nee
 
 Then, in your javascript file
 
-```javascript
+```js
 var Spotify = require('spotify-web-api-js');
 var s = new Spotify();
 //s.searchTracks()...
@@ -109,13 +111,13 @@ The wrapper supports callback functions, as well as [Promises](http://www.html5r
 
 First, instantiate the wrapper.
 
-```javascript
+```js
 var spotifyApi = new SpotifyWebApi();
 ```
 
 If you have an access token, you can set it doing:
 
-```javascript
+```js
 spotifyApi.setAccessToken('<here_your_access_token>');
 ```
 
@@ -123,13 +125,13 @@ When you set an access token, it will be used for signing your requests. An acce
 
 If you want to use a Promises/A+ library, you can set it:
 
-```javascript
+```js
 spotifyApi.setPromiseImplementation(Q);
 ```
 
 Here you see how to get basic information using a function like `getArtistAlbums`:
 
-```javascript
+```js
 // get Elvis' albums, passing a callback. When a callback is passed, no Promise is returned
 spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function (err, data) {
   if (err) console.error(err);
@@ -150,7 +152,7 @@ spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE').then(
 The promises also expose an `abort` method that aborts the XMLHttpRequest. This is useful to cancel
 requests that were made earlier and could be resolved out-of-sync:
 
-```javascript
+```js
 var prev = null;
 
 function onUserInput(queryTerm) {
@@ -177,7 +179,7 @@ function onUserInput(queryTerm) {
 
 The functions that fetch data from the API support also an optional JSON object with a set of options, such as the ones regarding pagination. These options will be sent as query parameters:
 
-```javascript
+```js
 // passing a callback - get Elvis' albums in range [20...29]
 spotifyApi.getArtistAlbums(
   '43ZHCT0cAZBISjO8DG9PnE',
@@ -207,7 +209,7 @@ _Note: The following examples use Promises/Q/when as the return object._
 
 Here you can see more examples of the usage of this wrapper:
 
-```javascript
+```js
 // get multiple albums
 spotifyApi.getAlbums(['5U4W9E5WsYb2jUQWePT8Xm', '3KyVcddATClQKIdtaap4bV']).then(
   function (data) {
@@ -285,7 +287,7 @@ spotifyApi.searchTracks('artist:Love').then(
 
 When you need to make multiple calls to get some dataset, you can take advantage of the Promises to get a cleaner code:
 
-```javascript
+```js
 // track detail information for album tracks
 spotifyApi
   .getAlbum('5U4W9E5WsYb2jUQWePT8Xm')
@@ -324,7 +326,7 @@ spotifyApi
 
 In order to get user's information you need to request a user-signed access token, from either the Implicit Grant or Authorization Code flow. Say for instance you want to get user's playlists. Once you get an access token, set it and fetch the data:
 
-```javascript
+```js
 // get an access token
 ...
 
@@ -349,7 +351,7 @@ spotifyApi.getPlaylist('4vHIKV7j4QcZwgzGQcZg1x')
 Some functions don't need to receive the user's id as a parameter, and will use the
 user's information from the access token:
 
-```javascript
+```js
 var spotifyApi = new SpotifyWebApi();
 spotifyApi.setAccessToken('<here_your_access_token>');
 spotifyApi

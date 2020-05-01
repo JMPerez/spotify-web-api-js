@@ -228,6 +228,51 @@ declare namespace SpotifyApi {
   }
 
   /**
+   * Get a Show
+   *
+   * GET /v1/shows/{id}
+   * https://developer.spotify.com/documentation/web-api/reference/shows/get-a-show/
+   */
+  interface SingleShowResponse extends ShowObjectFull {}
+
+  /**
+   * Get Several Shows
+   *
+   * /v1/shows?ids={ids}
+   * https://developer.spotify.com/documentation/web-api/reference/shows/get-several-shows/
+   */
+  interface MultipleShowsResponse {
+    shows: ShowObjectFull[];
+  }
+
+  /**
+   * Get a Show’s Episodes
+   *
+   * /v1/shows/{id}/episodes
+   * https://developer.spotify.com/documentation/web-api/reference/shows/get-shows-episodes/
+   */
+  interface ShowEpisodesResponse
+    extends PagingObject<EpisodeObjectSimplified> {}
+
+  /**
+   * Get an Episode
+   *
+   * GET /v1/episode/{id}
+   * https://developer.spotify.com/documentation/web-api/reference/episodes/get-an-episode/
+   */
+  interface SingleEpisodeResponse extends EpisodeObjectFull {}
+
+  /**
+   * Get Several Episodes
+   *
+   * /v1/episodes?ids={ids}
+   * https://developer.spotify.com/documentation/web-api/reference/episodes/get-several-episodes/
+   */
+  interface MultipleEpisodesResponse {
+    episodes: EpisodeObjectFull[];
+  }
+
+  /**
    * Get Audio Analysis for a Track
    *
    * GET /v1/audio-analysis/{id}
@@ -302,7 +347,7 @@ declare namespace SpotifyApi {
    * GET /v1/browse/categories/{id}/playlists
    * https://developer.spotify.com/web-api/get-categorys-playlists/
    */
-  interface CategoryPlaylistsReponse {
+  interface CategoryPlaylistsResponse {
     playlists: PagingObject<PlaylistObjectSimplified>;
   }
 
@@ -354,7 +399,7 @@ declare namespace SpotifyApi {
    * PUT /v1/users/{owner_id}/playlists/{playlist_id}/followers
    * https://developer.spotify.com/web-api/follow-playlist/
    */
-  interface FollowPlaylistReponse extends VoidResponse {}
+  interface FollowPlaylistResponse extends VoidResponse {}
 
   /**
    * Unfollow a Playlist
@@ -362,7 +407,7 @@ declare namespace SpotifyApi {
    * DELETE /v1/users/{owner_id}/playlists/{playlist_id}/followers
    * https://developer.spotify.com/web-api/unfollow-playlist/
    */
-  interface UnfollowPlaylistReponse extends VoidResponse {}
+  interface UnfollowPlaylistResponse extends VoidResponse {}
 
   /**
    * Save tracks for user
@@ -512,7 +557,27 @@ declare namespace SpotifyApi {
   }
 
   /**
-   * Search for artists/albums/tracks/playlists
+   * Search for a show
+   *
+   * GET /v1/search?type=show
+   * https://developer.spotify.com/web-api/search-item/
+   */
+  interface ShowSearchResponse {
+    shows: PagingObject<ShowObjectSimplified>;
+  }
+
+  /**
+   * Search for a episode
+   *
+   * GET /v1/search?type=episode
+   * https://developer.spotify.com/web-api/search-item/
+   */
+  interface EpisodeSearchResponse {
+    episodes: PagingObject<EpisodeObjectSimplified>;
+  }
+
+  /**
+   * Search for artists/albums/tracks/playlists/shows/episodes
    *
    * GET /v1/search?type=album
    * https://developer.spotify.com/web-api/search-item/
@@ -521,7 +586,9 @@ declare namespace SpotifyApi {
     extends Partial<ArtistSearchResponse>,
       Partial<AlbumSearchResponse>,
       Partial<TrackSearchResponse>,
-      Partial<PlaylistSearchResponse> {}
+      Partial<PlaylistSearchResponse>,
+      Partial<ShowSearchResponse>,
+      Partial<EpisodeSearchResponse> {}
 
   /**
    * Get a track
@@ -597,7 +664,7 @@ declare namespace SpotifyApi {
    * PUT /v1/users/{user_id}/playlists/{playlist_id}
    * https://developer.spotify.com/web-api/change-playlist-details/
    */
-  interface ChangePlaylistDetailsReponse extends VoidResponse {}
+  interface ChangePlaylistDetailsResponse extends VoidResponse {}
 
   /**
    * Add Tracks to a Playlist
@@ -637,7 +704,7 @@ declare namespace SpotifyApi {
    * PUT /v1/users/{user_id}/playlists/{playlist_id}/images
    * https://developer.spotify.com/web-api/upload-a-custom-playlist-cover-image/
    */
-  interface UploadCustomPlaylistCoverImageReponse extends VoidResponse {}
+  interface UploadCustomPlaylistCoverImageResponse extends VoidResponse {}
 
   /**
    * Check if Users Follow a Playlist
@@ -645,7 +712,7 @@ declare namespace SpotifyApi {
    * GET /v1/users/{user_id}/playlists/{playlist_id}/followers/contains
    * https://developer.spotify.com/web-api/check-user-following-playlist/
    */
-  interface UsersFollowPlaylistReponse extends Array<boolean> {}
+  interface UsersFollowPlaylistResponse extends Array<boolean> {}
 
   interface UserDevicesResponse {
     devices: UserDevice[];
@@ -656,6 +723,39 @@ declare namespace SpotifyApi {
       PlaybackObject {}
 
   interface CurrentlyPlayingResponse extends CurrentlyPlayingObject {}
+
+  /**
+   * Get a list of a user's saved shows
+   *
+   * GET /v1/me/shows
+   * https://developer.spotify.com/documentation/web-api/reference/library/get-users-saved-shows/
+   */
+  interface ListOfUsersShowsResponse
+    extends PagingObject<ShowObjectSimplified> {}
+
+  /**
+   * Save shows for user
+   *
+   * PUT /v1/me/shows?ids={ids}
+   * https://developer.spotify.com/documentation/web-api/reference/library/save-shows-user/
+   */
+  interface SaveShowsForUserResponse extends VoidResponse {}
+
+  /**
+   * Remove shows for user
+   *
+   * DELETE /v1/me/shows?ids={ids}
+   * https://developer.spotify.com/documentation/web-api/reference/library/remove-shows-user/
+   */
+  interface RemoveUsersSavedShowsResponse extends VoidResponse {}
+
+  /**
+   * Check user's saved shows
+   *
+   * GET /v1/me/shows/contains?ids={ids}
+   * https://developer.spotify.com/documentation/web-api/reference/library/check-users-saved-shows/
+   */
+  interface CheckUsersSavedShowsResponse extends Array<boolean> {}
 
   //
   // Objects from the Object Models of the Spotify Web Api, ordered alphabetically.
@@ -895,7 +995,7 @@ declare namespace SpotifyApi {
     added_at: string;
     added_by: UserObjectPublic;
     is_local: boolean;
-    track: TrackObjectFull;
+    track: TrackObjectFull | EpisodeObjectFull;
   }
 
   /**
@@ -922,7 +1022,7 @@ declare namespace SpotifyApi {
 
   /**
    * Saved Track Object in Playlists
-   * [](https://developer.spotify.com/web-api/object-model/)
+   * [](https://developer.spotify.com/documentation/web-api/reference/object-model/#saved-track-object)
    */
   interface SavedTrackObject {
     added_at: string;
@@ -930,12 +1030,21 @@ declare namespace SpotifyApi {
   }
 
   /**
-   * Saved Track Object in Playlists
-   * [](https://developer.spotify.com/web-api/object-model/)
+   * Saved Album Object in Playlists
+   * [](https://developer.spotify.com/documentation/web-api/reference/object-model/#saved-album-object)
    */
   interface SavedAlbumObject {
     added_at: string;
     album: AlbumObjectFull;
+  }
+
+  /**
+   * Saved Show Object
+   * [](https://developer.spotify.com/documentation/web-api/reference/object-model/#saved-show-object)
+   */
+  interface SavedShowObject {
+    added_at: string;
+    album: ShowObjectFull;
   }
 
   /**
@@ -1050,6 +1159,77 @@ declare namespace SpotifyApi {
     name: string;
     type: string;
     volume_percent: number | null;
+  }
+
+  /**
+   * Full Show Object
+   * [show object (full)](https://developer.spotify.com/documentation/web-api/reference/object-model/#show-object-full)
+   */
+  interface ShowObjectFull extends ShowObjectSimplified {
+    episodes: EpisodeObjectSimplified[];
+  }
+
+  /**
+   * Simplified Show Object
+   * [show object (simplified)](https://developer.spotify.com/documentation/web-api/reference/object-model/#show-object-simplified)
+   */
+  interface ShowObjectSimplified {
+    available_markets?: string[];
+    copyrights: CopyrightObject[];
+    description: string;
+    explicit: boolean;
+    external_urls: ExternalUrlObject;
+    href: string;
+    id: string;
+    images: ImageObject[];
+    is_externally_hosted: boolean;
+    languages: string[];
+    media_type: string;
+    name: string;
+    publisher: string;
+    type: 'show';
+    uri: string;
+  }
+
+  /**
+   * Full Episode Object
+   * [episode object (full)](https://developer.spotify.com/documentation/web-api/reference/object-model/#episode-object-full)
+   */
+  interface EpisodeObjectFull extends EpisodeObjectSimplified {
+    show: ShowObjectSimplified;
+  }
+
+  /**
+   * Simplified Episode Object
+   * [episode object (simplified)](https://developer.spotify.com/documentation/web-api/reference/object-model/#episode-object-simplified)
+   */
+  interface EpisodeObjectSimplified {
+    audio_preview_url: string | null;
+    description: string;
+    duration_ms: number;
+    explicit: boolean;
+    external_urls: ExternalUrlObject;
+    href: string;
+    id: string;
+    images: ImageObject[];
+    is_externally_hosted: boolean;
+    is_playable: boolean;
+    languages: string[];
+    name: string;
+    release_date: string;
+    release_date_precision: string;
+    resume_point: ResumePointObject;
+    type: 'episode';
+    uri: string;
+  }
+
+  /**
+   * Resume Point Object
+   * [resume point object](https://developer.spotify.com/documentation/web-api/reference/object-model/#resume-point-object)
+   */
+  interface ResumePointObject {
+    full_played: boolean;
+    resume_position_ms: number;
   }
 
   type ContextObjectType = 'artist' | 'playlist' | 'album';

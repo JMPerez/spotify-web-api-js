@@ -1,4 +1,4 @@
-module.exports = {
+{
   "display_name": "Some Random User",
   "external_urls": {
     "spotify": "https://open.spotify.com/user/some_random_user"
@@ -15,4 +15,4 @@ module.exports = {
   "product": "premium",
   "type": "user",
   "uri": "spotify:user:some_random_user"
-};
+}

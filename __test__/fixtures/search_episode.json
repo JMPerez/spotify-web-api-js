@@ -1,0 +1,49 @@
+{
+  "episodes": {
+    "href": "https://api.spotify.com/v1/search?query=web+performance&type=episode&offset=0&limit=1",
+    "items": [
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/dae0d881ddb23971b4273e44752b0f5db2d3b2de",
+        "description": "\"เว็บเร็ว\" เป็นเรื่องสำคัญมากๆ ที่ตะถูกพูดถงหนักเข้าไปอีกในปีนี้ วันนี้ผมจะมาเล่าให้ฟังครับว่า เรื่อง web performance ในปี 2020 นี้ มีอะไรเปลี่ยนไปบ้าง แล้วเราควรจะเริ่มลองศึกษาหรือปรับตัวยังไงบ้าง",
+        "duration_ms": 915422,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/7xx0sAk9qmb71XGLedK56d"
+        },
+        "href": "https://api.spotify.com/v1/episodes/7xx0sAk9qmb71XGLedK56d",
+        "id": "7xx0sAk9qmb71XGLedK56d",
+        "images": [
+          {
+            "height": 500,
+            "url": "https://i.scdn.co/image/a53db5fecf206500131753deed4c6c486e1105bb",
+            "width": 500
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/63fd374093d49a2578fe696d92c12d1baed88b59",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/427d5a9834a21a955a7dc252e5996d95c7752417",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "en",
+        "languages": ["en"],
+        "name": "EP.20 - Web performance ใน ปี 2020 จะเปลี่ยนไปยังไงบ้าง",
+        "release_date": "2020-03-30",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:7xx0sAk9qmb71XGLedK56d"
+      }
+    ],
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=web+performance&type=episode&offset=1&limit=1",
+    "offset": 0,
+    "previous": null,
+    "total": 299
+  }
+}

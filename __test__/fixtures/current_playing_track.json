@@ -1,11 +1,11 @@
 {
   "context": {
-    "external_urls" : {
-      "spotify" : "http://open.spotify.com/user/spotify/playlist/49znshcYJROspEqBoHg3Sv"
+    "external_urls": {
+      "spotify": "http://open.spotify.com/user/spotify/playlist/49znshcYJROspEqBoHg3Sv"
     },
-    "href" : "https://api.spotify.com/v1/users/spotify/playlists/49znshcYJROspEqBoHg3Sv",
-    "type" : "playlist",
-    "uri" : "spotify:user:spotify:playlist:49znshcYJROspEqBoHg3Sv"
+    "href": "https://api.spotify.com/v1/users/spotify/playlists/49znshcYJROspEqBoHg3Sv",
+    "type": "playlist",
+    "uri": "spotify:user:spotify:playlist:49znshcYJROspEqBoHg3Sv"
   },
   "timestamp": 1490252122574,
   "progress_ms": 44272,
@@ -51,12 +51,7 @@
         "uri": "spotify:artist:0C0XlULifJtAgn6ZNCW2eu"
       }
     ],
-    "available_markets": [
-      "AD",
-      "AR",
-      "TW",
-      "UY"
-    ],
+    "available_markets": ["AD", "AR", "TW", "UY"],
     "disc_number": 1,
     "duration_ms": 222075,
     "explicit": false,
