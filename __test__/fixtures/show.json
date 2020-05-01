@@ -1,0 +1,1973 @@
+{
+  "available_markets": [
+    "AD",
+    "AE",
+    "AR",
+    "AT",
+    "AU",
+    "BE",
+    "BG",
+    "BH",
+    "BO",
+    "BR",
+    "CA",
+    "CH",
+    "CL",
+    "CO",
+    "CR",
+    "CY",
+    "CZ",
+    "DE",
+    "DK",
+    "DO",
+    "DZ",
+    "EC",
+    "EE",
+    "ES",
+    "FI",
+    "FR",
+    "GB",
+    "GR",
+    "GT",
+    "HK",
+    "HN",
+    "HU",
+    "ID",
+    "IE",
+    "IL",
+    "IN",
+    "IS",
+    "IT",
+    "JO",
+    "JP",
+    "KW",
+    "LB",
+    "LI",
+    "LT",
+    "LU",
+    "LV",
+    "MA",
+    "MC",
+    "MT",
+    "MX",
+    "MY",
+    "NI",
+    "NL",
+    "NO",
+    "NZ",
+    "OM",
+    "PA",
+    "PE",
+    "PH",
+    "PL",
+    "PS",
+    "PT",
+    "PY",
+    "QA",
+    "RO",
+    "SE",
+    "SG",
+    "SK",
+    "SV",
+    "TH",
+    "TN",
+    "TR",
+    "TW",
+    "US",
+    "UY",
+    "VN",
+    "ZA"
+  ],
+  "copyrights": [],
+  "description": "Nyheter på lätt svenska för dig som är ny i Sverige. Ansvarig utgivare: Klas Wolf-Watz",
+  "episodes": {
+    "href": "https://api.spotify.com/v1/shows/7qV2tMPbnZu18p2h0w6vvR/episodes?offset=0&limit=50",
+    "items": [
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/3852fac7b64ee43c62b6557d78c8c12300cd8f98",
+        "description": "Företag som har förlorat mycket pengar nu ska få hjälp av staten. | Idag är det Valborg. Men i år är inte firandet som vanligt. | Hur vet man om man har pollenallergi eller covid-19? | Läs texterna till nyheterna på webbsidan: www.sverigesradio.se/lattsvenska  Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 729000,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/47nrkWxUkjYqkfJrAIYeAI"
+        },
+        "href": "https://api.spotify.com/v1/episodes/47nrkWxUkjYqkfJrAIYeAI",
+        "id": "47nrkWxUkjYqkfJrAIYeAI",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/1fb1e3b0bbea8c77780eef0a901098ccf15ca1e8",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/fdf2ab20a685ff4da727251cea6b553df398e2c7",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/e838bd9a770aa1229ba1216b32f06cb85a28a716",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 30 april 2020",
+        "release_date": "2020-04-30",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:47nrkWxUkjYqkfJrAIYeAI"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/960ff53ed602c8c54cbcb16cd192b55b0e01f949",
+        "description": "Våldet i hemmen har ökat under coronakrisen. | En sjuksköterska som smittats av coronaviruset dog. Nu utreder en åklagare om det var ett brott mot arbetsmiljön. | Sverige har valt en annan strategi mot coronasmittan än många andra länder. | Här kan du läsa texten till nyheterna: https://sverigesradio.se/radioswedenpalattsvenska  Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 721895,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6eV4cQt2Du8shnRjj6vO7o"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6eV4cQt2Du8shnRjj6vO7o",
+        "id": "6eV4cQt2Du8shnRjj6vO7o",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/e2052620e7546ff3b0f85838db60f1d3568fd487",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/0d152a30be3dbfea0a1ea3ca73507e5ff67338ad",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/9a2e417c6b27c243919c8b0f41b49286bc2e82e0",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 29 april 2020",
+        "release_date": "2020-04-29",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6eV4cQt2Du8shnRjj6vO7o"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/44c69128d9a8af99b7dd40df8aacf470944ae5bf",
+        "description": "SÄPO varnar för att Sverige har blivit mer sårbart av coronakrisen. Andra länder kan spionera. | Coronaviruset fortsätter att spridas i en ganska jämn takt. | Flygbolaget SAS varslar 5000 anställda om uppsägning. De kan förlora jobbet på grund av coronakrisen. | Här kan du läsa texten till nyheterna: https://sverigesradio.se/radioswedenpalattsvenska  Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 595802,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/2kMG7xYNE8w2JkWJXCkyUe"
+        },
+        "href": "https://api.spotify.com/v1/episodes/2kMG7xYNE8w2JkWJXCkyUe",
+        "id": "2kMG7xYNE8w2JkWJXCkyUe",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/fb85cd04bc9377871f4882ffb638883299ec01c2",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/c503724136715e1b6cec89dce1cbdc1d658425fe",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/2c55636e8b0112285f85b03e15e4555c570c15f1",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 28 april 2020",
+        "release_date": "2020-04-28",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:2kMG7xYNE8w2JkWJXCkyUe"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/569c170f0ca27f020daadd4719e369b29044ad5c",
+        "description": "Fem restauranger i Stockholm stängdes, för att de inte följde Folkhälsomyndighetens regler. | Många anställda är nu permitterade. De jobbar mindre, och staten betalar en del av lönen. Men flera företag fuskar med permitteringarna. | Författaren PO Enquist har dött. | Läs texterna till nyheterna på webbsidan: www.sverigesradio.se/lattsvenska  Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 598179,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/2JhdujBpZ4xL0lzFrZXuHf"
+        },
+        "href": "https://api.spotify.com/v1/episodes/2JhdujBpZ4xL0lzFrZXuHf",
+        "id": "2JhdujBpZ4xL0lzFrZXuHf",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/4167cd51f26535beb567ac9f2a0c60982bdcb18e",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/410a5fcd404833ca72ee3dbf830964ce8693e4c6",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/cdaaded3ccc42f978e38a56bbecefe8c9606912b",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 27 april 2020",
+        "release_date": "2020-04-27",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:2JhdujBpZ4xL0lzFrZXuHf"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/ac88b89e574ee12247d977f3940ac26eca792165",
+        "description": "Fler restauranger och uteserveringar i Stockholm ska kontrolleras, så att de följer Folkhälsomyndighetens regler. | Det är torrt ute nu, och skog och gräs kan lätt börja brinna. | Den muslimska högtiden Ramadan har börjat. Men i år måste människor fira hemma. | Här kan du läsa texten till nyheterna: https://sverigesradio.se/radioswedenpalattsvenska  Programledare: Jenny Hallberg & Ingrid Forsberg.",
+        "duration_ms": 594574,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6gvsSBtFkiMIDHjQs8Wyku"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6gvsSBtFkiMIDHjQs8Wyku",
+        "id": "6gvsSBtFkiMIDHjQs8Wyku",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/4f3ca9eec7d66389f74d68f2bb67d19b06448e84",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/c29b093c191e86486a8ffe54f6530e2237fc8a0c",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/08e02f60b5d7c3e3abccfac1854efe3612d4ee09",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 24 april 2020",
+        "release_date": "2020-04-24",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6gvsSBtFkiMIDHjQs8Wyku"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/8453b3b4b1438a5045a481a78ce382dcb7ef116f",
+        "description": "Många vill vara ute i solen och träffa vänner. Men faran med coronaviruset är absolut inte över, säger regeringen och Folkhälsomyndigheten. | Färre personer söker akut vård för sjukdomar som stroke och hjärtinfarkt nu under coronapandemin. | Många kommuner och gymnasieskolor stoppar studentfirandet i år. | Läs texterna till nyheterna på webbsidan: www.sverigesradio.se/lattsvenska  Programledare: Ingrid Forsberg & Jenny Hallberg.",
+        "duration_ms": 626078,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6i9SVaoUvu1vvAS0tCoB3g"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6i9SVaoUvu1vvAS0tCoB3g",
+        "id": "6i9SVaoUvu1vvAS0tCoB3g",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/92a9e26db8695b7630ea65807643e0c23af74afd",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/f99b7668897400b338d682f69c14be789c2dfe5a",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/38983ed0d172ef94b96728eddb621140b007ca9d",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 23 april 2020",
+        "release_date": "2020-04-23",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6i9SVaoUvu1vvAS0tCoB3g"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/7ae3cd31d54fb5515deb38a20c7b9910a80752c3",
+        "description": "Många sommarjobb för unga försvinner på grund av coronakrisen, men nu ger regeringen mer pengar till kommunerna för att fler unga ska få sommarjobb. | Fler arter av djur och växter är hotade och kan försvinna. | Ett nytt projekt hjälper människor att hjälpa varandra i krisen. | Här kan du läsa texten till nyheterna: https://sverigesradio.se/radioswedenpalattsvenska  Programledare: Jenny Hallberg och Ingrid Forsberg",
+        "duration_ms": 656772,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/1tDnkzMRYZuMtJTDe2WgOB"
+        },
+        "href": "https://api.spotify.com/v1/episodes/1tDnkzMRYZuMtJTDe2WgOB",
+        "id": "1tDnkzMRYZuMtJTDe2WgOB",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/5507ef90ee095ce4824c14a5a19d48ea1d3e2d8c",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/d3b79835720407d7b2a9f93a2d53b10c727eae99",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/817692d62499398e4f9199725c1d4b52e496dace",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 22 april 2020",
+        "release_date": "2020-04-22",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:1tDnkzMRYZuMtJTDe2WgOB"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/a76eb08564c5a8fed7524cf51d7f909f46108cae",
+        "description": "En av tre i Stockholm kan snart ha haft coronaviruset, tror experterna | Personalen i intensivvården i Stockholm jobbar långa dagar och många är trötta. | Lantbrukare odlar blommor för att det ska bli fler bin. | Här kan du läsa texterna: https://sverigesradio.se/lattsvenska  Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 603795,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/0NtdOz27FgSQtqZwi9euoZ"
+        },
+        "href": "https://api.spotify.com/v1/episodes/0NtdOz27FgSQtqZwi9euoZ",
+        "id": "0NtdOz27FgSQtqZwi9euoZ",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/8e83147e0b5eb884be93aec1bf102303df7943cf",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/19ada9c10f90eed3e8cf6ba4ea1e5d39db8dc634",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/be25de5798cd1306d7bfa75f24d2731a6f794b14",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 21 april 2020",
+        "release_date": "2020-04-21",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:0NtdOz27FgSQtqZwi9euoZ"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/eba9b8dc59dbac3ffb692b21bf55c6f14da4a460",
+        "description": "Antalet coronasmittade i Sverige ökar ungefär lika mycket varje dag. | Många människor är ute på uteserveringar och i parker, och alla följer inte myndigheternas rekommendationer. | Nu börjar industrin i Sverige att göra bilar och lastbilar igen. | Läs texterna till nyheterna här: www.sverigesradio.se/lattsvenska  Programledare: Jenny Hallberg och Ingrid Forsberg.",
+        "duration_ms": 618084,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/0ApTlCiP963hBJU5WKgxAA"
+        },
+        "href": "https://api.spotify.com/v1/episodes/0ApTlCiP963hBJU5WKgxAA",
+        "id": "0ApTlCiP963hBJU5WKgxAA",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/37473f082bcca5665ae132635c590371f544d366",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/b32500ae912c1c0f1b9f8a2a537df4603d59f6d5",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/fc9a6ac5dfe7bffa528eb62a875cb2defe74559c",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 20 april 2020",
+        "release_date": "2020-04-20",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:0ApTlCiP963hBJU5WKgxAA"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/6cd319aca6d97818e0c5664d2c313ab4b10abfae",
+        "description": "Sverige ska göra fler tester för coronaviruset. | Regeringen får mer makt och kan bestämma mer i arbetet mot coronaviruset. | Tio nya artister har valts in i Swedish Music Hall of Fame. | Läs texterna till nyheterna här: www.sverigesradio.se/lattsvenska  Programledare: Jenny Hallberg och Ingrid Forsberg",
+        "duration_ms": 584230,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/7wIgWnAFEwrKvVIdkrzUhj"
+        },
+        "href": "https://api.spotify.com/v1/episodes/7wIgWnAFEwrKvVIdkrzUhj",
+        "id": "7wIgWnAFEwrKvVIdkrzUhj",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/c8f415b82731ed31b081476c7fd43c9c564cd6c4",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/6b34807cdf6940c1b043008f16e39bf93e52aa32",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/7cf7881d363787606580245d29fa4ff8dfd2fa89",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 17 april 2020",
+        "release_date": "2020-04-17",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:7wIgWnAFEwrKvVIdkrzUhj"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/20665fc57d98dcb7364ae8827368ad7e52d67a94",
+        "description": "Statsminister Stefan Löfven tackar alla som tog sitt ansvar och stannade hemma under påsken. Och han uppmanar alla att fortsätta göra som myndigheterna säger. | Det kan bli problem för lantbruket i Sverige. De utländska gästarbetarna kan inte resa hit. | Rekordmånga personer har sökt utbildningar på universitet och högskolor. | Läs texterna till nyheterna här: www.sverigesradio.se/lattsvenska  Programledare: Ingrid Forsberg",
+        "duration_ms": 655074,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/42Zu6Dn5A0KyxofatHE6R6"
+        },
+        "href": "https://api.spotify.com/v1/episodes/42Zu6Dn5A0KyxofatHE6R6",
+        "id": "42Zu6Dn5A0KyxofatHE6R6",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/9a25d06be31312f554454a66fa4832562683bfb7",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/d47636700c34c2b35b83e64bb7490cdfd558fde6",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/531e2c3bcbe035884b3f6fda662f788598cb5798",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 16 april 2020",
+        "release_date": "2020-04-16",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:42Zu6Dn5A0KyxofatHE6R6"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/17377a924c5a70546048bef69fa617840c39bec7",
+        "description": "Det går dåligt för Sveriges ekonomi på grund av coronaviruset. Regeringen lägger mer än 100 miljarder kronor extra i vårbudgeten. | Det kan vara så att coronaviruset inte sprids lika snabbt längre, säger Folkhälsomyndigheten. | Många är ute i naturen nu. | Läs texterna till nyhterna på webbsidan: www.sverigesradio.se/lattsvenska  Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 698176,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/3i4yLDhrtTyFUQirSAtNbw"
+        },
+        "href": "https://api.spotify.com/v1/episodes/3i4yLDhrtTyFUQirSAtNbw",
+        "id": "3i4yLDhrtTyFUQirSAtNbw",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/95e725f1a0921f157a68517602b294bf68fb7a3d",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/81528e522b021e2c609b24ae4d9f68e87619685f",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/4598f950632daddc779406c29e9a3f7b373e1ad1",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 15 april 2020",
+        "release_date": "2020-04-15",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:3i4yLDhrtTyFUQirSAtNbw"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/610e85dc3fc0afea05d51eb0047f9d47bbef1913",
+        "description": "Fler än 1000 personer har dött av coronaviruset. | Arbetsförmedlingen har fått in nästan 55 000 nya arbetslösa i mars. | Svenskarna reste mycket mindre än vanligt under påsken.  | Läs texterna till nyheterna på webbsidan: www.sverigesradio.se/lattsvenska  Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 770822,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6VzKV7DP97fbPO6JMNPCLI"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6VzKV7DP97fbPO6JMNPCLI",
+        "id": "6VzKV7DP97fbPO6JMNPCLI",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ba7fc8f85393eeec1c7f7c630a7207549eb5a6d9",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/a76d017f37886fa1bb86352a24ce1a01be6b0142",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/02ee3655b5c320312b412a9ae629c2372c43b453",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 14 april 2020",
+        "release_date": "2020-04-14",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6VzKV7DP97fbPO6JMNPCLI"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/72eb539eff5ac7e200db991830ed1aa497c3149d",
+        "description": "På torsdag eftermiddag hade minst 793 coronasmittade personer dött i Sverige. Alla restauranger och barer följer inte Folkhälsomyndighetens regler. Under påsken brukar det vara många människor i kyrkorna. Men i år sänds många gudstjänster på internet i stället.  Programledare: Ingrid Forsberg.",
+        "duration_ms": 764710,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/5GSa0cmTOXx5wSt9NcKuDc"
+        },
+        "href": "https://api.spotify.com/v1/episodes/5GSa0cmTOXx5wSt9NcKuDc",
+        "id": "5GSa0cmTOXx5wSt9NcKuDc",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/e8a7c6e1f503417b541e706b1464a5e696d521fc",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/e38135894fb9b83580179496b5fd986274921e3b",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/7444cb6659077dfce418f8e5e4f85cd52eebc39e",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 9 april 2020",
+        "release_date": "2020-04-09",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:5GSa0cmTOXx5wSt9NcKuDc"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/dd131782b6088ba3c9d6fa0e86473b173afd4952",
+        "description": "Det verkar som att färre blir smittade i Stockholm nu. Viruset ökar i stället lite på andra platser i Sverige, säger Folkhälsomyndigheten. Moderaterna vill att staten ger mer pengar till företag, och Vänsterpartiet vill att staten hjälper människor med hyran. Många människor vill hjälpa varandra nu under coronakrisen.   ",
+        "duration_ms": 752301,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/0fhpvJ2JXVyeDoHRr113nE"
+        },
+        "href": "https://api.spotify.com/v1/episodes/0fhpvJ2JXVyeDoHRr113nE",
+        "id": "0fhpvJ2JXVyeDoHRr113nE",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/cd56e6d515ccd3ba9cd251c89d5ba00ad27fcb56",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/04229475363bf5bf701300a7ca9c0212942e8ce2",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/086cb50bf13fcab2545a80d5b53456a79cbade18",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 8 april 2020",
+        "release_date": "2020-04-08",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:0fhpvJ2JXVyeDoHRr113nE"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/eb5b46a5b8d9f215626d6b73500352e4b4826d01",
+        "description": "Regeringen ska få rätt att ta vissa beslut om coronaviruset utan att be riksdagen om lov först. Stockholm, Östergötland och Sörmland är mest drabbade av coronasmittan. Annorlunda aktiviteter för barn och unga på påsklovet i år.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 645617,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6rD4acDEJZ4NvviWgoFWDt"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6rD4acDEJZ4NvviWgoFWDt",
+        "id": "6rD4acDEJZ4NvviWgoFWDt",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/3f88b69e33d8ef40e36a4d06f7fc46b823fbddbf",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/f643b81b0118343d332b91e04ec29738fe3a0333",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/26ed3233ee3f01134d560159b6556390fa09767d",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 7 april 2020",
+        "release_date": "2020-04-07",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6rD4acDEJZ4NvviWgoFWDt"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/5925c459bd43d66cf5c8501ef3cd6a332102975a",
+        "description": "Att coronaviruset har kommit in på många äldreboenden är det mest oroande just nu, säger Anders Tegnell på Folkhälsomyndigheten. Antalet arbetslösa personer ökar snabbt i Sverige. Sveriges kung höll ett tal till folket.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 722235,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/1IroAWjBkvEeMDj2mYJJpA"
+        },
+        "href": "https://api.spotify.com/v1/episodes/1IroAWjBkvEeMDj2mYJJpA",
+        "id": "1IroAWjBkvEeMDj2mYJJpA",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/eb610b2dc2132c63f6221a4035388b6a9bc601d6",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/12e2074037b439d8e46d496d2adee533fd584bf3",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/1b165f83ddd1cb4daeec4b1833261092eafb2b03",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 6 april 2020",
+        "release_date": "2020-04-06",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:1IroAWjBkvEeMDj2mYJJpA"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/57761b9b6f313151bbff3bcf08654453ee6bd3ca",
+        "description": "Region Stockholm har aktiverat ett krisavtal för personalen som jobbar med intensivvård. Nu ska personalen jobba fler timmar, och få mycket högre lön. Flera företag i världen ändrar nu sitt arbete så att de kan tillverka saker till sjukvården. Musiker sjunger och spelar utomhus för de äldre på äldreboenden.  Programledare: Ingrid Forsberg.",
+        "duration_ms": 691593,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6BHNdRbtIEUSO3dWynurMB"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6BHNdRbtIEUSO3dWynurMB",
+        "id": "6BHNdRbtIEUSO3dWynurMB",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/33ab6908e9ec1449da86508dbcecd758ef7e1f6a",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/d5995695745c90902b1575d369770b3f89eb9495",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/317d4d4e15199647386c5b86423ea95bc11f3d39",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 3 april 2020",
+        "release_date": "2020-04-03",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6BHNdRbtIEUSO3dWynurMB"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/4e2b26f6a498b26fc8a367f237a69e23b01594d1",
+        "description": "Coronaviruset har kommit in på många äldreboenden. Statsministern Stefan Löfven uppmanar alla att vara uthålliga och verkligen följa myndigheternas instruktioner. Det här kommer ta lång tid, säger han. Regeringen ger kommuner och regioner 15 miljarder kronor extra i år, på grund av coronapandemin.  Programledare: Ingrid Forsberg.",
+        "duration_ms": 703322,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/2bo87TGsXy4HXWXpw4UyYn"
+        },
+        "href": "https://api.spotify.com/v1/episodes/2bo87TGsXy4HXWXpw4UyYn",
+        "id": "2bo87TGsXy4HXWXpw4UyYn",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/37023f44e040cab504320fe38c17f1556f8bdcc1",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/9a4ce59d57878a045f5494344ad2558c3c860b70",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/dd580910e3c41b5aa31a5c94cd41c5d9ba9ac245",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 2 april 2020",
+        "release_date": "2020-04-02",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:2bo87TGsXy4HXWXpw4UyYn"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/fc1cf9c1c41e40bcb64d511df5495878b1391b71",
+        "description": "Håll avstånd till andra människor, för att hindra spridningen av coronaviruset. Nu får man bara hämta ut medicin som räcker i tre månader. Det är för att medicinerna ska räcka till alla som behöver dem. En rekommendation från en myndighet betyder att man ska göra på ett visst sätt.   Programledare: Ingrid Forsberg",
+        "duration_ms": 821735,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/3cRQIQ5cmGj7bhjxOVTzUH"
+        },
+        "href": "https://api.spotify.com/v1/episodes/3cRQIQ5cmGj7bhjxOVTzUH",
+        "id": "3cRQIQ5cmGj7bhjxOVTzUH",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ed56dec4d8f12cfb0b7874452b791ef6c983e11a",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/cdbb0fe9e16263747ade008d8447c985aa32fddd",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/528a232afeb1bcea11646e7e783e8aa2fbf0ee30",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 1 april 2020",
+        "release_date": "2020-04-01",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:3cRQIQ5cmGj7bhjxOVTzUH"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/da88428f1247fe5da72f70b4efde9f67d54235ef",
+        "description": "Fler ska testas för coronaviruset, och det blir förbjudet att besöka äldreboenden. Det ska bli lättare att få a-kassa när man blir arbetslös. Fler vill ha hjälp att sluta röka.   Programledare: Ingrid Forsberg & Jenny Hallberg.",
+        "duration_ms": 714267,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/14hZLwFNQ9i2Meh0PWmfX5"
+        },
+        "href": "https://api.spotify.com/v1/episodes/14hZLwFNQ9i2Meh0PWmfX5",
+        "id": "14hZLwFNQ9i2Meh0PWmfX5",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/50d010012458c2247c37cb4965bd727266013c79",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/6d538cc8929137d8ea600d6025e5c5f262b2f6fb",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/db565f7e8d96e2dea441c5bf8e22b41b6be012c8",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 31 mars 2020 ",
+        "release_date": "2020-03-31",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:14hZLwFNQ9i2Meh0PWmfX5"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/65ebfee2c29e7ee819230a8eb721551c3fe4dc5d",
+        "description": "I Stockholm behöver fler och fler sjukvård för att de smittats av coronaviruset. Många människor har blivit varslade och kan bli av med jobbet. Men det finns också många nya jobb. Regeringen hjälper svenskar att resa hem från andra länder.   Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 722679,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/470flGSFnzGk3zyL91xops"
+        },
+        "href": "https://api.spotify.com/v1/episodes/470flGSFnzGk3zyL91xops",
+        "id": "470flGSFnzGk3zyL91xops",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ba1a5ea97779d7e68230ac35611a8635775bf0b6",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/719f8441b14bb2f63eb1819892dc229606240368",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/f380a692af2c317376813647181bb1a0a1b55a37",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 30 mars 2020",
+        "release_date": "2020-03-30",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:470flGSFnzGk3zyL91xops"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/a5009079634ec80757c53006b6a296e71c6b8668",
+        "description": "Regeringen stoppar möten och evenemang med mer än 50 personer. Många vill hjälpa till och jobba i sjukvården nu. Luften har blivit renare. Och flera artister spelar på en musikfestival på nätet.  Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 772781,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/1jyTsHeBWxmWXowxH03N5I"
+        },
+        "href": "https://api.spotify.com/v1/episodes/1jyTsHeBWxmWXowxH03N5I",
+        "id": "1jyTsHeBWxmWXowxH03N5I",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/f9122fa2b6c472e400e4f173a7b2c62db7fb4904",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/74c978f2a90f9fca6ecfa5d12cd90d31e78c844d",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/81a9bc4d2e7d835ac6f6837349f0b857972c8236",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 27 mars 2020",
+        "release_date": "2020-03-27",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:1jyTsHeBWxmWXowxH03N5I"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/1e634ce2891e15fe401f9c769b0ccd823bae3c78",
+        "description": "Fler blir sjuka och dör av coronaviruset nu. Regeringen vill hjälpa små företag som är i kris på grund av coronaviruset. Hoten mot Sverige har ökat, säger Säkerhetspolisen.  Programledare: Ingrid Forsberg & Jenny Hallberg.",
+        "duration_ms": 706535,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6Jj9ybm5rPhjshypi0xynl"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6Jj9ybm5rPhjshypi0xynl",
+        "id": "6Jj9ybm5rPhjshypi0xynl",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/bc14f4f4d43f9fd198dc8bde64adb0cf595445ba",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ac3d47ec08ef532e21eb147a6ee93b08132a8c1f",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/3341bec96ded72ed71e9748a83b6c86b81e2433f",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 26 mars 2020",
+        "release_date": "2020-03-26",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6Jj9ybm5rPhjshypi0xynl"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/e5aee57ad31d354ab36d135b72b46ec3b1790c4f",
+        "description": "Ökningen av antal coronasmittade personer i Sverige är ganska stabil. Det säger Folkhälsomyndigheten. En del arbetsplatser behöver mer folk som kan jobba nu. Till exempel inom sjukvård och företag som säljer matvaror på internet. Det är färre inbrott i bostäder nu.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 708337,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/7njYoF2SZrjsLfnrRsNzzX"
+        },
+        "href": "https://api.spotify.com/v1/episodes/7njYoF2SZrjsLfnrRsNzzX",
+        "id": "7njYoF2SZrjsLfnrRsNzzX",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/64799566af22901ddcbde080e7c4d232557ad57a",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/b6ec3c4879f9e51761f9823aeb8e3d5b9ab5037e",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/2a2f3a729c5157742f0e391ad19eae0dd46757e5",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 25 mars 2020",
+        "release_date": "2020-03-25",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:7njYoF2SZrjsLfnrRsNzzX"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/ffeca4b2b67cf2efccac5dda287994e7f4dfb02f",
+        "description": "Restauranger och barer får bara servera personer som sitter vid ett bord. Ingen får sitta eller stå i baren. Trångboddhet och brist på information kan göra så att coronaviruset sprids mer. Regeringen varnar för falsk information och lögner om coronaviruset.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 785921,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/5e20FXXIAqAflpTjSPkuZw"
+        },
+        "href": "https://api.spotify.com/v1/episodes/5e20FXXIAqAflpTjSPkuZw",
+        "id": "5e20FXXIAqAflpTjSPkuZw",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/4b1665dc0b6244b4396238b81dd994895475c493",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/c4a5f5b86192f771768aa34841b9688f422897df",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/8877ce852cddbd2b02041d46c3fea0c9f070253e",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 24 mars 2020",
+        "release_date": "2020-03-24",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:5e20FXXIAqAflpTjSPkuZw"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/a868ffa56cc1ffdd5d977716a5a7266111ad0670",
+        "description": "Stockholm bygger fältsjukhus för de som är väldigt sjuka. Väldigt många människor kan bli av med jobbet på grund av coronaviruset. Statsministern har hållit ett tal till folket.   Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 684958,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/1jKuStvcODN6eg1x5zchlf"
+        },
+        "href": "https://api.spotify.com/v1/episodes/1jKuStvcODN6eg1x5zchlf",
+        "id": "1jKuStvcODN6eg1x5zchlf",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/7d1270b9da007daeb108d2b1c6c34f93b8f4e502",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/c4e8c4d8639406cc6807ba67a8fd736e59bb5e90",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/d2af83b055465c3c64b696901043cfbe4ff01930",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 23 mars 2020",
+        "release_date": "2020-03-23",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:1jKuStvcODN6eg1x5zchlf"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/d07a5a0032380489e70906d21a3b0fb5c85d673b",
+        "description": "Flera företag som tillverkar lastbilar och bilar stänger sina fabriker i Sverige nästa vecka. Alla måste ta ansvar för att inte sprida coronasmittan nu. Det säger Sveriges inrikesminister Mikael Damberg. Många barn och unga är oroliga och mår dåligt nu.   Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 699377,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/0n21kmt9kstPQNn9chOvjQ"
+        },
+        "href": "https://api.spotify.com/v1/episodes/0n21kmt9kstPQNn9chOvjQ",
+        "id": "0n21kmt9kstPQNn9chOvjQ",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/1cad586828ac060bef755c3c30c38b3504423be6",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/a7f8da069e0eb4b071a1d76cae72eeea6b530e0d",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/10e17c1152fb4ae9ee579998454b6ce2b8ca0987",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 20 mars 2020",
+        "release_date": "2020-03-20",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:0n21kmt9kstPQNn9chOvjQ"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/f0f22401d4d9fa0923671b122ea484ab1ad0d48c",
+        "description": "Sjukhusen ska få hjälp med att välja mellan olika patienter om vården inte räcker till alla. Många svenskar är fast utomlands. Nästan alla kulturevenemang blir inställda på grund av coronaviruset. Men man kan uppleva kultur på andra sätt.  Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 745275,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/6aFOXOZKaGzNjNCRgPA7Te"
+        },
+        "href": "https://api.spotify.com/v1/episodes/6aFOXOZKaGzNjNCRgPA7Te",
+        "id": "6aFOXOZKaGzNjNCRgPA7Te",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/1397f4afd4955002407231534ca9c63c12dfadbd",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/eda3077263de53c09c4d8f45b7bc1c02e58d289d",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/8583d28f2fafdea9b85ef5a1cb1f76d568c5141e",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 19 mars 2020",
+        "release_date": "2020-03-19",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:6aFOXOZKaGzNjNCRgPA7Te"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/13aa1f42354dcfaf450ddf2d40667525af279577",
+        "description": "Sverige och EU stänger gränserna för personer utanför EU. Mer material och utrustning för vården är på väg till Sverige. Många frivilliga vill nu hjälpa äldre människor att köpa mat och ordna andra saker.   Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 658809,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/0vqCqr7JMPNTJYvwYe7mit"
+        },
+        "href": "https://api.spotify.com/v1/episodes/0vqCqr7JMPNTJYvwYe7mit",
+        "id": "0vqCqr7JMPNTJYvwYe7mit",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/0e3ebe50943d6bd71c728356234511fa0784d10f",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ecc119a2d5b184392da5d68ba8468de2a93d8990",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/55120cd7a57a8aafbf2875ece34645fe29f52c1e",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 18 mars 2020",
+        "release_date": "2020-03-18",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:0vqCqr7JMPNTJYvwYe7mit"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/edb17e28bf9fe82830b25c953a181daf43a66a34",
+        "description": "Gymnasier och skolor för vuxna ska stänga. Studenterna ska studera hemma istället. Coronaviruset sprids nu i fler delar av Sverige. Många människor riskerar att förlora sina jobb.  Programledare: Ingrid Forsberg.",
+        "duration_ms": 761366,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/5V8S47EJzS2yYMdbiWKT7h"
+        },
+        "href": "https://api.spotify.com/v1/episodes/5V8S47EJzS2yYMdbiWKT7h",
+        "id": "5V8S47EJzS2yYMdbiWKT7h",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/6c00270cf78a8691e018c5eee60c83076e2d77e4",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/b4ff96cf36a63f0008e6a443f2b99c8558cdad06",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/03bb6710e1dcd86b562fa41281ce6d1b2161e5f4",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 17 mars 2020",
+        "release_date": "2020-03-17",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:5V8S47EJzS2yYMdbiWKT7h"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/5cf8598888a4c3f477ee613e5b9add999c3e5f0f",
+        "description": "Nu är det viktigt att skydda gamla personer, som är mest känsliga för coronaviruset. Regeringen lägger 300 miljarder kronor mer i budgeten för att hjälpa företag som drabbas av coronaviruset. Ingen ska resa utomlands nu, om man inte måste. Det säger Utrikesdepartementet.  Programledare: Ingrid Forsberg & Jenny Hallberg.",
+        "duration_ms": 785451,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/2w8XTmoXkcsajG66rsfWez"
+        },
+        "href": "https://api.spotify.com/v1/episodes/2w8XTmoXkcsajG66rsfWez",
+        "id": "2w8XTmoXkcsajG66rsfWez",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/935f1c190dbb034522b5db783fde625cd7897545",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/eea3882290cd988b9707526c37f210a3f2797015",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/e2cb446ea768a63fae4620aa7fcfd567f2bd1a38",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 16 mars 2020",
+        "release_date": "2020-03-16",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:2w8XTmoXkcsajG66rsfWez"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/b9a2a7cd5f07679055af9e4ff6a76ff65750446e",
+        "description": "Läget är allvarligt och alla måste hjälpas åt, säger statsminister Stefan Löfven. Regeringen stänger inte skolorna i Sverige just nu. En orsak är att föräldrar som arbetar inom viktiga arbeten som sjukvård behövs på sina arbeten. Coronaviruset påverkar ekonomin och hela samhället.  Programledare: Ingrid Forsberg & Jenny Hallberg",
+        "duration_ms": 746084,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/4cGdmLuirY1kR71kBiliYc"
+        },
+        "href": "https://api.spotify.com/v1/episodes/4cGdmLuirY1kR71kBiliYc",
+        "id": "4cGdmLuirY1kR71kBiliYc",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/b4bfd4e0551691d1a01b8f76b9b575878d67ac14",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/da3da311df402f294c48c09aeaa10bd97b5460da",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/bdb13779772d54dbfc51535bbbcabd59b6df3b4e",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 13 mars 2020",
+        "release_date": "2020-03-13",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:4cGdmLuirY1kR71kBiliYc"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/91ff50f9ed7d430599c534f2eb0ca27bb0f95f50",
+        "description": "Folkhälsomyndigheten ser tecken på att coronaviruset sprids i Sverige. Men de tror inte att det är någon stor spridning än. Alla evenemang och folksamlingar med fler än 500 personer stoppas. En 16-årig pojke sköts ihjäl i Göteborg.   Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 667612,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/1pAGanTLkA1RKc75n9skZi"
+        },
+        "href": "https://api.spotify.com/v1/episodes/1pAGanTLkA1RKc75n9skZi",
+        "id": "1pAGanTLkA1RKc75n9skZi",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/30973079aee7f33bfd8321bed74c2dcfb04b0181",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/fac29bbc2434f1a565b002309d99a316a7e52ec2",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/0f880ef651a22c38f8f2c74956933365c05380cd",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 12 mars 2020",
+        "release_date": "2020-03-12",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:1pAGanTLkA1RKc75n9skZi"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/d30655ecec3bfb00891e25eadcbffa350808bc78",
+        "description": "Stora samlingar av människor och evenemang kommer stoppas, på grund av coronaviruset. Statsministern Stefan Löfven säger att alla måste hjälpas åt för att inte sprida coronaviruset. En bro har åkt till Stockholm på ett jättestort fartyg, ända från Kina.  Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 564742,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/3njEAxygrg9KztCxSyLnkG"
+        },
+        "href": "https://api.spotify.com/v1/episodes/3njEAxygrg9KztCxSyLnkG",
+        "id": "3njEAxygrg9KztCxSyLnkG",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/e01c801df89383228d51d3178588794540032057",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/0193d9092292959b2cff251b715edfb2aea37e8a",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/dcf35c1ed6d62c2e71b7c2ed5262ba9f1ddad63f",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 11 mars 2020",
+        "release_date": "2020-03-11",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:3njEAxygrg9KztCxSyLnkG"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/990462c150a623f778bdb0a7fa7daef7da2e34e6",
+        "description": "Risken att coronaviruset sprids i Sverige är nu mycket hög. Företaget Preem vill bygga ut sin fabrik för att raffinera olja i Lysekil. Det skulle öka Sveriges utsläpp av koldioxid väldigt mycket. Flera stora idrottstävlingar ställs in i världen på grund av det nya coronaviruset.   Programledare: Ingrid Forsberg och Jenny Hallberg.",
+        "duration_ms": 703270,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/2NgvfqSu5qAmmiJ5k59gLI"
+        },
+        "href": "https://api.spotify.com/v1/episodes/2NgvfqSu5qAmmiJ5k59gLI",
+        "id": "2NgvfqSu5qAmmiJ5k59gLI",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/bfb7d66bacfd423614ced864f0582cbba654dfa9",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/989daf7859b9f55701f19f6c8a83624a22a16ffe",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/3f9c44d48f47ff8ab680ff0ce7c6ca507b2fea2e",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 10 mars 2020",
+        "release_date": "2020-03-10",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:2NgvfqSu5qAmmiJ5k59gLI"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/ed70e595c23a4d8d013cb39d99710a9396f757ef",
+        "description": "Folkhälsomyndigheten uppmanar alla att hjälpa till för att smittan inte ska spridas i Sverige. Man ska alltid vara hemma om man känner sig sjuk. De flesta svenskar vill att Sverige ska ta emot färre flyktingar. Gruppen The Mamas vann Melodifestivalen med låten \"Move\".  Programledare: Ingrid Forsberg och Jenny Hallberg",
+        "duration_ms": 632765,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/3Qvs1AVOQR42HmCwnN9DDu"
+        },
+        "href": "https://api.spotify.com/v1/episodes/3Qvs1AVOQR42HmCwnN9DDu",
+        "id": "3Qvs1AVOQR42HmCwnN9DDu",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/9cad161f9ba0fd07b614b75205bd2acf040a0cda",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/18c9341869430c4d43ef4db9ec7c2b9dcb5f5124",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/c6aeee3f4afb6a5e4afaed216c2532d8f250ed65",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 9 mars 2020",
+        "release_date": "2020-03-09",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:3Qvs1AVOQR42HmCwnN9DDu"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/525ee9b51ab66818bdb7d08084e631e5df1754e2",
+        "description": "Sveriges Utrikesdepartement säger att svenskar inte ska åka till norra Italien. Det är svårt att hitta information om coronaviruset på andra språk än svenska. På lördag är finalen i Melodifestivalen.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 712752,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/3yO9lcxa4Zdm0nCoHf2H1u"
+        },
+        "href": "https://api.spotify.com/v1/episodes/3yO9lcxa4Zdm0nCoHf2H1u",
+        "id": "3yO9lcxa4Zdm0nCoHf2H1u",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/a7401f21825f08a55f83b0a54f2be615c8b6726f",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/edbd1cdfa44ecd4644dd70a3a61532845a2ef911",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/3dd34646f3621a7b5433e6aaababc5a9f4874ae6",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 6 mars 2020",
+        "release_date": "2020-03-06",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:3yO9lcxa4Zdm0nCoHf2H1u"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/8381e17ce7dbfb0902df0aeb3188f1dd98a147de",
+        "description": "Nu är minst 60 personer i Sverige smittade av coronaviruset. Alla nya fall har blivit smittade i norra Italien. Unga brottslingar som gör grova brott ska inte få lägre straff, säger regeringen. Idag är första torsdagen i mars - en dag som många smålänningar firar.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 658496,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/0VvQA1cdZuse451VaElb2G"
+        },
+        "href": "https://api.spotify.com/v1/episodes/0VvQA1cdZuse451VaElb2G",
+        "id": "0VvQA1cdZuse451VaElb2G",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/da3c8b416e45a4806fb0d66895d8327e3c53f296",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/3d8ff2dd86fd6564fd4f96f2fcc8344ba2584242",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/3f9472b09fadf1617cfb98797cf9852e0d3336ed",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 5 mars 2020",
+        "release_date": "2020-03-05",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:0VvQA1cdZuse451VaElb2G"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/c602cc3f641283f61e8e1a291fc75374d8553554",
+        "description": "Minst 35 svenskar är nu smittade av coronaviruset. Alla har smittats utomlands, eller av en person som varit utomlands. Utrikesdepartementet planerar inte att hjälpa svenskar som vill hem från Iran. Väljarna litar mest på Vänsterpartiets partiledare.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 662728,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/7MEBZspFfbsrekANJ61PVS"
+        },
+        "href": "https://api.spotify.com/v1/episodes/7MEBZspFfbsrekANJ61PVS",
+        "id": "7MEBZspFfbsrekANJ61PVS",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/7e16f1e09eeb7b285258e0dadd0298d8b8f91d1b",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/dcd4cba9814e683005d00515e8461186bd07316d",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/fb521931ac645bcebca0f398fb912f6e473c90f0",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 4 mars 2020",
+        "release_date": "2020-03-04",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:7MEBZspFfbsrekANJ61PVS"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/b1e2ec7c986e726e2f945c17a41b71c1ba9e4ab9",
+        "description": "Minst nio nya coronasmittade personer har upptäckts i Sverige idag. Alla hade varit i norra Italien. Polisen upptäcker fler och fler förfalskade pass. Nu kan man se föreställningar från Kungliga Operan gratis, via internet.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 706378,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/42umEsOJq2FCdRG1nHyyR0"
+        },
+        "href": "https://api.spotify.com/v1/episodes/42umEsOJq2FCdRG1nHyyR0",
+        "id": "42umEsOJq2FCdRG1nHyyR0",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/c325a1a12a8d693e9ea3aafbe47bb040709b8eb5",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/3ca950ef5b576584c8acfe3f834f20cdd5a5ee4d",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/a53f0991d1d8e9a85d6ea193480170e8f48038cd",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 3 mars 2020",
+        "release_date": "2020-03-03",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:42umEsOJq2FCdRG1nHyyR0"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/76ad4b4392ad5f23caa1f0c966d7844acbdbdae4",
+        "description": "Risken att personer smittas med coronaviruset utomlands och reser till Sverige, är nu mycket hög. Flygresor mellan Sverige och Iran stoppas, på grund av coronaviruset. Nu är alla artisterna klara till årets final i Melodifestivalen.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 598963,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/3fE78SyzdxvMO9pQNqCLQ0"
+        },
+        "href": "https://api.spotify.com/v1/episodes/3fE78SyzdxvMO9pQNqCLQ0",
+        "id": "3fE78SyzdxvMO9pQNqCLQ0",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/04d21af6efca497925de024f541231a4b0aae0b2",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/a3cdec25f38049d22c3802b1229a54f654aafba7",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/b42c1f0e51533914f1ab2b73a438018b7e970896",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 2 mars 2020",
+        "release_date": "2020-03-02",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:3fE78SyzdxvMO9pQNqCLQ0"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/8a17912e2eba6b46d3dae40521c97ef314e437e4",
+        "description": "Fler svenskar är smittade av det nya coronaviruset. Statsminister Stefan Löfven säger att regeringen noga följer det som händer med coronaviruset. På söndag är den stora skidtävlingen Vasaloppet i Dalarna, där 15 000 skidåkare tävlar.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 687675,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/3fZZ7zz64hsveFxLzfHF2l"
+        },
+        "href": "https://api.spotify.com/v1/episodes/3fZZ7zz64hsveFxLzfHF2l",
+        "id": "3fZZ7zz64hsveFxLzfHF2l",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/dad4a283c412308706e518be4cefe36c60672bf1",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/caa552652fe40d08d21431f8cb80bffc88a23e2d",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/0b5cadec96483b306d9604c8b2ed65521f29e09e",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 28 februari 2020",
+        "release_date": "2020-02-28",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:3fZZ7zz64hsveFxLzfHF2l"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/114ce4ef199a33df4c0cfc0ea73fcc729f34628d",
+        "description": "En man i Göteborg är smittad av coronaviruset. Han är nu isolerad på ett sjukhus, men är inte allvarligt sjuk. Den 1 mars ändras reglerna för att ta körkort.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 545281,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/2QV1evSpflGg4sPlX8V8lK"
+        },
+        "href": "https://api.spotify.com/v1/episodes/2QV1evSpflGg4sPlX8V8lK",
+        "id": "2QV1evSpflGg4sPlX8V8lK",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/113cf78dc952551a107fcd3156222954473d19b3",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/18d12edcd0ec56756ee8e257ad3a1871b955c771",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/5fc54b81280521927e3a218d98f842cb820371c2",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 27 februari 2020",
+        "release_date": "2020-02-27",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:2QV1evSpflGg4sPlX8V8lK"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/8baf819fe0ccd14b1993896d1d923e59842505f2",
+        "description": "Folkhälsomyndigheten tror att fler personer som är smittade med coronaviruset kommer upptäckas i Sverige. Men risken att viruset ska börja spridas i Sverige är låg. Sveriges utrikesminister är i Saudiarabien, för att diskutera fred i Jemen.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 495021,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/4D0ysruHzb9WuGnKA3uhlv"
+        },
+        "href": "https://api.spotify.com/v1/episodes/4D0ysruHzb9WuGnKA3uhlv",
+        "id": "4D0ysruHzb9WuGnKA3uhlv",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/9d7220a1c70c96f523a003a1e07554e344a0e236",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/f3a27aef87ca2b10a64b89a30b2721c1f96e0ad7",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/7eb8a9d9ed3883f68ec92707eb6e34effd0499ac",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 26 februari 2020",
+        "release_date": "2020-02-26",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:4D0ysruHzb9WuGnKA3uhlv"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/1adc984e3c90d3317f6eee9c246ad7f7f11d830f",
+        "description": "Personer som har varit i länder där coronaviruset sprids nyligen, och känner sig sjuka, ska kontakta sjukvården i Sverige. Den svensk-kinesiske bokförläggaren Gui Minhai har dömts till fängelse i Kina. Idag äter svenskarna sex miljoner semlor.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 678427,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/7FuTCoCMeV6tSt1S9EqYcX"
+        },
+        "href": "https://api.spotify.com/v1/episodes/7FuTCoCMeV6tSt1S9EqYcX",
+        "id": "7FuTCoCMeV6tSt1S9EqYcX",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/4bbc37f28e0b6894f8e81fe7fbcde2b2d11ee02a",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/3b97edf020bff1771cbdc298331300de42278776",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/35e40e3e28997928dcf6a7dccc760b8cf26c400d",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Tisdag 25 februari 2020",
+        "release_date": "2020-02-25",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:7FuTCoCMeV6tSt1S9EqYcX"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/3189d17dc4572d46f6eac3bf385d956bfee7215a",
+        "description": "Sveriges regering ger 40 miljoner kronor till arbetet mot det nya coronaviruset. Det är stora översvämningar i södra Sverige. Hanna Öberg vann en bronsmedalj i VM i skidskytte.   Programledare: Ingrid Forsberg & Jenny Hallberg.",
+        "duration_ms": 563932,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/7AnzSnxHJOQuYqJ9tL9kTe"
+        },
+        "href": "https://api.spotify.com/v1/episodes/7AnzSnxHJOQuYqJ9tL9kTe",
+        "id": "7AnzSnxHJOQuYqJ9tL9kTe",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/66e52f8ae32ca3a9705707b7bd84cc54aec6ce47",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/52dcdbcbf486d74da008995bb8685da7feda2605",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/d25fce3d4ebb7d2340415e7c2d6b9130f655ad3d",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Måndag 24 februari 2020",
+        "release_date": "2020-02-24",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:7AnzSnxHJOQuYqJ9tL9kTe"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/d47a5378555993bb8869c5ca4295bc79a7899d53",
+        "description": "EU:s länder försöker komma överens om budgeten. Forskare har skickat en raket in i ett norrsken, för att studera det. Nu har det blivit vår i flera delar av Sverige.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 593790,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/4ZotOKkzRFUNAR23C6xadU"
+        },
+        "href": "https://api.spotify.com/v1/episodes/4ZotOKkzRFUNAR23C6xadU",
+        "id": "4ZotOKkzRFUNAR23C6xadU",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/eb579d98a1dbb4e8b31ea03f6eb643a8510eec76",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/955537ba092c212a6b0664baea4ac475b12a6c5a",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/48cd41facee2375e20838fa558bb0278e8e99a0f",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Fredag 21 februari 2020",
+        "release_date": "2020-02-21",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:4ZotOKkzRFUNAR23C6xadU"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/0c3e9d382638520f29705b3d7db37d729f70cf49",
+        "description": "Moderaterna, Kristdemokraterna och Vänsterpartiet samarbetar om hårdare regler för arbetskraftsinvandring. En kvinna åtalas för att hon inte har skött sitt barns tänder. Sverige vann medaljer i de Olympiska Spelen i matlagning.   Programledare: Ingrid Forsberg.",
+        "duration_ms": 614061,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/5SvEslbiFTTqhZ258eiVoo"
+        },
+        "href": "https://api.spotify.com/v1/episodes/5SvEslbiFTTqhZ258eiVoo",
+        "id": "5SvEslbiFTTqhZ258eiVoo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/776c4778df440c1fd569c490500aefc9a1febb5c",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/9950b3ba77ce8ea3607b5263061d980d85003f81",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/f512ec5948a3694fcceb098b625a2e512d5d1132",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Torsdag 20 februari 2020",
+        "release_date": "2020-02-20",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:5SvEslbiFTTqhZ258eiVoo"
+      },
+      {
+        "audio_preview_url": "https://p.scdn.co/mp3-preview/e9fda17653ac3d7d3cd02c9ee95288412e32ddba",
+        "description": "Sjuksköterska, lärare och civilingenjör är yrken där det kommer finnas många jobb de kommande fem åren. Det är få som döms för att de har köpt sex. Svenska popstjärnan Mabel vann ett stort pris på den brittiska musikgalan Brit Awards.  Programledare: Ingrid Forsberg",
+        "duration_ms": 650659,
+        "explicit": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/episode/329rz9kfQ3LoKTpWl94B4V"
+        },
+        "href": "https://api.spotify.com/v1/episodes/329rz9kfQ3LoKTpWl94B4V",
+        "id": "329rz9kfQ3LoKTpWl94B4V",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/9f9ab585f0b6842871bae91a650bc4cc9f6465df",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ed83531647e4e38f03a883efe186969aa3e777a7",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/870359caed71c9b8de8edcf215ed55ebd097e7ac",
+            "width": 64
+          }
+        ],
+        "is_externally_hosted": false,
+        "is_playable": true,
+        "language": "sv",
+        "languages": ["sv"],
+        "name": "Onsdag 19 februari 2020",
+        "release_date": "2020-02-19",
+        "release_date_precision": "day",
+        "type": "episode",
+        "uri": "spotify:episode:329rz9kfQ3LoKTpWl94B4V"
+      }
+    ],
+    "limit": 50,
+    "next": "https://api.spotify.com/v1/shows/7qV2tMPbnZu18p2h0w6vvR/episodes?offset=50&limit=50",
+    "offset": 0,
+    "previous": null,
+    "total": 500
+  },
+  "explicit": false,
+  "external_urls": {
+    "spotify": "https://open.spotify.com/show/7qV2tMPbnZu18p2h0w6vvR"
+  },
+  "href": "https://api.spotify.com/v1/shows/7qV2tMPbnZu18p2h0w6vvR",
+  "id": "7qV2tMPbnZu18p2h0w6vvR",
+  "images": [
+    {
+      "height": 640,
+      "url": "https://i.scdn.co/image/29126c05d08eac150b0e9a4cc61f13885c555ff1",
+      "width": 640
+    },
+    {
+      "height": 300,
+      "url": "https://i.scdn.co/image/1ec0eba6e85fb1bc30221fe10092488111533a15",
+      "width": 300
+    },
+    {
+      "height": 64,
+      "url": "https://i.scdn.co/image/8870c75630935db5290d2162245b611f0fb40b14",
+      "width": 64
+    }
+  ],
+  "is_externally_hosted": false,
+  "languages": ["sv"],
+  "media_type": "audio",
+  "name": "Radio Sweden på lätt svenska",
+  "publisher": "Sveriges Radio",
+  "type": "show",
+  "uri": "spotify:show:7qV2tMPbnZu18p2h0w6vvR"
+}

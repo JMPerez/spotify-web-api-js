@@ -78,7 +78,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get an albums\'s tracks', function () {
+    it("should get an albums's tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.getAlbumTracks('0sNOF9WDwhWunNAHPD3Baj', callback);
@@ -129,7 +129,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get an artist\'s albums', function () {
+    it("should get an artist's albums", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.getArtistAlbums('5YyScSZOuBHpoFhGvHFedc', callback);
@@ -145,7 +145,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get 2 artist\'s albums', function () {
+    it("should get 2 artist's albums", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.getArtistAlbums('5YyScSZOuBHpoFhGvHFedc', { limit: 2 }, callback);
@@ -163,7 +163,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get an artist\'s top tracks', function () {
+    it("should get an artist's top tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.getArtistTopTracks('5YyScSZOuBHpoFhGvHFedc', 'ES', callback);
@@ -181,7 +181,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get an artist\'s related artists', function () {
+    it("should get an artist's related artists", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.getArtistRelatedArtists('6J6yx1t3nwIDyPXk5xa7O8', callback);
@@ -298,6 +298,209 @@ describe('Basic tests', function () {
       );
     });
 
+    it('should search for shows', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.searchShows('sweden', { offset: 0, limit: 1 }, callback);
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.search_show)
+      );
+      expect(callback.calledWith(null, fixtures.search_show)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/search/?q=sweden&type=show&offset=0&limit=1'
+      );
+    });
+
+    it('should search for episodes', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.searchEpisodes('web performance', { offset: 0, limit: 1 }, callback);
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.search_episode)
+      );
+      expect(callback.calledWith(null, fixtures.search_episode)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/search/?q=web%20performance&type=episode&offset=0&limit=1'
+      );
+    });
+
+    it('should get a show', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getShow('7qV2tMPbnZu18p2h0w6vvR', callback);
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.show)
+      );
+      expect(callback.calledWith(null, fixtures.show)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/shows/7qV2tMPbnZu18p2h0w6vvR'
+      );
+    });
+
+    it('should get several shows', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getShows(
+        ['5CfCWKI5pZ28U0uOzXkDHe', '5as3aKmN2k11yfDDDSrvaZ'],
+        callback
+      );
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.shows)
+      );
+      expect(callback.calledWith(null, fixtures.shows)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/shows/?ids=5CfCWKI5pZ28U0uOzXkDHe%2C5as3aKmN2k11yfDDDSrvaZ'
+      );
+    });
+
+    it("should get a show's episodes", function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getShowEpisodes(
+        '7qV2tMPbnZu18p2h0w6vvR',
+        { offset: 0, limit: 2 },
+        callback
+      );
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.show_episodes)
+      );
+      expect(callback.calledWith(null, fixtures.show_episodes)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/shows/7qV2tMPbnZu18p2h0w6vvR/episodes?offset=0&limit=2'
+      );
+    });
+
+    it('should get an episode', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getEpisode('47nrkWxUkjYqkfJrAIYeAI', callback);
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.episode)
+      );
+      expect(callback.calledWith(null, fixtures.episode)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/episodes/47nrkWxUkjYqkfJrAIYeAI'
+      );
+    });
+
+    it('should get several episodes', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getEpisodes(
+        ['77o6BIVlYM3msb4MMIL1jH', '0Q86acNRm6V9GYx55SXKwf'],
+        callback
+      );
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.episodes)
+      );
+      expect(callback.calledWith(null, fixtures.episodes)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/episodes/?ids=77o6BIVlYM3msb4MMIL1jH%2C0Q86acNRm6V9GYx55SXKwf'
+      );
+    });
+
+    it("should get user's saved shows", function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.getMySavedShows({ offset: 0, limit: 2 }, callback);
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.user_saved_shows)
+      );
+      expect(callback.calledWith(null, fixtures.user_saved_shows)).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/me/shows?offset=0&limit=2'
+      );
+    });
+
+    it("should add shows to user's saved shows", function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.addToMySavedShows(
+        [
+          '5AvwZVawapvyhJUIx71pdJ',
+          '6ups0LMt1G8n81XLlkbsPo',
+          '5AvwZVawapvyhJUIx71pdJ'
+        ],
+        callback
+      );
+      that.requests[0].respond(200, { 'Content-Type': 'application/json' }, '');
+      expect(callback.calledWith(null, '')).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/shows');
+      expect(that.requests[0].method).toBe('PUT');
+      expect(that.requests[0].status).toBe(200);
+    });
+
+    it("should remove shows from user's saved shows", function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.removeFromMySavedShows(
+        [
+          '5AvwZVawapvyhJUIx71pdJ',
+          '6ups0LMt1G8n81XLlkbsPo',
+          '5AvwZVawapvyhJUIx71pdJ'
+        ],
+        callback
+      );
+      that.requests[0].respond(200, { 'Content-Type': 'application/json' }, '');
+      expect(callback.calledWith(null, '')).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/shows');
+      expect(that.requests[0].method).toBe('DELETE');
+      expect(that.requests[0].status).toBe(200);
+    });
+
+    it("should check if a show is in the user's saved shows", function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.containsMySavedShows(
+        [
+          '5AvwZVawapvyhJUIx71pdJ',
+          '6ups0LMt1G8n81XLlkbsPo',
+          '5AvwZVawapvyhJUIx71pdJ'
+        ],
+        callback
+      );
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify([true, true, false])
+      );
+      expect(callback.calledWith(null, [true, true, false])).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/me/shows/contains?ids=5AvwZVawapvyhJUIx71pdJ%2C6ups0LMt1G8n81XLlkbsPo%2C5AvwZVawapvyhJUIx71pdJ'
+      );
+    });
+
     it('should get a track using a token', function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
@@ -394,7 +597,7 @@ describe('Basic tests', function () {
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me');
     });
 
-    it('should get user\'s saved tracks', function () {
+    it("should get user's saved tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -411,7 +614,7 @@ describe('Basic tests', function () {
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/tracks');
     });
 
-    it('should add tracks to user\'s saved tracks', function () {
+    it("should add tracks to user's saved tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -427,7 +630,7 @@ describe('Basic tests', function () {
       expect(that.requests[0].status).toBe(200);
     });
 
-    it('should remove tracks from user\'s saved tracks', function () {
+    it("should remove tracks from user's saved tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -443,7 +646,7 @@ describe('Basic tests', function () {
       expect(that.requests[0].status).toBe(200);
     });
 
-    it('should check if a track is in the user\'s saved tracks', function () {
+    it("should check if a track is in the user's saved tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -463,7 +666,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get user\'s saved albums', function () {
+    it("should get user's saved albums", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -480,7 +683,7 @@ describe('Basic tests', function () {
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/albums');
     });
 
-    it('should add albums to user\'s saved albums', function () {
+    it("should add albums to user's saved albums", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -496,7 +699,7 @@ describe('Basic tests', function () {
       expect(that.requests[0].status).toBe(200);
     });
 
-    it('should remove albums from user\'s saved albums', function () {
+    it("should remove albums from user's saved albums", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -512,7 +715,7 @@ describe('Basic tests', function () {
       expect(that.requests[0].status).toBe(200);
     });
 
-    it('should check if a album is in the user\'s saved albums', function () {
+    it("should check if a album is in the user's saved albums", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -532,7 +735,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get user\'s top artists', function () {
+    it("should get user's top artists", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -549,7 +752,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get user\'s top tracks', function () {
+    it("should get user's top tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -566,7 +769,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get user\'s recently played tracks', function () {
+    it("should get user's recently played tracks", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -585,7 +788,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get user\'s playlists', function () {
+    it("should get user's playlists", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -602,7 +805,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get current user\'s playlists', function () {
+    it("should get current user's playlists", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -619,7 +822,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should get current user\'s playlists with options', function () {
+    it("should get current user's playlists with options", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');
@@ -693,7 +896,7 @@ describe('Basic tests', function () {
       );
     });
 
-    it('should update a playlist\'s details', function () {
+    it("should update a playlist's details", function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.setAccessToken('<example_access_token>');

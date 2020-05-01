@@ -31,12 +31,15 @@ module.exports = {
   search_artist: loadFixture('search_artist'),
   search_track: loadFixture('search_track'),
   search_playlist: loadFixture('search_playlist'),
+  search_show: loadFixture('search_show'),
+  search_episode: loadFixture('search_episode'),
   user: loadFixture('user'),
   me: loadFixture('me'),
   user_playlists: loadFixture('user_playlists'),
   user_new_playlist: loadFixture('user_new_playlist'),
   user_saved_tracks: loadFixture('user_saved_tracks'),
   user_saved_albums: loadFixture('user_saved_albums'),
+  user_saved_shows: loadFixture('user_saved_shows'),
   user_top_artists: loadFixture('user_top_artists'),
   user_top_tracks: loadFixture('user_top_tracks'),
   playlist: loadFixture('playlist'),
@@ -55,5 +58,10 @@ module.exports = {
   recently_played_tracks: loadFixture('recently_played_tracks'),
   available_devices: loadFixture('available_devices'),
   current_playback: loadFixture('current_playback'),
-  current_playing_track: loadFixture('current_playing_track')
+  current_playing_track: loadFixture('current_playing_track'),
+  show: loadFixture('show'),
+  shows: loadFixture('shows'),
+  show_episodes: loadFixture('show_episodes'),
+  episode: loadFixture('episode'),
+  episodes: loadFixture('episodes')
 };

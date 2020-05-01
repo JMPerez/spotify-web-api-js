@@ -1,5 +1,5 @@
-module.exports = {
-  "genres" : [
+{
+  "genres": [
     "acoustic",
     "afrobeat",
     "alt-rock",
@@ -127,4 +127,4 @@ module.exports = {
     "work-out",
     "world-music"
   ]
-};
+}

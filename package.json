@@ -47,6 +47,6 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --single-quote --trailing-comma none --write '{**/*.ts,**/*.js,*.md}'"
+    "*.{js,css,md,json}": "prettier --single-quote --trailing-comma none --write '{**/*.ts,**/*.js,*.md,__test__/**/*.json}'"
   }
 }

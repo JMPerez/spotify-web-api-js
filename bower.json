@@ -20,12 +20,8 @@
     "node_modules",
     "bower_components"
   ],
-  "authors": [
-    "jmperez1985@gmail.com"
-  ],
+  "authors": ["jmperez1985@gmail.com"],
   "main": "src/spotify-web-api.js",
-  "keywords": [
-    "spotify"
-  ],
+  "keywords": ["spotify"],
   "license": "MIT"
 }

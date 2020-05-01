@@ -1,0 +1,84 @@
+{
+  "href": "https://api.spotify.com/v1/shows/7qV2tMPbnZu18p2h0w6vvR/episodes?offset=0&limit=2",
+  "items": [
+    {
+      "audio_preview_url": "https://p.scdn.co/mp3-preview/3852fac7b64ee43c62b6557d78c8c12300cd8f98",
+      "description": "Företag som har förlorat mycket pengar nu ska få hjälp av staten. | Idag är det Valborg. Men i år är inte firandet som vanligt. | Hur vet man om man har pollenallergi eller covid-19? | Läs texterna till nyheterna på webbsidan: www.sverigesradio.se/lattsvenska  Ingrid Forsberg och Jenny Hallberg.",
+      "duration_ms": 729000,
+      "explicit": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/episode/47nrkWxUkjYqkfJrAIYeAI"
+      },
+      "href": "https://api.spotify.com/v1/episodes/47nrkWxUkjYqkfJrAIYeAI",
+      "id": "47nrkWxUkjYqkfJrAIYeAI",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/1fb1e3b0bbea8c77780eef0a901098ccf15ca1e8",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/fdf2ab20a685ff4da727251cea6b553df398e2c7",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/e838bd9a770aa1229ba1216b32f06cb85a28a716",
+          "width": 64
+        }
+      ],
+      "is_externally_hosted": false,
+      "is_playable": true,
+      "language": "sv",
+      "languages": ["sv"],
+      "name": "Torsdag 30 april 2020",
+      "release_date": "2020-04-30",
+      "release_date_precision": "day",
+      "type": "episode",
+      "uri": "spotify:episode:47nrkWxUkjYqkfJrAIYeAI"
+    },
+    {
+      "audio_preview_url": "https://p.scdn.co/mp3-preview/960ff53ed602c8c54cbcb16cd192b55b0e01f949",
+      "description": "Våldet i hemmen har ökat under coronakrisen. | En sjuksköterska som smittats av coronaviruset dog. Nu utreder en åklagare om det var ett brott mot arbetsmiljön. | Sverige har valt en annan strategi mot coronasmittan än många andra länder. | Här kan du läsa texten till nyheterna: https://sverigesradio.se/radioswedenpalattsvenska  Programledare: Ingrid Forsberg och Jenny Hallberg",
+      "duration_ms": 721895,
+      "explicit": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/episode/6eV4cQt2Du8shnRjj6vO7o"
+      },
+      "href": "https://api.spotify.com/v1/episodes/6eV4cQt2Du8shnRjj6vO7o",
+      "id": "6eV4cQt2Du8shnRjj6vO7o",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e2052620e7546ff3b0f85838db60f1d3568fd487",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/0d152a30be3dbfea0a1ea3ca73507e5ff67338ad",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/9a2e417c6b27c243919c8b0f41b49286bc2e82e0",
+          "width": 64
+        }
+      ],
+      "is_externally_hosted": false,
+      "is_playable": true,
+      "language": "sv",
+      "languages": ["sv"],
+      "name": "Onsdag 29 april 2020",
+      "release_date": "2020-04-29",
+      "release_date_precision": "day",
+      "type": "episode",
+      "uri": "spotify:episode:6eV4cQt2Du8shnRjj6vO7o"
+    }
+  ],
+  "limit": 2,
+  "next": "https://api.spotify.com/v1/shows/7qV2tMPbnZu18p2h0w6vvR/episodes?offset=2&limit=2",
+  "offset": 0,
+  "previous": null,
+  "total": 500
+}
