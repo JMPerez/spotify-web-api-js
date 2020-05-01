@@ -873,6 +873,25 @@ describe('Basic tests', function () {
       );
     });
 
+    it('should get cover image of a playlist', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.setAccessToken('<example_access_token>');
+      api.getPlaylistCoverImage('3cEYpjA9oz9GiPac4AsH4n', callback);
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(fixtures.playlist_cover_image)
+      );
+      expect(
+        callback.calledWith(null, fixtures.playlist_cover_image)
+      ).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n/images'
+      );
+    });
+
     it('should create a playlist', function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();

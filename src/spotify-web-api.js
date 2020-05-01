@@ -760,6 +760,24 @@ var SpotifyWebApi = (function () {
   };
 
   /**
+   * Gets the current image associated with a specific playlist.
+   * See [Get a Playlist Cover Image](https://developer.spotify.com/documentation/web-api/reference/playlists/get-playlist-cover/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {string} playlistId The id of the playlist. If you know the Spotify URI it is easy
+   * to find the playlist id (e.g. spotify:playlist:<here_is_the_playlist_id>)
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.getPlaylistCoverImage = function (playlistId, callback) {
+    var requestData = {
+      url: _baseUri + '/playlists/' + playlistId + '/images'
+    };
+    return _checkParamsAndPerformRequest(requestData, callback);
+  };
+
+  /**
    * Creates a playlist and stores it in the current user's library.
    * See [Create a Playlist](https://developer.spotify.com/web-api/create-playlist/) on
    * the Spotify Developer site for more information about the endpoint.
