@@ -707,6 +707,13 @@ declare namespace SpotifyApi {
   interface UploadCustomPlaylistCoverImageResponse extends VoidResponse {}
 
   /**
+   * Get a Playlist Cover Image
+   * GET /v1/playlists/{playlist_id}/images
+   * https://developer.spotify.com/documentation/web-api/reference/playlists/get-playlist-cover/
+   */
+  interface PlaylistCoverImageResponse extends Array<ImageObject> {}
+
+  /**
    * Check if Users Follow a Playlist
    *
    * GET /v1/users/{user_id}/playlists/{playlist_id}/followers/contains

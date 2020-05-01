@@ -44,6 +44,7 @@ module.exports = {
   user_top_tracks: loadFixture('user_top_tracks'),
   playlist: loadFixture('playlist'),
   playlist_tracks: loadFixture('playlist_tracks'),
+  playlist_cover_image: loadFixture('playlist_cover_image'),
   featured_playlists: loadFixture('featured_playlists'),
   browse_categories: loadFixture('browse_categories'),
   category: loadFixture('category'),
