@@ -16,8 +16,7 @@ Follow these steps:
 2. Update bower version in the `bower.json` file to match the version from the npm package. Amend the commit generated in step 1.
 3. Push with tags: `git push --follow-tags`
 4. Draft a new release
-5. Generate the docs
-6. Publish a new npm package: `npm publish`
-7. Profit
+5. Publish a new npm package: `npm publish`
+6. Profit
 
 Thanks for collaborating!
