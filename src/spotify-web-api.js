@@ -1654,21 +1654,22 @@ var SpotifyWebApi = (function () {
    */
   Constr.prototype.play = function (options, callback) {
     options = options || {};
-    var params =
-      'device_id' in options ? { device_id: options.device_id } : null;
-    var postData = {};
-    ['context_uri', 'uris', 'offset', 'position_ms'].forEach(function (field) {
-      if (field in options) {
-        postData[field] = options[field];
-      }
-    });
+    var params;
+    if ('device_id' in options) {
+      params = {
+        uri: track_uri,
+        device_id: options.device_id
+      };
+    } else {
+      params = {
+        uri: track_uri
+      };
+    }
     var requestData = {
-      type: 'PUT',
-      url: _baseUri + '/me/player/play',
-      params: params,
-      postData: postData
+      type: 'POST',
+      url: _baseUri + '/me/player/queue',
+      params: params
     };
-
     // need to clear options so it doesn't add all of them to the query params
     var newOptions = typeof options === 'function' ? options : {};
     return _checkParamsAndPerformRequest(requestData, newOptions, callback);

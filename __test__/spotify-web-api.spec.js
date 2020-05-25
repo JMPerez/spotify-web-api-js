@@ -1720,18 +1720,13 @@ describe('Basic tests', function () {
     it('should queue a track', function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
-      api.queue(
-        {
-          uri: 'spotify:track:xxx'
-        },
-        callback
-      );
+      api.queue('spotify:track:2Oehrcv4Kov0SuIgWyQY9e', {}, callback);
       that.requests[0].respond(204);
       expect(that.requests[0].method).toBe('POST');
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/me/player/queue?uri=spotify:track:xxx'
+        'https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A2Oehrcv4Kov0SuIgWyQY9e'
       );
     });
 
@@ -1739,9 +1734,9 @@ describe('Basic tests', function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
       api.queue(
+        'spotify:track:2Oehrcv4Kov0SuIgWyQY9e',
         {
-          uri: 'spotify:track:xxx',
-          device_id: 'my_device_id',
+          device_id: 'my_device_id'
         },
         callback
       );
@@ -1750,7 +1745,7 @@ describe('Basic tests', function () {
       expect(callback.calledWith(null, '')).toBeTruthy();
       expect(that.requests.length).toBe(1);
       expect(that.requests[0].url).toBe(
-        'https://api.spotify.com/v1/me/player/queue?uri=spotify:track:xxx&device_id=my_device_id'
+        'https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A2Oehrcv4Kov0SuIgWyQY9e&device_id=my_device_id'
       );
     });
 
@@ -2027,7 +2022,7 @@ describe('Basic tests', function () {
     it('should throw an error when setting a not supported promise implementation', function () {
       var api = new SpotifyWebApi();
       var setPromise = function () {
-        var wrongImplementation = function () { };
+        var wrongImplementation = function () {};
         api.setPromiseImplementation(wrongImplementation);
       };
       expect(setPromise).toThrow();
