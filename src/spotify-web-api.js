@@ -1654,7 +1654,7 @@ var SpotifyWebApi = (function () {
    * See [Add an Item to the User's Playback Queue](https://developer.spotify.com/documentation/web-api/reference/player/add-to-queue/) on
    * the Spotify Developer site for more information about the endpoint.
    *
-   * @param {Object} track_uri The track to be queued.
+   * @param {string} track_uri The track to be queued.
    * @param {Object} options A JSON object with options that can be passed.
    * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
    * one is the error object (null if no error), and the second is the value if the request succeeded.
