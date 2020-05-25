@@ -1629,6 +1629,7 @@ var SpotifyWebApi = (function () {
    */
   Constr.prototype.play = function (options, callback) {
     options = options || {};
+<<<<<<< HEAD
     var params =
       'device_id' in options ? { device_id: options.device_id } : null;
     var postData = {};
@@ -1642,6 +1643,16 @@ var SpotifyWebApi = (function () {
       url: _baseUri + '/me/player/play',
       params: params,
       postData: postData
+=======
+    var params = 'device_id' in options ? {device_id: options.device_id} : null
+    params = params + {uri: track_uri}
+
+    
+    var requestData = {
+      type: 'POST',
+      url: _baseUri + '/me/player/queue',
+      params: params
+>>>>>>> 7d981e0035c561de09ff6b522a7ebf751229d2d3
     };
 
     // need to clear options so it doesn't add all of them to the query params
