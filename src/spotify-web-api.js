@@ -1663,6 +1663,7 @@ var SpotifyWebApi = (function () {
   Constr.prototype.queue = function (track_uri, options, callback) {
     options = options || {};
     var requestData
+<<<<<<< HEAD
     var params
     if ('device_id' in options) {
       params = {
@@ -1682,6 +1683,24 @@ var SpotifyWebApi = (function () {
         type: 'POST',
         url: _baseUri + '/me/player/queue',
         params: params
+=======
+    if ('device_id' in options) {
+      requestData = {
+        type: 'POST',
+        url: _baseUri + '/me/player/queue',
+        params: {
+          uri: track_uri,
+          device_id: options.device_id
+        }
+      };
+    } else {
+      requestData = {
+        type: 'POST',
+        url: _baseUri + '/me/player/queue',
+        params: {
+          uri: track_uri
+        }
+>>>>>>> 00f4f9e6a79ac5a0bd511d68e54a15487751ffde
       };
     }
 
