@@ -1662,16 +1662,32 @@ var SpotifyWebApi = (function () {
    */
   Constr.prototype.queue = function (track_uri, options, callback) {
     options = options || {};
-
-    var requestData = {
-      type: 'POST',
-      url: _baseUri + '/me/player/queue',
-      params: { 
-        uri: track_uri 
+    var requestData
+    var params
+    if ('device_id' in options) {
+      params = {
+        uri: track_uri,
+        device_id: options.device_id
       }
-    };
+      requestData = {
+        type: 'POST',
+        url: _baseUri + '/me/player/queue',
+        params: params
+      };
+    } else {
+      params = {
+        uri: track_uri,
+      }
+      requestData = {
+        type: 'POST',
+        url: _baseUri + '/me/player/queue',
+        params: params
+      };
+    }
 
-    return _checkParamsAndPerformRequest(requestData, options, callback);
+    // need to clear options so it doesn't add all of them to the query params
+    var newOptions = typeof options === 'function' ? options : {};
+    return _checkParamsAndPerformRequest(requestData, newOptions, callback);
   };
 
   /**
