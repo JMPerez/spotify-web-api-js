@@ -173,7 +173,7 @@ var SpotifyWebApi = (function () {
    * Creates an instance of the wrapper
    * @constructor
    */
-  var Constr = function () {};
+  var Constr = function () { };
 
   Constr.prototype = {
     constructor: SpotifyWebApi
@@ -1627,32 +1627,6 @@ var SpotifyWebApi = (function () {
    * one is the error object (null if no error), and the second is the value if the request succeeded.
    * @return {Object} Null if a callback is provided, a `Promise` object otherwise
    */
-  Constr.prototype.queue = function (track_uri, options, callback) {
-    options = options || {};
-    var params = 'device_id' in options ? {device_id: options.device_id} : null
-    params = params + {uri: track_uri}
-    
-    var requestData = {
-      type: 'POST',
-      url: _baseUri + '/me/player/queue',
-      params: params
-    };
-
-    // need to clear options so it doesn't add all of them to the query params
-    var newOptions = typeof options === 'function' ? options : {};
-    return _checkParamsAndPerformRequest(requestData, newOptions, callback);
-  };
-
-    /**
-   * Add a track to the queue on the user’s active device.
-   * See [Add an Item to the User's Playback Queue](https://developer.spotify.com/documentation/web-api/reference/player/add-to-queue/) on
-   * the Spotify Developer site for more information about the endpoint.
-   *
-   * @param {Object} options A JSON object with options that can be passed.
-   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
-   * one is the error object (null if no error), and the second is the value if the request succeeded.
-   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
-   */
   Constr.prototype.play = function (options, callback) {
     options = options || {};
     var params =
@@ -1668,6 +1642,33 @@ var SpotifyWebApi = (function () {
       url: _baseUri + '/me/player/play',
       params: params,
       postData: postData
+    };
+
+    // need to clear options so it doesn't add all of them to the query params
+    var newOptions = typeof options === 'function' ? options : {};
+    return _checkParamsAndPerformRequest(requestData, newOptions, callback);
+  };
+
+  /**
+   * Add a track to the queue on the user’s active device.
+   * See [Add an Item to the User's Playback Queue](https://developer.spotify.com/documentation/web-api/reference/player/add-to-queue/) on
+   * the Spotify Developer site for more information about the endpoint.
+   *
+   * @param {Object} track_uri The track to be queued.
+   * @param {Object} options A JSON object with options that can be passed.
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.queue = function (track_uri, options, callback) {
+    options = options || {};
+    var params = 'device_id' in options ? { device_id: options.device_id } : null
+    params = params + { uri: track_uri }
+
+    var requestData = {
+      type: 'POST',
+      url: _baseUri + '/me/player/queue',
+      params: params
     };
 
     // need to clear options so it doesn't add all of them to the query params
