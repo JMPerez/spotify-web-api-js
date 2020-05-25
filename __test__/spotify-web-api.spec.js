@@ -1717,6 +1717,43 @@ describe('Basic tests', function () {
       );
     });
 
+    it('should queue a track', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.queue(
+        {
+          uri: 'spotify:track:xxx'
+        },
+        callback
+      );
+      that.requests[0].respond(204);
+      expect(that.requests[0].method).toBe('POST');
+      expect(callback.calledWith(null, '')).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/me/player/queue?uri=spotify:track:xxx'
+      );
+    });
+
+    it('should queue a track on a certain device', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.queue(
+        {
+          uri: 'spotify:track:xxx',
+          device_id: 'my_device_id',
+        },
+        callback
+      );
+      that.requests[0].respond(204);
+      expect(that.requests[0].method).toBe('POST');
+      expect(callback.calledWith(null, '')).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/me/player/queue?uri=spotify:track:xxx&device_id=my_device_id'
+      );
+    });
+
     it('should pause', function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
@@ -1990,7 +2027,7 @@ describe('Basic tests', function () {
     it('should throw an error when setting a not supported promise implementation', function () {
       var api = new SpotifyWebApi();
       var setPromise = function () {
-        var wrongImplementation = function () {};
+        var wrongImplementation = function () { };
         api.setPromiseImplementation(wrongImplementation);
       };
       expect(setPromise).toThrow();
