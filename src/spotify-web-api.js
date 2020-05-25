@@ -1631,6 +1631,7 @@ var SpotifyWebApi = (function () {
     options = options || {};
     var params = 'device_id' in options ? {device_id: options.device_id} : null
     params = params + {uri: track_uri}
+
     
     var requestData = {
       type: 'POST',
