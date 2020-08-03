@@ -1618,8 +1618,8 @@ var SpotifyWebApi = (function () {
   };
 
   /**
-   * Start a new context or resume current playback on the user’s active device.
-   * See [Start/Resume a User’s Playback](https://developer.spotify.com/web-api/start-a-users-playback/) on
+   * Play a track on the user's active device
+   * See [Start/Resume a User's Playback](https://developer.spotify.com/documentation/web-api/reference/player/start-a-users-playback/) on
    * the Spotify Developer site for more information about the endpoint.
    *
    * @param {Object} options A JSON object with options that can be passed.
