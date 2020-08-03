@@ -111,6 +111,10 @@ declare namespace SpotifyApi {
     play?: boolean;
   }
 
+  interface QueueParameterObject {
+    device_id?: string;
+  }
+
   interface TrackRelinkingParameterObject {
     market?: string;
   }

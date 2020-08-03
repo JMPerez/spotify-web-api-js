@@ -1650,6 +1650,30 @@ var SpotifyWebApi = (function () {
   };
 
   /**
+   * Add an item to the end of the user’s current playback queue.
+   * See [Add an Item to the User's Playback Queue](https://developer.spotify.com/documentation/web-api/reference/player/add-to-queue/) on
+   * the Spotify Developer site for more information about the endpoint.
+   * @param {string} uri The uri of the item to add to the queue. Must be a track or an episode uri.
+   * @param {Object} options A JSON object with options that can be passed.
+   * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+   * one is the error object (null if no error), and the second is the value if the request succeeded.
+   * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+   */
+  Constr.prototype.queue = function (uri, options, callback) {
+    options = options || {};
+    var params =
+      'device_id' in options
+        ? { uri: uri, device_id: options.device_id }
+        : { uri: uri };
+    var requestData = {
+      type: 'POST',
+      url: _baseUri + '/me/player/queue',
+      params: params
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+
+  /**
    * Pause playback on the user’s account.
    * See [Pause a User’s Playback](https://developer.spotify.com/web-api/pause-a-users-playback/) on
    * the Spotify Developer site for more information about the endpoint.
