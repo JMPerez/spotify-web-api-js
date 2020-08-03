@@ -1396,6 +1396,28 @@ declare namespace SpotifyWebApi {
     ): void;
 
     /**
+     * Add an item to the end of the user’s current playback queue.
+     * See [Add an Item to the User's Playback Queue](https://developer.spotify.com/documentation/web-api/reference/player/add-to-queue/) on
+     * the Spotify Developer site for more information about the endpoint.
+     *
+     * @param {string} uri The uri of the item to add to the queue. Must be a track or an episode uri.
+     * @param {Object} options A JSON object with options that can be passed.
+     * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+     * one is the error object (null if no error), and the second is the value if the request succeeded.
+     * @return {Object} Null if a callback is provided, a `Promise` object otherwise
+     */
+    queue(
+      uri: string,
+      options?: SpotifyApi.QueueParameterObject
+    ): Promise<void>;
+    getMyCurrentPlayingTrack(
+      uri: string,
+      options: SpotifyApi.QueueParameterObject,
+      callback: VoidResultsCallback
+    ): void;
+    queue(uri: string, callback: VoidResultsCallback): void;
+
+    /**
      * Start a new context or resume current playback on the user’s active device.
      * See [Start/Resume a User’s Playback](https://developer.spotify.com/web-api/start-a-users-playback/) on
      * the Spotify Developer site for more information about the endpoint.

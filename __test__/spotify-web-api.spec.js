@@ -1678,6 +1678,19 @@ describe('Basic tests', function () {
       expect(that.requests[0].url).toBe('https://api.spotify.com/v1/me/player');
     });
 
+    it('should queue', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.queue('spotify:track:1301WleyT98MSxVHPZCA6M', callback);
+      that.requests[0].respond(204);
+      expect(that.requests[0].method).toBe('POST');
+      expect(callback.calledWith(null, '')).toBeTruthy();
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M'
+      );
+    });
+
     it('should play', function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
