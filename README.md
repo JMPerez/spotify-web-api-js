@@ -81,6 +81,7 @@ The wrapper includes helper functions to do the following:
 - Set repeat mode on user's playback
 - Set volume for user's playback
 - Toggle shuffle for user's playback
+- Queue a track or an episode
 
 ## Installation
 
