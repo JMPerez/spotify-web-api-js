@@ -378,7 +378,7 @@ Get great code completion for this package using the integrated typescript typin
 If you are bundling spotify-web-api-js using e.g. webpack you can include the library and the typings into a typescript file like this:
 
 ```typescript
-import * as SpotifyWebApi from 'spotify-web-api-js';
+import SpotifyWebApi from 'spotify-web-api-js';
 
 let spotify = new SpotifyWebApi();
 ```
