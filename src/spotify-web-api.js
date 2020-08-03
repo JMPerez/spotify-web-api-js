@@ -481,6 +481,7 @@ var SpotifyWebApi = (function () {
     return _checkParamsAndPerformRequest(requestData, callback);
   };
 
+
   /**
    * Add the current user as a follower of one playlist.
    * See [Follow a Playlist](https://developer.spotify.com/web-api/follow-playlist/) on
@@ -1649,6 +1650,27 @@ var SpotifyWebApi = (function () {
     return _checkParamsAndPerformRequest(requestData, newOptions, callback);
   };
 
+  
+  /**
+   * adds a song to the queue
+   * See [Add an Item to the User's Playback Queue](https://developer.spotify.com/documentation/web-api/reference/player/add-to-queue/) on
+   * the Spotify Developer site for more information about the endpoint.
+   */  
+  
+  Constr.prototype.queue = function (uri, options, callback) {
+    options = options || {};
+    var params =
+      'device_id' in options ? { uri: uri, device_id: options.device_id } : {uri: uri};
+    var requestData = {
+      type: 'PUT',
+      url: _baseUri + '/me/player/queue',
+      params: params
+    };
+    return _checkParamsAndPerformRequest(requestData, options, callback);
+  };
+  
+  
+  
   /**
    * Pause playback on the user’s account.
    * See [Pause a User’s Playback](https://developer.spotify.com/web-api/pause-a-users-playback/) on
