@@ -98,9 +98,6 @@ var SpotifyWebApi = (function () {
       if (_accessToken) {
         req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
       }
-      if (requestData.contentType) {
-        req.setRequestHeader('Content-Type', requestData.contentType);
-      }
 
       req.onreadystatechange = function () {
         if (req.readyState === 4) {
@@ -124,10 +121,13 @@ var SpotifyWebApi = (function () {
       } else {
         var postData = null;
         if (requestData.postData) {
-          postData =
-            requestData.contentType === 'image/jpeg'
-              ? requestData.postData
-              : JSON.stringify(requestData.postData);
+          if (requestData.contentType === 'image/jpeg') {
+            postData = requestData.postData;
+            req.setRequestHeader('Content-Type', requestData.contentType);
+          } else {
+            postData = JSON.stringify(requestData.postData);
+            req.setRequestHeader('Content-Type', 'application/json');
+          }
         }
         req.send(postData);
       }
