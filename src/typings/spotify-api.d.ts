@@ -961,6 +961,7 @@ declare namespace SpotifyApi {
    */
   interface PlaylistBaseObject {
     collaborative: boolean;
+    description: string | null;
     external_urls: ExternalUrlObject;
     href: string;
     id: string;
@@ -978,7 +979,6 @@ declare namespace SpotifyApi {
    * [](https://developer.spotify.com/web-api/object-model/)
    */
   interface PlaylistObjectFull extends PlaylistBaseObject {
-    description: string;
     followers: FollowersObject;
     tracks: PagingObject<PlaylistTrackObject>;
   }
