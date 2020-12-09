@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.1.0",
+    "doxdox": "^3.0.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
@@ -31,7 +32,8 @@
   "scripts": {
     "lint": "eslint src/*.js",
     "test": "npm run lint && jest --coverage",
-    "travis": "npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "travis": "npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "docs": "mkdir -p docs && doxdox 'src/**/*.js' --layout bootstrap --output docs/index.html"
   },
   "files": [
     "src/*.js",
