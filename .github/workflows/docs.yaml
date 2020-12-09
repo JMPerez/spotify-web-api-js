@@ -3,8 +3,6 @@ name: Node.js CI
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
 jobs:
   build:
@@ -18,7 +16,13 @@ jobs:
           node-version: '12.x'
       - name: Install dependencies
         run: npm install
-      - name: Build library and test
-        run: npm test
+      - name: Build docs
+        run: npm run docs
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: docs
         env:
-          CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
