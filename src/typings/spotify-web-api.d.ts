@@ -693,9 +693,7 @@ declare namespace SpotifyWebApi {
     uploadCustomPlaylistCoverImage(
       playlistId: string,
       imageData: string,
-      callback?: ResultsCallback<
-        SpotifyApi.UploadCustomPlaylistCoverImageResponse
-      >
+      callback?: ResultsCallback<SpotifyApi.UploadCustomPlaylistCoverImageResponse>
     ): Promise<SpotifyApi.UploadCustomPlaylistCoverImageResponse>;
 
     /**
