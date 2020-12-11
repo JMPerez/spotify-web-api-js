@@ -85,10 +85,6 @@ The wrapper includes helper functions to do the following:
 
 ## Installation
 
-Install via bower (browser):
-
-    $ bower install spotify-web-api-js
-
 Install via node (since the requests are made using XMLHttpRequest, you will need a tool like Browserify to run this on a browser):
 
     $ npm install -S spotify-web-api-js
