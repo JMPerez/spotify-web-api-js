@@ -742,7 +742,7 @@ declare namespace SpotifyApi {
    * https://developer.spotify.com/documentation/web-api/reference/library/get-users-saved-shows/
    */
   interface ListOfUsersShowsResponse
-    extends PagingObject<ShowObjectSimplified> {}
+    extends PagingObject<SavedShowObject> {}
 
   /**
    * Save shows for user
@@ -1055,7 +1055,7 @@ declare namespace SpotifyApi {
    */
   interface SavedShowObject {
     added_at: string;
-    album: ShowObjectFull;
+    show: ShowObjectSimplified;
   }
 
   /**
