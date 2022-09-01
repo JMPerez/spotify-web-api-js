@@ -64,5 +64,6 @@ module.exports = {
   shows: loadFixture('shows'),
   show_episodes: loadFixture('show_episodes'),
   episode: loadFixture('episode'),
-  episodes: loadFixture('episodes')
+  episodes: loadFixture('episodes'),
+  get_queue: loadFixture('get_queue')
 };

@@ -1367,6 +1367,27 @@ declare namespace SpotifyWebApi {
     getMyCurrentPlayingTrack(
       callback: ResultsCallback<SpotifyApi.CurrentlyPlayingResponse>
     ): void;
+    
+    /**
+     * Get the list of objects that make up the user's queue.
+     * See [Get the User's Queue](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-queue) on
+     * the Spotify Developer site for more information about the endpoint.
+     * 
+     * @param {Object} options A JSON object with options that can be passed.
+     * @param {function(Object,Object)} callback An optional callback that receives 2 parameters. The first
+     * one is the error object (null if no error), and the second is the value if the request succeeded.
+     * @returns {Object} Null if a callback is provided, a `Promise` object otherwise
+     */
+    getMyQueue(
+      options?: Object
+    ): Promise<SpotifyApi.QueueResponse>
+    getMyQueue(
+      options: Object,
+      callback: ResultsCallback<SpotifyApi.QueueResponse>
+    ): void
+    getMyQueue(
+      callback: ResultsCallback<SpotifyApi.QueueResponse>
+    ): void
 
     /**
      * Transfer playback to a new device and determine if it should start playing.

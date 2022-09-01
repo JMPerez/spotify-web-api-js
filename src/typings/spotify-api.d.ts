@@ -735,6 +735,8 @@ declare namespace SpotifyApi {
 
   interface CurrentlyPlayingResponse extends CurrentlyPlayingObject {}
 
+  interface QueueResponse extends QueueObject {}
+
   /**
    * Get a list of a user's saved shows
    *
@@ -1163,6 +1165,11 @@ declare namespace SpotifyApi {
     context: ContextObject | null;
   }
 
+  interface QueueObject {
+    currently_playing: TrackObjectFull
+    queue: TrackObjectFull[]
+  }
+
   interface UserDevice {
     id: string | null;
     is_active: boolean;
@@ -1246,3 +1253,5 @@ declare namespace SpotifyApi {
   type ContextObjectType = 'artist' | 'playlist' | 'album';
   type PlaybackRepeatState = 'off' | 'track' | 'context';
 }
+
+
