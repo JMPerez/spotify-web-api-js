@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.1.0",
-    "doxdox": "^3.0.0",
+    "doxdox": "^4.0.0-preview.19",
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^7.0.0",
     "husky": "^4.3.5",
