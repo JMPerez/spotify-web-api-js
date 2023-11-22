@@ -1,3 +1,4 @@
 # These are supported funding model platforms
 
-github: JMPerez
+github: [JMPerez]
+custom: ['https://www.buymeacoffee.com/jmp']
