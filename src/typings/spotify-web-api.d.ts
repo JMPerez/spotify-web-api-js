@@ -461,7 +461,11 @@ declare namespace SpotifyWebApi {
      * @return {Object} Null if a callback is provided, a `Promise` object otherwise
      */
     getUserPlaylists(
-      userId?: string,
+      userId: string,
+      options?: Object,
+      callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>
+    ): Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
+    getUserPlaylists(
       options?: Object,
       callback?: ResultsCallback<SpotifyApi.ListOfUsersPlaylistsResponse>
     ): Promise<SpotifyApi.ListOfUsersPlaylistsResponse>;
