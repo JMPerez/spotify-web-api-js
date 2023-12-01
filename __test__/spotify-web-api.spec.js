@@ -1749,6 +1749,24 @@ describe('Basic tests', function () {
       );
     });
 
+    it('should get queued tracks', function () {
+      var callback = sinon.spy();
+      var api = new SpotifyWebApi();
+      api.getMyCurrentQueue(callback);
+      that.requests[0].respond(
+        200,
+        { 'Content-Type': 'application/json' },
+        JSON.stringify(
+          Object.assign({ currently_playing: fixtures.track }, fixtures.queue)
+        )
+      );
+      expect(that.requests[0].method).toBe('GET');
+      expect(that.requests.length).toBe(1);
+      expect(that.requests[0].url).toBe(
+        'https://api.spotify.com/v1/me/player/queue'
+      );
+    });
+
     it('should pause', function () {
       var callback = sinon.spy();
       var api = new SpotifyWebApi();
