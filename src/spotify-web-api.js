@@ -55,12 +55,16 @@ var SpotifyWebApi = (function () {
     return target;
   };
 
-  var _buildUrl = function (url, parameters) {
+  var _buildUrl = function (url, parameters, dontEncodePlus) {
     var qs = '';
     for (var key in parameters) {
       if (parameters.hasOwnProperty(key)) {
         var value = parameters[key];
-        qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
+        if (dontEncodePlus) {        
+            qs += encodeURIComponent(key) + '=' + value.split('+').map(x => encodeURIComponent(x)).join('+') + '&';
+        } else {
+            qs += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
+        }
       }
     }
     if (qs.length > 0) {
@@ -94,7 +98,7 @@ var SpotifyWebApi = (function () {
       }
 
       var type = requestData.type || 'GET';
-      req.open(type, _buildUrl(requestData.url, requestData.params));
+      req.open(type, _buildUrl(requestData.url, requestData.params, requestData.dontEncodePlus));
       if (_accessToken) {
         req.setRequestHeader('Authorization', 'Bearer ' + _accessToken);
       }
@@ -1360,7 +1364,8 @@ var SpotifyWebApi = (function () {
       params: {
         q: query,
         type: types.join(',')
-      }
+      },
+      dontEncodePlus: true
     };
     return _checkParamsAndPerformRequest(requestData, options, callback);
   };
